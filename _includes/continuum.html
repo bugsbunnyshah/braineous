@@ -1,0 +1,191 @@
+<div class="full-width-bg component">
+  <div class="grid-wrapper">
+    <div class="width-3-12 width-12-12-m">
+    <img src="{{site.baseurl}}/assets/images/about/icon-reactive.svg">
+    </div>
+    <div class="width-9-12 width-12-12-m">
+        <p>
+        </p>
+    </div>
+    <div class="width-12-12 width-12-12-m">
+        <p>
+            Braineous transforms any data-format, XML, CSV, into JSON for its processor.
+            Once JSON a simple Object Graph and uses configured JSONPATH-expressions
+            to produce data for the target system and delivers it to desired data-format.
+
+            Completely dynamic. Just change the pipe configuration and roll.
+        </p>
+      <h2 id="http-microservices"><a class="anchor" href="#http-microservices"></a>HTTP microservices</h2>
+      <p>Let’s start with the basics: HTTP microservices. In this context, you need to develop an HTTP endpoint,
+          often called REST or CRUD. You process incoming HTTP requests,
+          and to do so you often need to rely on other services, such as databases, or another HTTP
+          service.
+      </p>
+      <p>For this type of application, Quarkus relies on well-known standards such as JAX-RS, JPA
+          and MicroProfile Rest Client, but also Hibernate with Panache to simplify interactions with databases.
+      </p>
+      <p>Let’s take a very simple application handling <em>elements</em> from the periodic table. The code would
+          be something like:
+      </p>
+      <pre class="highlightjs highlight">
+          <code class="language-java hljs" data-lang="java">
+          <span class="hljs-meta">
+          {
+              "pipeId": "123",
+              "configuration": [
+                {
+                  "storeDriver" : "com.appgallabs.dataplatform.receiver.core.driver.MongoDBStoreDriver",
+                  "name": "scenario2_store0",
+                  "config": {
+                    "connectionString": "mongodb://localhost:27017",
+                    "database": "scenario2_store0",
+                    "collection": "data"
+                  },
+                  "jsonpathExpression": "jsonpath:1"
+                },
+                {
+                  "storeDriver" : "com.appgallabs.dataplatform.receiver.core.driver.MongoDBStoreDriver",
+                  "name": "scenario2_store1",
+                  "config": {
+                    "connectionString": "mongodb://localhost:27017",
+                    "database": "scenario2_store1",
+                    "collection": "data"
+                  },
+                  "jsonpathExpression": "jsonpath:1"
+                }
+              ]
+          }
+          </span></code>
+      </pre>
+
+
+        <p>
+        <pre class="highlightjs highlight">
+          <code class="language-java hljs" data-lang="java">
+          <span class="hljs-meta">
+          ---
+openapi: 3.0.3
+info:
+  title: dataplatform API
+  version: 1.0.0
+paths:
+  /data/lake:
+    get:
+      tags:
+      - Data Lake Endpoint
+      parameters:
+      - name: entity
+        in: query
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+  /data/lake/query:
+    post:
+      tags:
+      - Data Lake Graph Ql Query Endpoint
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        "200":
+          description: OK
+  /data/microservice:
+    get:
+      tags:
+      - Microservice
+      responses:
+        "200":
+          description: OK
+    post:
+      tags:
+      - Microservice
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        "200":
+          description: OK
+  /data/security/issue:
+    post:
+      tags:
+      - JWT Token Manager
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        "200":
+          description: OK
+  /ingestion/csv:
+    post:
+      tags:
+      - Data Ingestion
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        "200":
+          description: OK
+  /ingestion/json:
+    post:
+      tags:
+      - Data Ingestion
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        "200":
+          description: OK
+  /ingestion/register_pipe:
+    post:
+      tags:
+      - Data Ingestion
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        "200":
+          description: OK
+  /ingestion/xml:
+    post:
+      tags:
+      - Data Ingestion
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        "200":
+          description: OK
+  /replay/chain:
+    get:
+      tags:
+      - Data Replay
+      parameters:
+      - name: oid
+        in: query
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          </span></code>
+      </pre>
+        </p>
+    </div>
+  </div>
+</div>

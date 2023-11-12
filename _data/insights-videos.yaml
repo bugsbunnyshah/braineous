@@ -1,0 +1,758 @@
+sectiontitle: "Upcoming Podcast"
+socialdescription: "View the Podcast on these platforms"
+futureheadline: "Scheduled Podcasts"
+
+futurevideos:
+
+- title: "EPISODE #143: Dance with Quarkus Security"
+  link: 
+  date: "November 6, 2023"
+  authors: "Sergey Beryozkin"
+
+- title: "EPISODE #144: Mandrel, Leyden and OpenJDK"
+  link: 
+  date: "November 13, 2023"
+  authors: "Andrew Dinn & Dan Heidinga"
+
+- title: "EPISODE #145: What’s new in Hibernate Search"
+  link: 
+  date: "November 20, 2023"
+  authors: "Yoann Rodiere"
+
+- title: "EPISODE #146: Quarkus in the Wild with Antoine Sabot-Durand"
+  link: 
+  date: "November 27, 2023"
+  authors: "Antoine Sabot-Durand" 
+
+- title: "EPISODE #147: Quarkus Observability"
+  link: 
+  date: "December 4, 2023"
+  authors: "Bruno Baptista" 
+
+- title: "EPISODE #148: Microcks and Quarkus"
+  link: 
+  date: "December 11, 2023"
+  authors: "Laurent Broudoux & Clement Escoffier" 
+
+
+pastheadline: "Archived Podcast Videos"
+
+pastvideos:
+
+
+- title: "EPISODE #142: JVM profiling on Quarkus"
+  link: https://youtube.com/live/6aGD-gFNQzk
+  date: "October 23, 2023"
+  authors: "Daniele Zonca, Francesco Nigro, & Sanne Grinovero"
+  
+- title: "EPISODE #141: Pulsar Integration in Quarkus"
+  link: https://youtube.com/live/rEZutvXrdsU
+  date: " October 16, 2023"
+  authors: "Matteo Merli, Clement Escoffier & Ozan Günalp"
+
+
+- title: "EPISODE #140: Contributing to Quarkus Community Panel"
+  link: https://youtube.com/live/ad6AbZbvsXk
+  date: "October 9, 2023"
+  authors: "Emil Lefkof, Antonio Goncalves, & Loïc Mathieu"
+
+- title: "EPISODE #139: Quarkus Web Bundler"
+  link: https://youtube.com/live/nnu1k3WKtaM
+  date: "September 25, 2023"
+  authors: "Andy Damevin & Erik Jan de Wit"
+
+- title: "EPISODE #138: The Quarkus Frontend rainbow. Why is Quarkus the best framework for full stack developers?"
+  link: https://youtube.com/live/C9JDsIrcTWI
+  date: "September 11, 2023"
+  authors: "Andy Damevin & Stéphane Épardaud"
+
+- title: "EPISODE #137: Comparing Native Java REST API Frameworks"
+  link: https://youtube.com/live/yoU1ruBSXSA
+  date: "August 21, 2023"
+  authors: "Matt Raible"
+  
+- title: "EPISODE #136: Quarkus Component Testing"
+  link: https://youtube.com/live/uXHuNexQNAE
+  date: "August 7, 2023"
+  authors: "Martin Kouba"
+
+- title: "EPISODE #135: What’s new in Quarkus’ gRPC?"
+  link: https://youtube.com/live/HTD_1HGI48I
+  date: "July 24, 2023"
+  authors: "Aleš Justin"
+
+- title: "EPISODE #134: Quarkus in the Wild with AXA"
+  link: https://youtube.com/live/JLsZYYnIB-Q
+  date: "July 10, 2023"
+  authors: "Guillaume Thomas"
+
+- title: "EPISODE #133: Quarkus + JDK Flight recorder/Cryostat"
+  link: https://youtube.com/live/HEy-ad4v6dY
+  date: "June 26, 2023"
+  authors: "Andrew Azores & Robert Toyonaga"
+
+- title: "EPISODE #132: Quarkiverse Extension Spotlight: Quarkus CXF extension"
+  link: https://youtube.com/live/dUV-kUrZ5m0
+  date: "June 21, 2023"
+  authors: "Shumon Sharif and Peter Palaga join us to discuss how the CXF extension is critical for implementing SOAP clients and JAX-WS services."
+
+- title: "EPISODE #131: What’s new with Hibernate 6 and Quarkus"
+  link: https://youtube.com/live/6lPTwV4mvVU
+  date: "June 14, 2023"
+  authors: "Steve Ebersole & Gavin King"
+
+- title: "EPISODE #130: Sebastian Daschner’s Quarkus wishlist"
+  link: https://youtube.com/live/nXnxcl4v9eg
+  date: "May 22, 2023"
+  authors: "Sebastian Daschner"
+
+- title: "EPISODE #129: Quarkus plugins: JBang!"
+  link: https://youtube.com/live/iskDa-i82RU
+  date: "May 15, 2023"
+  authors: "Ioannis Kanellos"
+
+- title: "EPISODE #128: What's new in Quarkus 3 and Ask Us Anything"
+  link: https://youtube.com/live/p4g9HVcc6ro
+  date: "April 24, 2023"
+  authors: "Ioannis Kanellos"
+
+- title: "EPISODE #127: JPAStreamer Quarkus Extension"
+  link: https://youtube.com/live/f2ZNVDhFmkU
+  date: "April 24, 2023"
+  authors: "Julia Gustafsson"
+
+- title: "EPISODE #126: Quarkus to build better services (or Using Quarkus to build a better mousetrap)"
+  link: https://youtube.com/live/1leA_MvEoFU
+  date: "April 17, 2023"
+  authors: "KimJohn Quinn"
+  
+- title: "EPISODE #125: What’s new with the Dev UI"
+  link: https://youtu.be/EFQRSlAiz3k
+  date: "April 12, 2023"
+  authors: "Phillip Krüger"
+
+- title: "EPISODE #124: 1000 ways to deploy Quarkus"
+  link: https://youtube.com/live/82NjJ7gDzv0
+  date: "April 3, 2023"
+  authors: "Ioannis Kanellos"
+  
+- title: "EPISODE #123: 10 things I like about Quarkus"
+  link: https://youtube.com/live/cU-2witNthQ
+  date: "March 27, 2023"
+  authors: "Alexei Bratuhin"
+
+- title: "EPISODE #122: CDI Lite and Build Compatible Extensions [in Quarkus]"
+  link: https://youtube.com/live/ODA31hrHFvU
+  date: "March 20, 2023"
+  authors: "Ladislav Thon, Matej Novotny, and Martin Kouba" 
+
+- title: "EPISODE #121: Quarkus Extension Spotlight: Quarkus Zeebe"
+  link: https://youtube.com/live/LA50HS3jNoE
+  date: "March 13, 2023"
+  authors: "Andrej Petras"  
+  
+- title: "EPISODE #120: What's new with Mutiny?"
+  link: https://youtube.com/live/RRs4DJJUSx8
+  date: "March 6, 2023"
+  authors: "Julien Ponge & Clement Escoffier"  
+
+- title: "EPISODE #119: Dashbuilder Quarkus Extension spotlight"
+  link: https://youtube.com/live/sXtSxx-pwJI
+  date: "February 27, 2023"
+  authors: "William Siqueira"
+
+- title: "EPISODE #118: What's new with the Quarkus Superheroes"
+  link: https://youtu.be/H9yK0xnExeA
+  date: "February 20, 2023"
+  authors: "Eric Deandrea & Antonio Goncalves"
+
+- title: "EPISODE #117: Contract Testing with Pact and Quarkus"
+  link: https://youtube.com/live/d9CSY8HuZ9U
+  date: "February 13, 2023"
+  authors: "Holly Cummins"
+  
+- title: "EPISODE #116: Quarkus Helm in Action"
+  link: https://youtube.com/live/95GsShVW6rY
+  date: "February 6, 2023"
+  authors: "Jose Carvajal Hilario"
+  
+- title: "EPISODE #115: What’s new in Infinispan?"
+  link: https://youtu.be/qcjrGlRimYU
+  date: "January 23, 2023"
+  authors: "Katia Aresti & Fabio Massimo Ercoli"
+
+- title: "EPISODE #114: The latest in writing GitHub bots and GitHub Actions with Quarkus"
+  link: https://youtu.be/hzXO0Do9dMM
+  date: "January 17, 2023"
+  authors: "Guillaume Smet"
+  
+- title: "EPISODE #113: Quarkiverse Extension Spotlight: Quarkus Logging Cloudwatch"
+  link: https://youtu.be/VYjLnELuoVM
+  date: "January 9, 2023"
+  authors: "Bennet Schulz"  
+
+- title: "EPISODE #112: Quarkiverse Extension Spotlight: Apache Cassandra"
+  link: https://youtu.be/0DVLAnTq0vA
+  date: "December 12, 2022"
+  authors: "Raghavan Srinivas"
+
+- title: "EPISODE #111: What’s new with Google Cloud Functions extension"
+  link: https://youtu.be/zD52BQrEktU
+  date: "December 5, 2022"
+  authors: "Loïc Mathieu"
+
+- title: "EPISODE #110: Quarkiverse Extension Spotlight: Apache Camel"
+  link: https://youtu.be/stBjGMu73B0
+  date: "November 28, 2022"
+  authors: "Claus Ibsen, Peter Palaga, and Zineb Bendhiba"
+
+- title: "EPISODE #109: Quarkiverse Extension Spotlight: Minio Client"
+  link: https://youtu.be/ScSdgWx6aAM
+  date: "November 14, 2022"
+  authors: "Jérôme Tama"
+
+- title: "EPISODE #108: Quarkiverse Extension Spotlight: Quarkus Hazelcast Client"
+  link: https://youtu.be/tO8ZQ3iC1Rs
+  date: "November 7, 2022"
+  authors: "Grzegorz Piwowarek"
+  
+- title: "EPISODE #107: Quarkus Runtime performance - a peek into JVM internals"
+  link: https://youtu.be/G40VfIsnCdo
+  date: "October 31, 2022"
+  authors: "Francesco Nigro & Luis Barreiro"
+
+- title: "EPISODE #106: Quarkiverse Extension Spotlight: OpenApi Generator"
+  link: https://youtu.be/_s_if69t2iQ
+  date: "October 26, 2022"
+  authors: "Ricardo Zanini"
+  
+- title: "EPISODE #105: Discover the new Quarkus Redis API"
+  link: https://youtu.be/-gyJ6JoHxlc
+  date: "October 17, 2022"
+  authors: "Clement Escoffier"
+
+- title: "EPISODE #104: Stargate & Quarkus"
+  link: https://youtu.be/nBX-J4LgEog
+  date: "October 3, 2022"
+  authors: "Ivan Senic"
+
+- title: "EPISODE #103: Debezium & Quarkus -- A Match Made in Heaven?"
+  link: https://youtu.be/MQR1SLJVpgM
+  date: "September 26, 2022"
+  authors: "Gunnar Morling & Chris Cranford"
+  
+- title: "EPISODE #102: Quarkiverse Extension Spotlight: Operator SDK"
+  link: https://youtu.be/omMRnntAZNk
+  date: "September 19, 2022"
+  authors: "Chris Laprun & Attila Mészáros"
+
+- title: "EPISODE #101: Quarkiverse Extension Spotlight: Loom in Quarkus"
+  link: https://youtu.be/514Ub0jNiII
+  date: "September 12, 2022"
+  authors: "Arthur Navarro & Clement Escoffier"
+
+- title: "EPISODE #100: EDDI chatbot goes cloud-native with Quarkus"
+  link: https://youtu.be/NJglcdL9m7A
+  date: "August 29, 2022"
+  authors: "Gregor Jarisch & Roland Pickl"
+
+- title: "EPISODE #99: Using Quarkus CodeStarts"
+  link: https://youtu.be/lLyVDqVK8cE
+  date: "August 22, 2022"
+  authors: "Andy Damevin"
+
+- title: "EPISODE #98: Using Minecraft as an Observability client"
+  link: https://youtu.be/Urj1X60H6YY
+  date: "August 8, 2022"
+  authors: "Holly Cummins"
+  
+- title: "EPISODE #97: Qute with Quarkus"
+  link: https://www.youtube.com/watch?v=nH-27gOp0h4
+  date: "August 1, 2022"
+  authors: "Martin Kouba"
+
+- title: "EPISODE #96: Quarkus Q&A"
+  link: https://youtu.be/kdasoBPOWUQ
+  date: "July 18, 2022"
+  authors: "Max Andersen, Jason Greene"
+
+- title: "EPISODE #95: Quarkus: Runtime Performance"
+  link: https://youtu.be/m_UmdIqDXg0
+  date: "July 11, 2022"
+  authors: "Francesco Nigro and Sanne Grinovero"
+
+
+- title: "EPISODE #94: Scientific Games meets Quarkus"
+  link: https://youtu.be/qqztCp5Bvbg
+  date: "June 27, 2022"
+  authors: "Theocharis Panagiotis & Christos Peristeris"
+
+- title: "EPISODE #93: The Latest with GraphQL and Quarkus"
+  link: https://youtu.be/PHWOzzusfrY
+  date: "June 20, 2022"
+  authors: "Phillip Krüger & Jan Martiška"
+
+- title: "EPISODE #92: Quinoa... Quarkus Modern UI with no hassle"
+  link: https://youtu.be/ya8To5V1QUU
+  date: "May June 13, 2022"
+  authors: "Andy Damevin"
+
+- title: "EPISODE #91: CDI Non-standard Features"
+  link: https://youtu.be/XybonqP34hM
+  date: "May 23, 2022"
+  authors: "Martin Kouba"
+
+- title: "EPISODE #90: Quarkus Tooling Update"
+  link: https://youtu.be/UhfXS3P2uLE
+  date: "May 16, 2022"
+  authors: "Fred Bricon"
+
+- title: "EPISODE #89: Capgemini’s Road to Quarkus"
+  link: https://youtu.be/mudqwT6l0Co
+  date: "May 9, 2022"
+  authors: "Luis Fernandez Palacio"
+
+- title: "EPISODE #88: Quarkus Scheduler"
+  link: https://youtu.be/MwJB93hhHak
+  date: "May 2, 2022"
+  authors: "Martin Kouba"
+
+- title: "EPISODE #87: Keycloak Quarkus Distribution"
+  link: https://youtu.be/vbLRO8xJWy8
+  date: "April 25, 2022"
+  authors: "Stian Thorgersen, Dominik Guhr and Pedro Igor Silva"
+
+- title: "EPISODE #86: Vaadin & Quarkus"
+  link: https://youtu.be/22wg8oO9xXM
+  date: "April 4, 2022"
+  authors: "Matti Tahvonen"
+
+- title: "EPISODE #85: What's new in Quarkus Kafka, REX with Loïc Mathieu"
+  link: https://youtu.be/saTxdw-SPGA
+  date: "March 29, 2022"
+  authors: "Ozan Günalp & Loïc Mathieu"
+  
+- title: "EPISODE #84: What's new in Quarkus Testing"
+  link: https://youtu.be/wPkHO6PUrAg
+  date: "March 23, 2022"
+  authors: "Georgios Andrianakis"
+
+- title: "EPISODE #83: Quarkus's Fault Tolerance API"
+  link: https://youtu.be/9jlYniaQ_aw
+  date: "March 14, 2022"
+  authors: "Ladislav Thon"
+
+- title: "EPISODE #82: What's new in RESTEasy Reactive"
+  link: https://youtu.be/DCEJSBgA0T8
+  date: "March 7, 2022"
+  authors: "Clément Escoffier & Georgios Andrianakis"
+
+- title: "EPISODE #81: Morphia and MongoDB object-document mapping"
+  link: https://youtu.be/XL-rSQJuhqI
+  date: "February 21, 2022"
+  authors: "Justin Lee"
+  
+- title: "EPISODE #80: Neo4j with Quarkus"
+  link: https://youtu.be/H4FI19b4FMA
+  date: "February 14, 2022"
+  authors: "Michal Simons"
+
+- title: "EPISODE #79: New and noteworthy in Quarkus dev mode"
+  link: https://youtu.be/hNyf0OgJEug
+  date: "February 7, 2022"
+  authors: "Stuart Douglas"
+
+- title: "EPISODE #78: Quarkus Example App Demo"
+  link: https://youtu.be/7M0Tvlx-GTA
+  date: "January 31, 2022"
+  authors: "Eric Deandrea"
+  
+- title: "EPISODE #77: Quarkus Renarde - a server-side web framework experiment"
+  link: https://youtu.be/ChDVGuqGqUI
+  date: "January 25, 2022"
+  authors: "Stéphane Épardaud"
+
+- title: "EPISODE #76: Quarkus Q&A"
+  link: https://youtu.be/JuBmInppfOw
+  date: "January 17, 2022"
+  authors: "Jason Greene"
+  
+- title: "EPISODE #75: State of the Quarkiverse Ecosystem"
+  link: https://youtu.be/1Rt7CPFodbE
+  date: "January 10, 2022"
+  authors: "Alexey Loubyansky & George Gastaldi"
+
+- title: "EPISODE #74: Deploying OpenShift applications in the Real World using Quarkus"
+  link: https://youtu.be/jPGZanPQlRk
+  date: "December 13, 2021"
+  authors: "Vincent Sevel"
+
+- title: "EPISODE #73: What's New with Java 17"
+  link: https://youtu.be/j5gyD92lPnQ
+  date: "December 6, 2021"
+  authors: "Clement Escoffier & Georgios Andrianakis"
+
+- title: "EPISODE #72: Messaging in Quarkus with Kafka"
+  link: https://youtu.be/r8Li0n7CR2w
+  date: "November 29, 2021"
+  authors: "Ozan Günalp & Clement Escoffier"
+  
+- title: "EPISODE #71: Using JReleaser with Quarkus"
+  link: https://youtu.be/Ui_bwjNNjcc
+  date: "November 22, 2021"
+  authors: "Andres Almiray"
+
+- title: "EPISODE #70: Introducing Stork"
+  link: https://youtu.be/l3mLKU3wR2A
+  date: "November 15, 2021"
+  authors: "Clement Escoffier, Michał Szynkiewicz, & Aurea Munoz Hernandez"
+  
+- title: "EPISODE #69: Performance and costs of reactive libraries in Java"
+  link: https://youtu.be/xGQ-5UKeAaQ
+  date: "November 8, 2021"
+  authors: "Julien Ponge"
+
+- title: "EPISODE #68: Hibernate Reactive 1.0 and Quarkus"
+  link: https://youtu.be/VGAnVX1lCxg
+  date: "October 25, 2021"
+  authors: "Sanne Grinovero and Gavin King"
+
+- title: "EPISODE #67: Testing Command Mode"
+  link: https://youtu.be/oY8TtKrC_5I
+  date: "October 18, 2021"
+  authors: "Erin Schnabel"
+  
+- title: "EPISODE #66: SNCF migration to Quarkus"
+  link: https://youtu.be/2cHX8HT7Z6A
+  date: "October 4, 2021"
+  authors: "Bertrand Deweer"
+
+- title: "EPISODE #65: Boost Business Automation Productivity with Quarkus Dev UI "
+  link: https://youtu.be/efPuzK2YM4I
+  date: "September 27, 2021"
+  authors: "Alex Porcelli and Paulo Rego"
+
+- title: "EPISODE #64: Measuring and Bending for Continuous Improvement"
+  link: https://youtu.be/JpafbcOFIGI
+  date: "September 20, 2021"
+  authors: "KimJohn Quinn"
+
+- title: "EPISODE #63: Quarkus for Spring Developers"
+  link: https://youtu.be/RvO8MUfc0kA
+  date: "September 13, 2021"
+  authors: "Eric Deandrea"
+  
+- title: "EPISODE #62: Paul's Adventures with Quarkus in Production"
+  link: https://youtu.be/wMnKjTGI20c
+  date: "September 8, 2021"
+  authors: "Paul Carter-Brown"
+
+- title: "EPISODE #61: Do's and Don't of Microservice design"
+  link: https://youtu.be/KLYxyacnuOc
+  date: "August 30, 2021"
+  authors: "Erin Schnabel, Rick Osowski, & Chris Richardson"
+
+- title: "EPISODE #60: Quarkus 2: The Rise of Platforms"
+  link: https://youtu.be/smIVxLA-A0w
+  date: "August 23, 2021"
+  authors: "Alexey Loubyansky"
+  
+- title: "EPISODE #59: Quarkus projects using MicroProfile specs with Giuseppe"
+  link: https://youtu.be/-CB7OQmNg5Q
+  date: "August 09, 2021"
+  authors: "Giuseppe Scaramuzzino"
+
+- title: "EPISODE #58: ORM and GraalVM native image lessons learned "
+  link: https://youtu.be/y0-cuY8qCMg
+  date: "July 19, 2021"
+  authors: "Sanne Grinovero"
+
+- title: "EPISODE #57: Quarkus CLI"
+  link: https://youtu.be/e_kwOJE2vQo
+  date: "July 14, 2021"
+  authors: "Erin Schnabel"
+
+- title: "EPISODE #56: Quarkus Configuration"
+  link: https://youtu.be/n6D6a4G6ozg
+  date: "July 7, 2021"
+  authors: "Roberto Cortez"
+
+- title: "EPISODE #55: Quarkus 2.0 Launch"
+  link: https://youtu.be/WyeaF2pk8Ec
+  date: "June 28, 2021"
+  authors: "The Quarkus Team"
+
+- title: "EPISODE #54: Kotlin on Quarkus"
+  link: https://youtu.be/pYhaZYX0kq4
+  date: "June 21, 2021"
+  authors: "Justin Lee"
+
+- title: "EPISODE #53: Java Memory - why should you care"
+  link: https://youtu.be/pYhaZYX0kq4
+  date: "June 14, 2021"
+  authors: "John O'Hara & Jason Greene"
+
+- title: "EPISODE #52: Gizmo: Build-time Boost Your Extensions"
+  link: https://youtu.be/iZ501bG2ZAE
+  date: "June 7, 2021"
+  authors: "Martin Kouba & Jason Greene"
+  
+- title: "EPISODE #51: Q & A - Session II"
+  link: https://youtu.be/ETTMBWEBfLY
+  date: "June 2, 2021"
+  authors: "Steve Poole"
+
+- title: "EPISODE #50: Quarkus + GRPC"
+  link: https://youtu.be/szYpdjc5WXM
+  date: "May 24, 2021"
+  authors: "Michał Szynkiewicz"
+
+- title: "EPISODE #49: Why I use Quarkus for Cloud Native Apps"
+  link: https://youtu.be/ILl85LLj93w
+  date: "May 17, 2021"
+  authors: "Pascal Libenzi "
+
+- title: "EPISODE #48: Continuous Testing in Quarkus 2 Alpha"
+  link: https://youtu.be/cvxivqZ1PNA
+  date: "May 10, 2021"
+  authors: "Stuart Douglas & Benjamin Thomas"
+
+- title: "EPISODE #47: Keycloak's Journey to Quarkus"
+  link: https://youtu.be/qNeDPgrytxE
+  date: "May 3, 2021"
+  authors: "Sebastien Blanc and Pedro Igor"
+
+- title: "EPISODE #46: Quarkus and AWS Lambda Containers"
+  link: https://youtu.be/bDJZMgcMlFE
+  date: "April 26, 2021"
+  authors: "Aaron Walker"
+
+- title: "EPISODE #45: Writing github bots with Quarkus"
+  link: https://youtu.be/23foOjHl-RE
+  date: "April 19, 2021"
+  authors: "Guillaume Smet"
+
+- title: "EPISODE #44: JHipster for Quarkus - Part II"
+  link: https://youtu.be/d4q7j9qjuKM
+  date: "April 12, 2021"
+  authors: "Daniel Petisme & Anthony Viard"
+
+- title: "EPISODE #43: Writing Quarkus Extensions"
+  link: https://youtu.be/RZbLwBuKxuw
+  date: "April 7, 2021"
+  authors: "Peter Palaga"
+
+- title: "EPISODE #42: Talking about the Quarkus 1.13 Release"
+  link: https://www.youtube.com/watch?v=iXktoQi5gpA
+  date: "March 29, 2021"
+  authors: "Stuart Douglas"
+
+- title: "EPISODE #41: Going to Funqy town"
+  link: https://youtube.com/live/R5texNJH4s4
+  date: "March 24, 2021"
+  authors: "Bill Burke"
+
+- title: "EPISODE #40: Quarkus - Behind the Curtains"
+  link: https://youtu.be/BQMMd-RbXcE
+  date: "March 8, 2021"
+  authors: "Guillaume Smet"
+
+- title: "EPISODE #39: Microprofile OpenAPI"
+  link: https://youtu.be/8JsnjHQM36k
+  date: "March 1, 2021"
+  authors: "Phillip Krüger"
+
+- title: "EPISODE #38: Efficient Data Access with Quarkus"
+  link: https://youtu.be/J-JB1SwCyv4
+  date: "February 22, 2021"
+  authors: "Max Andersen"
+
+- title: "EPISODE #37: Why you'll fall in love with Quarkus according to Sebastian D."
+  link: https://youtu.be/ng1r7nLrbc8
+  date: "February 15, 2021"
+  authors: "Sebastian Dacschner"
+
+- title: "EPISODE #36: Quarkus Q&A"
+  link: https://youtu.be/OV-ZnvHoQIk
+  date: "February 8, 2021"
+  authors: "Georgios Andrianakis, Jason Greene, Max Andersen, and Steve Poole"
+
+- title: "EPISODE #35: Quarkus Dev UI"
+  link: https://youtu.be/fZIDzlqXGe4
+  date: "February 1, 2021"
+  authors: "Stéphane Épardaud"
+
+- title: "EPISODE #34: Talking about Quarkus 1.11 Release"
+  link: https://youtu.be/hQovrvrIjdc
+  date: "January 25, 2021"
+  authors: "Erin Schnabel"
+
+- title: "EPISODE #33: Quarkus at Vodafone"
+  link: https://youtu.be/aUvXLl_qIb4
+  date: "January 18, 2021"
+  authors: "Christos Sotiriou & Vlasis Pitsios"
+
+- title: "EPISODE #33: Quarkus at Vodafone"
+  link: https://youtu.be/aUvXLl_qIb4
+  date: "January 18, 2021"
+  authors: "Christos Sotiriou & Vlasis Pitsios"
+
+- title: "EPISODE #32: Hibernate Search"
+  link: https://youtu.be/hwxWx-ORVwM
+  date: "January 11, 2021"
+  authors: "Yoann Rodière"
+
+- title: "EPISODE #31: RESTEasy Reactive"
+  link: https://youtu.be/WV19zzSCcjk
+  date: "December 14, 2020"
+  authors: "Stéphane Épardaud & Stuart Douglas"
+
+- title: "EPISODE #30: Google CloudFunctions in the Quarkiverse"
+  link: https://youtu.be/eNlMuDqFR3s
+  date: "December 7, 2020"
+  authors: "Loïc Mathieu"
+
+- title: "EPISODE #28: Books to understand and practice Quarkus"
+  link: https://youtu.be/x8-UTzo52mU
+  date: "November 23, 2020"
+  authors: "Antonio Goncalves"
+
+- title: "EPISODE #27: Quarkus helping optimize Covid19 testing"
+  link: https://youtu.be/LSmfKeDGtzI
+  date: "November 16, 2020"
+  authors: "Ioannis Christodoulou & Vagelis Antoniadis"
+
+- title: "EPISODE #26: Exploring Qute templating"
+  link: https://youtu.be/EcIDsb8Vg_A
+  date: "November 9, 2020"
+  authors: "Martin Kouba"
+
+- title: "EPISODE #25: Quarkus Tools"
+  link: https://youtu.be/0KYL6Q1QO4c
+  date: "November 2, 2020"
+  authors: "Fred Bricon"
+
+- title: "EPISODE #24: Exploring OpenID with Quarkus"
+  link: https://youtu.be/OueM07U0yjg
+  date: "October 26, 2020"
+  authors: "Sébastien Blanc"
+
+- title: "EPISODE #23: AI Constraint Solving with Optaplanner"
+  link: https://youtu.be/Oq6kAuO_S5g
+  date: "October 20, 2020"
+  authors: "Geoffrey De Smet"
+
+- title: "EPISODE #22: Performance Testing: Tips and Pitfalls"
+  link: https://youtu.be/xdG8b9iDYbE
+  date: "October 12, 2020"
+  authors: "John O’Hara"
+
+- title: "EPISODE #21: Contributing to Quarkus the first time"
+  link: https://youtu.be/xXagvtCteR8
+  date: "October 5, 2020"
+  authors: "Loïc Mathieu"
+
+- title: "EPISODE #20: Kafka Streams"
+  link: https://youtu.be/C4JxejyeF6s
+  date: "October 5, 2020"
+  authors: "Gunnar Morling"
+
+- title: "EPISODE #19: Hackathon IoT Winner"
+  link: https://youtu.be/fX3Stq5VpkE
+  date: "September 28, 2020"
+  authors: "Joe White"
+
+- title: "EPISODE #18: Spring the Quarkus Way"
+  link: https://youtu.be/pDPRg0Iho9k
+  date: "September 21, 2020"
+  authors: "John Clingon & Jason Greene"
+
+- title: "EPISODE #17: Whats new in Metrics"
+  link: https://youtu.be/mijoal4B8Ik
+  date: "September 14, 2020"
+  authors: "Ken Finnigan & Erin Schnabel"
+
+- title: "EPISODE #16: Quarkus with JBang"
+  link: https://youtu.be/3JopX_mtFiY
+  date: "September 7, 2020"
+  authors: "Tako Schotanus"
+
+- title: "EPISODE #15: Kubernetes and OpenShift with Quarkus"
+  link: https://youtu.be/gyOe-m-kltw
+  date: "August 31, 2020"
+  authors: "Georgios Andrianakis"
+
+- title: "EPISODE #14: What's new in dev mode?"
+  link: https://youtu.be/Yp0TsGNgu4Q
+  date: "August 24, 2020"
+  authors: "Stuart Douglas"
+
+- title: "EPISODE #13: MongoDB with Panache"
+  link: https://youtu.be/0rVxJxlexYI
+  date: "August 3, 2020"
+  authors: "Loïc Matheiu"
+
+- title: "EPISODE #12: Quarkus Fundementals & Principles"
+  link: https://youtu.be/GySrCQ7ZNn8
+  date: "July 27, 2020"
+  authors: "Jason Greene"
+
+- title: "EPISODE #11: Mutiny the reactive framework II"
+  link: https://youtu.be/KIEaMn-bzOc
+  date: "July 20, 2020"
+  authors: "Clement Escoffier"
+
+- title: "EPISODE #10: CDC, Debezium and the outbox pattern"
+  link: https://youtu.be/DJTtGaPsSYY
+  date: "July 13, 2020"
+  authors: "Gunnar Morling"
+
+- title: "EPISODE #09: Wonders of GraphQL"
+  link: https://youtu.be/nMti8-zIDQs
+  date: "June 29, 2020"
+  authors: "Phillip Krüger"
+
+- title: "EPISODE #08: Mutiny - the reactive library"
+  link: https://youtu.be/uTK73fpPznQ
+  date: "June 22, 2020"
+  authors: "Clement Escoffier"
+
+- title: "EPISODE #07:  GraalVM and Mandrel"
+  link: https://youtu.be/jUdx5Gq8Sqw
+  date: "June 15, 2020"
+  authors: "Andrew Dinn"
+
+- title: "EPISODE #06: Roadmap"
+  link: https://youtu.be/xcYP-h9uSqs
+  date: "June 9, 2020"
+  authors: "Georgios Andrianakis"
+
+- title: "EPISODE #05: Quarkify.net"
+  link: hhttps://youtu.be/6XVBa5YlEsw
+  date: "June 2, 2020"
+  authors: "Dmitry Chaban"
+
+- title: "EPISODE #04: JHipster for Quarkus"
+  link: https://youtu.be/MJe2giXrbuM
+  date: "May 25, 2020"
+  authors: "Daniel Petisme"
+
+- title: "EPISODE #03: Hibernate Panache"
+  link: https://youtu.be/t84sdt9Mnmw
+  date: "May 18, 2020"
+  authors: "Stéphane Épardaud"
+
+- title: "EPISODE #02: quarkus:dev and Command mode"
+  link: https://youtu.be/5UhM_W6zukg
+  date: "May 12, 2020"
+  authors: "Stuart Douglas"
+
+- title: "EPISODE #01: Tests"
+  link: https://youtu.be/OCPFdpvL1Q0
+  date: "May 4, 2020"
+  authors: "Georgios Andrianakis"
+
+- title: "EPISODE #00: Inception"
+  link: https://youtu.be/YKm8rVzLhNE
+  date: "April 29, 2020"
+  authors: "Emmanuel Bernard & Max Andersen"

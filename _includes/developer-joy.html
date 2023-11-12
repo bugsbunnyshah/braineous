@@ -1,0 +1,68 @@
+<div class="full-width-bg component">
+  <div class="grid-wrapper">
+    <div class="width-9-12 width-12-12-m">
+      <p class="intropara">
+        A data pipeline connects the data source to a target store/system. The data
+        source generates the data and posts it to the Braineous ingestion system
+        via the Braineous Data Ingestion Java SDK.
+
+        Braineous data pipeline engine supports multiple data sources and multiple
+        target systems that can be associated with a single pipe.
+
+        In turn it supports as many pipes that maybe necessary for the applications in
+        question at scale.
+      </p>
+      <img src="../guides/images/build-time-principle.png" alt="Quarkus Build Time Principle" width="90%">
+    </div>
+
+    <div class="width-12-12 width-12-12-m">
+      <h2>Pipe Registration</h2>
+      <p>
+      <p>
+      <pre class="highlightjs highlight">
+          <code class="language-java hljs" data-lang="java">
+          <span class="hljs-meta">
+          {
+              "pipeId": "123",
+              "configuration": [
+                {
+                  "storeDriver" : "com.appgallabs.dataplatform.receiver.core.driver.MongoDBStoreDriver",
+                  "name": "scenario2_store0",
+                  "config": {
+                    "connectionString": "mongodb://localhost:27017",
+                    "database": "scenario2_store0",
+                    "collection": "data"
+                  },
+                  "jsonpathExpression": "jsonpath:1"
+                },
+                {
+                  "storeDriver" : "com.appgallabs.dataplatform.receiver.core.driver.MongoDBStoreDriver",
+                  "name": "scenario2_store1",
+                  "config": {
+                    "connectionString": "mongodb://localhost:27017",
+                    "database": "scenario2_store1",
+                    "collection": "data"
+                  },
+                  "jsonpathExpression": "jsonpath:1"
+                }
+              ]
+          }
+          </span></code>
+      </pre>
+      </p>
+
+      <h2>Data Ingestion</h2>
+      <p>
+      </p>
+
+      <h2>Data Delivery</h2>
+      <p>
+      </p>
+
+
+      <h2>Pipeline Registration Update</h2>
+      <p>
+      </p>
+    </div>
+  </div>
+</div>
