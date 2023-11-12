@@ -1,0 +1,2 @@
+I"µ<p>While you are encouraged to use CDI annotations for injection, Quarkus provides a compatibility layer for Spring dependency injection in the form of the spring-di extension.</p>
+:ET
