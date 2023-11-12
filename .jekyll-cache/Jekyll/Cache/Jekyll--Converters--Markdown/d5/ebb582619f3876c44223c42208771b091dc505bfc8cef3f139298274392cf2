@@ -1,0 +1,5 @@
+I"'<p>Quarkus comes with a Transaction Manager and uses it to coordinate and expose transactions to your applications.
+Each extension dealing with persistence will integrate with it for you.
+And you will explicitly interact with transactions via CDI.
+This guide will walk you through all that.</p>
+:ET

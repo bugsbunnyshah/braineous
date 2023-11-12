@@ -1,0 +1,2 @@
+I"á<p>Infinispan is an in memory data grid that allows running in a server outside of application processes. This extension provides functionality to allow the client that can connect to said server when running in Quarkus.</p>
+:ET

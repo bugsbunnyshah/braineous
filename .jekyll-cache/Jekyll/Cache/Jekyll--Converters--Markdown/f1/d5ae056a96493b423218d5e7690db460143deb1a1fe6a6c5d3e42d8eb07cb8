@@ -1,0 +1,13 @@
+I"3<p>This guide covers:</p>
+
+<ul>
+  <li>Gradle configuration</li>
+  <li>Creating a new project</li>
+  <li>Dealing with extensions</li>
+  <li>Development mode</li>
+  <li>Debugging</li>
+  <li>Import in your IDE</li>
+  <li>Building a native executable</li>
+  <li>Build a container friendly executable</li>
+</ul>
+:ET
