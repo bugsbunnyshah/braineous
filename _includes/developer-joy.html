@@ -2,6 +2,13 @@
   <div class="grid-wrapper">
     <div class="width-9-12 width-12-12-m">
       <p class="intropara">
+        Braineous transforms any data-format, XML, CSV, into JSON for its processor.
+        Once JSON a simple Object Graph and uses configured JSONPATH-expressions
+        to produce data for the target system and delivers it to desired data-format.
+
+        Completely dynamic. Just change the pipe configuration and roll.
+      </p>
+      <p class="intropara">
         A data pipeline connects the data source to a target store/system. The data
         source generates the data and posts it to the Braineous ingestion system
         via the Braineous Data Ingestion Java SDK.
@@ -53,14 +60,44 @@
 
       <h2>Data Ingestion</h2>
       <p>
+        The Data Ingestion process starts by sending data to the BRAINEOUS Data Ingestion endpoint. It is processed
+        asynchronously as the data moves through its pipe through an Apache Kafka Topic and an Apache Flink
+        Stream Processor
       </p>
-
-      <h2>Data Delivery</h2>
       <p>
+        Each ingestion goes through an ordered process of phases which are
+        <u>
+          <li>Validation</li>
+          <li>Transformation</li>
+          <li>Cleansing especially for Machine Learning applications</li>
+          <li>Delivery to the Target system</li>
+        </u>
       </p>
-
 
       <h2>Pipeline Registration Update</h2>
+      <p>
+        BRAINEOUS' Pipeline Engine is completely dynamic.
+        You can add or remove Target Stores/Systems by updating
+        the Registration via the BRAINEOUS Pipeline Management
+        Endpoint.
+      </p>
+
+      <h2>Data Ingestion Java SDK</h2>
+      <p>
+        You can send data to the BRAINEOUS Data Ingestion engine using the
+        included Java Data Ingestion SDK or directly via the REST API.
+
+        The advantage of using the SDK has benefits of pre-processing
+        optimizations such as:
+
+        <u>
+          <li>Tenant Authentication</li>
+          <li>Data Throttling</li>
+          <li>GraphQL endpoint to query the ingested data (planned for CR2 release)</li>
+        </u>
+      </p>
+
+      <h2>Data Ingestion REST API</h2>
       <p>
       </p>
     </div>
