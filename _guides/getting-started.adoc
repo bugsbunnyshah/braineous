@@ -43,7 +43,52 @@ image::getting-started-architecture.png[alt=Architecture, align=center]
 
 This guide also covers the testing of the endpoint.
 
-== Solution
+== Get the Source Data in JSON-format
+
+We recommend that you follow the instructions from xref:bootstrapping-the-project[Bootstrapping the project] and onwards to create the application step by step.
+
+However, you can go right to the completed example.
+
+Download an {quickstarts-archive-url}[archive] or clone the git repository:
+
+[source,bash,subs=attributes+]
+----
+git clone {quickstarts-clone-url}
+----
+
+The solution is located in the `getting-started` link:{quickstarts-tree-url}/getting-started[directory].
+
+== Get the Source Data in JSON-format
+
+We recommend that you follow the instructions from xref:bootstrapping-the-project[Bootstrapping the project] and onwards to create the application step by step.
+
+However, you can go right to the completed example.
+
+Download an {quickstarts-archive-url}[archive] or clone the git repository:
+
+[source,bash,subs=attributes+]
+----
+git clone {quickstarts-clone-url}
+----
+
+The solution is located in the `getting-started` link:{quickstarts-tree-url}/getting-started[directory].
+
+== Get the Source Data in JSON-format
+
+We recommend that you follow the instructions from xref:bootstrapping-the-project[Bootstrapping the project] and onwards to create the application step by step.
+
+However, you can go right to the completed example.
+
+Download an {quickstarts-archive-url}[archive] or clone the git repository:
+
+[source,bash,subs=attributes+]
+----
+git clone {quickstarts-clone-url}
+----
+
+The solution is located in the `getting-started` link:{quickstarts-tree-url}/getting-started[directory].
+
+== Get the Source Data in JSON-format
 
 We recommend that you follow the instructions from xref:bootstrapping-the-project[Bootstrapping the project] and onwards to create the application step by step.
 
