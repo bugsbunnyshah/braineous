@@ -5,7 +5,7 @@
         <title>Braineous</title>
         <link>http://localhost:4000</link>
         <description>Braineous: Supersonic Subatomic Java</description>
-        <lastBuildDate>Sun, 12 Nov 2023 23:10:20 -0500</lastBuildDate>
+        <lastBuildDate>Mon, 13 Nov 2023 05:46:36 -0500</lastBuildDate>
         
         <item>
             <title>Exploring why native executables produced with Mandrel 23.0 are bigger than those produced with Mandrel 22.3</title>
