@@ -1,2 +1,0 @@
-I"<p>Quarkus provides a Jakarta Persistence (formerly known as JPA) identity provider, similar to the JDBC identity provider, suitable for use with the Basic and Form-based Quarkus Security mechanisms, which require a combination of username and password credentials.</p>
-:ET

@@ -1,2 +1,0 @@
-I"Â<p>While you are encouraged to use the Cache extension for your application-level caching, Quarkus provides a compatibility layer for Spring Cache in the form of the spring-cache extension.</p>
-:ET
