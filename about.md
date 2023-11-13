@@ -1,6 +1,6 @@
 ---
 layout: about
-title: What is Braineous?
-subtitle: An Open Source Data Platform.
+title: ROADMAP
+subtitle: CR2 (Candidate Release 2) and GA (General Availability)
 permalink: /about/
 ---
