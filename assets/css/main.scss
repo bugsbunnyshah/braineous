@@ -58,7 +58,7 @@ $baseurl: "{{ site.baseurl }}";
 @import "includes/awards-band";
 @import "includes/back-to-top";
 @import "includes/whitecards";
-//@import "includes/copycode";
+@import "includes/copycode";
 @import "includes/asciidoc-tabs";
 @import "includes/tooltip";
 @import "includes/language-band.scss";
