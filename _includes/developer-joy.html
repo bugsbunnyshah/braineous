@@ -98,7 +98,88 @@
       </p>
 
       <h2>Data Ingestion REST API</h2>
+      <h1>Create/Update Pipe Registration</h1>
       <p>
+      <pre class="highlightjs highlight">
+          <code class="language-java hljs" data-lang="java">
+          <span class="hljs-meta">
+            /ingestion/register_pipe:
+    post:
+      tags:
+      - Data Ingestion
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        "200":
+          description: OK
+          </span></code>
+      </pre>
+      </p>
+
+        <h1>Json-format ingestion</h1>
+        <p>
+      <pre class="highlightjs highlight">
+          <code class="language-java hljs" data-lang="java">
+          <span class="hljs-meta">
+            /ingestion/json:
+    post:
+      tags:
+      - Data Ingestion
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        "200":
+          description: OK
+          </span></code>
+      </pre>
+        </p>
+
+      <h1>XML-format ingestion</h1>
+      <p>
+      <pre class="highlightjs highlight">
+          <code class="language-java hljs" data-lang="java">
+          <span class="hljs-meta">
+            /ingestion/xml:
+    post:
+      tags:
+      - Data Ingestion
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        "200":
+          description: OK
+          </span></code>
+      </pre>
+      </p>
+
+      <h1>CSV-format ingestion</h1>
+      <p>
+      <pre class="highlightjs highlight">
+          <code class="language-java hljs" data-lang="java">
+          <span class="hljs-meta">
+            /ingestion/csv:
+    post:
+      tags:
+      - Data Ingestion
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        "200":
+          description: OK
+          </span></code>
+      </pre>
       </p>
     </div>
   </div>

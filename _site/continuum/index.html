@@ -6,7 +6,7 @@
 
 
 <head>
-  <title>Automated Data Movement - Quarkus</title>
+  <title>Target System Data Connectors - Quarkus</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net https://analytics.ossupstream.org; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app https://analytics.ossupstream.org; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' 
@@ -17,13 +17,13 @@
   <META HTTP-EQUIV='X-Content-Type-Options' CONTENT="nosniff">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Quarkus: Supersonic Subatomic Java">
+  <meta name="description" content="Braineous: Supersonic Subatomic Java">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@QuarkusIO"> 
   <meta name="twitter:creator" content="@QuarkusIO">
   <meta property="og:url" content="http://localhost:4000/continuum/" />
-  <meta property="og:title" content="Automated Data Movement" />
-  <meta property="og:description" content="Quarkus: Supersonic Subatomic Java" />
+  <meta property="og:title" content="Target System Data Connectors" />
+  <meta property="og:description" content="Braineous: Supersonic Subatomic Java" />
   <meta property="og:image" content="http://localhost:4000/assets/images/quarkus_card.png" />
   
   <link rel="canonical" href="http://localhost:4000/continuum/">
@@ -31,7 +31,7 @@
   <link rel="stylesheet" href="/guides/stylesheet/config.css" />
   <link rel="stylesheet" href="/assets/css/main.css?2021-07-29" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-  <link rel="alternate" type="application/rss+xml"  href="/feed.xml" title="Quarkus">
+  <link rel="alternate" type="application/rss+xml"  href="/feed.xml" title="Braineous">
   <script src="/assets/javascript/hl.js" type="text/javascript"></script>
   
   
@@ -99,8 +99,8 @@
 
   <div class="content">
     <div class="title-band">
-  <h1 class="title">Automated Data Movement</h1>
-  <h3 class="mb-0">Schema-agnostic, Fully dynamic. No disruption to any changes</h3>
+  <h1 class="title">Target System Data Connectors</h1>
+  <h3 class="mb-0"></h3>
 </div>
 
 <div class="full-width-bg component">
@@ -114,182 +114,13 @@
     </div>
     <div class="width-12-12 width-12-12-m">
         <p>
-            Braineous transforms any data-format, XML, CSV, into JSON for its processor.
-            Once JSON a simple Object Graph and uses configured JSONPATH-expressions
-            to produce data for the target system and delivers it to desired data-format.
-
-            Completely dynamic. Just change the pipe configuration and roll.
-        </p>
-      <h2 id="http-microservices"><a class="anchor" href="#http-microservices"></a>HTTP microservices</h2>
-      <p>Let’s start with the basics: HTTP microservices. In this context, you need to develop an HTTP endpoint,
-          often called REST or CRUD. You process incoming HTTP requests,
-          and to do so you often need to rely on other services, such as databases, or another HTTP
-          service.
-      </p>
-      <p>For this type of application, Quarkus relies on well-known standards such as JAX-RS, JPA
-          and MicroProfile Rest Client, but also Hibernate with Panache to simplify interactions with databases.
-      </p>
-      <p>Let’s take a very simple application handling <em>elements</em> from the periodic table. The code would
-          be something like:
-      </p>
-      <pre class="highlightjs highlight">
-          <code class="language-java hljs" data-lang="java">
-          <span class="hljs-meta">
-          {
-              "pipeId": "123",
-              "configuration": [
-                {
-                  "storeDriver" : "com.appgallabs.dataplatform.receiver.core.driver.MongoDBStoreDriver",
-                  "name": "scenario2_store0",
-                  "config": {
-                    "connectionString": "mongodb://localhost:27017",
-                    "database": "scenario2_store0",
-                    "collection": "data"
-                  },
-                  "jsonpathExpression": "jsonpath:1"
-                },
-                {
-                  "storeDriver" : "com.appgallabs.dataplatform.receiver.core.driver.MongoDBStoreDriver",
-                  "name": "scenario2_store1",
-                  "config": {
-                    "connectionString": "mongodb://localhost:27017",
-                    "database": "scenario2_store1",
-                    "collection": "data"
-                  },
-                  "jsonpathExpression": "jsonpath:1"
-                }
-              ]
-          }
-          </span></code>
-      </pre>
-
-
-        <p>
-        <pre class="highlightjs highlight">
-          <code class="language-java hljs" data-lang="java">
-          <span class="hljs-meta">
-          ---
-openapi: 3.0.3
-info:
-  title: dataplatform API
-  version: 1.0.0
-paths:
-  /data/lake:
-    get:
-      tags:
-      - Data Lake Endpoint
-      parameters:
-      - name: entity
-        in: query
-        schema:
-          type: string
-      responses:
-        "200":
-          description: OK
-  /data/lake/query:
-    post:
-      tags:
-      - Data Lake Graph Ql Query Endpoint
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: string
-      responses:
-        "200":
-          description: OK
-  /data/microservice:
-    get:
-      tags:
-      - Microservice
-      responses:
-        "200":
-          description: OK
-    post:
-      tags:
-      - Microservice
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: string
-      responses:
-        "200":
-          description: OK
-  /data/security/issue:
-    post:
-      tags:
-      - JWT Token Manager
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: string
-      responses:
-        "200":
-          description: OK
-  /ingestion/csv:
-    post:
-      tags:
-      - Data Ingestion
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: string
-      responses:
-        "200":
-          description: OK
-  /ingestion/json:
-    post:
-      tags:
-      - Data Ingestion
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: string
-      responses:
-        "200":
-          description: OK
-  /ingestion/register_pipe:
-    post:
-      tags:
-      - Data Ingestion
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: string
-      responses:
-        "200":
-          description: OK
-  /ingestion/xml:
-    post:
-      tags:
-      - Data Ingestion
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: string
-      responses:
-        "200":
-          description: OK
-  /replay/chain:
-    get:
-      tags:
-      - Data Replay
-      parameters:
-      - name: oid
-        in: query
-        schema:
-          type: string
-      responses:
-        "200":
-          description: OK
-          </span></code>
-      </pre>
+            Braineous supports a core connector for MongoDB as a target system.
+            Candidate Release 2 will include many target data connectors such as
+            <ul>
+                <li>Postgresql</li>
+                <li>Oracle</li>
+                <li><a href="https://airbyte.com/connectors" target="_blank">Airbyte Catalog</a></li>
+            </ul>
         </p>
     </div>
   </div>
