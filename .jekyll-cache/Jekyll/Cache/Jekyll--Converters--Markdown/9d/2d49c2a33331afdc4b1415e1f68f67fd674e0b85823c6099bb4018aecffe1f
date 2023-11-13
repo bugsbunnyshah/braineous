@@ -1,2 +1,0 @@
-I"å<p>This guide demonstrates how to use the OpenID Connect extension to protect your Quarkus JAX-RS service application using Bearer Token Authorization where the tokens are issued by OpenId Connect Providers such as Keycloak.</p>
-:ET
