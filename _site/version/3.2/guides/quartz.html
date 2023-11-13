@@ -76,7 +76,7 @@
         <span href="/learn/">Learn<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/get-started" class="">GET STARTED</a></li>
-          <li><a href="/guides" class="active">TUTORIALS</a></li>
+          <li><a href="/guides/getting-started" class="active">TUTORIAL</a></li>
           </ul>
       </li>
       <li class="dropdown">
@@ -1055,7 +1055,7 @@ quarkus.quartz.plugins.jobHistory.properties.jobSuccessMessage=Job [{1}.{0}] exe
 <p>If enabled make sure to set the appropriate cluster properties.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-29243">QUARKUS_QUARTZ_CLUSTERED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-29243" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-105303">QUARKUS_QUARTZ_CLUSTERED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-105303" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1078,7 +1078,7 @@ quarkus.quartz.plugins.jobHistory.properties.jobSuccessMessage=Job [{1}.{0}] exe
 <p>Ignored if using a <code>ram</code> store i.e <code>StoreType#RAM</code>.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-29244">QUARKUS_QUARTZ_CLUSTER_CHECKIN_INTERVAL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-29244" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-105304">QUARKUS_QUARTZ_CLUSTER_CHECKIN_INTERVAL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-105304" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1104,7 +1104,7 @@ quarkus.quartz.plugins.jobHistory.properties.jobSuccessMessage=Job [{1}.{0}] exe
 <p>To create Quartz tables, you can perform a schema migration via the <a href="https://quarkus.io/guides/flyway">Flyway extension</a> using a SQL script matching your database picked from <a href="https://github.com/quartz-scheduler/quartz/blob/master/quartz-core/src/main/resources/org/quartz/impl/jdbcjobstore">Quartz repository</a>.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-29245">QUARKUS_QUARTZ_STORE_TYPE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-29245" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-105305">QUARKUS_QUARTZ_STORE_TYPE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-105305" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1132,7 +1132,7 @@ quarkus.quartz.plugins.jobHistory.properties.jobSuccessMessage=Job [{1}.{0}] exe
 <p>Optionally needed when using the <code>jdbc-tx</code> or <code>jdbc-cmt</code> store types. If not specified, defaults to using the default datasource.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-29246">QUARKUS_QUARTZ_DATASOURCE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-29246" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-105306">QUARKUS_QUARTZ_DATASOURCE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-105306" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1155,7 +1155,7 @@ quarkus.quartz.plugins.jobHistory.properties.jobSuccessMessage=Job [{1}.{0}] exe
 <p>Ignored if using a <code>ram</code> store i.e <code>StoreType#RAM</code></p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-29247">QUARKUS_QUARTZ_TABLE_PREFIX</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-29247" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-105307">QUARKUS_QUARTZ_TABLE_PREFIX</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-105307" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1184,7 +1184,7 @@ quarkus.quartz.plugins.jobHistory.properties.jobSuccessMessage=Job [{1}.{0}] exe
 <p>An example SQL string <code>SELECT * FROM {0}LOCKS WHERE SCHED_NAME = {1} AND LOCK_NAME = ? FOR UPDATE</code></p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-29248">QUARKUS_QUARTZ_SELECT_WITH_LOCK_SQL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-29248" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-105308">QUARKUS_QUARTZ_SELECT_WITH_LOCK_SQL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-105308" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1213,7 +1213,7 @@ quarkus.quartz.plugins.jobHistory.properties.jobSuccessMessage=Job [{1}.{0}] exe
 <p>If this is set to <code>false</code> (the default), the values can be stored as name-value pairs rather than storing more complex objects in their serialized form in the BLOB column. This can be handy, as you avoid the class versioning issues that can arise from serializing your non-String classes into a BLOB. This is equivalent of setting <code>org.quartz.jobStore.useProperties</code> to <code>true</code>.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-29249">QUARKUS_QUARTZ_SERIALIZE_JOB_DATA</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-29249" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-105309">QUARKUS_QUARTZ_SERIALIZE_JOB_DATA</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-105309" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1233,7 +1233,7 @@ quarkus.quartz.plugins.jobHistory.properties.jobSuccessMessage=Job [{1}.{0}] exe
 <p>The name of the Quartz instance.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-29250">QUARKUS_QUARTZ_INSTANCE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-29250" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-105310">QUARKUS_QUARTZ_INSTANCE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-105310" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1253,7 +1253,7 @@ quarkus.quartz.plugins.jobHistory.properties.jobSuccessMessage=Job [{1}.{0}] exe
 <p>The identifier of Quartz instance that must be unique for all schedulers working as if they are the same <em>logical</em> Scheduler within a cluster. Use the default value <code>AUTO</code> or some of the configured <a href="https://quarkus.io/guides/quartz#quarkus-quartz_quarkus.quartz.instance-id-generators-instance-id-generators">instance ID generators</a> if you wish the identifier to be generated for you.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-29251">QUARKUS_QUARTZ_INSTANCE_ID</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-29251" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-105311">QUARKUS_QUARTZ_INSTANCE_ID</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-105311" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1273,7 +1273,7 @@ quarkus.quartz.plugins.jobHistory.properties.jobSuccessMessage=Job [{1}.{0}] exe
 <p>The amount of time in milliseconds that a trigger is allowed to be acquired and fired ahead of its scheduled fire time.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-29252">QUARKUS_QUARTZ_BATCH_TRIGGER_ACQUISITION_FIRE_AHEAD_TIME_WINDOW</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-29252" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-105312">QUARKUS_QUARTZ_BATCH_TRIGGER_ACQUISITION_FIRE_AHEAD_TIME_WINDOW</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-105312" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1293,7 +1293,7 @@ quarkus.quartz.plugins.jobHistory.properties.jobSuccessMessage=Job [{1}.{0}] exe
 <p>The maximum number of triggers that a scheduler node is allowed to acquire (for firing) at once.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-29253">QUARKUS_QUARTZ_BATCH_TRIGGER_ACQUISITION_MAX_COUNT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-29253" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-105313">QUARKUS_QUARTZ_BATCH_TRIGGER_ACQUISITION_MAX_COUNT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-105313" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1313,7 +1313,7 @@ quarkus.quartz.plugins.jobHistory.properties.jobSuccessMessage=Job [{1}.{0}] exe
 <p>The size of scheduler thread pool. This will initialize the number of worker threads in the pool.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-29254">QUARKUS_QUARTZ_THREAD_COUNT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-29254" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-105314">QUARKUS_QUARTZ_THREAD_COUNT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-105314" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1333,7 +1333,7 @@ quarkus.quartz.plugins.jobHistory.properties.jobSuccessMessage=Job [{1}.{0}] exe
 <p>Thread priority of worker threads in the pool.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-29255">QUARKUS_QUARTZ_THREAD_PRIORITY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-29255" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-105315">QUARKUS_QUARTZ_THREAD_PRIORITY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-105315" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1353,7 +1353,7 @@ quarkus.quartz.plugins.jobHistory.properties.jobSuccessMessage=Job [{1}.{0}] exe
 <p>Defines how late the schedulers should be to be considered misfired.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-29256">QUARKUS_QUARTZ_MISFIRE_THRESHOLD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-29256" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-105316">QUARKUS_QUARTZ_MISFIRE_THRESHOLD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-105316" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1374,7 +1374,7 @@ quarkus.quartz.plugins.jobHistory.properties.jobSuccessMessage=Job [{1}.{0}] exe
 <p>The maximum amount of time Quarkus will wait for currently running jobs to finish. If the value is <code>0</code>, then Quarkus will not wait at all for these jobs to finish - it will call <code>org.quartz.Scheduler.shutdown(false)</code> in this case.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-29257">QUARKUS_QUARTZ_SHUTDOWN_WAIT_TIME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-29257" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-105317">QUARKUS_QUARTZ_SHUTDOWN_WAIT_TIME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-105317" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1395,7 +1395,7 @@ quarkus.quartz.plugins.jobHistory.properties.jobSuccessMessage=Job [{1}.{0}] exe
 <p>The quartz misfire policy for this job.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-29258">QUARKUS_QUARTZ_SIMPLE_TRIGGER_MISFIRE_POLICY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-29258" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-105318">QUARKUS_QUARTZ_SIMPLE_TRIGGER_MISFIRE_POLICY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-105318" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1417,7 +1417,7 @@ quarkus.quartz.plugins.jobHistory.properties.jobSuccessMessage=Job [{1}.{0}] exe
 <p>The quartz misfire policy for this job.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-29259">QUARKUS_QUARTZ_CRON_TRIGGER_MISFIRE_POLICY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-29259" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-105319">QUARKUS_QUARTZ_CRON_TRIGGER_MISFIRE_POLICY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-105319" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1442,7 +1442,7 @@ quarkus.quartz.plugins.jobHistory.properties.jobSuccessMessage=Job [{1}.{0}] exe
 <p>When this option is enabled, blocking scheduled methods do not run on a <code>duplicated context</code>.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-29260">QUARKUS_QUARTZ_RUN_BLOCKING_SCHEDULED_METHOD_ON_QUARTZ_THREAD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-29260" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-105320">QUARKUS_QUARTZ_RUN_BLOCKING_SCHEDULED_METHOD_ON_QUARTZ_THREAD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-105320" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1467,7 +1467,7 @@ quarkus.quartz.plugins.jobHistory.properties.jobSuccessMessage=Job [{1}.{0}] exe
 <p>Class name for the configuration.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-29261">QUARKUS_QUARTZ_INSTANCE_ID_GENERATORS__GENERATOR_NAME__CLASS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-29261" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-105321">QUARKUS_QUARTZ_INSTANCE_ID_GENERATORS__GENERATOR_NAME__CLASS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-105321" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1487,7 +1487,7 @@ quarkus.quartz.plugins.jobHistory.properties.jobSuccessMessage=Job [{1}.{0}] exe
 <p>The properties passed to the class.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-29262">QUARKUS_QUARTZ_INSTANCE_ID_GENERATORS__GENERATOR_NAME__PROPERTIES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-29262" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-105322">QUARKUS_QUARTZ_INSTANCE_ID_GENERATORS__GENERATOR_NAME__PROPERTIES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-105322" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1512,7 +1512,7 @@ quarkus.quartz.plugins.jobHistory.properties.jobSuccessMessage=Job [{1}.{0}] exe
 <p>Class name for the configuration.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-29263">QUARKUS_QUARTZ_TRIGGER_LISTENERS__LISTENER_NAME__CLASS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-29263" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-105323">QUARKUS_QUARTZ_TRIGGER_LISTENERS__LISTENER_NAME__CLASS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-105323" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1532,7 +1532,7 @@ quarkus.quartz.plugins.jobHistory.properties.jobSuccessMessage=Job [{1}.{0}] exe
 <p>The properties passed to the class.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-29264">QUARKUS_QUARTZ_TRIGGER_LISTENERS__LISTENER_NAME__PROPERTIES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-29264" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-105324">QUARKUS_QUARTZ_TRIGGER_LISTENERS__LISTENER_NAME__PROPERTIES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-105324" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1557,7 +1557,7 @@ quarkus.quartz.plugins.jobHistory.properties.jobSuccessMessage=Job [{1}.{0}] exe
 <p>Class name for the configuration.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-29265">QUARKUS_QUARTZ_JOB_LISTENERS__LISTENER_NAME__CLASS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-29265" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-105325">QUARKUS_QUARTZ_JOB_LISTENERS__LISTENER_NAME__CLASS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-105325" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1577,7 +1577,7 @@ quarkus.quartz.plugins.jobHistory.properties.jobSuccessMessage=Job [{1}.{0}] exe
 <p>The properties passed to the class.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-29266">QUARKUS_QUARTZ_JOB_LISTENERS__LISTENER_NAME__PROPERTIES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-29266" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-105326">QUARKUS_QUARTZ_JOB_LISTENERS__LISTENER_NAME__PROPERTIES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-105326" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1602,7 +1602,7 @@ quarkus.quartz.plugins.jobHistory.properties.jobSuccessMessage=Job [{1}.{0}] exe
 <p>Class name for the configuration.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-29267">QUARKUS_QUARTZ_PLUGINS__PLUGIN_NAME__CLASS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-29267" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-105327">QUARKUS_QUARTZ_PLUGINS__PLUGIN_NAME__CLASS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-105327" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1622,7 +1622,7 @@ quarkus.quartz.plugins.jobHistory.properties.jobSuccessMessage=Job [{1}.{0}] exe
 <p>The properties passed to the class.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-29268">QUARKUS_QUARTZ_PLUGINS__PLUGIN_NAME__PROPERTIES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-29268" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-105328">QUARKUS_QUARTZ_PLUGINS__PLUGIN_NAME__PROPERTIES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-105328" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1647,7 +1647,7 @@ quarkus.quartz.plugins.jobHistory.properties.jobSuccessMessage=Job [{1}.{0}] exe
 <p>The quartz misfire policy for this job.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-29269">QUARKUS_QUARTZ_MISFIRE_POLICY__IDENTITY_</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-29269" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-105329">QUARKUS_QUARTZ_MISFIRE_POLICY__IDENTITY_</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-105329" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>

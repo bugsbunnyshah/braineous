@@ -1,0 +1,2 @@
+I"È<p>While you are encouraged to use the Scheduler or Quartz extensions to schedule tasks, Quarkus provides a compatibility layer for Spring Scheduled in the form of the spring-scheduled extension.</p>
+:ET

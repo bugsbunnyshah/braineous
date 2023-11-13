@@ -1,0 +1,2 @@
+I"À<p>While you are encouraged to use Hibernate ORM with Panache for your data layer, Quarkus provides a compatibility layer for Spring Data JPA in the form of the spring-data-jpa extension.</p>
+:ET
