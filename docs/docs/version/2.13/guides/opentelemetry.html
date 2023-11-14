@@ -17,13 +17,13 @@
   <META HTTP-EQUIV='X-Content-Type-Options' CONTENT="nosniff">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Braineous: Supersonic Subatomic Java">
+  <meta name="description" content="Braineous Data Platform">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@QuarkusIO"> 
   <meta name="twitter:creator" content="@QuarkusIO">
   <meta property="og:url" content="http://localhost:4000/version/2.13/guides/opentelemetry" />
   <meta property="og:title" content="Using OpenTelemetry - 2.13" />
-  <meta property="og:description" content="Braineous: Supersonic Subatomic Java" />
+  <meta property="og:description" content="Braineous Data Platform" />
   <meta property="og:image" content="http://localhost:4000/assets/images/quarkus_card.png" />
   
   <link rel="canonical" href="http://localhost:4000/guides/opentelemetry">
@@ -31,7 +31,7 @@
   <link rel="stylesheet" href="/guides/stylesheet/config.css" />
   <link rel="stylesheet" href="/braineous/assets/css/main.css?2021-07-29" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-  <link rel="alternate" type="application/rss+xml"  href="/feed.xml" title="Braineous">
+  <link rel="alternate" type="application/rss+xml"  href="/feed.xml" title="Braineous Data Platform">
   <script src="/assets/javascript/hl.js" type="text/javascript"></script>
   
   
@@ -106,39 +106,13 @@
 <section class="full-width-version-bg flexfilterbar guides">
   <div class="guideflexcontainer">
     <div class="docslink">
-      <a class="returnlink" href="/braineous/version/2.13/guides/"> Back to Guides</a>
+      <a class="returnlink" href="/braineous/get-started">Back</a>
     </div>
+    <!--
     <div class="flexlabel">
       <label>By Version</label>
     </div>
-    <div class="guidepulldown version">
-    <select id="guide-version-dropdown">
-      
-        
-        
-        <option value="main" >Main - SNAPSHOT</option>
-        
-        
-        
-        <option value="latest" >3.5.0 - Latest</option>
-        
-        
-        
-        <option value="3.2" >3.2</option>
-        
-        
-        
-        <option value="2.16" >2.16</option>
-        
-        
-        
-        <option value="2.13" selected>2.13</option>
-        
-        
-        
-        <option value="2.7" >2.7</option>
-        </select>
-    </div>
+    -->
   </div>
 </section>
 
@@ -830,7 +804,7 @@ which retrieves the OpenTelemetry <code>Context</code> to extract the current sp
 OpenTelemetry support is enabled by default.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13530">QUARKUS_OPENTELEMETRY_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13530" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13522">QUARKUS_OPENTELEMETRY_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13522" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -852,7 +826,7 @@ Valid values are <code>b3, b3multi, baggage, jaeger, ottrace, tracecontext, xray
 Default value is <code>traceContext,baggage</code>.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13531">QUARKUS_OPENTELEMETRY_PROPAGATORS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13531" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13523">QUARKUS_OPENTELEMETRY_PROPAGATORS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13523" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -873,7 +847,7 @@ Default value is <code>traceContext,baggage</code>.</p>
 Support for tracing will be enabled if OpenTelemetry support is enabled and either this value is true, or this value is unset.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13532">QUARKUS_OPENTELEMETRY_TRACER_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13532" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13524">QUARKUS_OPENTELEMETRY_TRACER_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13524" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -893,7 +867,7 @@ Support for tracing will be enabled if OpenTelemetry support is enabled and eith
 <p>A comma separated list of name=value resource attributes that represents the entity producing telemetry (eg. <code>service.name=authservice</code>).</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13533">QUARKUS_OPENTELEMETRY_TRACER_RESOURCE_ATTRIBUTES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13533" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13525">QUARKUS_OPENTELEMETRY_TRACER_RESOURCE_ATTRIBUTES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13525" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -915,7 +889,7 @@ Valid values are <code>off, on, ratio</code>.
 Defaults to <code>on</code>.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13534">QUARKUS_OPENTELEMETRY_TRACER_SAMPLER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13534" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13526">QUARKUS_OPENTELEMETRY_TRACER_SAMPLER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13526" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -932,7 +906,7 @@ Defaults to <code>on</code>.</p>
 <div id="conf-non-collapsible-desc-6" class="openblock description">
 <div class="content">
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13535">QUARKUS_OPENTELEMETRY_TRACER_SAMPLER_RATIO</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13535" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13527">QUARKUS_OPENTELEMETRY_TRACER_SAMPLER_RATIO</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13527" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -951,7 +925,7 @@ Valid values are <code>true, false</code>.
 Defaults to <code>true</code>.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13536">QUARKUS_OPENTELEMETRY_TRACER_SAMPLER_PARENT_BASED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13536" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13528">QUARKUS_OPENTELEMETRY_TRACER_SAMPLER_PARENT_BASED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13528" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -972,7 +946,7 @@ Defaults to <code>true</code>.</p>
 Suppressing non-application uris is enabled by default.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13537">QUARKUS_OPENTELEMETRY_TRACER_SUPPRESS_NON_APPLICATION_URIS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13537" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13529">QUARKUS_OPENTELEMETRY_TRACER_SUPPRESS_NON_APPLICATION_URIS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13529" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -993,7 +967,7 @@ Suppressing non-application uris is enabled by default.</p>
 Include static resources is disabled by default.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13538">QUARKUS_OPENTELEMETRY_TRACER_INCLUDE_STATIC_RESOURCES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13538" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13530">QUARKUS_OPENTELEMETRY_TRACER_INCLUDE_STATIC_RESOURCES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13530" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1031,7 +1005,7 @@ Include static resources is disabled by default.</p>
 OTLP SpanExporter support is enabled by default.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13539">QUARKUS_OPENTELEMETRY_TRACER_EXPORTER_OTLP_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13539" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13531">QUARKUS_OPENTELEMETRY_TRACER_EXPORTER_OTLP_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13531" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1051,7 +1025,7 @@ OTLP SpanExporter support is enabled by default.</p>
 <p>The OTLP endpoint to connect to. The endpoint must start with either http:// or https://.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13540">QUARKUS_OPENTELEMETRY_TRACER_EXPORTER_OTLP_ENDPOINT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13540" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13532">QUARKUS_OPENTELEMETRY_TRACER_EXPORTER_OTLP_ENDPOINT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13532" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1071,7 +1045,7 @@ OTLP SpanExporter support is enabled by default.</p>
 <p>Key-value pairs to be used as headers associated with gRPC requests. The format is similar to the <code>OTEL_EXPORTER_OTLP_HEADERS</code> environment variable, a list of key-value pairs separated by the "=" character. See <a href="https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/protocol/exporter.md#specifying-headers-via-environment-variables">Specifying headers</a> for more details.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13541">QUARKUS_OPENTELEMETRY_TRACER_EXPORTER_OTLP_HEADERS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13541" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13533">QUARKUS_OPENTELEMETRY_TRACER_EXPORTER_OTLP_HEADERS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13533" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1091,7 +1065,7 @@ OTLP SpanExporter support is enabled by default.</p>
 <p>The maximum amount of time to wait for the collector to process exported spans before an exception is thrown. A value of <code>0</code> will disable the timeout: the exporter will continue waiting until either exported spans are processed, or the connection fails, or is closed for some other reason.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13542">QUARKUS_OPENTELEMETRY_TRACER_EXPORTER_OTLP_EXPORT_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13542" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13534">QUARKUS_OPENTELEMETRY_TRACER_EXPORTER_OTLP_EXPORT_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13534" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1113,7 +1087,7 @@ OTLP SpanExporter support is enabled by default.</p>
 See <a href="https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/protocol/exporter.md#opentelemetry-protocol-exporter">Configuration Options</a> for the supported compression methods.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13543">QUARKUS_OPENTELEMETRY_TRACER_EXPORTER_OTLP_COMPRESSION</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13543" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13535">QUARKUS_OPENTELEMETRY_TRACER_EXPORTER_OTLP_COMPRESSION</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13535" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1265,21 +1239,17 @@ Otherwise, <code>PT</code> is implicitly prepended to the value to obtain a stan
         <span>Braineous is made of community projects</span>
         <ul class="footer-links">
           
-            <li><a blah href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
+            <li><a blah href="https://quarkus.io/" target="_blank">Quarkus</a></li>
           
-            <li><a blah href="https://smallrye.io" target="_blank">SmallRye</a></li>
+            <li><a blah href="https://kafka.apache.org/" target="_blank">Apache Kafka</a></li>
           
-            <li><a blah href="https://hibernate.org" target="_blank">Hibernate</a></li>
+            <li><a blah href="https://flink.apache.org/" target="_blank">Apache Flink</a></li>
           
-            <li><a blah href="https://netty.io" target="_blank">Netty</a></li>
+            <li><a blah href="https://github.com/google/gson" target="_blank">Gson</a></li>
           
-            <li><a blah href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
+            <li><a blah href="https://www.mongodb.com/" target="_blank">MongoDB</a></li>
           
-            <li><a blah href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
-          
-            <li><a blah href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
-          
-            <li><a blah href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
+            <li><a blah href="https://github.com/bugsbunnyshah/braineous_dataplatform/blob/main/pom.xml" target="_blank">And many more...</a></li>
           
         </ul>
       </div>

@@ -17,13 +17,13 @@
   <META HTTP-EQUIV='X-Content-Type-Options' CONTENT="nosniff">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Braineous: Supersonic Subatomic Java">
+  <meta name="description" content="Braineous Data Platform">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@QuarkusIO"> 
   <meta name="twitter:creator" content="@QuarkusIO">
   <meta property="og:url" content="http://localhost:4000/version/2.13/guides/kafka-streams" />
   <meta property="og:title" content="Using Apache Kafka Streams - 2.13" />
-  <meta property="og:description" content="Braineous: Supersonic Subatomic Java" />
+  <meta property="og:description" content="Braineous Data Platform" />
   <meta property="og:image" content="http://localhost:4000/assets/images/quarkus_card.png" />
   
   <link rel="canonical" href="http://localhost:4000/guides/kafka-streams">
@@ -31,7 +31,7 @@
   <link rel="stylesheet" href="/guides/stylesheet/config.css" />
   <link rel="stylesheet" href="/braineous/assets/css/main.css?2021-07-29" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-  <link rel="alternate" type="application/rss+xml"  href="/feed.xml" title="Braineous">
+  <link rel="alternate" type="application/rss+xml"  href="/feed.xml" title="Braineous Data Platform">
   <script src="/assets/javascript/hl.js" type="text/javascript"></script>
   
   
@@ -106,39 +106,13 @@
 <section class="full-width-version-bg flexfilterbar guides">
   <div class="guideflexcontainer">
     <div class="docslink">
-      <a class="returnlink" href="/braineous/version/2.13/guides/"> Back to Guides</a>
+      <a class="returnlink" href="/braineous/get-started">Back</a>
     </div>
+    <!--
     <div class="flexlabel">
       <label>By Version</label>
     </div>
-    <div class="guidepulldown version">
-    <select id="guide-version-dropdown">
-      
-        
-        
-        <option value="main" >Main - SNAPSHOT</option>
-        
-        
-        
-        <option value="latest" >3.5.0 - Latest</option>
-        
-        
-        
-        <option value="3.2" >3.2</option>
-        
-        
-        
-        <option value="2.16" >2.16</option>
-        
-        
-        
-        <option value="2.13" selected>2.13</option>
-        
-        
-        
-        <option value="2.7" >2.7</option>
-        </select>
-    </div>
+    -->
   </div>
 </section>
 
@@ -1808,7 +1782,7 @@ Refer to the Quarkus guides on <a href="micrometer">Micrometer</a>, <a href="sma
 <p>Whether a health check is published in case the smallrye-health extension is present (defaults to true).</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13054">QUARKUS_KAFKA_STREAMS_HEALTH_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13054" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13046">QUARKUS_KAFKA_STREAMS_HEALTH_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13046" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1828,7 +1802,7 @@ Refer to the Quarkus guides on <a href="micrometer">Micrometer</a>, <a href="sma
 <p>A unique identifier for this Kafka Streams application. If not set, defaults to quarkus.application.name.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13055">QUARKUS_KAFKA_STREAMS_APPLICATION_ID</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13055" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13047">QUARKUS_KAFKA_STREAMS_APPLICATION_ID</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13047" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1848,7 +1822,7 @@ Refer to the Quarkus guides on <a href="micrometer">Micrometer</a>, <a href="sma
 <p>A comma-separated list of host:port pairs identifying the Kafka bootstrap server(s). If not set, fallback to <code>kafka.bootstrap.servers</code>, and if not set either use <code>localhost:9012</code>.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13056">QUARKUS_KAFKA_STREAMS_BOOTSTRAP_SERVERS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13056" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13048">QUARKUS_KAFKA_STREAMS_BOOTSTRAP_SERVERS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13048" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1868,7 +1842,7 @@ Refer to the Quarkus guides on <a href="micrometer">Micrometer</a>, <a href="sma
 <p>A unique identifier of this application instance, typically in the form host:port.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13057">QUARKUS_KAFKA_STREAMS_APPLICATION_SERVER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13057" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13049">QUARKUS_KAFKA_STREAMS_APPLICATION_SERVER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13049" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1888,7 +1862,7 @@ Refer to the Quarkus guides on <a href="micrometer">Micrometer</a>, <a href="sma
 <p>A comma-separated list of topic names. The pipeline will only be started once all these topics are present in the Kafka cluster and <code>ignore.topics</code> is set to false.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13058">QUARKUS_KAFKA_STREAMS_TOPICS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13058" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13050">QUARKUS_KAFKA_STREAMS_TOPICS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13050" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1908,7 +1882,7 @@ Refer to the Quarkus guides on <a href="micrometer">Micrometer</a>, <a href="sma
 <p>Timeout to wait for topic names to be returned from admin client. If set to 0 (or negative), <code>topics</code> check is ignored.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13059">QUARKUS_KAFKA_STREAMS_TOPICS_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13059" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13051">QUARKUS_KAFKA_STREAMS_TOPICS_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13051" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1929,7 +1903,7 @@ Refer to the Quarkus guides on <a href="micrometer">Micrometer</a>, <a href="sma
 <p>The schema registry key. Different schema registry libraries expect a registry URL in different configuration properties. For Apicurio Registry, use <code>apicurio.registry.url</code>. For Confluent schema registry, use <code>schema.registry.url</code>.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13060">QUARKUS_KAFKA_STREAMS_SCHEMA_REGISTRY_KEY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13060" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13052">QUARKUS_KAFKA_STREAMS_SCHEMA_REGISTRY_KEY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13052" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1949,7 +1923,7 @@ Refer to the Quarkus guides on <a href="micrometer">Micrometer</a>, <a href="sma
 <p>The schema registry URL.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13061">QUARKUS_KAFKA_STREAMS_SCHEMA_REGISTRY_URL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13061" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13053">QUARKUS_KAFKA_STREAMS_SCHEMA_REGISTRY_URL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13053" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1969,7 +1943,7 @@ Refer to the Quarkus guides on <a href="micrometer">Micrometer</a>, <a href="sma
 <p>The security protocol to use See <a href="https://docs.confluent.io/current/streams/developer-guide/security.html#security-example" class="bare">https://docs.confluent.io/current/streams/developer-guide/security.html#security-example</a></p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13062">QUARKUS_KAFKA_STREAMS_SECURITY_PROTOCOL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13062" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13054">QUARKUS_KAFKA_STREAMS_SECURITY_PROTOCOL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13054" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1989,7 +1963,7 @@ Refer to the Quarkus guides on <a href="micrometer">Micrometer</a>, <a href="sma
 <p>SASL mechanism used for client connections</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13063">QUARKUS_KAFKA_STREAMS_SASL_MECHANISM</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13063" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13055">QUARKUS_KAFKA_STREAMS_SASL_MECHANISM</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13055" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2009,7 +1983,7 @@ Refer to the Quarkus guides on <a href="micrometer">Micrometer</a>, <a href="sma
 <p>JAAS login context parameters for SASL connections in the format used by JAAS configuration files</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13064">QUARKUS_KAFKA_STREAMS_SASL_JAAS_CONFIG</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13064" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13056">QUARKUS_KAFKA_STREAMS_SASL_JAAS_CONFIG</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13056" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2029,7 +2003,7 @@ Refer to the Quarkus guides on <a href="micrometer">Micrometer</a>, <a href="sma
 <p>The fully qualified name of a SASL client callback handler class</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13065">QUARKUS_KAFKA_STREAMS_SASL_CLIENT_CALLBACK_HANDLER_CLASS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13065" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13057">QUARKUS_KAFKA_STREAMS_SASL_CLIENT_CALLBACK_HANDLER_CLASS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13057" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2049,7 +2023,7 @@ Refer to the Quarkus guides on <a href="micrometer">Micrometer</a>, <a href="sma
 <p>The fully qualified name of a SASL login callback handler class</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13066">QUARKUS_KAFKA_STREAMS_SASL_LOGIN_CALLBACK_HANDLER_CLASS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13066" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13058">QUARKUS_KAFKA_STREAMS_SASL_LOGIN_CALLBACK_HANDLER_CLASS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13058" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2069,7 +2043,7 @@ Refer to the Quarkus guides on <a href="micrometer">Micrometer</a>, <a href="sma
 <p>The fully qualified name of a class that implements the Login interface</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13067">QUARKUS_KAFKA_STREAMS_SASL_LOGIN_CLASS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13067" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13059">QUARKUS_KAFKA_STREAMS_SASL_LOGIN_CLASS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13059" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2089,7 +2063,7 @@ Refer to the Quarkus guides on <a href="micrometer">Micrometer</a>, <a href="sma
 <p>The Kerberos principal name that Kafka runs as</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13068">QUARKUS_KAFKA_STREAMS_SASL_KERBEROS_SERVICE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13068" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13060">QUARKUS_KAFKA_STREAMS_SASL_KERBEROS_SERVICE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13060" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2109,7 +2083,7 @@ Refer to the Quarkus guides on <a href="micrometer">Micrometer</a>, <a href="sma
 <p>Kerberos kinit command path</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13069">QUARKUS_KAFKA_STREAMS_SASL_KERBEROS_KINIT_CMD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13069" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13061">QUARKUS_KAFKA_STREAMS_SASL_KERBEROS_KINIT_CMD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13061" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2129,7 +2103,7 @@ Refer to the Quarkus guides on <a href="micrometer">Micrometer</a>, <a href="sma
 <p>Login thread will sleep until the specified window factor of time from last refresh</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13070">QUARKUS_KAFKA_STREAMS_SASL_KERBEROS_TICKET_RENEW_WINDOW_FACTOR</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13070" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13062">QUARKUS_KAFKA_STREAMS_SASL_KERBEROS_TICKET_RENEW_WINDOW_FACTOR</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13062" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2149,7 +2123,7 @@ Refer to the Quarkus guides on <a href="micrometer">Micrometer</a>, <a href="sma
 <p>Percentage of random jitter added to the renewal time</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13071">QUARKUS_KAFKA_STREAMS_SASL_KERBEROS_TICKET_RENEW_JITTER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13071" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13063">QUARKUS_KAFKA_STREAMS_SASL_KERBEROS_TICKET_RENEW_JITTER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13063" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2169,7 +2143,7 @@ Refer to the Quarkus guides on <a href="micrometer">Micrometer</a>, <a href="sma
 <p>Percentage of random jitter added to the renewal time</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13072">QUARKUS_KAFKA_STREAMS_SASL_KERBEROS_MIN_TIME_BEFORE_RELOGIN</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13072" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13064">QUARKUS_KAFKA_STREAMS_SASL_KERBEROS_MIN_TIME_BEFORE_RELOGIN</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13064" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2189,7 +2163,7 @@ Refer to the Quarkus guides on <a href="micrometer">Micrometer</a>, <a href="sma
 <p>Login refresh thread will sleep until the specified window factor relative to the credential&#8217;s lifetime has been reached-</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13073">QUARKUS_KAFKA_STREAMS_SASL_LOGIN_REFRESH_WINDOW_FACTOR</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13073" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13065">QUARKUS_KAFKA_STREAMS_SASL_LOGIN_REFRESH_WINDOW_FACTOR</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13065" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2209,7 +2183,7 @@ Refer to the Quarkus guides on <a href="micrometer">Micrometer</a>, <a href="sma
 <p>The maximum amount of random jitter relative to the credential&#8217;s lifetime</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13074">QUARKUS_KAFKA_STREAMS_SASL_LOGIN_REFRESH_WINDOW_JITTER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13074" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13066">QUARKUS_KAFKA_STREAMS_SASL_LOGIN_REFRESH_WINDOW_JITTER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13066" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2229,7 +2203,7 @@ Refer to the Quarkus guides on <a href="micrometer">Micrometer</a>, <a href="sma
 <p>The desired minimum duration for the login refresh thread to wait before refreshing a credential</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13075">QUARKUS_KAFKA_STREAMS_SASL_LOGIN_REFRESH_MIN_PERIOD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13075" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13067">QUARKUS_KAFKA_STREAMS_SASL_LOGIN_REFRESH_MIN_PERIOD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13067" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2250,7 +2224,7 @@ Refer to the Quarkus guides on <a href="micrometer">Micrometer</a>, <a href="sma
 <p>The amount of buffer duration before credential expiration to maintain when refreshing a credential</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13076">QUARKUS_KAFKA_STREAMS_SASL_LOGIN_REFRESH_BUFFER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13076" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13068">QUARKUS_KAFKA_STREAMS_SASL_LOGIN_REFRESH_BUFFER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13068" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2271,7 +2245,7 @@ Refer to the Quarkus guides on <a href="micrometer">Micrometer</a>, <a href="sma
 <p>The SSL protocol used to generate the SSLContext</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13077">QUARKUS_KAFKA_STREAMS_SSL_PROTOCOL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13077" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13069">QUARKUS_KAFKA_STREAMS_SSL_PROTOCOL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13069" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2291,7 +2265,7 @@ Refer to the Quarkus guides on <a href="micrometer">Micrometer</a>, <a href="sma
 <p>The name of the security provider used for SSL connections</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13078">QUARKUS_KAFKA_STREAMS_SSL_PROVIDER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13078" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13070">QUARKUS_KAFKA_STREAMS_SSL_PROVIDER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13070" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2311,7 +2285,7 @@ Refer to the Quarkus guides on <a href="micrometer">Micrometer</a>, <a href="sma
 <p>A list of cipher suites</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13079">QUARKUS_KAFKA_STREAMS_SSL_CIPHER_SUITES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13079" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13071">QUARKUS_KAFKA_STREAMS_SSL_CIPHER_SUITES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13071" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2331,7 +2305,7 @@ Refer to the Quarkus guides on <a href="micrometer">Micrometer</a>, <a href="sma
 <p>The list of protocols enabled for SSL connections</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13080">QUARKUS_KAFKA_STREAMS_SSL_ENABLED_PROTOCOLS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13080" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13072">QUARKUS_KAFKA_STREAMS_SSL_ENABLED_PROTOCOLS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13072" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2351,7 +2325,7 @@ Refer to the Quarkus guides on <a href="micrometer">Micrometer</a>, <a href="sma
 <p>Trust store type</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13081">QUARKUS_KAFKA_STREAMS_SSL_TRUSTSTORE_TYPE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13081" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13073">QUARKUS_KAFKA_STREAMS_SSL_TRUSTSTORE_TYPE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13073" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2371,7 +2345,7 @@ Refer to the Quarkus guides on <a href="micrometer">Micrometer</a>, <a href="sma
 <p>Trust store location</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13082">QUARKUS_KAFKA_STREAMS_SSL_TRUSTSTORE_LOCATION</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13082" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13074">QUARKUS_KAFKA_STREAMS_SSL_TRUSTSTORE_LOCATION</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13074" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2391,7 +2365,7 @@ Refer to the Quarkus guides on <a href="micrometer">Micrometer</a>, <a href="sma
 <p>Trust store password</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13083">QUARKUS_KAFKA_STREAMS_SSL_TRUSTSTORE_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13083" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13075">QUARKUS_KAFKA_STREAMS_SSL_TRUSTSTORE_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13075" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2411,7 +2385,7 @@ Refer to the Quarkus guides on <a href="micrometer">Micrometer</a>, <a href="sma
 <p>Trust store certificates</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13084">QUARKUS_KAFKA_STREAMS_SSL_TRUSTSTORE_CERTIFICATES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13084" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13076">QUARKUS_KAFKA_STREAMS_SSL_TRUSTSTORE_CERTIFICATES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13076" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2431,7 +2405,7 @@ Refer to the Quarkus guides on <a href="micrometer">Micrometer</a>, <a href="sma
 <p>Key store type</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13085">QUARKUS_KAFKA_STREAMS_SSL_KEYSTORE_TYPE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13085" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13077">QUARKUS_KAFKA_STREAMS_SSL_KEYSTORE_TYPE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13077" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2451,7 +2425,7 @@ Refer to the Quarkus guides on <a href="micrometer">Micrometer</a>, <a href="sma
 <p>Key store location</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13086">QUARKUS_KAFKA_STREAMS_SSL_KEYSTORE_LOCATION</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13086" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13078">QUARKUS_KAFKA_STREAMS_SSL_KEYSTORE_LOCATION</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13078" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2471,7 +2445,7 @@ Refer to the Quarkus guides on <a href="micrometer">Micrometer</a>, <a href="sma
 <p>Key store password</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13087">QUARKUS_KAFKA_STREAMS_SSL_KEYSTORE_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13087" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13079">QUARKUS_KAFKA_STREAMS_SSL_KEYSTORE_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13079" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2491,7 +2465,7 @@ Refer to the Quarkus guides on <a href="micrometer">Micrometer</a>, <a href="sma
 <p>Key store private key</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13088">QUARKUS_KAFKA_STREAMS_SSL_KEYSTORE_KEY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13088" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13080">QUARKUS_KAFKA_STREAMS_SSL_KEYSTORE_KEY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13080" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2511,7 +2485,7 @@ Refer to the Quarkus guides on <a href="micrometer">Micrometer</a>, <a href="sma
 <p>Key store certificate chain</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13089">QUARKUS_KAFKA_STREAMS_SSL_KEYSTORE_CERTIFICATE_CHAIN</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13089" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13081">QUARKUS_KAFKA_STREAMS_SSL_KEYSTORE_CERTIFICATE_CHAIN</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13081" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2531,7 +2505,7 @@ Refer to the Quarkus guides on <a href="micrometer">Micrometer</a>, <a href="sma
 <p>Password of the private key in the key store</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13090">QUARKUS_KAFKA_STREAMS_SSL_KEY_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13090" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13082">QUARKUS_KAFKA_STREAMS_SSL_KEY_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13082" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2551,7 +2525,7 @@ Refer to the Quarkus guides on <a href="micrometer">Micrometer</a>, <a href="sma
 <p>The algorithm used by key manager factory for SSL connections</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13091">QUARKUS_KAFKA_STREAMS_SSL_KEYMANAGER_ALGORITHM</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13091" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13083">QUARKUS_KAFKA_STREAMS_SSL_KEYMANAGER_ALGORITHM</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13083" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2571,7 +2545,7 @@ Refer to the Quarkus guides on <a href="micrometer">Micrometer</a>, <a href="sma
 <p>The algorithm used by trust manager factory for SSL connections</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13092">QUARKUS_KAFKA_STREAMS_SSL_TRUSTMANAGER_ALGORITHM</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13092" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13084">QUARKUS_KAFKA_STREAMS_SSL_TRUSTMANAGER_ALGORITHM</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13084" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2591,7 +2565,7 @@ Refer to the Quarkus guides on <a href="micrometer">Micrometer</a>, <a href="sma
 <p>The endpoint identification algorithm to validate server hostname using server certificate</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13093">QUARKUS_KAFKA_STREAMS_SSL_ENDPOINT_IDENTIFICATION_ALGORITHM</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13093" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13085">QUARKUS_KAFKA_STREAMS_SSL_ENDPOINT_IDENTIFICATION_ALGORITHM</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13085" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2611,7 +2585,7 @@ Refer to the Quarkus guides on <a href="micrometer">Micrometer</a>, <a href="sma
 <p>The SecureRandom PRNG implementation to use for SSL cryptography operations</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13094">QUARKUS_KAFKA_STREAMS_SSL_SECURE_RANDOM_IMPLEMENTATION</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13094" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13086">QUARKUS_KAFKA_STREAMS_SSL_SECURE_RANDOM_IMPLEMENTATION</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13086" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2760,21 +2734,17 @@ Otherwise, <code>PT</code> is implicitly prepended to the value to obtain a stan
         <span>Braineous is made of community projects</span>
         <ul class="footer-links">
           
-            <li><a blah href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
+            <li><a blah href="https://quarkus.io/" target="_blank">Quarkus</a></li>
           
-            <li><a blah href="https://smallrye.io" target="_blank">SmallRye</a></li>
+            <li><a blah href="https://kafka.apache.org/" target="_blank">Apache Kafka</a></li>
           
-            <li><a blah href="https://hibernate.org" target="_blank">Hibernate</a></li>
+            <li><a blah href="https://flink.apache.org/" target="_blank">Apache Flink</a></li>
           
-            <li><a blah href="https://netty.io" target="_blank">Netty</a></li>
+            <li><a blah href="https://github.com/google/gson" target="_blank">Gson</a></li>
           
-            <li><a blah href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
+            <li><a blah href="https://www.mongodb.com/" target="_blank">MongoDB</a></li>
           
-            <li><a blah href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
-          
-            <li><a blah href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
-          
-            <li><a blah href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
+            <li><a blah href="https://github.com/bugsbunnyshah/braineous_dataplatform/blob/main/pom.xml" target="_blank">And many more...</a></li>
           
         </ul>
       </div>

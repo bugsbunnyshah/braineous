@@ -5,13 +5,17 @@ links:
     width: 1
     subfolderitems:
       - page: Home
-        url: /
+        url: /braineous/
       - page: High Scale Data Ingestion
-        url: /container-first
-      - page: Blog
-        url: /blog
+        url: /braineous/container-first
+      - page: Data Pipelines
+        url: /braineous/developer-joy
+      - page: Data Connectors
+        url: /braineous/continuum
+      #- page: Blog
+      #  url: /blog
       - page: Roadmap
-        url: https://github.com/orgs/quarkusio/projects/13/views/1
+        url: /braineous/about
 
   - title: Follow Us
     width: 1
@@ -34,13 +38,9 @@ links:
     width: 2
     subfolderitems:
       - page: Support
-        url: /support
-      - page: Guides
-        url: /guides
-      - page: FAQ
-        url: /faq
-      - page: Get Started
-        url: /get-started
+        url: /braineous/support
+      #- page: FAQ
+      #  url: /faq
       #- page: Stack Overflow
       #  url: https://stackoverflow.com/questions/tagged/quarkus
       - page: Discussions
