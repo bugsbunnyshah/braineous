@@ -52,19 +52,15 @@ more_links:
 
   - title: Braineous is made of community projects
     subfolderitems:
-      - page: Eclipse Vert.x
-        url: https://vertx.io/
-      - page: SmallRye
-        url: https://smallrye.io
-      - page: Hibernate
-        url: https://hibernate.org
-      - page: Netty
-        url: https://netty.io
-      - page: RESTEasy
-        url: https://resteasy.github.io
-      - page: Apache Camel
-        url: https://camel.apache.org
-      - page: Eclipse MicroProfile
-        url: https://microprofile.io
+      - page: Quarkus
+        url: https://quarkus.io/
+      - page: Apache Kafka
+        url: https://kafka.apache.org/
+      - page: Apache Flink
+        url: https://flink.apache.org/
+      - page: Gson
+        url: https://github.com/google/gson
+      - page: MongoDB
+        url: https://www.mongodb.com/
       - page: And many more...
-        url: https://code.quarkus.io/
+        url: https://github.com/bugsbunnyshah/braineous_dataplatform/blob/main/pom.xml
