@@ -119,9 +119,10 @@ In the next Candidate Release, Braineous team will add support for more target s
 
 * Postgresql
 * Mysql
-* OracleDB
+* Oracle
 * Snowflake
 * Microservices
+* Airbyte Catalog
 
 Java Code - Register Pipe
 [source,bash,subs=attributes+]
