@@ -17,13 +17,13 @@
   <META HTTP-EQUIV='X-Content-Type-Options' CONTENT="nosniff">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Braineous: Supersonic Subatomic Java">
+  <meta name="description" content="Braineous Data Platform">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@QuarkusIO"> 
   <meta name="twitter:creator" content="@QuarkusIO">
   <meta property="og:url" content="http://localhost:4000/version/2.16/guides/cdi-reference" />
   <meta property="og:title" content="Contexts and Dependency Injection - 2.16" />
-  <meta property="og:description" content="Braineous: Supersonic Subatomic Java" />
+  <meta property="og:description" content="Braineous Data Platform" />
   <meta property="og:image" content="http://localhost:4000/assets/images/quarkus_card.png" />
   
   <link rel="canonical" href="http://localhost:4000/guides/cdi-reference">
@@ -31,7 +31,7 @@
   <link rel="stylesheet" href="/guides/stylesheet/config.css" />
   <link rel="stylesheet" href="/braineous/assets/css/main.css?2021-07-29" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-  <link rel="alternate" type="application/rss+xml"  href="/feed.xml" title="Braineous">
+  <link rel="alternate" type="application/rss+xml"  href="/feed.xml" title="Braineous Data Platform">
   <script src="/assets/javascript/hl.js" type="text/javascript"></script>
   
   
@@ -106,39 +106,13 @@
 <section class="full-width-version-bg flexfilterbar guides">
   <div class="guideflexcontainer">
     <div class="docslink">
-      <a class="returnlink" href="/braineous/version/2.16/guides/"> Back to Guides</a>
+      <a class="returnlink" href="/braineous/get-started">Back</a>
     </div>
+    <!--
     <div class="flexlabel">
       <label>By Version</label>
     </div>
-    <div class="guidepulldown version">
-    <select id="guide-version-dropdown">
-      
-        
-        
-        <option value="main" >Main - SNAPSHOT</option>
-        
-        
-        
-        <option value="latest" >3.5.0 - Latest</option>
-        
-        
-        
-        <option value="3.2" >3.2</option>
-        
-        
-        
-        <option value="2.16" selected>2.16</option>
-        
-        
-        
-        <option value="2.13" >2.13</option>
-        
-        
-        
-        <option value="2.7" >2.7</option>
-        </select>
-    </div>
+    -->
   </div>
 </section>
 
@@ -1938,7 +1912,7 @@ An unused bean:</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-18210">QUARKUS_ARC_REMOVE_UNUSED_BEANS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18210" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-18202">QUARKUS_ARC_REMOVE_UNUSED_BEANS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18202" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1958,7 +1932,7 @@ An unused bean:</p>
 <p>If set to true <code>@Inject</code> is automatically added to all non-static non-final fields that are annotated with one of the annotations defined by <code>AutoInjectAnnotationBuildItem</code>.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-18211">QUARKUS_ARC_AUTO_INJECT_FIELDS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18211" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-18203">QUARKUS_ARC_AUTO_INJECT_FIELDS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18203" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1981,7 +1955,7 @@ An unused bean:</p>
  - Makes private no-args constructors package-private if necessary.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-18212">QUARKUS_ARC_TRANSFORM_UNPROXYABLE_CLASSES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18212" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-18204">QUARKUS_ARC_TRANSFORM_UNPROXYABLE_CLASSES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18204" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2001,7 +1975,7 @@ An unused bean:</p>
 <p>If set to true, the build fails if a private method that is neither an observer nor a producer, is annotated with an interceptor binding. An example of this is the use of <code>Transactional</code> on a private method of a bean. If set to false, Quarkus simply logs a warning that the annotation will be ignored.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-18213">QUARKUS_ARC_FAIL_ON_INTERCEPTED_PRIVATE_METHOD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18213" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-18205">QUARKUS_ARC_FAIL_ON_INTERCEPTED_PRIVATE_METHOD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18205" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2026,7 +2000,7 @@ An element value can be:
  - a package name with suffix <code>.**</code>, i.e. <code>org.acme.**</code>, matches a package that starts with the value  Each element value is used to match an alternative bean class, an alternative stereotype annotation type or a bean class that declares an alternative producer. If any value matches then the priority of <code>Integer#MAX_VALUE</code> is used for the relevant bean. The priority declared via <code>javax.annotation.Priority</code> or <code>io.quarkus.arc.AlternativePriority</code> is overridden.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-18214">QUARKUS_ARC_SELECTED_ALTERNATIVES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18214" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-18206">QUARKUS_ARC_SELECTED_ALTERNATIVES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18206" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2046,7 +2020,7 @@ An element value can be:
 <p>If set to true then <code>javax.enterprise.inject.Produces</code> is automatically added to all non-void methods that are annotated with a scope annotation, a stereotype or a qualifier, and are not annotated with <code>Inject</code> or <code>Produces</code>, and no parameter is annotated with <code>Disposes</code>, <code>Observes</code> or <code>ObservesAsync</code>.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-18215">QUARKUS_ARC_AUTO_PRODUCER_METHODS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18215" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-18207">QUARKUS_ARC_AUTO_PRODUCER_METHODS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18207" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2071,7 +2045,7 @@ An element value can be:
  - a package name with suffix <code>.**</code>, i.e. <code>org.acme.**</code>, matches a package that starts with the value  If any element value matches a discovered type then the type is excluded from discovery, i.e. no beans and observer methods are created from this type.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-18216">QUARKUS_ARC_EXCLUDE_TYPES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18216" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-18208">QUARKUS_ARC_EXCLUDE_TYPES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18208" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2096,7 +2070,7 @@ An element value can be:
  - a package name with suffix <code>.**</code>, i.e. <code>org.acme.**</code>, matches a package that starts with the value  If any element value matches a discovered bean, then such a bean is considered unremovable.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-18217">QUARKUS_ARC_UNREMOVABLE_TYPES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18217" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-18209">QUARKUS_ARC_UNREMOVABLE_TYPES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18209" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2116,7 +2090,7 @@ An element value can be:
 <p>If set to true then the container attempts to detect "unused removed beans" false positives during programmatic lookup at runtime. You can disable this feature to conserve some memory when running your application in production.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-18218">QUARKUS_ARC_DETECT_UNUSED_FALSE_POSITIVES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18218" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-18210">QUARKUS_ARC_DETECT_UNUSED_FALSE_POSITIVES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18210" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2137,7 +2111,7 @@ An element value can be:
 A typical example is <code>@javax.ejb.Singleton</code> which is often confused with <code>@javax.inject.Singleton</code>. As a result a component annotated with <code>@javax.ejb.Singleton</code> would be completely ignored. Another example is an inner class annotated with a scope annotation - this component would be again completely ignored.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-18219">QUARKUS_ARC_DETECT_WRONG_ANNOTATIONS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18219" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-18211">QUARKUS_ARC_DETECT_WRONG_ANNOTATIONS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18211" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2157,7 +2131,7 @@ A typical example is <code>@javax.ejb.Singleton</code> which is often confused w
 <p>If set to true then the container monitors business method invocations and fired events during the development mode.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-18220">QUARKUS_ARC_DEV_MODE_MONITORING_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18220" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-18212">QUARKUS_ARC_DEV_MODE_MONITORING_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18212" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2177,7 +2151,7 @@ A typical example is <code>@javax.ejb.Singleton</code> which is often confused w
 <p>If set to true then disable <code>StartupEvent</code> and <code>ShutdownEvent</code> observers declared on application bean classes during the tests.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-18221">QUARKUS_ARC_TEST_DISABLE_APPLICATION_LIFECYCLE_OBSERVERS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18221" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-18213">QUARKUS_ARC_TEST_DISABLE_APPLICATION_LIFECYCLE_OBSERVERS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18213" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2200,7 +2174,7 @@ A package string representation can be:
  - a package name with suffix <code>.*</code>, i.e. <code>org.acme.*</code>, which matches a package that starts with provided value</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-18222">QUARKUS_ARC_IGNORED_SPLIT_PACKAGES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18222" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-18214">QUARKUS_ARC_IGNORED_SPLIT_PACKAGES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18214" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2220,7 +2194,7 @@ A package string representation can be:
 <p>If set to true and SmallRye Context Propagation extension is present then enable the context propagation for CDI contexts.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-18223">QUARKUS_ARC_CONTEXT_PROPAGATION_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18223" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-18215">QUARKUS_ARC_CONTEXT_PROPAGATION_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18215" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2245,7 +2219,7 @@ A package string representation can be:
 <p>The maven groupId of the artifact.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-18224">QUARKUS_ARC_EXCLUDE_DEPENDENCY__DEPENDENCY_NAME__GROUP_ID</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18224" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-18216">QUARKUS_ARC_EXCLUDE_DEPENDENCY__DEPENDENCY_NAME__GROUP_ID</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18216" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2265,7 +2239,7 @@ A package string representation can be:
 <p>The maven artifactId of the artifact.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-18225">QUARKUS_ARC_EXCLUDE_DEPENDENCY__DEPENDENCY_NAME__ARTIFACT_ID</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18225" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-18217">QUARKUS_ARC_EXCLUDE_DEPENDENCY__DEPENDENCY_NAME__ARTIFACT_ID</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18217" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2285,7 +2259,7 @@ A package string representation can be:
 <p>The maven classifier of the artifact.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-18226">QUARKUS_ARC_EXCLUDE_DEPENDENCY__DEPENDENCY_NAME__CLASSIFIER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18226" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-18218">QUARKUS_ARC_EXCLUDE_DEPENDENCY__DEPENDENCY_NAME__CLASSIFIER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-18218" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2426,21 +2400,17 @@ A package string representation can be:
         <span>Braineous is made of community projects</span>
         <ul class="footer-links">
           
-            <li><a blah href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
+            <li><a blah href="https://quarkus.io/" target="_blank">Quarkus</a></li>
           
-            <li><a blah href="https://smallrye.io" target="_blank">SmallRye</a></li>
+            <li><a blah href="https://kafka.apache.org/" target="_blank">Apache Kafka</a></li>
           
-            <li><a blah href="https://hibernate.org" target="_blank">Hibernate</a></li>
+            <li><a blah href="https://flink.apache.org/" target="_blank">Apache Flink</a></li>
           
-            <li><a blah href="https://netty.io" target="_blank">Netty</a></li>
+            <li><a blah href="https://github.com/google/gson" target="_blank">Gson</a></li>
           
-            <li><a blah href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
+            <li><a blah href="https://www.mongodb.com/" target="_blank">MongoDB</a></li>
           
-            <li><a blah href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
-          
-            <li><a blah href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
-          
-            <li><a blah href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
+            <li><a blah href="https://github.com/bugsbunnyshah/braineous_dataplatform/blob/main/pom.xml" target="_blank">And many more...</a></li>
           
         </ul>
       </div>

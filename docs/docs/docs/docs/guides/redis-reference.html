@@ -17,13 +17,13 @@
   <META HTTP-EQUIV='X-Content-Type-Options' CONTENT="nosniff">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Braineous: Supersonic Subatomic Java">
+  <meta name="description" content="Braineous Data Platform">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@QuarkusIO"> 
   <meta name="twitter:creator" content="@QuarkusIO">
   <meta property="og:url" content="http://localhost:4000/guides/redis-reference" />
   <meta property="og:title" content="Redis Extension Reference Guide" />
-  <meta property="og:description" content="Braineous: Supersonic Subatomic Java" />
+  <meta property="og:description" content="Braineous Data Platform" />
   <meta property="og:image" content="http://localhost:4000/assets/images/quarkus_card.png" />
   
   <link rel="canonical" href="http://localhost:4000/guides/redis-reference">
@@ -31,7 +31,7 @@
   <link rel="stylesheet" href="/guides/stylesheet/config.css" />
   <link rel="stylesheet" href="/braineous/assets/css/main.css?2021-07-29" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-  <link rel="alternate" type="application/rss+xml"  href="/feed.xml" title="Braineous">
+  <link rel="alternate" type="application/rss+xml"  href="/feed.xml" title="Braineous Data Platform">
   <script src="/assets/javascript/hl.js" type="text/javascript"></script>
   
   
@@ -106,39 +106,13 @@
 <section class="full-width-version-bg flexfilterbar guides">
   <div class="guideflexcontainer">
     <div class="docslink">
-      <a class="returnlink" href="/braineous/guides/"> Back to Guides</a>
+      <a class="returnlink" href="/braineous/get-started">Back</a>
     </div>
+    <!--
     <div class="flexlabel">
       <label>By Version</label>
     </div>
-    <div class="guidepulldown version">
-    <select id="guide-version-dropdown">
-      
-        
-        
-        <option value="main" >Main - SNAPSHOT</option>
-        
-        
-        
-        <option value="latest" selected>3.5.0 - Latest</option>
-        
-        
-        
-        <option value="3.2" >3.2</option>
-        
-        
-        
-        <option value="2.16" >2.16</option>
-        
-        
-        
-        <option value="2.13" >2.13</option>
-        
-        
-        
-        <option value="2.7" >2.7</option>
-        </select>
-    </div>
+    -->
   </div>
 </section>
 
@@ -1550,7 +1524,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 </ul>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7156">QUARKUS_REDIS_LOAD_SCRIPT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7156" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7148">QUARKUS_REDIS_LOAD_SCRIPT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7148" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1570,7 +1544,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>When using <code>redisLoadScript</code>, indicates if the Redis database must be flushed (erased) before importing.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7157">QUARKUS_REDIS_FLUSH_BEFORE_LOAD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7157" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7149">QUARKUS_REDIS_FLUSH_BEFORE_LOAD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7149" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1590,7 +1564,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>When using <code>redisLoadScript</code>, indicates if the import should only happen if the database is empty (no keys).</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7158">QUARKUS_REDIS_LOAD_ONLY_IF_EMPTY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7158" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7150">QUARKUS_REDIS_LOAD_ONLY_IF_EMPTY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7150" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1610,7 +1584,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Whether a health check is published in case the smallrye-health extension is present.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7159">QUARKUS_REDIS_HEALTH_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7159" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7151">QUARKUS_REDIS_HEALTH_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7151" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1633,7 +1607,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>When DevServices is enabled Quarkus will attempt to automatically configure and start a database when running in Dev or Test mode and when Docker is running.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7160">QUARKUS_REDIS_DEVSERVICES_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7160" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7152">QUARKUS_REDIS_DEVSERVICES_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7152" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1653,7 +1627,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>The container image name to use, for container based DevServices providers. If you want to use Redis Stack modules (bloom, graph, search&#8230;&#8203;), use: <code>redis/redis-stack:latest</code>.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7161">QUARKUS_REDIS_DEVSERVICES_IMAGE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7161" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7153">QUARKUS_REDIS_DEVSERVICES_IMAGE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7153" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1676,7 +1650,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>If not defined, the port will be chosen randomly.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7162">QUARKUS_REDIS_DEVSERVICES_PORT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7162" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7154">QUARKUS_REDIS_DEVSERVICES_PORT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7154" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1702,7 +1676,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Container sharing is only used in dev mode.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7163">QUARKUS_REDIS_DEVSERVICES_SHARED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7163" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7155">QUARKUS_REDIS_DEVSERVICES_SHARED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7155" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1725,7 +1699,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>This property is used when you need multiple shared Redis servers.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7164">QUARKUS_REDIS_DEVSERVICES_SERVICE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7164" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7156">QUARKUS_REDIS_DEVSERVICES_SERVICE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7156" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1748,7 +1722,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>The URI provided uses the following schema <code>redis://[username:password@][host][:port][/database]</code> Use <code>quarkus.redis.hosts-provider-name</code> to provide the hosts programmatically.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7165">QUARKUS_REDIS_HOSTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7165" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7157">QUARKUS_REDIS_HOSTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7157" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1774,7 +1748,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Used when <code>quarkus.redis.hosts</code> is not set.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7166">QUARKUS_REDIS_HOSTS_PROVIDER_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7166" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7158">QUARKUS_REDIS_HOSTS_PROVIDER_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7158" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1794,7 +1768,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>The maximum delay to wait before a blocking command to redis server times out</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7167">QUARKUS_REDIS_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7167" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7159">QUARKUS_REDIS_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7159" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1815,7 +1789,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>The redis client type. Accepted values are: <code>STANDALONE</code> (default), <code>CLUSTER</code>, <code>REPLICATION</code>, <code>SENTINEL</code>.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7168">QUARKUS_REDIS_CLIENT_TYPE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7168" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7160">QUARKUS_REDIS_CLIENT_TYPE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7160" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1837,7 +1811,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>The master name (only considered in HA mode).</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7169">QUARKUS_REDIS_MASTER_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7169" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7161">QUARKUS_REDIS_MASTER_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7161" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1857,7 +1831,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>The role name (only considered in Sentinel / HA mode). Accepted values are: <code>MASTER</code>, <code>REPLICA</code>, <code>SENTINEL</code>.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7170">QUARKUS_REDIS_ROLE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7170" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7162">QUARKUS_REDIS_ROLE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7162" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1879,7 +1853,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Whether to use replicas nodes (only considered in Cluster mode). Accepted values are: <code>ALWAYS</code>, <code>NEVER</code>, <code>SHARE</code>.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7171">QUARKUS_REDIS_REPLICAS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7171" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7163">QUARKUS_REDIS_REPLICAS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7163" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1904,7 +1878,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>If not set it will try to extract the value from the current default <code>#hosts</code>.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7172">QUARKUS_REDIS_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7172" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7164">QUARKUS_REDIS_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7164" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1927,7 +1901,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>This value should be at least the total number of cluster member (or number of sentinels &#43; 1)</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7173">QUARKUS_REDIS_MAX_POOL_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7173" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7165">QUARKUS_REDIS_MAX_POOL_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7165" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1947,7 +1921,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>The maximum waiting requests for a connection from the pool.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7174">QUARKUS_REDIS_MAX_POOL_WAITING</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7174" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7166">QUARKUS_REDIS_MAX_POOL_WAITING</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7166" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1967,7 +1941,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>The duration indicating how often should the connection pool cleaner executes.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7175">QUARKUS_REDIS_POOL_CLEANER_INTERVAL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7175" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7167">QUARKUS_REDIS_POOL_CLEANER_INTERVAL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7167" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1988,7 +1962,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>The timeout for a connection recycling.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7176">QUARKUS_REDIS_POOL_RECYCLE_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7176" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7168">QUARKUS_REDIS_POOL_RECYCLE_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7168" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2012,7 +1986,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>The client will always work on pipeline mode, this means that messages can start queueing. Using this configuration option, you can control how much backlog you&#8217;re willing to accept.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7177">QUARKUS_REDIS_MAX_WAITING_HANDLERS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7177" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7169">QUARKUS_REDIS_MAX_WAITING_HANDLERS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7169" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2032,7 +2006,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Tune how much nested arrays are allowed on a redis response. This affects the parser performance.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7178">QUARKUS_REDIS_MAX_NESTED_ARRAYS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7178" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7170">QUARKUS_REDIS_MAX_NESTED_ARRAYS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7170" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2052,7 +2026,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>The number of reconnection attempts when a pooled connection cannot be established on first try.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7179">QUARKUS_REDIS_RECONNECT_ATTEMPTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7179" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7171">QUARKUS_REDIS_RECONNECT_ATTEMPTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7171" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2072,7 +2046,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>The interval between reconnection attempts when a pooled connection cannot be established on first try.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7180">QUARKUS_REDIS_RECONNECT_INTERVAL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7180" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7172">QUARKUS_REDIS_RECONNECT_INTERVAL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7172" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2093,7 +2067,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Should the client perform {@code RESP protocol negotiation during the connection handshake.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7181">QUARKUS_REDIS_PROTOCOL_NEGOTIATION</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7181" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7173">QUARKUS_REDIS_PROTOCOL_NEGOTIATION</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7173" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2132,7 +2106,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 </ul>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7182">QUARKUS_REDIS__REDIS_CLIENT_NAME__LOAD_SCRIPT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7182" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7174">QUARKUS_REDIS__REDIS_CLIENT_NAME__LOAD_SCRIPT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7174" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2152,7 +2126,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>When using <code>redisLoadScript</code>, indicates if the Redis database must be flushed (erased) before importing.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7183">QUARKUS_REDIS__REDIS_CLIENT_NAME__FLUSH_BEFORE_LOAD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7183" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7175">QUARKUS_REDIS__REDIS_CLIENT_NAME__FLUSH_BEFORE_LOAD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7175" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2172,7 +2146,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>When using <code>redisLoadScript</code>, indicates if the import should only happen if the database is empty (no keys).</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7184">QUARKUS_REDIS__REDIS_CLIENT_NAME__LOAD_ONLY_IF_EMPTY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7184" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7176">QUARKUS_REDIS__REDIS_CLIENT_NAME__LOAD_ONLY_IF_EMPTY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7176" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2192,7 +2166,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Environment variables that are passed to the container.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7185">QUARKUS_REDIS_DEVSERVICES_CONTAINER_ENV</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7185" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7177">QUARKUS_REDIS_DEVSERVICES_CONTAINER_ENV</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7177" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2215,7 +2189,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>When DevServices is enabled Quarkus will attempt to automatically configure and start a database when running in Dev or Test mode and when Docker is running.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7186">QUARKUS_REDIS__ADDITIONAL_REDIS_CLIENTS__DEVSERVICES_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7186" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7178">QUARKUS_REDIS__ADDITIONAL_REDIS_CLIENTS__DEVSERVICES_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7178" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2235,7 +2209,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>The container image name to use, for container based DevServices providers. If you want to use Redis Stack modules (bloom, graph, search&#8230;&#8203;), use: <code>redis/redis-stack:latest</code>.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7187">QUARKUS_REDIS__ADDITIONAL_REDIS_CLIENTS__DEVSERVICES_IMAGE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7187" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7179">QUARKUS_REDIS__ADDITIONAL_REDIS_CLIENTS__DEVSERVICES_IMAGE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7179" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2258,7 +2232,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>If not defined, the port will be chosen randomly.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7188">QUARKUS_REDIS__ADDITIONAL_REDIS_CLIENTS__DEVSERVICES_PORT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7188" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7180">QUARKUS_REDIS__ADDITIONAL_REDIS_CLIENTS__DEVSERVICES_PORT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7180" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2284,7 +2258,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Container sharing is only used in dev mode.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7189">QUARKUS_REDIS__ADDITIONAL_REDIS_CLIENTS__DEVSERVICES_SHARED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7189" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7181">QUARKUS_REDIS__ADDITIONAL_REDIS_CLIENTS__DEVSERVICES_SHARED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7181" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2307,7 +2281,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>This property is used when you need multiple shared Redis servers.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7190">QUARKUS_REDIS__ADDITIONAL_REDIS_CLIENTS__DEVSERVICES_SERVICE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7190" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7182">QUARKUS_REDIS__ADDITIONAL_REDIS_CLIENTS__DEVSERVICES_SERVICE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7182" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2327,7 +2301,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Environment variables that are passed to the container.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7191">QUARKUS_REDIS__ADDITIONAL_REDIS_CLIENTS__DEVSERVICES_CONTAINER_ENV</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7191" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7183">QUARKUS_REDIS__ADDITIONAL_REDIS_CLIENTS__DEVSERVICES_CONTAINER_ENV</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7183" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2350,7 +2324,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>The URI provided uses the following schema <code>redis://[username:password@][host][:port][/database]</code> Use <code>quarkus.redis.hosts-provider-name</code> to provide the hosts programmatically.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7192">QUARKUS_REDIS__REDIS_CLIENT_NAME__HOSTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7192" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7184">QUARKUS_REDIS__REDIS_CLIENT_NAME__HOSTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7184" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2376,7 +2350,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Used when <code>quarkus.redis.hosts</code> is not set.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7193">QUARKUS_REDIS__REDIS_CLIENT_NAME__HOSTS_PROVIDER_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7193" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7185">QUARKUS_REDIS__REDIS_CLIENT_NAME__HOSTS_PROVIDER_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7185" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2396,7 +2370,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>The maximum delay to wait before a blocking command to redis server times out</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7194">QUARKUS_REDIS__REDIS_CLIENT_NAME__TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7194" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7186">QUARKUS_REDIS__REDIS_CLIENT_NAME__TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7186" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2417,7 +2391,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>The redis client type. Accepted values are: <code>STANDALONE</code> (default), <code>CLUSTER</code>, <code>REPLICATION</code>, <code>SENTINEL</code>.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7195">QUARKUS_REDIS__REDIS_CLIENT_NAME__CLIENT_TYPE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7195" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7187">QUARKUS_REDIS__REDIS_CLIENT_NAME__CLIENT_TYPE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7187" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2439,7 +2413,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>The master name (only considered in HA mode).</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7196">QUARKUS_REDIS__REDIS_CLIENT_NAME__MASTER_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7196" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7188">QUARKUS_REDIS__REDIS_CLIENT_NAME__MASTER_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7188" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2459,7 +2433,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>The role name (only considered in Sentinel / HA mode). Accepted values are: <code>MASTER</code>, <code>REPLICA</code>, <code>SENTINEL</code>.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7197">QUARKUS_REDIS__REDIS_CLIENT_NAME__ROLE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7197" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7189">QUARKUS_REDIS__REDIS_CLIENT_NAME__ROLE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7189" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2481,7 +2455,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Whether to use replicas nodes (only considered in Cluster mode). Accepted values are: <code>ALWAYS</code>, <code>NEVER</code>, <code>SHARE</code>.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7198">QUARKUS_REDIS__REDIS_CLIENT_NAME__REPLICAS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7198" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7190">QUARKUS_REDIS__REDIS_CLIENT_NAME__REPLICAS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7190" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2506,7 +2480,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>If not set it will try to extract the value from the current default <code>#hosts</code>.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7199">QUARKUS_REDIS__REDIS_CLIENT_NAME__PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7199" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7191">QUARKUS_REDIS__REDIS_CLIENT_NAME__PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7191" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2529,7 +2503,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>This value should be at least the total number of cluster member (or number of sentinels &#43; 1)</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7200">QUARKUS_REDIS__REDIS_CLIENT_NAME__MAX_POOL_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7200" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7192">QUARKUS_REDIS__REDIS_CLIENT_NAME__MAX_POOL_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7192" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2549,7 +2523,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>The maximum waiting requests for a connection from the pool.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7201">QUARKUS_REDIS__REDIS_CLIENT_NAME__MAX_POOL_WAITING</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7201" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7193">QUARKUS_REDIS__REDIS_CLIENT_NAME__MAX_POOL_WAITING</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7193" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2569,7 +2543,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>The duration indicating how often should the connection pool cleaner executes.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7202">QUARKUS_REDIS__REDIS_CLIENT_NAME__POOL_CLEANER_INTERVAL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7202" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7194">QUARKUS_REDIS__REDIS_CLIENT_NAME__POOL_CLEANER_INTERVAL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7194" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2590,7 +2564,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>The timeout for a connection recycling.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7203">QUARKUS_REDIS__REDIS_CLIENT_NAME__POOL_RECYCLE_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7203" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7195">QUARKUS_REDIS__REDIS_CLIENT_NAME__POOL_RECYCLE_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7195" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2614,7 +2588,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>The client will always work on pipeline mode, this means that messages can start queueing. Using this configuration option, you can control how much backlog you&#8217;re willing to accept.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7204">QUARKUS_REDIS__REDIS_CLIENT_NAME__MAX_WAITING_HANDLERS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7204" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7196">QUARKUS_REDIS__REDIS_CLIENT_NAME__MAX_WAITING_HANDLERS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7196" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2634,7 +2608,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Tune how much nested arrays are allowed on a redis response. This affects the parser performance.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7205">QUARKUS_REDIS__REDIS_CLIENT_NAME__MAX_NESTED_ARRAYS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7205" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7197">QUARKUS_REDIS__REDIS_CLIENT_NAME__MAX_NESTED_ARRAYS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7197" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2654,7 +2628,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>The number of reconnection attempts when a pooled connection cannot be established on first try.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7206">QUARKUS_REDIS__REDIS_CLIENT_NAME__RECONNECT_ATTEMPTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7206" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7198">QUARKUS_REDIS__REDIS_CLIENT_NAME__RECONNECT_ATTEMPTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7198" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2674,7 +2648,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>The interval between reconnection attempts when a pooled connection cannot be established on first try.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7207">QUARKUS_REDIS__REDIS_CLIENT_NAME__RECONNECT_INTERVAL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7207" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7199">QUARKUS_REDIS__REDIS_CLIENT_NAME__RECONNECT_INTERVAL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7199" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2695,7 +2669,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Should the client perform {@code RESP protocol negotiation during the connection handshake.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7208">QUARKUS_REDIS__REDIS_CLIENT_NAME__PROTOCOL_NEGOTIATION</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7208" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7200">QUARKUS_REDIS__REDIS_CLIENT_NAME__PROTOCOL_NEGOTIATION</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7200" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2720,7 +2694,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Set the ALPN usage.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7209">QUARKUS_REDIS_TCP_ALPN</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7209" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7201">QUARKUS_REDIS_TCP_ALPN</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7201" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2740,7 +2714,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Sets the list of application-layer protocols to provide to the server during the <code>Application-Layer Protocol Negotiation</code>.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7210">QUARKUS_REDIS_TCP_APPLICATION_LAYER_PROTOCOLS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7210" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7202">QUARKUS_REDIS_TCP_APPLICATION_LAYER_PROTOCOLS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7202" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2760,7 +2734,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Sets the list of enabled SSL/TLS protocols.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7211">QUARKUS_REDIS_TCP_SECURE_TRANSPORT_PROTOCOLS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7211" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7203">QUARKUS_REDIS_TCP_SECURE_TRANSPORT_PROTOCOLS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7203" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2780,7 +2754,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Set the idle timeout.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7212">QUARKUS_REDIS_TCP_IDLE_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7212" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7204">QUARKUS_REDIS_TCP_IDLE_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7204" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2801,7 +2775,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Set the connect timeout.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7213">QUARKUS_REDIS_TCP_CONNECTION_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7213" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7205">QUARKUS_REDIS_TCP_CONNECTION_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7205" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2822,7 +2796,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Set a list of remote hosts that are not proxied when the client is configured to use a proxy.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7214">QUARKUS_REDIS_TCP_NON_PROXY_HOSTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7214" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7206">QUARKUS_REDIS_TCP_NON_PROXY_HOSTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7206" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2842,7 +2816,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Set proxy username.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7215">QUARKUS_REDIS_TCP_PROXY_OPTIONS_USERNAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7215" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7207">QUARKUS_REDIS_TCP_PROXY_OPTIONS_USERNAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7207" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2862,7 +2836,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Set proxy password.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7216">QUARKUS_REDIS_TCP_PROXY_OPTIONS_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7216" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7208">QUARKUS_REDIS_TCP_PROXY_OPTIONS_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7208" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2882,7 +2856,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Set proxy port. Defaults to 3128.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7217">QUARKUS_REDIS_TCP_PROXY_OPTIONS_PORT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7217" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7209">QUARKUS_REDIS_TCP_PROXY_OPTIONS_PORT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7209" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2902,7 +2876,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Set proxy host.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7218">QUARKUS_REDIS_TCP_PROXY_OPTIONS_HOST</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7218" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7210">QUARKUS_REDIS_TCP_PROXY_OPTIONS_HOST</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7210" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2922,7 +2896,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Set proxy type. Accepted values are: <code>HTTP</code> (default), <code>SOCKS4</code> and <code>SOCKS5</code>.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7219">QUARKUS_REDIS_TCP_PROXY_OPTIONS_TYPE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7219" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7211">QUARKUS_REDIS_TCP_PROXY_OPTIONS_TYPE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7211" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2944,7 +2918,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Set the read idle timeout.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7220">QUARKUS_REDIS_TCP_READ_IDLE_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7220" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7212">QUARKUS_REDIS_TCP_READ_IDLE_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7212" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2965,7 +2939,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Set the TCP receive buffer size.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7221">QUARKUS_REDIS_TCP_RECEIVE_BUFFER_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7221" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7213">QUARKUS_REDIS_TCP_RECEIVE_BUFFER_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7213" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2985,7 +2959,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Set the value of reconnect attempts.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7222">QUARKUS_REDIS_TCP_RECONNECT_ATTEMPTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7222" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7214">QUARKUS_REDIS_TCP_RECONNECT_ATTEMPTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7214" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -3005,7 +2979,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Set the reconnect interval.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7223">QUARKUS_REDIS_TCP_RECONNECT_INTERVAL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7223" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7215">QUARKUS_REDIS_TCP_RECONNECT_INTERVAL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7215" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -3026,7 +3000,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Whether to reuse the address.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7224">QUARKUS_REDIS_TCP_REUSE_ADDRESS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7224" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7216">QUARKUS_REDIS_TCP_REUSE_ADDRESS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7216" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -3046,7 +3020,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Whether to reuse the port.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7225">QUARKUS_REDIS_TCP_REUSE_PORT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7225" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7217">QUARKUS_REDIS_TCP_REUSE_PORT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7217" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -3066,7 +3040,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Set the TCP send buffer size.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7226">QUARKUS_REDIS_TCP_SEND_BUFFER_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7226" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7218">QUARKUS_REDIS_TCP_SEND_BUFFER_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7218" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -3086,7 +3060,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Set the <code>SO_linger</code> keep alive duration.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7227">QUARKUS_REDIS_TCP_SO_LINGER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7227" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7219">QUARKUS_REDIS_TCP_SO_LINGER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7219" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -3107,7 +3081,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Enable the <code>TCP_CORK</code> option - only with linux native transport.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7228">QUARKUS_REDIS_TCP_CORK</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7228" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7220">QUARKUS_REDIS_TCP_CORK</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7220" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -3127,7 +3101,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Enable the <code>TCP_FASTOPEN</code> option - only with linux native transport.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7229">QUARKUS_REDIS_TCP_FAST_OPEN</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7229" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7221">QUARKUS_REDIS_TCP_FAST_OPEN</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7221" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -3147,7 +3121,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Set whether keep alive is enabled</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7230">QUARKUS_REDIS_TCP_KEEP_ALIVE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7230" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7222">QUARKUS_REDIS_TCP_KEEP_ALIVE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7222" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -3167,7 +3141,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Set whether no delay is enabled</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7231">QUARKUS_REDIS_TCP_NO_DELAY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7231" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7223">QUARKUS_REDIS_TCP_NO_DELAY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7223" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -3187,7 +3161,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Enable the <code>TCP_QUICKACK</code> option - only with linux native transport.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7232">QUARKUS_REDIS_TCP_QUICK_ACK</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7232" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7224">QUARKUS_REDIS_TCP_QUICK_ACK</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7224" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -3207,7 +3181,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Set the value of traffic class.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7233">QUARKUS_REDIS_TCP_TRAFFIC_CLASS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7233" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7225">QUARKUS_REDIS_TCP_TRAFFIC_CLASS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7225" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -3227,7 +3201,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Set the write idle timeout.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7234">QUARKUS_REDIS_TCP_WRITE_IDLE_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7234" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7226">QUARKUS_REDIS_TCP_WRITE_IDLE_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7226" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -3248,7 +3222,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Set the local interface to bind for network connections. When the local address is null, it will pick any local address, the default local address is null.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7235">QUARKUS_REDIS_TCP_LOCAL_ADDRESS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7235" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7227">QUARKUS_REDIS_TCP_LOCAL_ADDRESS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7227" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -3268,7 +3242,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Set the ALPN usage.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7236">QUARKUS_REDIS__REDIS_CLIENT_NAME__TCP_ALPN</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7236" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7228">QUARKUS_REDIS__REDIS_CLIENT_NAME__TCP_ALPN</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7228" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -3288,7 +3262,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Sets the list of application-layer protocols to provide to the server during the <code>Application-Layer Protocol Negotiation</code>.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7237">QUARKUS_REDIS__REDIS_CLIENT_NAME__TCP_APPLICATION_LAYER_PROTOCOLS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7237" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7229">QUARKUS_REDIS__REDIS_CLIENT_NAME__TCP_APPLICATION_LAYER_PROTOCOLS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7229" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -3308,7 +3282,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Sets the list of enabled SSL/TLS protocols.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7238">QUARKUS_REDIS__REDIS_CLIENT_NAME__TCP_SECURE_TRANSPORT_PROTOCOLS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7238" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7230">QUARKUS_REDIS__REDIS_CLIENT_NAME__TCP_SECURE_TRANSPORT_PROTOCOLS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7230" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -3328,7 +3302,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Set the idle timeout.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7239">QUARKUS_REDIS__REDIS_CLIENT_NAME__TCP_IDLE_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7239" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7231">QUARKUS_REDIS__REDIS_CLIENT_NAME__TCP_IDLE_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7231" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -3349,7 +3323,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Set the connect timeout.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7240">QUARKUS_REDIS__REDIS_CLIENT_NAME__TCP_CONNECTION_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7240" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7232">QUARKUS_REDIS__REDIS_CLIENT_NAME__TCP_CONNECTION_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7232" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -3370,7 +3344,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Set a list of remote hosts that are not proxied when the client is configured to use a proxy.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7241">QUARKUS_REDIS__REDIS_CLIENT_NAME__TCP_NON_PROXY_HOSTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7241" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7233">QUARKUS_REDIS__REDIS_CLIENT_NAME__TCP_NON_PROXY_HOSTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7233" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -3390,7 +3364,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Set proxy username.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7242">QUARKUS_REDIS__REDIS_CLIENT_NAME__TCP_PROXY_OPTIONS_USERNAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7242" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7234">QUARKUS_REDIS__REDIS_CLIENT_NAME__TCP_PROXY_OPTIONS_USERNAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7234" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -3410,7 +3384,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Set proxy password.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7243">QUARKUS_REDIS__REDIS_CLIENT_NAME__TCP_PROXY_OPTIONS_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7243" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7235">QUARKUS_REDIS__REDIS_CLIENT_NAME__TCP_PROXY_OPTIONS_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7235" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -3430,7 +3404,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Set proxy port. Defaults to 3128.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7244">QUARKUS_REDIS__REDIS_CLIENT_NAME__TCP_PROXY_OPTIONS_PORT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7244" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7236">QUARKUS_REDIS__REDIS_CLIENT_NAME__TCP_PROXY_OPTIONS_PORT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7236" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -3450,7 +3424,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Set proxy host.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7245">QUARKUS_REDIS__REDIS_CLIENT_NAME__TCP_PROXY_OPTIONS_HOST</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7245" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7237">QUARKUS_REDIS__REDIS_CLIENT_NAME__TCP_PROXY_OPTIONS_HOST</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7237" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -3470,7 +3444,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Set proxy type. Accepted values are: <code>HTTP</code> (default), <code>SOCKS4</code> and <code>SOCKS5</code>.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7246">QUARKUS_REDIS__REDIS_CLIENT_NAME__TCP_PROXY_OPTIONS_TYPE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7246" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7238">QUARKUS_REDIS__REDIS_CLIENT_NAME__TCP_PROXY_OPTIONS_TYPE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7238" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -3492,7 +3466,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Set the read idle timeout.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7247">QUARKUS_REDIS__REDIS_CLIENT_NAME__TCP_READ_IDLE_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7247" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7239">QUARKUS_REDIS__REDIS_CLIENT_NAME__TCP_READ_IDLE_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7239" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -3513,7 +3487,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Set the TCP receive buffer size.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7248">QUARKUS_REDIS__REDIS_CLIENT_NAME__TCP_RECEIVE_BUFFER_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7248" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7240">QUARKUS_REDIS__REDIS_CLIENT_NAME__TCP_RECEIVE_BUFFER_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7240" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -3533,7 +3507,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Set the value of reconnect attempts.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7249">QUARKUS_REDIS__REDIS_CLIENT_NAME__TCP_RECONNECT_ATTEMPTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7249" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7241">QUARKUS_REDIS__REDIS_CLIENT_NAME__TCP_RECONNECT_ATTEMPTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7241" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -3553,7 +3527,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Set the reconnect interval.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7250">QUARKUS_REDIS__REDIS_CLIENT_NAME__TCP_RECONNECT_INTERVAL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7250" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7242">QUARKUS_REDIS__REDIS_CLIENT_NAME__TCP_RECONNECT_INTERVAL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7242" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -3574,7 +3548,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Whether to reuse the address.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7251">QUARKUS_REDIS__REDIS_CLIENT_NAME__TCP_REUSE_ADDRESS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7251" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7243">QUARKUS_REDIS__REDIS_CLIENT_NAME__TCP_REUSE_ADDRESS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7243" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -3594,7 +3568,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Whether to reuse the port.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7252">QUARKUS_REDIS__REDIS_CLIENT_NAME__TCP_REUSE_PORT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7252" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7244">QUARKUS_REDIS__REDIS_CLIENT_NAME__TCP_REUSE_PORT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7244" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -3614,7 +3588,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Set the TCP send buffer size.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7253">QUARKUS_REDIS__REDIS_CLIENT_NAME__TCP_SEND_BUFFER_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7253" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7245">QUARKUS_REDIS__REDIS_CLIENT_NAME__TCP_SEND_BUFFER_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7245" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -3634,7 +3608,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Set the <code>SO_linger</code> keep alive duration.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7254">QUARKUS_REDIS__REDIS_CLIENT_NAME__TCP_SO_LINGER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7254" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7246">QUARKUS_REDIS__REDIS_CLIENT_NAME__TCP_SO_LINGER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7246" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -3655,7 +3629,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Enable the <code>TCP_CORK</code> option - only with linux native transport.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7255">QUARKUS_REDIS__REDIS_CLIENT_NAME__TCP_CORK</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7255" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7247">QUARKUS_REDIS__REDIS_CLIENT_NAME__TCP_CORK</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7247" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -3675,7 +3649,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Enable the <code>TCP_FASTOPEN</code> option - only with linux native transport.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7256">QUARKUS_REDIS__REDIS_CLIENT_NAME__TCP_FAST_OPEN</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7256" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7248">QUARKUS_REDIS__REDIS_CLIENT_NAME__TCP_FAST_OPEN</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7248" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -3695,7 +3669,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Set whether keep alive is enabled</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7257">QUARKUS_REDIS__REDIS_CLIENT_NAME__TCP_KEEP_ALIVE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7257" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7249">QUARKUS_REDIS__REDIS_CLIENT_NAME__TCP_KEEP_ALIVE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7249" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -3715,7 +3689,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Set whether no delay is enabled</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7258">QUARKUS_REDIS__REDIS_CLIENT_NAME__TCP_NO_DELAY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7258" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7250">QUARKUS_REDIS__REDIS_CLIENT_NAME__TCP_NO_DELAY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7250" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -3735,7 +3709,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Enable the <code>TCP_QUICKACK</code> option - only with linux native transport.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7259">QUARKUS_REDIS__REDIS_CLIENT_NAME__TCP_QUICK_ACK</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7259" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7251">QUARKUS_REDIS__REDIS_CLIENT_NAME__TCP_QUICK_ACK</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7251" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -3755,7 +3729,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Set the value of traffic class.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7260">QUARKUS_REDIS__REDIS_CLIENT_NAME__TCP_TRAFFIC_CLASS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7260" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7252">QUARKUS_REDIS__REDIS_CLIENT_NAME__TCP_TRAFFIC_CLASS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7252" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -3775,7 +3749,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Set the write idle timeout.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7261">QUARKUS_REDIS__REDIS_CLIENT_NAME__TCP_WRITE_IDLE_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7261" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7253">QUARKUS_REDIS__REDIS_CLIENT_NAME__TCP_WRITE_IDLE_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7253" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -3796,7 +3770,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Set the local interface to bind for network connections. When the local address is null, it will pick any local address, the default local address is null.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7262">QUARKUS_REDIS__REDIS_CLIENT_NAME__TCP_LOCAL_ADDRESS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7262" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7254">QUARKUS_REDIS__REDIS_CLIENT_NAME__TCP_LOCAL_ADDRESS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7254" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -3821,7 +3795,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Whether SSL/TLS is enabled.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7263">QUARKUS_REDIS_TLS_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7263" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7255">QUARKUS_REDIS_TLS_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7255" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -3841,7 +3815,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Enable trusting all certificates. Disabled by default.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7264">QUARKUS_REDIS_TLS_TRUST_ALL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7264" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7256">QUARKUS_REDIS_TLS_TRUST_ALL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7256" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -3861,7 +3835,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>PEM Trust config is disabled by default.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7265">QUARKUS_REDIS_TLS_TRUST_CERTIFICATE_PEM</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7265" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7257">QUARKUS_REDIS_TLS_TRUST_CERTIFICATE_PEM</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7257" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -3881,7 +3855,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Comma-separated list of the trust certificate files (Pem format).</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7266">QUARKUS_REDIS_TLS_TRUST_CERTIFICATE_PEM_CERTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7266" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7258">QUARKUS_REDIS_TLS_TRUST_CERTIFICATE_PEM_CERTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7258" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -3901,7 +3875,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>JKS config is disabled by default.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7267">QUARKUS_REDIS_TLS_TRUST_CERTIFICATE_JKS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7267" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7259">QUARKUS_REDIS_TLS_TRUST_CERTIFICATE_JKS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7259" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -3921,7 +3895,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Path of the key file (JKS format).</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7268">QUARKUS_REDIS_TLS_TRUST_CERTIFICATE_JKS_PATH</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7268" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7260">QUARKUS_REDIS_TLS_TRUST_CERTIFICATE_JKS_PATH</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7260" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -3941,7 +3915,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Password of the key file.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7269">QUARKUS_REDIS_TLS_TRUST_CERTIFICATE_JKS_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7269" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7261">QUARKUS_REDIS_TLS_TRUST_CERTIFICATE_JKS_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7261" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -3961,7 +3935,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>PFX config is disabled by default.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7270">QUARKUS_REDIS_TLS_TRUST_CERTIFICATE_PFX</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7270" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7262">QUARKUS_REDIS_TLS_TRUST_CERTIFICATE_PFX</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7262" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -3981,7 +3955,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Path to the key file (PFX format).</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7271">QUARKUS_REDIS_TLS_TRUST_CERTIFICATE_PFX_PATH</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7271" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7263">QUARKUS_REDIS_TLS_TRUST_CERTIFICATE_PFX_PATH</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7263" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -4001,7 +3975,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Password of the key.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7272">QUARKUS_REDIS_TLS_TRUST_CERTIFICATE_PFX_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7272" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7264">QUARKUS_REDIS_TLS_TRUST_CERTIFICATE_PFX_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7264" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -4021,7 +3995,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>PEM Key/cert config is disabled by default.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7273">QUARKUS_REDIS_TLS_KEY_CERTIFICATE_PEM</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7273" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7265">QUARKUS_REDIS_TLS_KEY_CERTIFICATE_PEM</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7265" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -4041,7 +4015,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Comma-separated list of the path to the key files (Pem format).</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7274">QUARKUS_REDIS_TLS_KEY_CERTIFICATE_PEM_KEYS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7274" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7266">QUARKUS_REDIS_TLS_KEY_CERTIFICATE_PEM_KEYS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7266" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -4061,7 +4035,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Comma-separated list of the path to the certificate files (Pem format).</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7275">QUARKUS_REDIS_TLS_KEY_CERTIFICATE_PEM_CERTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7275" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7267">QUARKUS_REDIS_TLS_KEY_CERTIFICATE_PEM_CERTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7267" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -4081,7 +4055,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>JKS config is disabled by default.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7276">QUARKUS_REDIS_TLS_KEY_CERTIFICATE_JKS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7276" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7268">QUARKUS_REDIS_TLS_KEY_CERTIFICATE_JKS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7268" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -4101,7 +4075,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Path of the key file (JKS format).</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7277">QUARKUS_REDIS_TLS_KEY_CERTIFICATE_JKS_PATH</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7277" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7269">QUARKUS_REDIS_TLS_KEY_CERTIFICATE_JKS_PATH</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7269" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -4121,7 +4095,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Password of the key file.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7278">QUARKUS_REDIS_TLS_KEY_CERTIFICATE_JKS_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7278" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7270">QUARKUS_REDIS_TLS_KEY_CERTIFICATE_JKS_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7270" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -4141,7 +4115,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>PFX config is disabled by default.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7279">QUARKUS_REDIS_TLS_KEY_CERTIFICATE_PFX</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7279" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7271">QUARKUS_REDIS_TLS_KEY_CERTIFICATE_PFX</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7271" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -4161,7 +4135,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Path to the key file (PFX format).</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7280">QUARKUS_REDIS_TLS_KEY_CERTIFICATE_PFX_PATH</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7280" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7272">QUARKUS_REDIS_TLS_KEY_CERTIFICATE_PFX_PATH</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7272" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -4181,7 +4155,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Password of the key.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7281">QUARKUS_REDIS_TLS_KEY_CERTIFICATE_PFX_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7281" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7273">QUARKUS_REDIS_TLS_KEY_CERTIFICATE_PFX_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7273" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -4201,7 +4175,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>The hostname verification algorithm to use in case the server&#8217;s identity should be checked. Should be HTTPS, LDAPS or an empty string.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7282">QUARKUS_REDIS_TLS_HOSTNAME_VERIFICATION_ALGORITHM</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7282" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7274">QUARKUS_REDIS_TLS_HOSTNAME_VERIFICATION_ALGORITHM</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7274" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -4221,7 +4195,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Whether SSL/TLS is enabled.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7283">QUARKUS_REDIS__REDIS_CLIENT_NAME__TLS_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7283" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7275">QUARKUS_REDIS__REDIS_CLIENT_NAME__TLS_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7275" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -4241,7 +4215,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Enable trusting all certificates. Disabled by default.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7284">QUARKUS_REDIS__REDIS_CLIENT_NAME__TLS_TRUST_ALL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7284" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7276">QUARKUS_REDIS__REDIS_CLIENT_NAME__TLS_TRUST_ALL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7276" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -4261,7 +4235,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>PEM Trust config is disabled by default.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7285">QUARKUS_REDIS__REDIS_CLIENT_NAME__TLS_TRUST_CERTIFICATE_PEM</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7285" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7277">QUARKUS_REDIS__REDIS_CLIENT_NAME__TLS_TRUST_CERTIFICATE_PEM</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7277" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -4281,7 +4255,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Comma-separated list of the trust certificate files (Pem format).</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7286">QUARKUS_REDIS__REDIS_CLIENT_NAME__TLS_TRUST_CERTIFICATE_PEM_CERTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7286" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7278">QUARKUS_REDIS__REDIS_CLIENT_NAME__TLS_TRUST_CERTIFICATE_PEM_CERTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7278" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -4301,7 +4275,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>JKS config is disabled by default.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7287">QUARKUS_REDIS__REDIS_CLIENT_NAME__TLS_TRUST_CERTIFICATE_JKS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7287" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7279">QUARKUS_REDIS__REDIS_CLIENT_NAME__TLS_TRUST_CERTIFICATE_JKS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7279" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -4321,7 +4295,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Path of the key file (JKS format).</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7288">QUARKUS_REDIS__REDIS_CLIENT_NAME__TLS_TRUST_CERTIFICATE_JKS_PATH</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7288" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7280">QUARKUS_REDIS__REDIS_CLIENT_NAME__TLS_TRUST_CERTIFICATE_JKS_PATH</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7280" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -4341,7 +4315,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Password of the key file.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7289">QUARKUS_REDIS__REDIS_CLIENT_NAME__TLS_TRUST_CERTIFICATE_JKS_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7289" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7281">QUARKUS_REDIS__REDIS_CLIENT_NAME__TLS_TRUST_CERTIFICATE_JKS_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7281" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -4361,7 +4335,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>PFX config is disabled by default.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7290">QUARKUS_REDIS__REDIS_CLIENT_NAME__TLS_TRUST_CERTIFICATE_PFX</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7290" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7282">QUARKUS_REDIS__REDIS_CLIENT_NAME__TLS_TRUST_CERTIFICATE_PFX</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7282" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -4381,7 +4355,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Path to the key file (PFX format).</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7291">QUARKUS_REDIS__REDIS_CLIENT_NAME__TLS_TRUST_CERTIFICATE_PFX_PATH</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7291" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7283">QUARKUS_REDIS__REDIS_CLIENT_NAME__TLS_TRUST_CERTIFICATE_PFX_PATH</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7283" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -4401,7 +4375,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Password of the key.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7292">QUARKUS_REDIS__REDIS_CLIENT_NAME__TLS_TRUST_CERTIFICATE_PFX_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7292" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7284">QUARKUS_REDIS__REDIS_CLIENT_NAME__TLS_TRUST_CERTIFICATE_PFX_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7284" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -4421,7 +4395,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>PEM Key/cert config is disabled by default.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7293">QUARKUS_REDIS__REDIS_CLIENT_NAME__TLS_KEY_CERTIFICATE_PEM</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7293" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7285">QUARKUS_REDIS__REDIS_CLIENT_NAME__TLS_KEY_CERTIFICATE_PEM</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7285" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -4441,7 +4415,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Comma-separated list of the path to the key files (Pem format).</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7294">QUARKUS_REDIS__REDIS_CLIENT_NAME__TLS_KEY_CERTIFICATE_PEM_KEYS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7294" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7286">QUARKUS_REDIS__REDIS_CLIENT_NAME__TLS_KEY_CERTIFICATE_PEM_KEYS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7286" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -4461,7 +4435,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Comma-separated list of the path to the certificate files (Pem format).</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7295">QUARKUS_REDIS__REDIS_CLIENT_NAME__TLS_KEY_CERTIFICATE_PEM_CERTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7295" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7287">QUARKUS_REDIS__REDIS_CLIENT_NAME__TLS_KEY_CERTIFICATE_PEM_CERTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7287" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -4481,7 +4455,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>JKS config is disabled by default.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7296">QUARKUS_REDIS__REDIS_CLIENT_NAME__TLS_KEY_CERTIFICATE_JKS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7296" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7288">QUARKUS_REDIS__REDIS_CLIENT_NAME__TLS_KEY_CERTIFICATE_JKS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7288" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -4501,7 +4475,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Path of the key file (JKS format).</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7297">QUARKUS_REDIS__REDIS_CLIENT_NAME__TLS_KEY_CERTIFICATE_JKS_PATH</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7297" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7289">QUARKUS_REDIS__REDIS_CLIENT_NAME__TLS_KEY_CERTIFICATE_JKS_PATH</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7289" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -4521,7 +4495,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Password of the key file.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7298">QUARKUS_REDIS__REDIS_CLIENT_NAME__TLS_KEY_CERTIFICATE_JKS_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7298" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7290">QUARKUS_REDIS__REDIS_CLIENT_NAME__TLS_KEY_CERTIFICATE_JKS_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7290" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -4541,7 +4515,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>PFX config is disabled by default.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7299">QUARKUS_REDIS__REDIS_CLIENT_NAME__TLS_KEY_CERTIFICATE_PFX</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7299" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7291">QUARKUS_REDIS__REDIS_CLIENT_NAME__TLS_KEY_CERTIFICATE_PFX</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7291" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -4561,7 +4535,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Path to the key file (PFX format).</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7300">QUARKUS_REDIS__REDIS_CLIENT_NAME__TLS_KEY_CERTIFICATE_PFX_PATH</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7300" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7292">QUARKUS_REDIS__REDIS_CLIENT_NAME__TLS_KEY_CERTIFICATE_PFX_PATH</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7292" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -4581,7 +4555,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>Password of the key.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7301">QUARKUS_REDIS__REDIS_CLIENT_NAME__TLS_KEY_CERTIFICATE_PFX_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7301" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7293">QUARKUS_REDIS__REDIS_CLIENT_NAME__TLS_KEY_CERTIFICATE_PFX_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7293" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -4601,7 +4575,7 @@ redis_pool_queue_delay_seconds_max{pool_name="&lt;default&gt;",pool_type="redis"
 <p>The hostname verification algorithm to use in case the server&#8217;s identity should be checked. Should be HTTPS, LDAPS or an empty string.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-7302">QUARKUS_REDIS__REDIS_CLIENT_NAME__TLS_HOSTNAME_VERIFICATION_ALGORITHM</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7302" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7294">QUARKUS_REDIS__REDIS_CLIENT_NAME__TLS_HOSTNAME_VERIFICATION_ALGORITHM</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7294" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -4792,21 +4766,17 @@ See the <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
         <span>Braineous is made of community projects</span>
         <ul class="footer-links">
           
-            <li><a blah href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
+            <li><a blah href="https://quarkus.io/" target="_blank">Quarkus</a></li>
           
-            <li><a blah href="https://smallrye.io" target="_blank">SmallRye</a></li>
+            <li><a blah href="https://kafka.apache.org/" target="_blank">Apache Kafka</a></li>
           
-            <li><a blah href="https://hibernate.org" target="_blank">Hibernate</a></li>
+            <li><a blah href="https://flink.apache.org/" target="_blank">Apache Flink</a></li>
           
-            <li><a blah href="https://netty.io" target="_blank">Netty</a></li>
+            <li><a blah href="https://github.com/google/gson" target="_blank">Gson</a></li>
           
-            <li><a blah href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
+            <li><a blah href="https://www.mongodb.com/" target="_blank">MongoDB</a></li>
           
-            <li><a blah href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
-          
-            <li><a blah href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
-          
-            <li><a blah href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
+            <li><a blah href="https://github.com/bugsbunnyshah/braineous_dataplatform/blob/main/pom.xml" target="_blank">And many more...</a></li>
           
         </ul>
       </div>
