@@ -17,13 +17,13 @@
   <META HTTP-EQUIV='X-Content-Type-Options' CONTENT="nosniff">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Braineous: Supersonic Subatomic Java">
+  <meta name="description" content="Braineous Data Platform">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@QuarkusIO"> 
   <meta name="twitter:creator" content="@QuarkusIO">
   <meta property="og:url" content="http://localhost:4000/version/3.2/guides/infinispan-client-reference" />
   <meta property="og:title" content="Infinispan Client Extension Reference Guide - 3.2" />
-  <meta property="og:description" content="Braineous: Supersonic Subatomic Java" />
+  <meta property="og:description" content="Braineous Data Platform" />
   <meta property="og:image" content="http://localhost:4000/assets/images/quarkus_card.png" />
   
   <link rel="canonical" href="http://localhost:4000/guides/infinispan-client-reference">
@@ -31,7 +31,7 @@
   <link rel="stylesheet" href="/guides/stylesheet/config.css" />
   <link rel="stylesheet" href="/braineous/assets/css/main.css?2021-07-29" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-  <link rel="alternate" type="application/rss+xml"  href="/feed.xml" title="Braineous">
+  <link rel="alternate" type="application/rss+xml"  href="/feed.xml" title="Braineous Data Platform">
   <script src="/assets/javascript/hl.js" type="text/javascript"></script>
   
   
@@ -106,36 +106,13 @@
 <section class="full-width-version-bg flexfilterbar guides">
   <div class="guideflexcontainer">
     <div class="docslink">
-      <a class="returnlink" href="/braineous/version/3.2/guides/"> Back to Guides</a>
+      <a class="returnlink" href="/braineous/get-started">Back</a>
     </div>
+    <!--
     <div class="flexlabel">
       <label>By Version</label>
     </div>
-    <div class="guidepulldown version">
-    <select id="guide-version-dropdown">
-      
-        
-        
-        <option value="main" >Main - SNAPSHOT</option>
-        
-        
-        
-        <option value="latest" >3.5.0 - Latest</option>
-        
-        
-        
-        <option value="3.2" selected>3.2</option>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        </select>
-    </div>
+    -->
   </div>
 </section>
 
@@ -1404,7 +1381,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Sets the marshallerClass. Default is ProtoStreamMarshaller</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28497">QUARKUS_INFINISPAN_CLIENT_MARSHALLER_CLASS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28497" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28489">QUARKUS_INFINISPAN_CLIENT_MARSHALLER_CLASS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28489" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1427,7 +1404,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>When DevServices is enabled Quarkus will attempt to automatically configure and start a database when running in Dev or Test mode and when Docker is running.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28498">QUARKUS_INFINISPAN_CLIENT_DEVSERVICES_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28498" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28490">QUARKUS_INFINISPAN_CLIENT_DEVSERVICES_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28490" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1450,7 +1427,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>If not defined, the port will be chosen randomly.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28499">QUARKUS_INFINISPAN_CLIENT_DEVSERVICES_PORT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28499" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28491">QUARKUS_INFINISPAN_CLIENT_DEVSERVICES_PORT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28491" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1476,7 +1453,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Container sharing is only used in dev mode.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28500">QUARKUS_INFINISPAN_CLIENT_DEVSERVICES_SHARED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28500" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28492">QUARKUS_INFINISPAN_CLIENT_DEVSERVICES_SHARED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28492" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1499,7 +1476,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>This property is used when you need multiple shared Infinispan servers.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28501">QUARKUS_INFINISPAN_CLIENT_DEVSERVICES_SERVICE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28501" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28493">QUARKUS_INFINISPAN_CLIENT_DEVSERVICES_SERVICE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28493" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1519,7 +1496,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>The image to use. Note that only official Infinispan images are supported.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28502">QUARKUS_INFINISPAN_CLIENT_DEVSERVICES_IMAGE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28502" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28494">QUARKUS_INFINISPAN_CLIENT_DEVSERVICES_IMAGE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28494" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1545,7 +1522,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>If an invalid value is passed, the Infinispan server will throw an error when trying to start.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28503">QUARKUS_INFINISPAN_CLIENT_DEVSERVICES_ARTIFACTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28503" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28495">QUARKUS_INFINISPAN_CLIENT_DEVSERVICES_ARTIFACTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28495" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1565,7 +1542,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Add a site name to start the Infinispan Server Container with Cross Site Replication enabled (ex. lon). Cross Site Replication is the capability to connect two separate Infinispan Server Clusters that might run in different Data Centers, and configure backup caches to copy the data across the clusters with active-active or active-passive replication. See more about Cross Site Replication in the Infinispan Documentation <a href="https://infinispan.org/docs/stable/titles/xsite/xsite.html" class="bare">https://infinispan.org/docs/stable/titles/xsite/xsite.html</a> Configure <code>mcast-port</code> to avoid forming a cluster with any other running Infinispan Server container.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28504">QUARKUS_INFINISPAN_CLIENT_DEVSERVICES_SITE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28504" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28496">QUARKUS_INFINISPAN_CLIENT_DEVSERVICES_SITE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28496" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1585,7 +1562,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>If you are running an Infinispan Server already in docker, if the containers use the same mcastPort they will form a cluster. Set a different mcastPort to create a separate cluster in Docker (e. 46656). A common use case in a local Docker development mode, is the need of having two different Infinispan Clusters with Cross Site Replication enabled. see <a href="https://github.com/infinispan/infinispan-simple-tutorials/blob/main/infinispan-remote/cross-site-replication/docker-compose/" class="bare">https://github.com/infinispan/infinispan-simple-tutorials/blob/main/infinispan-remote/cross-site-replication/docker-compose/</a></p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28505">QUARKUS_INFINISPAN_CLIENT_DEVSERVICES_MCAST_PORT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28505" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28497">QUARKUS_INFINISPAN_CLIENT_DEVSERVICES_MCAST_PORT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28497" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1605,7 +1582,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Runs the Infinispan Server container with tracing enabled. Traces are disabled by default</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28506">QUARKUS_INFINISPAN_CLIENT_DEVSERVICES_TRACING_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28506" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28498">QUARKUS_INFINISPAN_CLIENT_DEVSERVICES_TRACING_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28498" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1625,7 +1602,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Sets Infinispan Server otlp endpoint. Default value is <a href="http://localhost:4317" class="bare">http://localhost:4317</a></p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28507">QUARKUS_INFINISPAN_CLIENT_DEVSERVICES_TRACING_EXPORTER_OTLP_ENDPOINT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28507" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28499">QUARKUS_INFINISPAN_CLIENT_DEVSERVICES_TRACING_EXPORTER_OTLP_ENDPOINT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28499" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1648,7 +1625,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>This is a global setting and is not specific to an Infinispan Client.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28508">QUARKUS_INFINISPAN_CLIENT_HEALTH_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28508" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28500">QUARKUS_INFINISPAN_CLIENT_HEALTH_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28500" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1668,7 +1645,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Sets the URI of the running Infinispan server to connect to. hotrod://localhost:11222@admin:password If provided <code>hosts</code>, <code>username</code> and <code>password</code> will be ignored.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28509">QUARKUS_INFINISPAN_CLIENT_URI</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28509" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28501">QUARKUS_INFINISPAN_CLIENT_URI</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28501" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1688,7 +1665,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Sets the host name/port to connect to. Each one is separated by a semicolon (eg. host1:11222;host2:11222).</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28510">QUARKUS_INFINISPAN_CLIENT_HOSTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28510" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28502">QUARKUS_INFINISPAN_CLIENT_HOSTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28502" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1708,7 +1685,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Sets client intelligence used by authentication Available values: * <code>BASIC</code> - Means that the client doesn&#8217;t handle server topology changes and therefore will only use the list of servers supplied at configuration time. * <code>TOPOLOGY_AWARE</code> - Use this provider if you don&#8217;t want the client to present any certificates to the remote TLS host. * <code>HASH_DISTRIBUTION_AWARE</code> - Like <code>TOPOLOGY_AWARE</code> but with the additional advantage that each request involving keys will be routed to the server who is the primary owner which improves performance greatly. This is the default.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28511">QUARKUS_INFINISPAN_CLIENT_CLIENT_INTELLIGENCE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28511" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28503">QUARKUS_INFINISPAN_CLIENT_CLIENT_INTELLIGENCE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28503" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1728,7 +1705,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Enables or disables authentication. Set it to false when connecting to an Infinispan Server without authentication. deployments. Default is 'true'.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28512">QUARKUS_INFINISPAN_CLIENT_USE_AUTH</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28512" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28504">QUARKUS_INFINISPAN_CLIENT_USE_AUTH</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28504" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1748,7 +1725,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Sets username used by authentication.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28513">QUARKUS_INFINISPAN_CLIENT_USERNAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28513" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28505">QUARKUS_INFINISPAN_CLIENT_USERNAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28505" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1768,7 +1745,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Sets password used by authentication.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28514">QUARKUS_INFINISPAN_CLIENT_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28514" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28506">QUARKUS_INFINISPAN_CLIENT_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28506" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1788,7 +1765,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Sets realm used by authentication</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28515">QUARKUS_INFINISPAN_CLIENT_AUTH_REALM</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28515" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28507">QUARKUS_INFINISPAN_CLIENT_AUTH_REALM</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28507" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1808,7 +1785,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Sets server name used by authentication</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28516">QUARKUS_INFINISPAN_CLIENT_AUTH_SERVER_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28516" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28508">QUARKUS_INFINISPAN_CLIENT_AUTH_SERVER_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28508" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1828,7 +1805,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Sets SASL mechanism used by authentication. Available values: * <code>DIGEST-MD5</code> - Uses the MD5 hashing algorithm in addition to nonces to encrypt credentials. This is the default. * <code>EXTERNAL</code> - Uses client certificates to provide valid identities to Infinispan Server and enable encryption. * <code>PLAIN</code> - Sends credentials in plain text (unencrypted) over the wire in a way that is similar to HTTP BASIC authentication. You should use <code>PLAIN</code> authentication only in combination with TLS encryption.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28517">QUARKUS_INFINISPAN_CLIENT_SASL_MECHANISM</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28517" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28509">QUARKUS_INFINISPAN_CLIENT_SASL_MECHANISM</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28509" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1848,7 +1825,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Specifies the filename of a truststore to use to create the <code>SSLContext</code>. You also need to specify a trustStorePassword. Setting this property implicitly enables SSL/TLS.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28518">QUARKUS_INFINISPAN_CLIENT_TRUST_STORE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28518" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28510">QUARKUS_INFINISPAN_CLIENT_TRUST_STORE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28510" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1868,7 +1845,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Specifies the password needed to open the truststore You also need to specify a trustStore. Setting this property implicitly enables SSL/TLS.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28519">QUARKUS_INFINISPAN_CLIENT_TRUST_STORE_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28519" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28511">QUARKUS_INFINISPAN_CLIENT_TRUST_STORE_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28511" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1888,7 +1865,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Specifies the type of the truststore, such as JKS or JCEKS. Defaults to JKS if trustStore is enabled.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28520">QUARKUS_INFINISPAN_CLIENT_TRUST_STORE_TYPE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28520" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28512">QUARKUS_INFINISPAN_CLIENT_TRUST_STORE_TYPE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28512" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1908,7 +1885,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Configures the secure socket protocol. Setting this property implicitly enables SSL/TLS.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28521">QUARKUS_INFINISPAN_CLIENT_SSL_PROTOCOL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28521" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28513">QUARKUS_INFINISPAN_CLIENT_SSL_PROTOCOL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28513" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1928,7 +1905,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Sets the ssl provider. For example BCFIPS Setting this implicitly enables SSL/TLS.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28522">QUARKUS_INFINISPAN_CLIENT_SSL_PROVIDER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28522" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28514">QUARKUS_INFINISPAN_CLIENT_SSL_PROVIDER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28514" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1948,7 +1925,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Configures the ciphers. Setting this property implicitly enables SSL/TLS.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28523">QUARKUS_INFINISPAN_CLIENT_SSL_CIPHERS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28523" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28515">QUARKUS_INFINISPAN_CLIENT_SSL_CIPHERS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28515" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1968,7 +1945,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Whether a tracing propagation is enabled in case the Opentelemetry extension is present. By default the propagation of the context is propagated from the client to the Infinispan Server.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28524">QUARKUS_INFINISPAN_CLIENT_TRACING_PROPAGATION_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28524" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28516">QUARKUS_INFINISPAN_CLIENT_TRACING_PROPAGATION_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28516" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1988,7 +1965,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Enables or disables Protobuf generated schemas upload to the server. Set it to 'false' when you need to handle the lifecycle of the Protobuf Schemas on Server side yourself. Default is 'true'. This is a global setting and is not specific to a Infinispan Client.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28525">QUARKUS_INFINISPAN_CLIENT_USE_SCHEMA_REGISTRATION</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28525" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28517">QUARKUS_INFINISPAN_CLIENT_USE_SCHEMA_REGISTRATION</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28517" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2008,7 +1985,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Cache configuration file in XML, JSON or YAML is defined in build time to create the cache on first access. An example of the user defined property. cacheConfig.xml file is located in the 'resources' folder: quarkus.infinispan-client.cache.bookscache.configuration-resource=cacheConfig.xml</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28526">QUARKUS_INFINISPAN_CLIENT_CACHE__CACHE__CONFIGURATION_RESOURCE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28526" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28518">QUARKUS_INFINISPAN_CLIENT_CACHE__CACHE__CONFIGURATION_RESOURCE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28518" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2028,7 +2005,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Environment variables that are passed to the container.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28527">QUARKUS_INFINISPAN_CLIENT_DEVSERVICES_CONTAINER_ENV</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28527" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28519">QUARKUS_INFINISPAN_CLIENT_DEVSERVICES_CONTAINER_ENV</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28519" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2048,7 +2025,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Sets the marshallerClass. Default is ProtoStreamMarshaller</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28528">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__MARSHALLER_CLASS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28528" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28520">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__MARSHALLER_CLASS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28520" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2068,7 +2045,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Cache configuration file in XML, JSON or YAML is defined in build time to create the cache on first access. An example of the user defined property. cacheConfig.xml file is located in the 'resources' folder: quarkus.infinispan-client.cache.bookscache.configuration-resource=cacheConfig.xml</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28529">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__CACHE__CACHE__CONFIGURATION_RESOURCE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28529" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28521">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__CACHE__CACHE__CONFIGURATION_RESOURCE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28521" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2091,7 +2068,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>When DevServices is enabled Quarkus will attempt to automatically configure and start a database when running in Dev or Test mode and when Docker is running.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28530">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__DEVSERVICES_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28530" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28522">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__DEVSERVICES_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28522" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2114,7 +2091,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>If not defined, the port will be chosen randomly.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28531">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__DEVSERVICES_PORT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28531" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28523">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__DEVSERVICES_PORT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28523" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2140,7 +2117,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Container sharing is only used in dev mode.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28532">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__DEVSERVICES_SHARED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28532" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28524">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__DEVSERVICES_SHARED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28524" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2163,7 +2140,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>This property is used when you need multiple shared Infinispan servers.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28533">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__DEVSERVICES_SERVICE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28533" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28525">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__DEVSERVICES_SERVICE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28525" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2183,7 +2160,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>The image to use. Note that only official Infinispan images are supported.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28534">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__DEVSERVICES_IMAGE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28534" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28526">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__DEVSERVICES_IMAGE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28526" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2209,7 +2186,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>If an invalid value is passed, the Infinispan server will throw an error when trying to start.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28535">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__DEVSERVICES_ARTIFACTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28535" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28527">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__DEVSERVICES_ARTIFACTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28527" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2229,7 +2206,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Add a site name to start the Infinispan Server Container with Cross Site Replication enabled (ex. lon). Cross Site Replication is the capability to connect two separate Infinispan Server Clusters that might run in different Data Centers, and configure backup caches to copy the data across the clusters with active-active or active-passive replication. See more about Cross Site Replication in the Infinispan Documentation <a href="https://infinispan.org/docs/stable/titles/xsite/xsite.html" class="bare">https://infinispan.org/docs/stable/titles/xsite/xsite.html</a> Configure <code>mcast-port</code> to avoid forming a cluster with any other running Infinispan Server container.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28536">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__DEVSERVICES_SITE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28536" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28528">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__DEVSERVICES_SITE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28528" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2249,7 +2226,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>If you are running an Infinispan Server already in docker, if the containers use the same mcastPort they will form a cluster. Set a different mcastPort to create a separate cluster in Docker (e. 46656). A common use case in a local Docker development mode, is the need of having two different Infinispan Clusters with Cross Site Replication enabled. see <a href="https://github.com/infinispan/infinispan-simple-tutorials/blob/main/infinispan-remote/cross-site-replication/docker-compose/" class="bare">https://github.com/infinispan/infinispan-simple-tutorials/blob/main/infinispan-remote/cross-site-replication/docker-compose/</a></p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28537">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__DEVSERVICES_MCAST_PORT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28537" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28529">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__DEVSERVICES_MCAST_PORT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28529" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2269,7 +2246,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Runs the Infinispan Server container with tracing enabled. Traces are disabled by default</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28538">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__DEVSERVICES_TRACING_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28538" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28530">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__DEVSERVICES_TRACING_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28530" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2289,7 +2266,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Sets Infinispan Server otlp endpoint. Default value is <a href="http://localhost:4317" class="bare">http://localhost:4317</a></p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28539">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__DEVSERVICES_TRACING_EXPORTER_OTLP_ENDPOINT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28539" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28531">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__DEVSERVICES_TRACING_EXPORTER_OTLP_ENDPOINT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28531" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2309,7 +2286,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Environment variables that are passed to the container.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28540">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__DEVSERVICES_CONTAINER_ENV</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28540" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28532">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__DEVSERVICES_CONTAINER_ENV</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28532" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2329,7 +2306,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Cache configuration in inlined XML to create the cache on first access. Will be ignored if the configuration-uri is provided for the same cache name. An example of the user defined property: quarkus.infinispan-client.cache.bookscache.configuration=</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28541">QUARKUS_INFINISPAN_CLIENT_CACHE__CACHE__CONFIGURATION</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28541" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28533">QUARKUS_INFINISPAN_CLIENT_CACHE__CACHE__CONFIGURATION</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28533" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2349,7 +2326,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Cache configuration file in XML, Json or YAML whose path will be converted to URI to create the cache on first access. An example of the user defined property. cacheConfig.xml file is located in the 'resources' folder: quarkus.infinispan-client.cache.bookscache.configuration-uri=cacheConfig.xml</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28542">QUARKUS_INFINISPAN_CLIENT_CACHE__CACHE__CONFIGURATION_URI</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28542" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28534">QUARKUS_INFINISPAN_CLIENT_CACHE__CACHE__CONFIGURATION_URI</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28534" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2369,7 +2346,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>The maximum number of entries to keep locally for the specified cache.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28543">QUARKUS_INFINISPAN_CLIENT_CACHE__CACHE__NEAR_CACHE_MAX_ENTRIES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28543" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28535">QUARKUS_INFINISPAN_CLIENT_CACHE__CACHE__NEAR_CACHE_MAX_ENTRIES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28535" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2389,7 +2366,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Sets near cache mode used by the Infinispan Client Available values: * <code>DISABLED</code> - Means that near caching is disabled. This is the default value. * <code>INVALIDATED</code> - Means is near caching is invalidated, so when entries are updated or removed server-side, invalidation messages will be sent to clients to remove them from the near cache.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28544">QUARKUS_INFINISPAN_CLIENT_CACHE__CACHE__NEAR_CACHE_MODE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28544" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28536">QUARKUS_INFINISPAN_CLIENT_CACHE__CACHE__NEAR_CACHE_MODE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28536" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2411,7 +2388,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Enables bloom filter for near caching. Bloom filters optimize performance for write operations by reducing the total number of invalidation messages.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28545">QUARKUS_INFINISPAN_CLIENT_CACHE__CACHE__NEAR_CACHE_USE_BLOOM_FILTER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28545" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28537">QUARKUS_INFINISPAN_CLIENT_CACHE__CACHE__NEAR_CACHE_USE_BLOOM_FILTER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28537" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2431,7 +2408,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Sets the URI of the running Infinispan server to connect to. hotrod://localhost:11222@admin:password If provided <code>hosts</code>, <code>username</code> and <code>password</code> will be ignored.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28546">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__URI</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28546" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28538">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__URI</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28538" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2451,7 +2428,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Sets the host name/port to connect to. Each one is separated by a semicolon (eg. host1:11222;host2:11222).</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28547">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__HOSTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28547" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28539">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__HOSTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28539" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2471,7 +2448,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Sets client intelligence used by authentication Available values: * <code>BASIC</code> - Means that the client doesn&#8217;t handle server topology changes and therefore will only use the list of servers supplied at configuration time. * <code>TOPOLOGY_AWARE</code> - Use this provider if you don&#8217;t want the client to present any certificates to the remote TLS host. * <code>HASH_DISTRIBUTION_AWARE</code> - Like <code>TOPOLOGY_AWARE</code> but with the additional advantage that each request involving keys will be routed to the server who is the primary owner which improves performance greatly. This is the default.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28548">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__CLIENT_INTELLIGENCE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28548" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28540">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__CLIENT_INTELLIGENCE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28540" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2491,7 +2468,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Enables or disables authentication. Set it to false when connecting to an Infinispan Server without authentication. deployments. Default is 'true'.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28549">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__USE_AUTH</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28549" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28541">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__USE_AUTH</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28541" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2511,7 +2488,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Sets username used by authentication.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28550">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__USERNAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28550" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28542">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__USERNAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28542" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2531,7 +2508,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Sets password used by authentication.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28551">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28551" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28543">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28543" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2551,7 +2528,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Sets realm used by authentication</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28552">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__AUTH_REALM</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28552" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28544">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__AUTH_REALM</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28544" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2571,7 +2548,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Sets server name used by authentication</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28553">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__AUTH_SERVER_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28553" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28545">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__AUTH_SERVER_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28545" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2591,7 +2568,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Sets SASL mechanism used by authentication. Available values: * <code>DIGEST-MD5</code> - Uses the MD5 hashing algorithm in addition to nonces to encrypt credentials. This is the default. * <code>EXTERNAL</code> - Uses client certificates to provide valid identities to Infinispan Server and enable encryption. * <code>PLAIN</code> - Sends credentials in plain text (unencrypted) over the wire in a way that is similar to HTTP BASIC authentication. You should use <code>PLAIN</code> authentication only in combination with TLS encryption.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28554">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__SASL_MECHANISM</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28554" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28546">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__SASL_MECHANISM</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28546" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2611,7 +2588,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Specifies the filename of a truststore to use to create the <code>SSLContext</code>. You also need to specify a trustStorePassword. Setting this property implicitly enables SSL/TLS.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28555">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__TRUST_STORE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28555" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28547">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__TRUST_STORE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28547" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2631,7 +2608,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Specifies the password needed to open the truststore You also need to specify a trustStore. Setting this property implicitly enables SSL/TLS.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28556">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__TRUST_STORE_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28556" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28548">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__TRUST_STORE_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28548" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2651,7 +2628,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Specifies the type of the truststore, such as JKS or JCEKS. Defaults to JKS if trustStore is enabled.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28557">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__TRUST_STORE_TYPE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28557" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28549">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__TRUST_STORE_TYPE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28549" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2671,7 +2648,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Configures the secure socket protocol. Setting this property implicitly enables SSL/TLS.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28558">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__SSL_PROTOCOL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28558" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28550">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__SSL_PROTOCOL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28550" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2691,7 +2668,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Sets the ssl provider. For example BCFIPS Setting this implicitly enables SSL/TLS.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28559">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__SSL_PROVIDER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28559" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28551">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__SSL_PROVIDER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28551" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2711,7 +2688,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Configures the ciphers. Setting this property implicitly enables SSL/TLS.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28560">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__SSL_CIPHERS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28560" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28552">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__SSL_CIPHERS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28552" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2731,7 +2708,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Whether a tracing propagation is enabled in case the Opentelemetry extension is present. By default the propagation of the context is propagated from the client to the Infinispan Server.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28561">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__TRACING_PROPAGATION_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28561" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28553">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__TRACING_PROPAGATION_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28553" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2751,7 +2728,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Cache configuration in inlined XML to create the cache on first access. Will be ignored if the configuration-uri is provided for the same cache name. An example of the user defined property: quarkus.infinispan-client.cache.bookscache.configuration=</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28562">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__CACHE__CACHE__CONFIGURATION</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28562" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28554">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__CACHE__CACHE__CONFIGURATION</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28554" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2771,7 +2748,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Cache configuration file in XML, Json or YAML whose path will be converted to URI to create the cache on first access. An example of the user defined property. cacheConfig.xml file is located in the 'resources' folder: quarkus.infinispan-client.cache.bookscache.configuration-uri=cacheConfig.xml</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28563">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__CACHE__CACHE__CONFIGURATION_URI</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28563" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28555">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__CACHE__CACHE__CONFIGURATION_URI</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28555" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2791,7 +2768,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>The maximum number of entries to keep locally for the specified cache.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28564">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__CACHE__CACHE__NEAR_CACHE_MAX_ENTRIES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28564" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28556">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__CACHE__CACHE__NEAR_CACHE_MAX_ENTRIES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28556" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2811,7 +2788,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Sets near cache mode used by the Infinispan Client Available values: * <code>DISABLED</code> - Means that near caching is disabled. This is the default value. * <code>INVALIDATED</code> - Means is near caching is invalidated, so when entries are updated or removed server-side, invalidation messages will be sent to clients to remove them from the near cache.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28565">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__CACHE__CACHE__NEAR_CACHE_MODE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28565" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28557">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__CACHE__CACHE__NEAR_CACHE_MODE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28557" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2833,7 +2810,7 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
 <p>Enables bloom filter for near caching. Bloom filters optimize performance for write operations by reducing the total number of invalidation messages.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-28566">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__CACHE__CACHE__NEAR_CACHE_USE_BLOOM_FILTER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28566" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28558">QUARKUS_INFINISPAN_CLIENT__NAMED_INFINISPAN_CLIENTS__CACHE__CACHE__NEAR_CACHE_USE_BLOOM_FILTER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28558" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2984,21 +2961,17 @@ You can set the port by configuring the <code>quarkus.infinispan-client.devservi
         <span>Braineous is made of community projects</span>
         <ul class="footer-links">
           
-            <li><a blah href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
+            <li><a blah href="https://quarkus.io/" target="_blank">Quarkus</a></li>
           
-            <li><a blah href="https://smallrye.io" target="_blank">SmallRye</a></li>
+            <li><a blah href="https://kafka.apache.org/" target="_blank">Apache Kafka</a></li>
           
-            <li><a blah href="https://hibernate.org" target="_blank">Hibernate</a></li>
+            <li><a blah href="https://flink.apache.org/" target="_blank">Apache Flink</a></li>
           
-            <li><a blah href="https://netty.io" target="_blank">Netty</a></li>
+            <li><a blah href="https://github.com/google/gson" target="_blank">Gson</a></li>
           
-            <li><a blah href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
+            <li><a blah href="https://www.mongodb.com/" target="_blank">MongoDB</a></li>
           
-            <li><a blah href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
-          
-            <li><a blah href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
-          
-            <li><a blah href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
+            <li><a blah href="https://github.com/bugsbunnyshah/braineous_dataplatform/blob/main/pom.xml" target="_blank">And many more...</a></li>
           
         </ul>
       </div>

@@ -12,6 +12,8 @@ include::_attributes.adoc[]
 :sectnumlevels: 4
 :topics: getting-started
 
+:url: https://github.com/bugsbunnyshah/braineous_dataplatform/raw/declarative_data_ingestion/releases/braineous-1.0.0-cr1/tutorials/braineous-tutorials.zip
+
 Learn how to create a Braineous Data Ingestion application.
 
 This guide covers:
@@ -36,11 +38,7 @@ You can verify which JDK Maven uses by running `mvn --version`.
 
 == Get the Source Data
 
-We recommend that you follow the instructions to create the application step by step.
-
-However, you can go right to the completed example.
-
-Download an {quickstarts-archive-url}[archive] or clone the git repository:
+Download the {url}[tutorial] :
 
 Let's start with a simple Json array to be used as datasource to be
 ingested by the Braineous Data Ingestion Engine
@@ -73,11 +71,27 @@ Source Data
 Java Code
 [source,bash,subs=attributes+]
 ----
-String datasetLocation = "tutorial/usecase/scenario1/scenario1Array.json";
-
-String json = Util.loadResource(datasetLocation);
-
-JsonElement datasetElement = JsonUtil.validateJson(json);
+//setup source data for ingestion
+String sourceData = "[\n" +
+        "  {\n" +
+        "    \"id\" : 1,\n" +
+        "    \"name\": \"Joe Black1\",\n" +
+        "    \"age\": 50,\n" +
+        "    \"addr\": {\n" +
+        "      \"email\": \"test@email.com\",\n" +
+        "      \"phone\": \"123456\"\n" +
+        "    }\n" +
+        "  },\n" +
+        "  {\n" +
+        "    \"id\": \"2\",\n" +
+        "    \"name\": \"Joe Black2\",\n" +
+        "    \"age\": 50,\n" +
+        "    \"addr\": {\n" +
+        "      \"email\": \"test@email.com\",\n" +
+        "      \"phone\": \"123456\"\n" +
+        "    }\n" +
+        "  }\n" +
+        "]";
 ----
 
 == Register a data pipe and send source data to multiple target MongoDB databases
@@ -127,27 +141,71 @@ In the next Candidate Release, Braineous team will add support for more target s
 Java Code - Register Pipe
 [source,bash,subs=attributes+]
 ----
-//get the configution file as String
-String configLocation = "tutorial/usecase/scenario1/scenario1_pipe_config.json";
+//setup data pipe configuration json
+String dataPipeConfiguration = "{\n" +
+        "  \"pipeId\": \"123\",\n" +
+        "  \"configuration\": [\n" +
+        "    {\n" +
+        "      \"storeDriver\" : \"com.appgallabs.dataplatform.receiver.core.driver.MongoDBStoreDriver\",\n" +
+        "      \"name\": \"get_started_store\",\n" +
+        "      \"config\": {\n" +
+        "        \"connectionString\": \"mongodb://localhost:27017\",\n" +
+        "        \"database\": \"get_started_store\",\n" +
+        "        \"collection\": \"data\"\n" +
+        "      },\n" +
+        "      \"jsonpathExpression\": \"jsonpath:1\"\n" +
+        "    }\n" +
+        "  ]\n" +
+        "}";
+JsonObject configJson = JsonUtil.validateJson(dataPipeConfiguration).getAsJsonObject();
 
-//parse into a JsonObject
-json = Util.loadResource(configLocation);
-
-//Use the registerPipe method on the DataPipeline SDK object to register the pipe
-DataPipeline.registerPipe(json);
+//register pipe
+JsonObject response = DataPipeline.registerPipe(dataPipeConfiguration);
+JsonUtil.printStdOut(response);
 ----
 
 Java Code - Send Data for ingestion
 [source,bash,subs=attributes+]
 ----
-JsonObject configJson = JsonUtil.validateJson(json).getAsJsonObject();
-
 //send source data through the pipeline
 String pipeId = configJson.get("pipeId").getAsString();
-String entity = TestConstants.ENTITY;
-DataPipeline.sendData(pipeId, entity, datasetElement.toString());
+String entity = "books";
+DataPipeline.sendData(pipeId, entity, sourceData);
 ----
 
 
 == Verify all target collections receive the data
+
+To verify the success of the ingestion and delivery to the configured target
+databases, use the following MongoDB commands.
+
+Expected Result: You should see two records added to a collection called "data"
+in a database called "get_started_store"
+
+mongosh
+
+[source,bash,subs=attributes+]
+----
+mongosh
+----
+
+[source,bash,subs=attributes+]
+----
+use get_started_store
+----
+
+[source,bash,subs=attributes+]
+----
+show collections
+----
+
+[source,bash,subs=attributes+]
+----
+db.data.find()
+----
+
+[source,bash,subs=attributes+]
+----
+db.data.count()
+----
 
