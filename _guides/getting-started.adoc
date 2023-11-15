@@ -12,7 +12,7 @@ include::_attributes.adoc[]
 :sectnumlevels: 4
 :topics: getting-started
 
-:url: https://github.com/bugsbunnyshah/braineous_dataplatform/raw/declarative_data_ingestion/releases/braineous-1.0.0-cr1/tutorials/braineous-tutorials.zip
+:url: https://github.com/bugsbunnyshah/braineous_dataplatform/releases/download/braineous-1.0.0-CR1/braineous-1.0.0-cr1.zip
 
 Learn how to create a Braineous Data Ingestion application.
 
@@ -35,10 +35,12 @@ and you could end up with unexpected results.
 You can verify which JDK Maven uses by running `mvn --version`.
 ====
 
+Download the {url}[Braineous-1.0.0-CR1] zip archive
+
+This tutorial is located under: braineous-1.0.0-cr1/tutorials/get-started
+
 
 == Get the Source Data
-
-Download the {url}[tutorial] :
 
 Let's start with a simple Json array to be used as datasource to be
 ingested by the Braineous Data Ingestion Engine
