@@ -17,13 +17,13 @@
   <META HTTP-EQUIV='X-Content-Type-Options' CONTENT="nosniff">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Braineous: Supersonic Subatomic Java">
+  <meta name="description" content="Braineous Data Platform">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@QuarkusIO"> 
   <meta name="twitter:creator" content="@QuarkusIO">
   <meta property="og:url" content="http://localhost:4000/guides/opentelemetry" />
   <meta property="og:title" content="Using OpenTelemetry" />
-  <meta property="og:description" content="Braineous: Supersonic Subatomic Java" />
+  <meta property="og:description" content="Braineous Data Platform" />
   <meta property="og:image" content="http://localhost:4000/assets/images/quarkus_card.png" />
   
   <link rel="canonical" href="http://localhost:4000/guides/opentelemetry">
@@ -31,7 +31,7 @@
   <link rel="stylesheet" href="/guides/stylesheet/config.css" />
   <link rel="stylesheet" href="/braineous/assets/css/main.css?2021-07-29" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-  <link rel="alternate" type="application/rss+xml"  href="/feed.xml" title="Braineous">
+  <link rel="alternate" type="application/rss+xml"  href="/feed.xml" title="Braineous Data Platform">
   <script src="/assets/javascript/hl.js" type="text/javascript"></script>
   
   
@@ -106,39 +106,13 @@
 <section class="full-width-version-bg flexfilterbar guides">
   <div class="guideflexcontainer">
     <div class="docslink">
-      <a class="returnlink" href="/braineous/guides/"> Back to Guides</a>
+      <a class="returnlink" href="/braineous/get-started">Back</a>
     </div>
+    <!--
     <div class="flexlabel">
       <label>By Version</label>
     </div>
-    <div class="guidepulldown version">
-    <select id="guide-version-dropdown">
-      
-        
-        
-        <option value="main" >Main - SNAPSHOT</option>
-        
-        
-        
-        <option value="latest" selected>3.5.0 - Latest</option>
-        
-        
-        
-        <option value="3.2" >3.2</option>
-        
-        
-        
-        <option value="2.16" >2.16</option>
-        
-        
-        
-        <option value="2.13" >2.13</option>
-        
-        
-        
-        <option value="2.7" >2.7</option>
-        </select>
-    </div>
+    -->
   </div>
 </section>
 
@@ -1176,7 +1150,7 @@ adding the usual <code>quarkus.*</code> prefix.</p>
 <p>Default on Quarkus is <code>ExporterType.Constants#CDI_VALUE</code>.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-6944">QUARKUS_OTEL_TRACES_EXPORTER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6944" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6936">QUARKUS_OTEL_TRACES_EXPORTER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6936" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1202,7 +1176,7 @@ adding the usual <code>quarkus.*</code> prefix.</p>
 <p>Fallbacks to the legacy property <code>quarkus.opentelemetry.tracer.sampler.sampler.name</code> or defaults to <code>SamplerType.Constants#PARENT_BASED_ALWAYS_ON</code>.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-6945">QUARKUS_OTEL_TRACES_SAMPLER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6945" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6937">QUARKUS_OTEL_TRACES_SAMPLER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6937" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1225,7 +1199,7 @@ adding the usual <code>quarkus.*</code> prefix.</p>
 <p>The <code>io.quarkus.opentelemetry.runtime.exporter.otlp.EndUserSpanProcessor</code> adds the <code>io.opentelemetry.semconv.trace.attributes.SemanticAttributes.ENDUSER_ID</code> and <code>io.opentelemetry.semconv.trace.attributes.SemanticAttributes.ENDUSER_ROLE</code> to the Span.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-6946">QUARKUS_OTEL_TRACES_EUSP_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6946" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6938">QUARKUS_OTEL_TRACES_EUSP_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6938" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1245,7 +1219,7 @@ adding the usual <code>quarkus.*</code> prefix.</p>
 <p>No Metrics exporter for now</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-6947">QUARKUS_OTEL_METRICS_EXPORTER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6947" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6939">QUARKUS_OTEL_METRICS_EXPORTER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6939" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1265,7 +1239,7 @@ adding the usual <code>quarkus.*</code> prefix.</p>
 <p>No Log exporter for now.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-6948">QUARKUS_OTEL_LOGS_EXPORTER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6948" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6940">QUARKUS_OTEL_LOGS_EXPORTER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6940" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1291,7 +1265,7 @@ adding the usual <code>quarkus.*</code> prefix.</p>
 <p>Default is <code>PropagatorType.Constants#TRACE_CONTEXT</code>,<code>PropagatorType.Constants#BAGGAGE</code> (W3C).</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-6949">QUARKUS_OTEL_PROPAGATORS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6949" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6941">QUARKUS_OTEL_PROPAGATORS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6941" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1314,7 +1288,7 @@ adding the usual <code>quarkus.*</code> prefix.</p>
 <p>Defaults to <code>false</code>.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-6950">QUARKUS_OTEL_SDK_DISABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6950" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6942">QUARKUS_OTEL_SDK_DISABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6942" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1343,7 +1317,7 @@ adding the usual <code>quarkus.*</code> prefix.</p>
 <p>Fallbacks to the legacy property <code>quarkus.opentelemetry.tracer.suppress-non-application-uris</code> or defaults to <code>true</code>.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-6951">QUARKUS_OTEL_TRACES_SUPPRESS_NON_APPLICATION_URIS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6951" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6943">QUARKUS_OTEL_TRACES_SUPPRESS_NON_APPLICATION_URIS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6943" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1369,7 +1343,7 @@ adding the usual <code>quarkus.*</code> prefix.</p>
 <p>Fallbacks to the legacy property <code>quarkus.opentelemetry.tracer.include-static-resources</code> or defaults to <code>false</code>.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-6952">QUARKUS_OTEL_TRACES_INCLUDE_STATIC_RESOURCES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6952" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6944">QUARKUS_OTEL_TRACES_INCLUDE_STATIC_RESOURCES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6944" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1392,7 +1366,7 @@ adding the usual <code>quarkus.*</code> prefix.</p>
 <p>Fallbacks to the legacy property <code>quarkus.opentelemetry.tracer.sampler.ratio</code> or defaults to <code>1.0</code>.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-6953">QUARKUS_OTEL_TRACES_SAMPLER_ARG</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6953" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6945">QUARKUS_OTEL_TRACES_SAMPLER_ARG</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6945" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1415,7 +1389,7 @@ adding the usual <code>quarkus.*</code> prefix.</p>
 <p>By default, there is no limit.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-6954">QUARKUS_OTEL_ATTRIBUTE_VALUE_LENGTH_LIMIT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6954" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6946">QUARKUS_OTEL_ATTRIBUTE_VALUE_LENGTH_LIMIT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6946" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1438,7 +1412,7 @@ adding the usual <code>quarkus.*</code> prefix.</p>
 <p>Default is <code>128</code>.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-6955">QUARKUS_OTEL_ATTRIBUTE_COUNT_LIMIT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6955" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6947">QUARKUS_OTEL_ATTRIBUTE_COUNT_LIMIT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6947" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1461,7 +1435,7 @@ adding the usual <code>quarkus.*</code> prefix.</p>
 <p>By default, there is no limit.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-6956">QUARKUS_OTEL_SPAN_ATTRIBUTE_VALUE_LENGTH_LIMIT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6956" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6948">QUARKUS_OTEL_SPAN_ATTRIBUTE_VALUE_LENGTH_LIMIT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6948" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1484,7 +1458,7 @@ adding the usual <code>quarkus.*</code> prefix.</p>
 <p>Default is <code>128</code>.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-6957">QUARKUS_OTEL_SPAN_ATTRIBUTE_COUNT_LIMIT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6957" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6949">QUARKUS_OTEL_SPAN_ATTRIBUTE_COUNT_LIMIT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6949" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1507,7 +1481,7 @@ adding the usual <code>quarkus.*</code> prefix.</p>
 <p>Default is <code>128</code>.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-6958">QUARKUS_OTEL_SPAN_EVENT_COUNT_LIMIT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6958" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6950">QUARKUS_OTEL_SPAN_EVENT_COUNT_LIMIT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6950" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1530,7 +1504,7 @@ adding the usual <code>quarkus.*</code> prefix.</p>
 <p>Default is <code>128</code>.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-6959">QUARKUS_OTEL_SPAN_LINK_COUNT_LIMIT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6959" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6951">QUARKUS_OTEL_SPAN_LINK_COUNT_LIMIT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6951" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1553,7 +1527,7 @@ adding the usual <code>quarkus.*</code> prefix.</p>
 <p>Default is <code>5000</code>.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-6960">QUARKUS_OTEL_BSP_SCHEDULE_DELAY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6960" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6952">QUARKUS_OTEL_BSP_SCHEDULE_DELAY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6952" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1577,7 +1551,7 @@ adding the usual <code>quarkus.*</code> prefix.</p>
 <p>Default is <code>2048</code>.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-6961">QUARKUS_OTEL_BSP_MAX_QUEUE_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6961" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6953">QUARKUS_OTEL_BSP_MAX_QUEUE_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6953" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1600,7 +1574,7 @@ adding the usual <code>quarkus.*</code> prefix.</p>
 <p>Default is <code>512</code>.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-6962">QUARKUS_OTEL_BSP_MAX_EXPORT_BATCH_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6962" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6954">QUARKUS_OTEL_BSP_MAX_EXPORT_BATCH_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6954" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1623,7 +1597,7 @@ adding the usual <code>quarkus.*</code> prefix.</p>
 <p>Default is <code>30s</code>.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-6963">QUARKUS_OTEL_BSP_EXPORT_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6963" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6955">QUARKUS_OTEL_BSP_EXPORT_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6955" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1644,7 +1618,7 @@ adding the usual <code>quarkus.*</code> prefix.</p>
 <p>Specify resource attributes in the following format: <code>key1=val1,key2=val2,key3=val3</code>.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-6964">QUARKUS_OTEL_RESOURCE_ATTRIBUTES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6964" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6956">QUARKUS_OTEL_RESOURCE_ATTRIBUTES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6956" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1667,7 +1641,7 @@ adding the usual <code>quarkus.*</code> prefix.</p>
 <p>Defaults to <code>quarkus.application.name</code>.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-6965">QUARKUS_OTEL_SERVICE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6965" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6957">QUARKUS_OTEL_SERVICE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6957" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1687,7 +1661,7 @@ adding the usual <code>quarkus.*</code> prefix.</p>
 <p>Specify resource attribute keys that are filtered.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-6966">QUARKUS_OTEL_EXPERIMENTAL_RESOURCE_DISABLED_KEYS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6966" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6958">QUARKUS_OTEL_EXPERIMENTAL_RESOURCE_DISABLED_KEYS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6958" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1707,7 +1681,7 @@ adding the usual <code>quarkus.*</code> prefix.</p>
 <p>Sets the OTLP endpoint to connect to. If unset, defaults to <code>OtlpExporterRuntimeConfig#DEFAULT_GRPC_BASE_URI</code>. We are currently using just the traces, therefore <code>quarkus.otel.exporter.otlp.traces.endpoint</code> is recommended.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-6967">QUARKUS_OTEL_EXPORTER_OTLP_ENDPOINT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6967" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6959">QUARKUS_OTEL_EXPORTER_OTLP_ENDPOINT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6959" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1730,7 +1704,7 @@ adding the usual <code>quarkus.*</code> prefix.</p>
 <p>Fallbacks to the legacy property <code>quarkus.opentelemetry.tracer.exporter.otlp.endpoint&lt;</code> or defaults to <code>OtlpExporterRuntimeConfig#DEFAULT_GRPC_BASE_URI</code>.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-6968">QUARKUS_OTEL_EXPORTER_OTLP_TRACES_ENDPOINT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6968" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6960">QUARKUS_OTEL_EXPORTER_OTLP_TRACES_ENDPOINT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6960" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1750,7 +1724,7 @@ adding the usual <code>quarkus.*</code> prefix.</p>
 <p>Key-value pairs to be used as headers associated with gRPC requests. The format is similar to the <code>OTEL_EXPORTER_OTLP_HEADERS</code> environment variable, a list of key-value pairs separated by the "=" character. i.e.: key1=value1,key2=value2</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-6969">QUARKUS_OTEL_EXPORTER_OTLP_TRACES_HEADERS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6969" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6961">QUARKUS_OTEL_EXPORTER_OTLP_TRACES_HEADERS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6961" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1770,7 +1744,7 @@ adding the usual <code>quarkus.*</code> prefix.</p>
 <p>Sets the method used to compress payloads. If unset, compression is disabled. Currently supported compression methods include <code>gzip</code> and <code>none</code>.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-6970">QUARKUS_OTEL_EXPORTER_OTLP_TRACES_COMPRESSION</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6970" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6962">QUARKUS_OTEL_EXPORTER_OTLP_TRACES_COMPRESSION</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6962" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1792,7 +1766,7 @@ adding the usual <code>quarkus.*</code> prefix.</p>
 <p>Sets the maximum time to wait for the collector to process an exported batch of spans. If unset, defaults to `OtlpExporterRuntimeConfig#DEFAULT_TIMEOUT_SECS`s.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-6971">QUARKUS_OTEL_EXPORTER_OTLP_TRACES_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6971" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6963">QUARKUS_OTEL_EXPORTER_OTLP_TRACES_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6963" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1816,7 +1790,7 @@ adding the usual <code>quarkus.*</code> prefix.</p>
 <p>Currently, only <code>grpc</code> and <code>http</code> are allowed.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-6972">QUARKUS_OTEL_EXPORTER_OTLP_TRACES_PROTOCOL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6972" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6964">QUARKUS_OTEL_EXPORTER_OTLP_TRACES_PROTOCOL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6964" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1836,7 +1810,7 @@ adding the usual <code>quarkus.*</code> prefix.</p>
 <p>Comma-separated list of the path to the key files (Pem format).</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-6973">QUARKUS_OTEL_EXPORTER_OTLP_TRACES_KEY_CERT_KEYS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6973" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6965">QUARKUS_OTEL_EXPORTER_OTLP_TRACES_KEY_CERT_KEYS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6965" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1856,7 +1830,7 @@ adding the usual <code>quarkus.*</code> prefix.</p>
 <p>Comma-separated list of the path to the certificate files (Pem format).</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-6974">QUARKUS_OTEL_EXPORTER_OTLP_TRACES_KEY_CERT_CERTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6974" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6966">QUARKUS_OTEL_EXPORTER_OTLP_TRACES_KEY_CERT_CERTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6966" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1876,7 +1850,7 @@ adding the usual <code>quarkus.*</code> prefix.</p>
 <p>Comma-separated list of the trust certificate files (Pem format).</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-6975">QUARKUS_OTEL_EXPORTER_OTLP_TRACES_TRUST_CERT_CERTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6975" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6967">QUARKUS_OTEL_EXPORTER_OTLP_TRACES_TRUST_CERT_CERTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6967" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -2057,21 +2031,17 @@ See the <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
         <span>Braineous is made of community projects</span>
         <ul class="footer-links">
           
-            <li><a blah href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
+            <li><a blah href="https://quarkus.io/" target="_blank">Quarkus</a></li>
           
-            <li><a blah href="https://smallrye.io" target="_blank">SmallRye</a></li>
+            <li><a blah href="https://kafka.apache.org/" target="_blank">Apache Kafka</a></li>
           
-            <li><a blah href="https://hibernate.org" target="_blank">Hibernate</a></li>
+            <li><a blah href="https://flink.apache.org/" target="_blank">Apache Flink</a></li>
           
-            <li><a blah href="https://netty.io" target="_blank">Netty</a></li>
+            <li><a blah href="https://github.com/google/gson" target="_blank">Gson</a></li>
           
-            <li><a blah href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
+            <li><a blah href="https://www.mongodb.com/" target="_blank">MongoDB</a></li>
           
-            <li><a blah href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
-          
-            <li><a blah href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
-          
-            <li><a blah href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
+            <li><a blah href="https://github.com/bugsbunnyshah/braineous_dataplatform/blob/main/pom.xml" target="_blank">And many more...</a></li>
           
         </ul>
       </div>
