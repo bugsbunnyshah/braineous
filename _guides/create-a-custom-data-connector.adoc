@@ -15,7 +15,7 @@ include::_attributes.adoc[]
 :url: https://github.com/bugsbunnyshah/braineous_dataplatform/releases/download/braineous-1.0.0-CR1/create-connector.zip
 :imagesdir: ../assets
 
-image::tutorials/customConnector.png[]
+image::tutorials/create_connector.jpg[]
 
 Learn how to create a Braineous Custom Data Connector
 
