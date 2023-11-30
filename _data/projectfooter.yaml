@@ -5,13 +5,17 @@ links:
     width: 1
     subfolderitems:
       - page: Home
-        url: /
+        url: /braineous/
       - page: High Scale Data Ingestion
-        url: /container-first
-      - page: Blog
-        url: /blog
+        url: /braineous/container-first
+      - page: Data Pipelines
+        url: /braineous/developer-joy
+      - page: Data Connectors
+        url: /braineous/continuum
+      #- page: Blog
+      #  url: /blog
       - page: Roadmap
-        url: https://github.com/orgs/quarkusio/projects/13/views/1
+        url: /braineous/about
 
   - title: Follow Us
     width: 1
@@ -34,13 +38,9 @@ links:
     width: 2
     subfolderitems:
       - page: Support
-        url: /support
-      - page: Guides
-        url: /guides
-      - page: FAQ
-        url: /faq
-      - page: Get Started
-        url: /get-started
+        url: /braineous/support
+      #- page: FAQ
+      #  url: /faq
       #- page: Stack Overflow
       #  url: https://stackoverflow.com/questions/tagged/quarkus
       - page: Discussions
@@ -52,19 +52,15 @@ more_links:
 
   - title: Braineous is made of community projects
     subfolderitems:
-      - page: Eclipse Vert.x
-        url: https://vertx.io/
-      - page: SmallRye
-        url: https://smallrye.io
-      - page: Hibernate
-        url: https://hibernate.org
-      - page: Netty
-        url: https://netty.io
-      - page: RESTEasy
-        url: https://resteasy.github.io
-      - page: Apache Camel
-        url: https://camel.apache.org
-      - page: Eclipse MicroProfile
-        url: https://microprofile.io
+      - page: Quarkus
+        url: https://quarkus.io/
+      - page: Apache Kafka
+        url: https://kafka.apache.org/
+      - page: Apache Flink
+        url: https://flink.apache.org/
+      - page: Gson
+        url: https://github.com/google/gson
+      - page: MongoDB
+        url: https://www.mongodb.com/
       - page: And many more...
-        url: https://code.quarkus.io/
+        url: https://github.com/bugsbunnyshah/braineous_dataplatform/blob/main/pom.xml

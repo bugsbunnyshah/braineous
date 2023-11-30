@@ -1,6 +1,6 @@
 ---
 layout: continuum
-title: Target System Data Connectors
+title: Data Connectors
 subtitle:
 permalink: /continuum/
 ---

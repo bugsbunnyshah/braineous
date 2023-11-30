@@ -1,0 +1,17 @@
+<div class="width-2-12 width-12-12-m">
+    <h2 class="step">Step <span class="step-no">6</span></h2>
+</div>
+      <div class="width-10-12 width-12-12-m">
+          <h3>Install MongoDB</h3>
+          <div class="grid-wrapper">
+              <div class="width-6-12 width-12-12-m">
+                  <div class= "highlighter-rouge">
+                  </div>
+              </div>
+          </div>
+      </div>
+
+
+      <div class="highlight">
+                                <a href="https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/#std-label-install-mdb-community-macos" target="_blank"/>
+                            </div>

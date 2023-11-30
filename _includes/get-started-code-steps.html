@@ -29,16 +29,23 @@
       <div class="width-10-12 width-12-12-m">
           <h3>Download Braineous</h3>
           <div class="grid-wrapper">
+              <a href="https://github.com/bugsbunnyshah/braineous_dataplatform/releases/download/braineous-1.0.0-CR1/braineous-1.0.0-cr1.zip">Braineous-1.0.0-CR1</a>
+          </div>
+      </div>
+
+      <div class="width-2-12 width-12-12-m">
+          <h2 class="step">Step <span class="step-no">3</span></h2>
+      </div>
+      <div class="width-10-12 width-12-12-m">
+          <h3>Start Zookeeper</h3>
+          <div class="grid-wrapper">
               <div class="width-6-12 width-12-12-m">
                   <div class= "highlighter-rouge">
                       <div class="highlight">
-                          <pre class="highlight"><code>brew tap mongodb/brew</code></pre>
+                          <pre class="highlight"><code>cd braineous-1.0.0-cr1/bin</code></pre>
                       </div>
                       <div class="highlight">
-                          <pre class="highlight"><code>brew update</code></pre>
-                      </div>
-                      <div class="highlight">
-                          <pre class="highlight"><code>brew install mongodb-community@7.0</code></pre>
+                          <pre class="highlight"><code>./start_zookeper.sh</code></pre>
                       </div>
                   </div>
               </div>
@@ -46,31 +53,17 @@
       </div>
 
 
-    <div class="width-2-12 width-12-12-m">
-      <h2 class="step">Step <span class="step-no">3</span></h2>
-    </div>
-    <div class="width-10-12 width-12-12-m">
-      <h3>Start Zookeeper</h3>
-      <div class="grid-wrapper">
-        <div class="width-6-12 width-12-12-m">
-          <div class= "highlighter-rouge">
-            <div class="highlight">
-              <pre class="highlight"><code> ./start_zookeper.sh</code></pre>
-            </div>
-          </div>
-        </div>
+      <div class="width-2-12 width-12-12-m">
+          <h2 class="step">Step <span class="step-no">4</span></h2>
       </div>
-    </div>
-
-
-    <div class="width-2-12 width-12-12-m">
-      <h2 class="step">Step <span class="step-no">4</span></h2>
-    </div>
       <div class="width-10-12 width-12-12-m">
           <h3>Start Kafka</h3>
           <div class="grid-wrapper">
               <div class="width-6-12 width-12-12-m">
                   <div class= "highlighter-rouge">
+                      <div class="highlight">
+                          <pre class="highlight"><code>cd braineous-1.0.0-cr1/bin</code></pre>
+                      </div>
                       <div class="highlight">
                           <pre class="highlight"><code>./start_kafka.sh</code></pre>
                       </div>
@@ -89,6 +82,9 @@
               <div class="width-6-12 width-12-12-m">
                   <div class= "highlighter-rouge">
                       <div class="highlight">
+                          <pre class="highlight"><code>cd braineous-1.0.0-cr1/bin</code></pre>
+                      </div>
+                      <div class="highlight">
                           <pre class="highlight"><code>./start_flink.sh</code></pre>
                       </div>
                   </div>
@@ -102,26 +98,27 @@
       </div>
       <div class="width-10-12 width-12-12-m">
           <h3>Start Braineous</h3>
+          <div class="grid-wrapper">
+              <div class="width-6-12 width-12-12-m">
+                  <div class= "highlighter-rouge">
+                      <div class="highlight">
+                          <pre class="highlight"><code>cd braineous-1.0.0-cr1/bin</code></pre>
+                      </div>
+                      <div class="highlight">
+                          <pre class="highlight"><code>./start_braineous.sh</code></pre>
+                      </div>
+                  </div>
+              </div>
+          </div>
       </div>
-
 
       <div class="width-2-12 width-12-12-m">
           <h2 class="step">Step <span class="step-no">7</span></h2>
       </div>
       <div class="width-10-12 width-12-12-m">
-          <h3>Start Ingestion</h3>
+          <h3>Ingestion Tutorial</h3>
+          <p><a href="{{site.baseurl}}/guides/getting-started">Next</a></p>
       </div>
-
-
-      <div class="width-2-12 width-12-12-m">
-          <h2 class="step">Step <span class="step-no">8</span></h2>
-      </div>
-      <div class="width-10-12 width-12-12-m">
-          <h3>Verify</h3>
-      </div>
-
-
-
   </div>
 </div>
 

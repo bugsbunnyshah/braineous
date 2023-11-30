@@ -1,4 +1,4 @@
 ---
 layout: index
-title: Quarkus - Supersonic Subatomic Java
+title: Braineous Data Platform
 ---
