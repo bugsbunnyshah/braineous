@@ -6,7 +6,7 @@ https://github.com/quarkusio/quarkus/tree/main/docs/src/main/asciidoc
 = Creating Your First Braineous Data Pipeline
 include::_attributes.adoc[]
 :categories: getting-started
-:summary: Discover how to create your first Braineous data ingestion application.
+:summary: Discover how to create your first Braineous data pipeline.
 :numbered:
 :sectnums:
 :sectnumlevels: 4
@@ -19,8 +19,8 @@ Learn how to create a Braineous Data Pipeline.
 This guide covers:
 
 * Get the Source Data
-* Register a data pipe and send source data to multiple target MongoDB databases
-* Verify all target databases receive the data
+* Register a data pipe and send source data to configured target MongoDB database
+* Verify the target database received the data
 
 == Prerequisites
 
@@ -35,15 +35,26 @@ and you could end up with unexpected results.
 You can verify which JDK Maven uses by running `mvn --version`.
 ====
 
-Download the {url}[Braineous-1.0.0-CR1] zip archive
+Download the {url}[Braineous-1.0.0-CR2] zip archive
 
-This tutorial is located under: braineous-1.0.0-cr1/tutorials/get-started
+This tutorial is located under: braineous-1.0.0-cr2/tutorials/get-started
 
+== Initialize
+
+Get an instance of the `DataPlatformService`. Setup your `API_KEY` and `API_SECRET`
+
+[source,bash,subs=attributes+]
+----
+DataPlatformService dataPlatformService = DataPlatformService.getInstance();
+
+String apiKey = "ffb2969c-5182-454f-9a0b-f3f2fb0ebf75";
+String apiSecret = "5960253b-6645-41bf-b520-eede5754196e";
+----
 
 == Get the Source Data
 
 Let's start with a simple Json array to be used as datasource to be
-ingested by the Braineous Data Ingestion Engine
+ingested by the *Braineous Data Ingestion Engine*
 
 Source Data
 [source,bash,subs=attributes+]
@@ -51,20 +62,20 @@ Source Data
 [
   {
     "id" : 1,
-    "name": "Joe Black1",
-    "age": 50,
+    "name": "name_1",
+    "age": 46,
     "addr": {
-      "email": "test@email.com",
-      "phone": "123456"
+      "email": "name_1@email.com",
+      "phone": "123"
     }
   },
   {
     "id": "2",
-    "name": "Joe Black2",
-    "age": 50,
+    "name": "name_2",
+    "age": 55,
     "addr": {
-      "email": "test@email.com",
-      "phone": "123456"
+      "email": "name_2@email.com",
+      "phone": "1234"
     }
   }
 ]
@@ -73,60 +84,47 @@ Source Data
 Java Code
 [source,bash,subs=attributes+]
 ----
-//setup source data for ingestion
-String sourceData = "[\n" +
-        "  {\n" +
-        "    \"id\" : 1,\n" +
-        "    \"name\": \"Joe Black1\",\n" +
-        "    \"age\": 50,\n" +
-        "    \"addr\": {\n" +
-        "      \"email\": \"test@email.com\",\n" +
-        "      \"phone\": \"123456\"\n" +
-        "    }\n" +
-        "  },\n" +
-        "  {\n" +
-        "    \"id\": \"2\",\n" +
-        "    \"name\": \"Joe Black2\",\n" +
-        "    \"age\": 50,\n" +
-        "    \"addr\": {\n" +
-        "      \"email\": \"test@email.com\",\n" +
-        "      \"phone\": \"123456\"\n" +
-        "    }\n" +
-        "  }\n" +
-        "]";
+String datasetLocation = "dataset/data.json";
+String json = Util.loadResource(datasetLocation);
 ----
+A dataset can be loaded from any data source such as a database, legacy production data store,
+live data feed, third-party data source, Kafka stream, etc. In this example the dataset is loaded from a classpath
+resource located at `src/main/resources/dataset/data.json`
 
-== Register a data pipe and send source data to multiple target MongoDB databases
+== Register a data pipe and send source data to configured target MongoDB database
 
-Register a data pipe with the Braineous Data Ingestion Engine using the
-Java Braineous Data Ingestion Client SDK.
+Register a data pipe with the *Braineous Data Ingestion Engine* using the
+*Java Braineous Data Ingestion Client SDK*.
 
 Pipe Configuration
 [source,bash,subs=attributes+]
 ----
 {
-  "pipeId": "123",
+  "pipeId": "yyya",
+  "entity": "abc",
   "configuration": [
     {
-      "storeDriver" : "com.appgallabs.dataplatform.receiver.core.driver.MongoDBStoreDriver",
-      "name": "scenario1_store",
+      "stagingStore" : "com.appgallabs.dataplatform.targetSystem.core.driver.MongoDBStagingStore",
+      "name": "yyya",
       "config": {
         "connectionString": "mongodb://localhost:27017",
-        "database": "scenario1_store",
-        "collection": "data"
-      },
-      "jsonpathExpression": "jsonpath:1"
+        "database": "yyya",
+        "collection": "data",
+        "jsonpathExpressions": []
+      }
     }
   ]
 }
 ----
 
-* pipeId : As a data source provider, this is id identifies this data pipe uniquely with the Braineous Data Pipline Engine.
-* configuration.storeDriver: MongoDB target store driver
-* name: a user-friendly way to indentify the target store
-* config.connectionString: MongoDB database connection string
-* config.database: MongoDB database
-* config.collection: MongoDB database collection
+* *pipeId* : As a data source provider, this id identifies this data pipe
+uniquely with the *Braineous Data Pipline Engine*.
+* *entity* : The business/domain entity that this dataset should be associated with.
+* *configuration.stagingStore*: The `Staging Store` driver
+* *configuration.name*: a user-friendly way to indentify the target store
+* *configuration.config.connectionString*: MongoDB database connection string for your target store
+* *configuration.config.database*: MongoDB database on your target store
+* *configuration.config.collection*: MongoDB database collection on your target store
 
 A data pipe can be configured with multiple target stores/systems associated with the same data pipe
 for data delivery.
@@ -143,38 +141,106 @@ In the next Candidate Release, Braineous team will add support for more target s
 Java Code - Register Pipe
 [source,bash,subs=attributes+]
 ----
-//setup data pipe configuration json
-String dataPipeConfiguration = "{\n" +
-        "  \"pipeId\": \"123\",\n" +
-        "  \"configuration\": [\n" +
-        "    {\n" +
-        "      \"storeDriver\" : \"com.appgallabs.dataplatform.receiver.core.driver.MongoDBStoreDriver\",\n" +
-        "      \"name\": \"get_started_store\",\n" +
-        "      \"config\": {\n" +
-        "        \"connectionString\": \"mongodb://localhost:27017\",\n" +
-        "        \"database\": \"get_started_store\",\n" +
-        "        \"collection\": \"data\"\n" +
-        "      },\n" +
-        "      \"jsonpathExpression\": \"jsonpath:1\"\n" +
-        "    }\n" +
-        "  ]\n" +
-        "}";
-JsonObject configJson = JsonUtil.validateJson(dataPipeConfiguration).getAsJsonObject();
+String configLocation = "pipe_config/pipe_config.json";
+String pipeConfigJson = Util.loadResource(configLocation);
+JsonObject configJson = JsonUtil.validateJson(pipeConfigJson).getAsJsonObject();
+String pipeId = configJson.get("pipeId").getAsString();
+String entity = configJson.get("entity").getAsString();
+System.out.println("*****PIPE_CONFIGURATION******");
+JsonUtil.printStdOut(configJson);
+
+//configure the DataPipeline Client
+Configuration configuration = new Configuration().
+ingestionHostUrl("http://localhost:8080/").
+apiKey(apiKey).
+apiSecret(apiSecret).
+streamSizeInObjects(0);
+dataPlatformService.configure(configuration);
 
 //register pipe
-JsonObject response = DataPipeline.registerPipe(dataPipeConfiguration);
-JsonUtil.printStdOut(response);
+dataPlatformService.registerPipe(configJson);
+System.out.println("*****PIPE_REGISTRATION_SUCCESS******");
 ----
+
+Pipe Configuration can be provided dynamically at runtime. The source can be a
+database, a configuration system, local file system, network file system etc.
+In this example the dataset is loaded from a classpath
+resource located at `src/main/resources/pipe_config/pipe_config.json`
+
 
 Java Code - Send Data for ingestion
 [source,bash,subs=attributes+]
 ----
 //send source data through the pipeline
-String pipeId = configJson.get("pipeId").getAsString();
-String entity = "books";
-DataPipeline.sendData(pipeId, entity, sourceData);
+dataPlatformService.sendData(pipeId, entity,datasetElement.toString());
+System.out.println("*****DATA_INGESTION_SUCCESS******");
 ----
 
+== Run the Tutorial
+
+[source,bash,subs=attributes+]
+----
+cd braineous-1.0.0-cr2/tutorials/get-started
+----
+
+[source,bash,subs=attributes+]
+----
+./run.sh
+----
+
+`Expected Output`:
+
+[source,bash,subs=attributes+]
+----
+[INFO] ------------------------------------------------------------------------
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+*****DATA_SET******
+******ARRAY_SIZE: 2**********
+[
+  {
+    "id": 1,
+    "name": "name_1",
+    "age": 46,
+    "addr": {
+      "email": "name_1@email.com",
+      "phone": "123"
+    }
+  },
+  {
+    "id": "2",
+    "name": "name_2",
+    "age": 55,
+    "addr": {
+      "email": "name_2@email.com",
+      "phone": "1234"
+    }
+  }
+]
+**********************
+*****PIPE_CONFIGURATION******
+{
+  "pipeId": "yyya",
+  "entity": "abc",
+  "configuration": [
+    {
+      "stagingStore": "com.appgallabs.dataplatform.targetSystem.core.driver.MongoDBStagingStore",
+      "name": "yyya",
+      "config": {
+        "connectionString": "mongodb://localhost:27017",
+        "database": "yyya",
+        "collection": "data",
+        "jsonpathExpressions": []
+      }
+    }
+  ]
+}
+**********************
+*****PIPE_REGISTRATION_SUCCESS******
+***SENDING_DATA_START*****
+*****DATA_INGESTION_SUCCESS******
+----
 
 == Verify all target collections receive the data
 
@@ -182,7 +248,7 @@ To verify the success of the ingestion and delivery to the configured target
 databases, use the following MongoDB commands.
 
 Expected Result: You should see two records added to a collection called "data"
-in a database called "get_started_store"
+in a database called "yyya" corresponding to configured value `configuration.config.database`
 
 mongosh
 
@@ -193,7 +259,7 @@ mongosh
 
 [source,bash,subs=attributes+]
 ----
-use get_started_store
+use yyya
 ----
 
 [source,bash,subs=attributes+]
