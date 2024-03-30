@@ -1,0 +1,6 @@
+source folders:
+
+_data
+_guides
+_includes
+_layouts
