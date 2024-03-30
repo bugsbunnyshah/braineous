@@ -3,7 +3,7 @@ This guide is maintained in the main Quarkus repository
 and pull requests should be submitted there:
 https://github.com/quarkusio/quarkus/tree/main/docs/src/main/asciidoc
 ////
-= Creating Your First Braineous Data Ingestion Application
+= Creating Your First Braineous Data Pipeline
 include::_attributes.adoc[]
 :categories: getting-started
 :summary: Discover how to create your first Braineous data ingestion application.
@@ -14,7 +14,7 @@ include::_attributes.adoc[]
 
 :url: https://github.com/bugsbunnyshah/braineous_dataplatform/releases/download/braineous-1.0.0-CR1/braineous-1.0.0-cr1.zip
 
-Learn how to create a Braineous Data Ingestion application.
+Learn how to create a Braineous Data Pipeline.
 
 This guide covers:
 

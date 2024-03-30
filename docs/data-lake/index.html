@@ -6,7 +6,7 @@
 
 
 <head>
-  <title>Get Started - Braineous</title>
+  <title>Data Pipelines - Quarkus</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net https://analytics.ossupstream.org; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app https://analytics.ossupstream.org; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' 
@@ -21,12 +21,12 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@QuarkusIO"> 
   <meta name="twitter:creator" content="@QuarkusIO">
-  <meta property="og:url" content="http://localhost:4000/get-started/" />
-  <meta property="og:title" content="Get Started" />
+  <meta property="og:url" content="http://localhost:4000/developer-joy/" />
+  <meta property="og:title" content="Data Pipelines" />
   <meta property="og:description" content="Braineous Data Platform" />
   <meta property="og:image" content="http://localhost:4000/assets/images/quarkus_card.png" />
   
-  <link rel="canonical" href="http://localhost:4000/get-started/">
+  <link rel="canonical" href="http://localhost:4000/developer-joy/">
   <link rel="shortcut icon" type="image/png" href="/braineous/favicon.ico" >
   <link rel="stylesheet" href="/guides/stylesheet/config.css" />
   <link rel="stylesheet" href="/braineous/assets/css/main.css?2021-07-29" />
@@ -42,7 +42,7 @@
   <script src="https://analytics.ossupstream.org/matomo.js" async defer></script>
 </head>
 
-<body class="get-started">
+<body class="developer-joy">
 
   
   <div class="nav-wrapper">
@@ -65,7 +65,7 @@
           <!--<li><a href="/braineous/about" class="">WHAT IS BRAINEOUS?</a></li>-->
           <li><a href="/braineous/container-first" class="">High Scale Data Ingestion</a></li>
           <!--<li><a href="/braineous/continuum" class="">Automated Data Movement</a></li>-->
-          <li><a href="/braineous/developer-joy" class="">Data Pipelines</a></li>
+          <li><a href="/braineous/developer-joy" class="active">Data Pipelines</a></li>
           <li><a href="/braineous/continuum" class="">Data Connectors</a></li>
           <!--
           <li><a href="/braineous/standards" class="">STANDARDS</a></li>
@@ -75,7 +75,7 @@
       <li class="dropdown">
         <span href="/braineous/learn/">Learn<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
-          <li><a href="/braineous/get-started" class="active">GET STARTED</a></li>
+          <li><a href="/braineous/get-started" class="">GET STARTED</a></li>
           <li><a href="/braineous/guides/getting-started" class="">Data Ingestion Tutorial</a></li>
           <li><a href="/braineous/guides/create-a-custom-data-connector" class="">Create a Custom Data Connector</a></li>
           </ul>
@@ -100,214 +100,198 @@
 
   <div class="content">
     <div class="title-band">
-  <h1 class="title">Get Started</h1>
-  <h3 class="mb-0">It’s a snap to be up and running with Braineous.</h3>
+  <h1 class="title">Data Pipelines</h1>
+  <h3 class="mb-0">Schema-agnostic, dynamic configuration-based approach to data delivery at scale. No service disruption to any changes</h3>
 </div>
 
-
-<div class="full-width-bg component-slim get-started-steps">
+<div class="full-width-bg component">
   <div class="grid-wrapper">
-      <div class="width-2-12 width-12-12-m">
-          <h2 class="step">Step <span class="step-no">1</span></h2>
-      </div>
-      <div class="width-10-12 width-12-12-m">
-          <h3>Install MongoDB</h3>
-          <div class="grid-wrapper">
-              <div class="width-6-12 width-12-12-m">
-                  <div class= "highlighter-rouge">
-                      <div class="highlight">
-                          <pre class="highlight"><code>brew tap mongodb/brew</code></pre>
-                      </div>
-                      <div class="highlight">
-                          <pre class="highlight"><code>brew update</code></pre>
-                      </div>
-                      <div class="highlight">
-                          <pre class="highlight"><code>brew install mongodb-community@7.0</code></pre>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
+    <div class="width-9-12 width-12-12-m">
+      <p class="intropara">
+        Braineous Data Lake transforms any data-format, XML, CSV, into JSON for its processor.
+        Once JSON a simple Object Graph and uses configured JSONPATH-expressions
+        to produce data for the target system and delivers it to desired data-format.
 
-      <div class="width-2-12 width-12-12-m">
-          <h2 class="step">Step <span class="step-no">2</span></h2>
-      </div>
-      <div class="width-10-12 width-12-12-m">
-          <h3>Download Braineous</h3>
-          <div class="grid-wrapper">
-              <a href="https://github.com/bugsbunnyshah/braineous_dataplatform/releases/download/braineous-1.0.0-CR1/braineous-1.0.0-cr1.zip">Braineous-1.0.0-CR1</a>
-          </div>
-      </div>
+        Completely dynamic. Just change the pipe configuration and roll.
+      </p>
+      <p class="intropara">
+        A data pipeline connects the data source to a target store/system. The data
+        source generates the data and posts it to the Braineous ingestion system
+        via the Braineous Data Ingestion Java SDK.
 
-      <div class="width-2-12 width-12-12-m">
-          <h2 class="step">Step <span class="step-no">3</span></h2>
-      </div>
-      <div class="width-10-12 width-12-12-m">
-          <h3>Start Zookeeper</h3>
-          <div class="grid-wrapper">
-              <div class="width-6-12 width-12-12-m">
-                  <div class= "highlighter-rouge">
-                      <div class="highlight">
-                          <pre class="highlight"><code>cd braineous-1.0.0-cr1/bin</code></pre>
-                      </div>
-                      <div class="highlight">
-                          <pre class="highlight"><code>./start_zookeper.sh</code></pre>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
+        Braineous data pipeline engine supports multiple data sources and multiple
+        target systems that can be associated with a single pipe.
 
-
-      <div class="width-2-12 width-12-12-m">
-          <h2 class="step">Step <span class="step-no">4</span></h2>
-      </div>
-      <div class="width-10-12 width-12-12-m">
-          <h3>Start Kafka</h3>
-          <div class="grid-wrapper">
-              <div class="width-6-12 width-12-12-m">
-                  <div class= "highlighter-rouge">
-                      <div class="highlight">
-                          <pre class="highlight"><code>cd braineous-1.0.0-cr1/bin</code></pre>
-                      </div>
-                      <div class="highlight">
-                          <pre class="highlight"><code>./start_kafka.sh</code></pre>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-
-
-      <div class="width-2-12 width-12-12-m">
-          <h2 class="step">Step <span class="step-no">5</span></h2>
-      </div>
-      <div class="width-10-12 width-12-12-m">
-          <h3>Start Flink</h3>
-          <div class="grid-wrapper">
-              <div class="width-6-12 width-12-12-m">
-                  <div class= "highlighter-rouge">
-                      <div class="highlight">
-                          <pre class="highlight"><code>cd braineous-1.0.0-cr1/bin</code></pre>
-                      </div>
-                      <div class="highlight">
-                          <pre class="highlight"><code>./start_flink.sh</code></pre>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-
-
-      <div class="width-2-12 width-12-12-m">
-          <h2 class="step">Step <span class="step-no">6</span></h2>
-      </div>
-      <div class="width-10-12 width-12-12-m">
-          <h3>Start Braineous</h3>
-          <div class="grid-wrapper">
-              <div class="width-6-12 width-12-12-m">
-                  <div class= "highlighter-rouge">
-                      <div class="highlight">
-                          <pre class="highlight"><code>cd braineous-1.0.0-cr1/bin</code></pre>
-                      </div>
-                      <div class="highlight">
-                          <pre class="highlight"><code>./start_braineous.sh</code></pre>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-
-      <div class="width-2-12 width-12-12-m">
-          <h2 class="step">Step <span class="step-no">7</span></h2>
-      </div>
-      <div class="width-10-12 width-12-12-m">
-          <h3>Ingestion Tutorial</h3>
-          <p><a href="/braineous/guides/getting-started">Next</a></p>
-      </div>
-  </div>
-</div>
-
-
-<!--
-<div class="full-width-bg white component-slim">
-  <div class="grid-wrapper click-cards">
-    <div class="width-12-12 width-12-12-m">
-      <h3 class="mt-0">Next Steps</h3>
+        In turn it supports as many pipes that maybe necessary for the applications in
+        question at scale.
+      </p>
+      <img src="../guides/images/build-time-principle.png" alt="Quarkus Build Time Principle" width="90%">
     </div>
 
-  
-      <div class="card">
-        <a href="/guides/building-native-image"></a>
-        <div>
-          <p class="title">Building Native Executables</p>
-          <div class="description">Build native executables with GraalVM or Mandrel.</div>
-        </div>
-        </a>
-      </div>
-  
-      <div class="card">
-        <a href="/guides/continuous-testing"></a>
-        <div>
-          <p class="title">Continuous Testing</p>
-          <div class="description">Learn how to use continuous testing in your Quarkus Application.</div>
-        </div>
-        </a>
-      </div>
-  
-      <div class="card">
-        <a href="/guides/funqy"></a>
-        <div>
-          <p class="title">Start with Serverless</p>
-          <div class="description">Create a portable Java API to write serverless functions deployable to AWS Lambda, Azure Functions, Knative, and more.</div>
-        </div>
-        </a>
-      </div>
-  
-      <div class="card">
-        <a href="/guides/ide-tooling"></a>
-        <div>
-          <p class="title">Quarkus Tools in Your Favorite IDE</p>
-          <div class="description">Every developer has their favorite IDE. Learn how to use Quarkus in yours.</div>
-        </div>
-        </a>
-      </div>
-  
-      <div class="card">
-        <a href="/guides/rest-json"></a>
-        <div>
-          <p class="title">Writing JSON REST services</p>
-          <div class="description">JSON is now the lingua franca between microservices. See how you can get your REST services to consume and produce JSON payloads.</div>
-        </div>
-        </a>
-      </div>
-  
-      <div class="card">
-        <a href="/guides/getting-started-reactive"></a>
-        <div>
-          <p class="title">Getting Started with Reactive</p>
-          <div class="description">Learn more about developing reactive applications with Quarkus.</div>
-        </div>
-        </a>
-      </div>
-  
-      <div class="card">
-        <a href="/guides/deploying-to-kubernetes"></a>
-        <div>
-          <p class="title">Deploying Quarkus Applications on Kubernetes</p>
-          <div class="description">This guide covers how to deploy a native application on Kubernetes.</div>
-        </div>
-        </a>
-      </div>
-  
     <div class="width-12-12 width-12-12-m">
-      <h4>Want to learn more? Check out the <a href='/guides/'>guides</a> to continue your journey.</h4>
+      <h2>Pipe Registration</h2>
+      <p>
+      <p>
+      <pre class="highlightjs highlight">
+          <code class="language-java hljs" data-lang="java">
+          <span class="hljs-meta">
+          {
+              "pipeId": "123",
+              "configuration": [
+                {
+                  "storeDriver" : "com.appgallabs.dataplatform.receiver.core.driver.MongoDBStoreDriver",
+                  "name": "scenario2_store0",
+                  "config": {
+                    "connectionString": "mongodb://localhost:27017",
+                    "database": "scenario2_store0",
+                    "collection": "data"
+                  },
+                  "jsonpathExpression": "jsonpath:1"
+                },
+                {
+                  "storeDriver" : "com.appgallabs.dataplatform.receiver.core.driver.MongoDBStoreDriver",
+                  "name": "scenario2_store1",
+                  "config": {
+                    "connectionString": "mongodb://localhost:27017",
+                    "database": "scenario2_store1",
+                    "collection": "data"
+                  },
+                  "jsonpathExpression": "jsonpath:1"
+                }
+              ]
+          }
+          </span></code>
+      </pre>
+      </p>
+
+      <h2>Data Ingestion</h2>
+      <p>
+        The Data Ingestion process starts by sending data to the BRAINEOUS Data Ingestion endpoint. It is processed
+        asynchronously as the data moves through its pipe through an Apache Kafka Topic and an Apache Flink
+        Stream Processor
+      </p>
+      <p>
+        Each ingestion goes through an ordered process of phases which are
+        <u>
+          <li>Validation</li>
+          <li>Transformation</li>
+          <li>Cleansing especially for Machine Learning applications</li>
+          <li>Delivery to the Target system</li>
+        </u>
+      </p>
+
+      <h2>Pipeline Registration Update</h2>
+      <p>
+        BRAINEOUS' Pipeline Engine is completely dynamic.
+        You can add or remove Target Stores/Systems by updating
+        the Registration via the BRAINEOUS Pipeline Management
+        Endpoint.
+      </p>
+
+      <h2>Data Ingestion Java SDK</h2>
+      <p>
+        You can send data to the BRAINEOUS Data Ingestion engine using the
+        included Java Data Ingestion SDK or directly via the REST API.
+
+        The advantage of using the SDK has benefits of pre-processing
+        optimizations such as:
+
+        <u>
+          <li>Tenant Authentication</li>
+          <li>Data Throttling</li>
+          <li>GraphQL endpoint to query the ingested data (planned for CR2 release)</li>
+        </u>
+      </p>
+
+      <h2>Data Ingestion REST API</h2>
+      <h1>Create/Update Pipe Registration</h1>
+      <p>
+      <pre class="highlightjs highlight">
+          <code class="language-java hljs" data-lang="java">
+          <span class="hljs-meta">
+            /ingestion/register_pipe:
+    post:
+      tags:
+      - Data Ingestion
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        "200":
+          description: OK
+          </span></code>
+      </pre>
+      </p>
+
+        <h1>Json-format ingestion</h1>
+        <p>
+      <pre class="highlightjs highlight">
+          <code class="language-java hljs" data-lang="java">
+          <span class="hljs-meta">
+            /ingestion/json:
+    post:
+      tags:
+      - Data Ingestion
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        "200":
+          description: OK
+          </span></code>
+      </pre>
+        </p>
+
+      <h1>XML-format ingestion</h1>
+      <p>
+      <pre class="highlightjs highlight">
+          <code class="language-java hljs" data-lang="java">
+          <span class="hljs-meta">
+            /ingestion/xml:
+    post:
+      tags:
+      - Data Ingestion
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        "200":
+          description: OK
+          </span></code>
+      </pre>
+      </p>
+
+      <h1>CSV-format ingestion</h1>
+      <p>
+      <pre class="highlightjs highlight">
+          <code class="language-java hljs" data-lang="java">
+          <span class="hljs-meta">
+            /ingestion/csv:
+    post:
+      tags:
+      - Data Ingestion
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        "200":
+          description: OK
+          </span></code>
+      </pre>
+      </p>
     </div>
   </div>
 </div>
 
 
--->
   </div>
 
   <div class="content project-footer">
