@@ -129,6 +129,10 @@ developed by the customer.
 
 ==== What is Data Transformation?
 
+
+link:/braineous/guides/data-transform[Data Transformation]
+
+
 == Pipeline Monitoring
 `Braineous` includes a pipeline monitoring tool called `pipemon` available
 in the `bin` directory of the binary distribution.
