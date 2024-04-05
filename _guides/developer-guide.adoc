@@ -129,8 +129,17 @@ developed by the customer.
 
 ==== What is Data Transformation?
 
+Data transformation is the process of converting data from one format, such as a database file, XML document or Excel spreadsheet, into another.
 
-link:/braineous/guides/data-transform[Data Transformation]
+Transformations typically involve converting a raw data source into a cleansed, validated and ready-to-use format. Data transformation is crucial to data management processes that include data integration, data migration, data warehousing and data preparation.
+
+Braineous is fully compliant with JSONPath specification:
+https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html
+
+You can transform your payload on the fly using JSONPath expressions on the
+pipeline configuration.
+
+Here is a tutorial: link:/braineous/guides/data-transform[Data Transformation]
 
 
 == Pipeline Monitoring
@@ -248,15 +257,15 @@ PIPE_SUCCESSFULLY_DEPLOYED
 yyya > Press exit or CTRL+C to exit
 ----
 
-== Usecases
+//== Usecases
 
-==== Extract/Transform/Load (ETL)
+//==== Extract/Transform/Load (ETL)
 
-==== Extract/Load/Transform (ELT)
+//==== Extract/Load/Transform (ELT)
 
-==== Analytics
+//==== Analytics
 
-==== Machine Learning
+//==== Machine Learning
 
 
 
