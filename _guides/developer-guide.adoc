@@ -120,7 +120,7 @@ For a hands-on tutorial please refer to: link:/braineous/guides/create-a-custom-
 ==== What is a Data Lake?
 
 A *'datalake store'* is the internal store the pipeline delivers the
-data for applications that have usecases related to analytics and machine learning. Braineous
+data for applications that have use cases related to analytics and machine learning. Braineous
 is built on `Apache Flink` as its data processing engine and supports `Apache Hive` based data lakes. Future releases of Braineous will include a Data Lake Connector framework that
 can support third-party data lakes like Apache Iceberg, Snowflake or a custom data lake
 developed by the customer.
