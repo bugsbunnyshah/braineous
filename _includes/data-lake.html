@@ -6,26 +6,71 @@
         data for applications that have use cases related to analytics and machine learning. Braineous
         is built on <strong>Apache Flink</strong> as its data processing engine and supports <strong>Apache Hive</strong> based data lakes.
         Future releases of Braineous will include a <strong>Data Lake Connector framework</strong> that
-        can support third-party data lakes like Apache Iceberg, Snowflake or a custom data lake
-        developed by the customer.
+        can support custom data lakes developed by the customer.
       </p>
       <img src="../guides/images/build-time-principle.png" alt="Quarkus Build Time Principle" width="90%">
     </div>
 
     <div class="width-9-12 width-12-12-m">
       <h2>Apache Hive</h2>
+      <p>
+        Apache Hive has established itself as a focal point of the data warehousing ecosystem. It serves as not only a SQL engine for big data analytics and ETL, but also a data management platform, where data is discovered, defined, and evolved.
+
+        Flink offers a two-fold integration with Hive.
+
+        The first is to leverage Hive’s Metastore as a persistent catalog with Flink’s HiveCatalog for storing Flink specific metadata across sessions. For example, users can store their Kafka or Elasticsearch tables in Hive Metastore by using HiveCatalog, and reuse them later on in SQL queries.
+
+        The second is to offer Flink as an alternative engine for reading and writing Hive tables.
+
+        The HiveCatalog is designed to be “out of the box” compatible with existing Hive installations. You do not need to modify your existing Hive Metastore or change the data placement or partitioning of your tables.
+      </p>
     </div>
 
     <div class="width-9-12 width-12-12-m">
-      <h2>Analytics/Business Intelligence</h2>
+      <h2>ETL/ELT</h2>
       <p>
+        Braineous allows for seamlessly
+        allowing customers whose systems need to integrate. They have to
+        spend months of integration cost in both money
+        and time to just do the 'Transform' part of ETL.
+
+        With Braineous they simply send raw data and 'Transormation'
+        via Configuration vs Software Development makes systems
+        talk to each other saving time and cost.
       </p>
     </div>
 
     <div class="width-9-12 width-12-12-m">
       <h2>Machine Learning</h2>
       <p>
+        So what challenge does Braineous solve for Machine Learning.
+        AI and Machine Learning are the same terms. Machine Learning
+        is the technical term, AI is a sexy marketing term. They mean
+        the same thing.
 
+        From a birds eye view, machine learning is a way to teach a
+        computer how to think and make decisions which could also
+        translate to prediction as it can learn patterns of data
+        it learns and then predicts an outcome.
+        Accuracy of prediction is the goal regardless of what
+        that could be. In Aviation case it would be what will my
+        flight network look like in terms of delays and disruptions
+        2 weeks from now so I am better prepared with crew as in pilot/
+        staffs and flight plans as in for a disrupted flight how can
+        I offer cheaper options to mitigate having to put passengers
+        on another flight in my network that day.
+      </p>
+      <p>
+        To do that again at a very high level, you need to train
+        this machine using data relevant to the application.
+        More data you can use the better the accuracy. This is
+        where Braineous data pipeline focuses as it can
+        handle lots of data volume.
+
+        Braineous would provide the infrastructure
+        a data scientist and machine learning engineer would need
+        to focus on their main goal which is building the AI model
+        and not all the infrastructure, that they would get out of the box.
       </p>
     </div>
 
