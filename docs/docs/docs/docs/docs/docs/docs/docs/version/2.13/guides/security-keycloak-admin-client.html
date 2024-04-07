@@ -17,13 +17,13 @@
   <META HTTP-EQUIV='X-Content-Type-Options' CONTENT="nosniff">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Braineous: Supersonic Subatomic Java">
+  <meta name="description" content="Braineous Data Platform">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@QuarkusIO"> 
   <meta name="twitter:creator" content="@QuarkusIO">
   <meta property="og:url" content="http://localhost:4000/version/2.13/guides/security-keycloak-admin-client" />
   <meta property="og:title" content="Using Keycloak Admin Client - 2.13" />
-  <meta property="og:description" content="Braineous: Supersonic Subatomic Java" />
+  <meta property="og:description" content="Braineous Data Platform" />
   <meta property="og:image" content="http://localhost:4000/assets/images/quarkus_card.png" />
   
   <link rel="canonical" href="http://localhost:4000/guides/security-keycloak-admin-client">
@@ -31,7 +31,7 @@
   <link rel="stylesheet" href="/guides/stylesheet/config.css" />
   <link rel="stylesheet" href="/braineous/assets/css/main.css?2021-07-29" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-  <link rel="alternate" type="application/rss+xml"  href="/feed.xml" title="Braineous">
+  <link rel="alternate" type="application/rss+xml"  href="/feed.xml" title="Braineous Data Platform">
   <script src="/assets/javascript/hl.js" type="text/javascript"></script>
   
   
@@ -106,38 +106,13 @@
 <section class="full-width-version-bg flexfilterbar guides">
   <div class="guideflexcontainer">
     <div class="docslink">
-      <a class="returnlink" href="/braineous/version/2.13/guides/"> Back to Guides</a>
+      <a class="returnlink" href="/braineous/get-started">Back</a>
     </div>
+    <!--
     <div class="flexlabel">
       <label>By Version</label>
     </div>
-    <div class="guidepulldown version">
-    <select id="guide-version-dropdown">
-      
-        
-        
-        <option value="main" >Main - SNAPSHOT</option>
-        
-        
-        
-        <option value="latest" >3.5.0 - Latest</option>
-        
-        
-        
-        <option value="3.2" >3.2</option>
-        
-        
-        
-        <option value="2.16" >2.16</option>
-        
-        
-        
-        <option value="2.13" selected>2.13</option>
-        
-        
-        
-        </select>
-    </div>
+    -->
   </div>
 </section>
 
@@ -500,7 +475,7 @@ Note that the <a href="security-openid-connect-client">OidcClient</a> can also b
 <p>Set to true if Keycloak Admin Client injection is supported.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13802">QUARKUS_KEYCLOAK_ADMIN_CLIENT_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13802" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13794">QUARKUS_KEYCLOAK_ADMIN_CLIENT_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13794" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -520,7 +495,7 @@ Note that the <a href="security-openid-connect-client">OidcClient</a> can also b
 <p>Keycloak server URL, for example, <code><a href="https://host:port" class="bare">https://host:port</a></code>. If this property is not set then the Keycloak Admin Client injection will fail - use <code>org.keycloak.admin.client.KeycloakBuilder</code> to create it instead.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13803">QUARKUS_KEYCLOAK_ADMIN_CLIENT_SERVER_URL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13803" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13795">QUARKUS_KEYCLOAK_ADMIN_CLIENT_SERVER_URL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13795" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -540,7 +515,7 @@ Note that the <a href="security-openid-connect-client">OidcClient</a> can also b
 <p>Realm.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13804">QUARKUS_KEYCLOAK_ADMIN_CLIENT_REALM</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13804" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13796">QUARKUS_KEYCLOAK_ADMIN_CLIENT_REALM</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13796" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -560,7 +535,7 @@ Note that the <a href="security-openid-connect-client">OidcClient</a> can also b
 <p>Client id.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13805">QUARKUS_KEYCLOAK_ADMIN_CLIENT_CLIENT_ID</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13805" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13797">QUARKUS_KEYCLOAK_ADMIN_CLIENT_CLIENT_ID</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13797" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -580,7 +555,7 @@ Note that the <a href="security-openid-connect-client">OidcClient</a> can also b
 <p>Client secret. Required with a <code>client_credentials</code> grant type.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13806">QUARKUS_KEYCLOAK_ADMIN_CLIENT_CLIENT_SECRET</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13806" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13798">QUARKUS_KEYCLOAK_ADMIN_CLIENT_CLIENT_SECRET</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13798" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -600,7 +575,7 @@ Note that the <a href="security-openid-connect-client">OidcClient</a> can also b
 <p>Username. Required with a <code>password</code> grant type.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13807">QUARKUS_KEYCLOAK_ADMIN_CLIENT_USERNAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13807" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13799">QUARKUS_KEYCLOAK_ADMIN_CLIENT_USERNAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13799" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -620,7 +595,7 @@ Note that the <a href="security-openid-connect-client">OidcClient</a> can also b
 <p>Password. Required with a <code>password</code> grant type.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13808">QUARKUS_KEYCLOAK_ADMIN_CLIENT_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13808" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13800">QUARKUS_KEYCLOAK_ADMIN_CLIENT_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13800" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -640,7 +615,7 @@ Note that the <a href="security-openid-connect-client">OidcClient</a> can also b
 <p>OAuth 2.0 <a href="https://datatracker.ietf.org/doc/html/rfc6749#section-3.3">Access Token Scope</a>.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13809">QUARKUS_KEYCLOAK_ADMIN_CLIENT_SCOPE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13809" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13801">QUARKUS_KEYCLOAK_ADMIN_CLIENT_SCOPE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13801" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -660,7 +635,7 @@ Note that the <a href="security-openid-connect-client">OidcClient</a> can also b
 <p>OAuth Grant Type.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13810">QUARKUS_KEYCLOAK_ADMIN_CLIENT_GRANT_TYPE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13810" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-13802">QUARKUS_KEYCLOAK_ADMIN_CLIENT_GRANT_TYPE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13802" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -795,21 +770,17 @@ Note that the <a href="security-openid-connect-client">OidcClient</a> can also b
         <span>Braineous is made of community projects</span>
         <ul class="footer-links">
           
-            <li><a blah href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
+            <li><a blah href="https://quarkus.io/" target="_blank">Quarkus</a></li>
           
-            <li><a blah href="https://smallrye.io" target="_blank">SmallRye</a></li>
+            <li><a blah href="https://kafka.apache.org/" target="_blank">Apache Kafka</a></li>
           
-            <li><a blah href="https://hibernate.org" target="_blank">Hibernate</a></li>
+            <li><a blah href="https://flink.apache.org/" target="_blank">Apache Flink</a></li>
           
-            <li><a blah href="https://netty.io" target="_blank">Netty</a></li>
+            <li><a blah href="https://github.com/google/gson" target="_blank">Gson</a></li>
           
-            <li><a blah href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
+            <li><a blah href="https://www.mongodb.com/" target="_blank">MongoDB</a></li>
           
-            <li><a blah href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
-          
-            <li><a blah href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
-          
-            <li><a blah href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
+            <li><a blah href="https://github.com/bugsbunnyshah/braineous_dataplatform/blob/main/pom.xml" target="_blank">And many more...</a></li>
           
         </ul>
       </div>
