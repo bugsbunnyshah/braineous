@@ -66,6 +66,7 @@
           <li><a href="/braineous/container-first" class="">High Scale Data Ingestion</a></li>
           <!--<li><a href="/braineous/continuum" class="">Automated Data Movement</a></li>-->
           <li><a href="/braineous/developer-joy" class="active">Data Pipelines</a></li>
+          <li><a href="/braineous/data-lake" class="">Data Lake</a></li>
           <li><a href="/braineous/continuum" class="">Data Connectors</a></li>
           <!--
           <li><a href="/braineous/standards" class="">STANDARDS</a></li>
@@ -75,9 +76,13 @@
       <li class="dropdown">
         <span href="/braineous/learn/">Learn<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
-          <li><a href="/braineous/get-started" class="">GET STARTED</a></li>
-          <li><a href="/braineous/guides/getting-started" class="">Data Ingestion Tutorial</a></li>
-          <li><a href="/braineous/guides/create-a-custom-data-connector" class="">Create a Custom Data Connector</a></li>
+          <!--<li><a href="/braineous/get-started" class="">GET STARTED</a></li>-->
+          <li><a href="/braineous/guides/developer-guide" class="">Developer Documentation (1.0-CR2)</a></li>
+          <li><a href="/braineous/get-started" class="">Get Started</a></li>
+          <li><a href="/braineous/guides/getting-started" class="">Create a Data Pipeline</a></li>
+          <li><a href="/braineous/guides/create-a-custom-data-connector" class="">Create a Data Connector</a></li>
+          <li><a href="/braineous/guides/data-lake" class="">Access the Data Lake</a></li>
+          <li><a href="/braineous/guides/data-transform" class="">Data Transformation</a></li>
           </ul>
       </li>
       <li class="dropdown">
@@ -108,13 +113,6 @@
   <div class="grid-wrapper">
     <div class="width-9-12 width-12-12-m">
       <p class="intropara">
-        Braineous transforms any data-format, XML, CSV, into JSON for its processor.
-        Once JSON a simple Object Graph and uses configured JSONPATH-expressions
-        to produce data for the target system and delivers it to desired data-format.
-
-        Completely dynamic. Just change the pipe configuration and roll.
-      </p>
-      <p class="intropara">
         A data pipeline connects the data source to a target store/system. The data
         source generates the data and posts it to the Braineous ingestion system
         via the Braineous Data Ingestion Java SDK.
@@ -125,45 +123,17 @@
         In turn it supports as many pipes that maybe necessary for the applications in
         question at scale.
       </p>
+      <p class="intropara">
+        Braineous transforms any data-format. (XML,CSV, or JSON) into JSON for it's processor.
+        Once JSON a simple Object Graph and uses configured JSONPATH-expressions
+        to produce data for the target system and delivers it to desired data-format.
+
+        Completely dynamic. Just change the pipe configuration and roll.
+      </p>
       <img src="../guides/images/build-time-principle.png" alt="Quarkus Build Time Principle" width="90%">
     </div>
 
-    <div class="width-12-12 width-12-12-m">
-      <h2>Pipe Registration</h2>
-      <p>
-      <p>
-      <pre class="highlightjs highlight">
-          <code class="language-java hljs" data-lang="java">
-          <span class="hljs-meta">
-          {
-              "pipeId": "123",
-              "configuration": [
-                {
-                  "storeDriver" : "com.appgallabs.dataplatform.receiver.core.driver.MongoDBStoreDriver",
-                  "name": "scenario2_store0",
-                  "config": {
-                    "connectionString": "mongodb://localhost:27017",
-                    "database": "scenario2_store0",
-                    "collection": "data"
-                  },
-                  "jsonpathExpression": "jsonpath:1"
-                },
-                {
-                  "storeDriver" : "com.appgallabs.dataplatform.receiver.core.driver.MongoDBStoreDriver",
-                  "name": "scenario2_store1",
-                  "config": {
-                    "connectionString": "mongodb://localhost:27017",
-                    "database": "scenario2_store1",
-                    "collection": "data"
-                  },
-                  "jsonpathExpression": "jsonpath:1"
-                }
-              ]
-          }
-          </span></code>
-      </pre>
-      </p>
-
+    <div class="width-9-12 width-12-12-m">
       <h2>Data Ingestion</h2>
       <p>
         The Data Ingestion process starts by sending data to the BRAINEOUS Data Ingestion endpoint. It is processed
@@ -173,121 +143,47 @@
       <p>
         Each ingestion goes through an ordered process of phases which are
         <u>
-          <li>Validation</li>
           <li>Transformation</li>
           <li>Cleansing especially for Machine Learning applications</li>
           <li>Delivery to the Target system</li>
         </u>
       </p>
+      </div>
 
-      <h2>Pipeline Registration Update</h2>
+    <div class="width-9-12 width-12-12-m">
+      <h2>Scale</h2>
       <p>
-        BRAINEOUS' Pipeline Engine is completely dynamic.
-        You can add or remove Target Stores/Systems by updating
-        the Registration via the BRAINEOUS Pipeline Management
-        Endpoint.
+        Scale is elusive yet attainable. A single <strong>Braineous</strong> pipeline can be associated
+        with thousands of target staging stores, all evolving over time. And thousands
+        of pipelines can be added with no disruption for a single tenant.
+        <strong>Braineous</strong> is designed to not have the concept of downtime.
+        Evolve your network at runtime, not static time.
       </p>
+      </div>
 
-      <h2>Data Ingestion Java SDK</h2>
+    <div class="width-9-12 width-12-12-m">
+      <h2>Accuracy</h2>
       <p>
-        You can send data to the BRAINEOUS Data Ingestion engine using the
-        included Java Data Ingestion SDK or directly via the REST API.
-
-        The advantage of using the SDK has benefits of pre-processing
-        optimizations such as:
-
-        <u>
-          <li>Tenant Authentication</li>
-          <li>Data Throttling</li>
-          <li>GraphQL endpoint to query the ingested data (planned for CR2 release)</li>
-        </u>
-      </p>
-
-      <h2>Data Ingestion REST API</h2>
-      <h1>Create/Update Pipe Registration</h1>
-      <p>
-      <pre class="highlightjs highlight">
-          <code class="language-java hljs" data-lang="java">
-          <span class="hljs-meta">
-            /ingestion/register_pipe:
-    post:
-      tags:
-      - Data Ingestion
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: string
-      responses:
-        "200":
-          description: OK
-          </span></code>
-      </pre>
-      </p>
-
-        <h1>Json-format ingestion</h1>
-        <p>
-      <pre class="highlightjs highlight">
-          <code class="language-java hljs" data-lang="java">
-          <span class="hljs-meta">
-            /ingestion/json:
-    post:
-      tags:
-      - Data Ingestion
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: string
-      responses:
-        "200":
-          description: OK
-          </span></code>
-      </pre>
-        </p>
-
-      <h1>XML-format ingestion</h1>
-      <p>
-      <pre class="highlightjs highlight">
-          <code class="language-java hljs" data-lang="java">
-          <span class="hljs-meta">
-            /ingestion/xml:
-    post:
-      tags:
-      - Data Ingestion
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: string
-      responses:
-        "200":
-          description: OK
-          </span></code>
-      </pre>
-      </p>
-
-      <h1>CSV-format ingestion</h1>
-      <p>
-      <pre class="highlightjs highlight">
-          <code class="language-java hljs" data-lang="java">
-          <span class="hljs-meta">
-            /ingestion/csv:
-    post:
-      tags:
-      - Data Ingestion
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: string
-      responses:
-        "200":
-          description: OK
-          </span></code>
-      </pre>
+        Every record ingested by <strong>Braineous</strong> is stored on a clustered Kafka log and also
+        in the <a href="/braineous/data-lake" class="">Data Lake</a>.
+        It keeps two sources of truth.
       </p>
     </div>
+
+    <div class="width-9-12 width-12-12-m">
+      <h2>Data Elasticity</h2>
+      <p>
+        <strong>Braineous</strong> bridges the unstructured dataset to the structured dataset on the fly.
+        Your <a href="/braineous/data-lake" class="">Data Lake</a>
+        evolves with the dataset. Analytics and Machine Learning need structured queries for training the AI model.
+        <strong>Braineous</strong> bridges two Worlds on the fly. Downtime is a time that is entirely
+        unacceptable for <strong>Braineous</strong>.
+      </p>
+    </div>
+
+
+
+  </div>
   </div>
 </div>
 
@@ -370,6 +266,8 @@
             <li><a blah href="https://kafka.apache.org/" target="_blank">Apache Kafka</a></li>
           
             <li><a blah href="https://flink.apache.org/" target="_blank">Apache Flink</a></li>
+          
+            <li><a blah href="https://hive.apache.org/" target="_blank">Apache Hive</a></li>
           
             <li><a blah href="https://github.com/google/gson" target="_blank">Gson</a></li>
           

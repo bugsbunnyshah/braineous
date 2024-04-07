@@ -2,185 +2,78 @@
   <div class="grid-wrapper">
     <div class="width-9-12 width-12-12-m">
       <p class="intropara">
-        Braineous DATALAKE transforms any data-format, XML, CSV, into JSON for its processor.
-        Once JSON a simple Object Graph and uses configured JSONPATH-expressions
-        to produce data for the target system and delivers it to desired data-format.
-
-        Completely dynamic. Just change the pipe configuration and roll.
-      </p>
-      <p class="intropara">
-        A data pipeline connects the data source to a target store/system. The data
-        source generates the data and posts it to the Braineous ingestion system
-        via the Braineous Data Ingestion Java SDK.
-
-        Braineous data pipeline engine supports multiple data sources and multiple
-        target systems that can be associated with a single pipe.
-
-        In turn it supports as many pipes that maybe necessary for the applications in
-        question at scale.
+        A <strong>'datalake store'</strong> is the internal store the pipeline delivers the
+        data for applications that have use cases related to analytics and machine learning. Braineous
+        is built on <strong>Apache Flink</strong> as its data processing engine and supports <strong>Apache Hive</strong> based data lakes.
+        Future releases of Braineous will include a <strong>Data Lake Connector framework</strong> that
+        can support custom data lakes developed by the customer.
       </p>
       <img src="../guides/images/build-time-principle.png" alt="Quarkus Build Time Principle" width="90%">
     </div>
 
-    <div class="width-12-12 width-12-12-m">
-      <h2>Pipe Registration</h2>
+    <div class="width-9-12 width-12-12-m">
+      <h2>Apache Hive</h2>
       <p>
-      <p>
-      <pre class="highlightjs highlight">
-          <code class="language-java hljs" data-lang="java">
-          <span class="hljs-meta">
-          {
-              "pipeId": "123",
-              "configuration": [
-                {
-                  "storeDriver" : "com.appgallabs.dataplatform.receiver.core.driver.MongoDBStoreDriver",
-                  "name": "scenario2_store0",
-                  "config": {
-                    "connectionString": "mongodb://localhost:27017",
-                    "database": "scenario2_store0",
-                    "collection": "data"
-                  },
-                  "jsonpathExpression": "jsonpath:1"
-                },
-                {
-                  "storeDriver" : "com.appgallabs.dataplatform.receiver.core.driver.MongoDBStoreDriver",
-                  "name": "scenario2_store1",
-                  "config": {
-                    "connectionString": "mongodb://localhost:27017",
-                    "database": "scenario2_store1",
-                    "collection": "data"
-                  },
-                  "jsonpathExpression": "jsonpath:1"
-                }
-              ]
-          }
-          </span></code>
-      </pre>
+        <strong>Apache Hive</strong> has established itself as a focal point of the data warehousing ecosystem.
+        It serves as not only a SQL engine for big data analytics and ETL, but also a data management platform, where data is discovered, defined, and evolved.
+
+        Flink offers a two-fold integration with Hive.
+
+        The first is to leverage Hive’s Metastore as a persistent catalog with Flink’s HiveCatalog for storing Flink specific metadata across sessions. For example,
+        users can store their Kafka or Elasticsearch tables in Hive Metastore by using HiveCatalog, and reuse them later on in SQL queries.
+
+        The second is to offer Flink as an alternative engine for reading and writing Hive tables.
+
+        The HiveCatalog is designed to be “out of the box” compatible with existing Hive installations.
+        You do not need to modify your existing Hive Metastore or change the data placement or partitioning of your tables.
       </p>
+    </div>
 
-      <h2>Data Ingestion</h2>
+    <div class="width-9-12 width-12-12-m">
+      <h2>ETL/ELT</h2>
       <p>
-        The Data Ingestion process starts by sending data to the BRAINEOUS Data Ingestion endpoint. It is processed
-        asynchronously as the data moves through its pipe through an Apache Kafka Topic and an Apache Flink
-        Stream Processor
+        <strong>Braineous</strong> allows for seamless data integration.
+        Customers have to
+        spend months of integration cost in both money
+        and time to just do the <strong>Transform</strong> part of ETL.
+
+        With <strong>Braineous</strong> they simply send raw data and <strong>'Transormation'</strong>
+        via Configuration makes systems
+        talk to each other saving time and money.
+      </p>
+    </div>
+
+    <div class="width-9-12 width-12-12-m">
+      <h2>Machine Learning</h2>
+      <p>
+        What challenge does <strong>Braineous</strong> solve for <strong>Machine Learning</strong> ?
+
+        From a birds eye view, machine learning is a way to teach a
+        computer how to think and make decisions which could also
+        translate to prediction as it can learn patterns of data
+        as it learns just like a human brain but at massive scale
+        and then predicts an outcome.
+        Accuracy of prediction is the goal. In <strong>Aviation</strong>,
+        if I am an airline, it could be what will my
+        flight network looks like in terms of delays and disruptions
+        2 weeks from now, so I am better prepared with crew as in pilot/
+        crew hours and flight plans.
+        How can I offer an optimized solution to mitigate having to put passengers
+        on another flight in my network that day.
       </p>
       <p>
-        Each ingestion goes through an ordered process of phases which are
-        <u>
-          <li>Validation</li>
-          <li>Transformation</li>
-          <li>Cleansing especially for Machine Learning applications</li>
-          <li>Delivery to the Target system</li>
-        </u>
-      </p>
-
-      <h2>Pipeline Registration Update</h2>
-      <p>
-        BRAINEOUS' Pipeline Engine is completely dynamic.
-        You can add or remove Target Stores/Systems by updating
-        the Registration via the BRAINEOUS Pipeline Management
-        Endpoint.
-      </p>
-
-      <h2>Data Ingestion Java SDK</h2>
-      <p>
-        You can send data to the BRAINEOUS Data Ingestion engine using the
-        included Java Data Ingestion SDK or directly via the REST API.
-
-        The advantage of using the SDK has benefits of pre-processing
-        optimizations such as:
-
-        <u>
-          <li>Tenant Authentication</li>
-          <li>Data Throttling</li>
-          <li>GraphQL endpoint to query the ingested data (planned for CR2 release)</li>
-        </u>
-      </p>
-
-      <h2>Data Ingestion REST API</h2>
-      <h1>Create/Update Pipe Registration</h1>
-      <p>
-      <pre class="highlightjs highlight">
-          <code class="language-java hljs" data-lang="java">
-          <span class="hljs-meta">
-            /ingestion/register_pipe:
-    post:
-      tags:
-      - Data Ingestion
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: string
-      responses:
-        "200":
-          description: OK
-          </span></code>
-      </pre>
-      </p>
-
-        <h1>Json-format ingestion</h1>
+        To do that at a high level, you need to train
+        this machine using data relevant to the application.
+        More data you can better the accuracy. This is
+        where <strong>Braineous</strong> data pipeline platform focuses as it can
+        process data at <strong>high scale</strong>
         <p>
-      <pre class="highlightjs highlight">
-          <code class="language-java hljs" data-lang="java">
-          <span class="hljs-meta">
-            /ingestion/json:
-    post:
-      tags:
-      - Data Ingestion
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: string
-      responses:
-        "200":
-          description: OK
-          </span></code>
-      </pre>
+        <strong>Braineous</strong> would provide the infrastructure
+        a data scientist and machine learning engineer would need
+        to focus on their main goal which is building the AI model.
         </p>
-
-      <h1>XML-format ingestion</h1>
-      <p>
-      <pre class="highlightjs highlight">
-          <code class="language-java hljs" data-lang="java">
-          <span class="hljs-meta">
-            /ingestion/xml:
-    post:
-      tags:
-      - Data Ingestion
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: string
-      responses:
-        "200":
-          description: OK
-          </span></code>
-      </pre>
-      </p>
-
-      <h1>CSV-format ingestion</h1>
-      <p>
-      <pre class="highlightjs highlight">
-          <code class="language-java hljs" data-lang="java">
-          <span class="hljs-meta">
-            /ingestion/csv:
-    post:
-      tags:
-      - Data Ingestion
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: string
-      responses:
-        "200":
-          description: OK
-          </span></code>
-      </pre>
       </p>
     </div>
   </div>
+</div>
 </div>

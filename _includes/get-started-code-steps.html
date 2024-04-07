@@ -29,7 +29,14 @@
       <div class="width-10-12 width-12-12-m">
           <h3>Download Braineous</h3>
           <div class="grid-wrapper">
-              <a href="https://github.com/bugsbunnyshah/braineous_dataplatform/releases/download/braineous-1.0.0-CR1/braineous-1.0.0-cr1.zip">Braineous-1.0.0-CR2</a>
+              <a href="https://www.dropbox.com/scl/fi/33x70udodj1p6wxy5bf7e/braineous-1.0.0-cr2-binary.zip?rlkey=6eh6kraoalln8vt41w9h4e9v4&dl=0">Braineous-1.0.0-CR2</a>
+          </div>
+          <p></p>
+          <div class="grid-wrapper">
+              <p>More instructions</p>
+          </div>
+          <div>
+              <a href="https://github.com/bugsbunnyshah/braineous_dataplatform/releases/tag/braineous-1.0.0-cr2" target="_blank">Release</a>
           </div>
       </div>
 
@@ -152,6 +159,47 @@
 
       <div class="width-2-12 width-12-12-m">
           <h2 class="step">Step <span class="step-no">9</span></h2>
+      </div>
+      <div class="width-10-12 width-12-12-m">
+          <h3>Generate an API Key and API Secret</h3>
+          <div class="grid-wrapper">
+              <div class="width-6-12 width-12-12-m">
+                  <div class= "highlighter-rouge">
+                      <div class="highlight">
+                          <pre class="highlight">Create a Tenant</pre>
+                      </div>
+                      <div class="highlight">
+                          <pre class="highlight"><code>./pipemon.sh</code></pre>
+                      </div>
+                      <div class="highlight">
+                          <pre class="highlight">
+                        ********************
+                         𝔹ℝ𝔸𝕀ℕ𝔼𝕆𝕌𝕊
+                         *****************
+                        > If you have a tenant press [l] to login, If you need to create a tenant press[c]
+                        c
+                        Create a tenant
+                        > tenant:
+                        cr2_tenant
+                        > email:
+                        cr2@cr2.com
+                        > password:
+                        password
+                        ***TENANT_CREATION_SUCCESS***
+                        {principal: cb4e0e9f-1b06-4e38-8f8a-395775d1a83f, apiSecret: e41bc11a-83ea-42e1-96c1-5bb136de9ce1, name: cr2_tenant, email: cr2@cr2.com, password: 5F4DCC3B5AA765D61D8327DEB882CF99, apiKey: cb4e0e9f-1b06-4e38-8f8a-395775d1a83f}
+                        Please keep the API secret safe for Data Platform usage. This will not be displayed in the future for security reasons
+                          </pre>
+                      </div>
+                      <div class="highlight">
+                          <pre class="highlight">Please use this generated API Key and API Secret for the tutorials.</pre>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="width-2-12 width-12-12-m">
+          <h2 class="step">Step <span class="step-no">10</span></h2>
       </div>
       <div class="width-10-12 width-12-12-m">
           <h3>Create a Data Pipeline</h3>

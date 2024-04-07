@@ -17,13 +17,13 @@
   <META HTTP-EQUIV='X-Content-Type-Options' CONTENT="nosniff">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Braineous: Supersonic Subatomic Java">
+  <meta name="description" content="Braineous Data Platform">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@QuarkusIO"> 
   <meta name="twitter:creator" content="@QuarkusIO">
   <meta property="og:url" content="http://localhost:4000/version/2.16/guides/quartz" />
   <meta property="og:title" content="Scheduling Periodic Tasks with Quartz - 2.16" />
-  <meta property="og:description" content="Braineous: Supersonic Subatomic Java" />
+  <meta property="og:description" content="Braineous Data Platform" />
   <meta property="og:image" content="http://localhost:4000/assets/images/quarkus_card.png" />
   
   <link rel="canonical" href="http://localhost:4000/guides/quartz">
@@ -31,7 +31,7 @@
   <link rel="stylesheet" href="/guides/stylesheet/config.css" />
   <link rel="stylesheet" href="/braineous/assets/css/main.css?2021-07-29" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-  <link rel="alternate" type="application/rss+xml"  href="/feed.xml" title="Braineous">
+  <link rel="alternate" type="application/rss+xml"  href="/feed.xml" title="Braineous Data Platform">
   <script src="/assets/javascript/hl.js" type="text/javascript"></script>
   
   
@@ -106,39 +106,13 @@
 <section class="full-width-version-bg flexfilterbar guides">
   <div class="guideflexcontainer">
     <div class="docslink">
-      <a class="returnlink" href="/braineous/version/2.16/guides/"> Back to Guides</a>
+      <a class="returnlink" href="/braineous/get-started">Back</a>
     </div>
+    <!--
     <div class="flexlabel">
       <label>By Version</label>
     </div>
-    <div class="guidepulldown version">
-    <select id="guide-version-dropdown">
-      
-        
-        
-        <option value="main" >Main - SNAPSHOT</option>
-        
-        
-        
-        <option value="latest" >3.5.0 - Latest</option>
-        
-        
-        
-        <option value="3.2" >3.2</option>
-        
-        
-        
-        <option value="2.16" selected>2.16</option>
-        
-        
-        
-        <option value="2.13" >2.13</option>
-        
-        
-        
-        <option value="2.7" >2.7</option>
-        </select>
-    </div>
+    -->
   </div>
 </section>
 
@@ -1054,7 +1028,7 @@ quarkus.quartz.plugins.jobHistory.properties.jobSuccessMessage=Job [{1}.{0}] exe
 If enabled make sure to set the appropriate cluster properties.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-20747">QUARKUS_QUARTZ_CLUSTERED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-20747" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-20739">QUARKUS_QUARTZ_CLUSTERED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-20739" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1074,7 +1048,7 @@ If enabled make sure to set the appropriate cluster properties.</p>
 <p>The frequency (in milliseconds) at which the scheduler instance checks-in with other instances of the cluster.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-20748">QUARKUS_QUARTZ_CLUSTER_CHECKIN_INTERVAL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-20748" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-20740">QUARKUS_QUARTZ_CLUSTER_CHECKIN_INTERVAL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-20740" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1096,7 +1070,7 @@ When using <code>StoreType#JDBC_CMT</code> or <code>StoreType#JDBC_TX</code> con
 To create Quartz tables, you can perform a schema migration via the <a href="https://quarkus.io/guides/flyway">Flyway extension</a> using a SQL script matching your database picked from <a href="https://github.com/quartz-scheduler/quartz/blob/master/quartz-core/src/main/resources/org/quartz/impl/jdbcjobstore">Quartz repository</a>.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-20749">QUARKUS_QUARTZ_STORE_TYPE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-20749" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-20741">QUARKUS_QUARTZ_STORE_TYPE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-20741" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1119,7 +1093,7 @@ To create Quartz tables, you can perform a schema migration via the <a href="htt
 Optionally needed when using the <code>jdbc-tx</code> or <code>jdbc-cmt</code> store types. If not specified, defaults to using the default datasource.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-20750">QUARKUS_QUARTZ_DATASOURCE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-20750" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-20742">QUARKUS_QUARTZ_DATASOURCE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-20742" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1140,7 +1114,7 @@ Optionally needed when using the <code>jdbc-tx</code> or <code>jdbc-cmt</code> s
 Ignored if using a <code>ram</code> store.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-20751">QUARKUS_QUARTZ_TABLE_PREFIX</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-20751" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-20743">QUARKUS_QUARTZ_TABLE_PREFIX</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-20743" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1162,7 +1136,7 @@ If not set, the default value of Quartz applies, for which the "{0}" is replaced
 An example SQL string <code>SELECT * FROM {0}LOCKS WHERE SCHED_NAME = {1} AND LOCK_NAME = ? FOR UPDATE</code></p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-20752">QUARKUS_QUARTZ_SELECT_WITH_LOCK_SQL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-20752" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-20744">QUARKUS_QUARTZ_SELECT_WITH_LOCK_SQL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-20744" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1182,7 +1156,7 @@ An example SQL string <code>SELECT * FROM {0}LOCKS WHERE SCHED_NAME = {1} AND LO
 <p>The name of the Quartz instance.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-20753">QUARKUS_QUARTZ_INSTANCE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-20753" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-20745">QUARKUS_QUARTZ_INSTANCE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-20745" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1202,7 +1176,7 @@ An example SQL string <code>SELECT * FROM {0}LOCKS WHERE SCHED_NAME = {1} AND LO
 <p>The identifier of Quartz instance that must be unique for all schedulers working as if they are the same <em>logical</em> Scheduler within a cluster. Use the default value <code>AUTO</code> or some of the configured <a href="https://quarkus.io/guides/quartz#quarkus-quartz_quarkus.quartz.instance-id-generators-instance-id-generators">instance ID generators</a> if you wish the identifier to be generated for you.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-20754">QUARKUS_QUARTZ_INSTANCE_ID</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-20754" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-20746">QUARKUS_QUARTZ_INSTANCE_ID</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-20746" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1222,7 +1196,7 @@ An example SQL string <code>SELECT * FROM {0}LOCKS WHERE SCHED_NAME = {1} AND LO
 <p>The amount of time in milliseconds that a trigger is allowed to be acquired and fired ahead of its scheduled fire time.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-20755">QUARKUS_QUARTZ_BATCH_TRIGGER_ACQUISITION_FIRE_AHEAD_TIME_WINDOW</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-20755" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-20747">QUARKUS_QUARTZ_BATCH_TRIGGER_ACQUISITION_FIRE_AHEAD_TIME_WINDOW</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-20747" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1242,7 +1216,7 @@ An example SQL string <code>SELECT * FROM {0}LOCKS WHERE SCHED_NAME = {1} AND LO
 <p>The maximum number of triggers that a scheduler node is allowed to acquire (for firing) at once.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-20756">QUARKUS_QUARTZ_BATCH_TRIGGER_ACQUISITION_MAX_COUNT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-20756" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-20748">QUARKUS_QUARTZ_BATCH_TRIGGER_ACQUISITION_MAX_COUNT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-20748" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1262,7 +1236,7 @@ An example SQL string <code>SELECT * FROM {0}LOCKS WHERE SCHED_NAME = {1} AND LO
 <p>The size of scheduler thread pool. This will initialize the number of worker threads in the pool.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-20757">QUARKUS_QUARTZ_THREAD_COUNT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-20757" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-20749">QUARKUS_QUARTZ_THREAD_COUNT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-20749" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1282,7 +1256,7 @@ An example SQL string <code>SELECT * FROM {0}LOCKS WHERE SCHED_NAME = {1} AND LO
 <p>Thread priority of worker threads in the pool.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-20758">QUARKUS_QUARTZ_THREAD_PRIORITY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-20758" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-20750">QUARKUS_QUARTZ_THREAD_PRIORITY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-20750" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1302,7 +1276,7 @@ An example SQL string <code>SELECT * FROM {0}LOCKS WHERE SCHED_NAME = {1} AND LO
 <p>Defines how late the schedulers should be to be considered misfired.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-20759">QUARKUS_QUARTZ_MISFIRE_THRESHOLD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-20759" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-20751">QUARKUS_QUARTZ_MISFIRE_THRESHOLD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-20751" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1323,7 +1297,7 @@ An example SQL string <code>SELECT * FROM {0}LOCKS WHERE SCHED_NAME = {1} AND LO
 <p>Scheduler can be started in different modes: normal, forced or halted. By default, the scheduler is not started unless a <code>io.quarkus.scheduler.Scheduled</code> business method is found. If set to "forced", scheduler will be started even if no scheduled business methods are found. This is necessary for "pure" programmatic scheduling. Additionally, setting it to "halted" will behave just like forced mode but the scheduler will not start triggering jobs until an explicit start is called from the main scheduler. This is useful to programmatically register listeners before scheduler starts performing some work.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-20760">QUARKUS_QUARTZ_START_MODE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-20760" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-20752">QUARKUS_QUARTZ_START_MODE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-20752" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1345,7 +1319,7 @@ An example SQL string <code>SELECT * FROM {0}LOCKS WHERE SCHED_NAME = {1} AND LO
 <p>The maximum amount of time Quarkus will wait for currently running jobs to finish. If the value is <code>0</code>, then Quarkus will not wait at all for these jobs to finish - it will call <code>org.quartz.Scheduler.shutdown(false)</code> in this case.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-20761">QUARKUS_QUARTZ_SHUTDOWN_WAIT_TIME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-20761" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-20753">QUARKUS_QUARTZ_SHUTDOWN_WAIT_TIME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-20753" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1366,7 +1340,7 @@ An example SQL string <code>SELECT * FROM {0}LOCKS WHERE SCHED_NAME = {1} AND LO
 <p>The quartz misfire policy for this job.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-20762">QUARKUS_QUARTZ_SIMPLE_TRIGGER_MISFIRE_POLICY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-20762" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-20754">QUARKUS_QUARTZ_SIMPLE_TRIGGER_MISFIRE_POLICY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-20754" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1388,7 +1362,7 @@ An example SQL string <code>SELECT * FROM {0}LOCKS WHERE SCHED_NAME = {1} AND LO
 <p>The quartz misfire policy for this job.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-20763">QUARKUS_QUARTZ_CRON_TRIGGER_MISFIRE_POLICY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-20763" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-20755">QUARKUS_QUARTZ_CRON_TRIGGER_MISFIRE_POLICY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-20755" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1411,7 +1385,7 @@ An example SQL string <code>SELECT * FROM {0}LOCKS WHERE SCHED_NAME = {1} AND LO
 When this option is enabled, blocking scheduled methods do not run on a <code>duplicated context</code>.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-20764">QUARKUS_QUARTZ_RUN_BLOCKING_SCHEDULED_METHOD_ON_QUARTZ_THREAD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-20764" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-20756">QUARKUS_QUARTZ_RUN_BLOCKING_SCHEDULED_METHOD_ON_QUARTZ_THREAD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-20756" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1436,7 +1410,7 @@ When this option is enabled, blocking scheduled methods do not run on a <code>du
 <p>Class name for the configuration.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-20765">QUARKUS_QUARTZ_INSTANCE_ID_GENERATORS__GENERATOR_NAME__CLASS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-20765" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-20757">QUARKUS_QUARTZ_INSTANCE_ID_GENERATORS__GENERATOR_NAME__CLASS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-20757" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1456,7 +1430,7 @@ When this option is enabled, blocking scheduled methods do not run on a <code>du
 <p>The properties passed to the class.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-20766">QUARKUS_QUARTZ_INSTANCE_ID_GENERATORS__GENERATOR_NAME__PROPERTIES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-20766" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-20758">QUARKUS_QUARTZ_INSTANCE_ID_GENERATORS__GENERATOR_NAME__PROPERTIES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-20758" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1481,7 +1455,7 @@ When this option is enabled, blocking scheduled methods do not run on a <code>du
 <p>Class name for the configuration.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-20767">QUARKUS_QUARTZ_TRIGGER_LISTENERS__LISTENER_NAME__CLASS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-20767" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-20759">QUARKUS_QUARTZ_TRIGGER_LISTENERS__LISTENER_NAME__CLASS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-20759" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1501,7 +1475,7 @@ When this option is enabled, blocking scheduled methods do not run on a <code>du
 <p>The properties passed to the class.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-20768">QUARKUS_QUARTZ_TRIGGER_LISTENERS__LISTENER_NAME__PROPERTIES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-20768" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-20760">QUARKUS_QUARTZ_TRIGGER_LISTENERS__LISTENER_NAME__PROPERTIES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-20760" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1526,7 +1500,7 @@ When this option is enabled, blocking scheduled methods do not run on a <code>du
 <p>Class name for the configuration.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-20769">QUARKUS_QUARTZ_JOB_LISTENERS__LISTENER_NAME__CLASS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-20769" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-20761">QUARKUS_QUARTZ_JOB_LISTENERS__LISTENER_NAME__CLASS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-20761" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1546,7 +1520,7 @@ When this option is enabled, blocking scheduled methods do not run on a <code>du
 <p>The properties passed to the class.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-20770">QUARKUS_QUARTZ_JOB_LISTENERS__LISTENER_NAME__PROPERTIES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-20770" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-20762">QUARKUS_QUARTZ_JOB_LISTENERS__LISTENER_NAME__PROPERTIES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-20762" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1571,7 +1545,7 @@ When this option is enabled, blocking scheduled methods do not run on a <code>du
 <p>Class name for the configuration.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-20771">QUARKUS_QUARTZ_PLUGINS__PLUGIN_NAME__CLASS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-20771" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-20763">QUARKUS_QUARTZ_PLUGINS__PLUGIN_NAME__CLASS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-20763" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1591,7 +1565,7 @@ When this option is enabled, blocking scheduled methods do not run on a <code>du
 <p>The properties passed to the class.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-20772">QUARKUS_QUARTZ_PLUGINS__PLUGIN_NAME__PROPERTIES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-20772" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-20764">QUARKUS_QUARTZ_PLUGINS__PLUGIN_NAME__PROPERTIES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-20764" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1616,7 +1590,7 @@ When this option is enabled, blocking scheduled methods do not run on a <code>du
 <p>The quartz misfire policy for this job.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-20773">QUARKUS_QUARTZ_MISFIRE_POLICY__IDENTITY_</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-20773" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-20765">QUARKUS_QUARTZ_MISFIRE_POLICY__IDENTITY_</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-20765" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div>
@@ -1762,21 +1736,17 @@ Otherwise, <code>PT</code> is implicitly prepended to the value to obtain a stan
         <span>Braineous is made of community projects</span>
         <ul class="footer-links">
           
-            <li><a blah href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
+            <li><a blah href="https://quarkus.io/" target="_blank">Quarkus</a></li>
           
-            <li><a blah href="https://smallrye.io" target="_blank">SmallRye</a></li>
+            <li><a blah href="https://kafka.apache.org/" target="_blank">Apache Kafka</a></li>
           
-            <li><a blah href="https://hibernate.org" target="_blank">Hibernate</a></li>
+            <li><a blah href="https://flink.apache.org/" target="_blank">Apache Flink</a></li>
           
-            <li><a blah href="https://netty.io" target="_blank">Netty</a></li>
+            <li><a blah href="https://github.com/google/gson" target="_blank">Gson</a></li>
           
-            <li><a blah href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
+            <li><a blah href="https://www.mongodb.com/" target="_blank">MongoDB</a></li>
           
-            <li><a blah href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
-          
-            <li><a blah href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
-          
-            <li><a blah href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
+            <li><a blah href="https://github.com/bugsbunnyshah/braineous_dataplatform/blob/main/pom.xml" target="_blank">And many more...</a></li>
           
         </ul>
       </div>

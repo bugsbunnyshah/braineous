@@ -3,7 +3,7 @@ This guide is maintained in the main Quarkus repository
 and pull requests should be submitted there:
 https://github.com/quarkusio/quarkus/tree/main/docs/src/main/asciidoc
 ////
-= Braineous Documentation version (1.0-CR2) Candidate Release 2
+= Braineous Documentation version (1.0.0-CR2) Candidate Release 2
 include::_attributes.adoc[]
 :categories: official-documentation
 :summary: Official Developer Documentation.
@@ -71,25 +71,15 @@ A sample Braineous pipe configuration
 [source,bash,subs=attributes+]
 ----
 {
-  "pipeId": "multiplestores",
-  "entity": "books",
+  "pipeId": "yyya",
+  "entity": "abc",
   "configuration": [
     {
       "stagingStore" : "com.appgallabs.dataplatform.targetSystem.core.driver.MongoDBStagingStore",
-      "name": "multiplestores0",
+      "name": "yyya",
       "config": {
         "connectionString": "mongodb://localhost:27017",
-        "database": "multi0",
-        "collection": "data",
-        "jsonpathExpressions": []
-      }
-    },
-    {
-      "stagingStore" : "com.appgallabs.dataplatform.targetSystem.core.driver.MongoDBStagingStore",
-      "name": "multiplestores1",
-      "config": {
-        "connectionString": "mongodb://localhost:27017",
-        "database": "multi1",
+        "database": "yyya",
         "collection": "data",
         "jsonpathExpressions": []
       }
@@ -98,13 +88,14 @@ A sample Braineous pipe configuration
 }
 ----
 
-* *pipeId* : As a data source provider, this is id identifies
-this data pipe uniquely with the Braineous Data Pipline Engine.
-* *configuration.storeDriver* : MongoDB target store driver
-* *name* : a user-friendly way to indentify the target store
-* *config.connectionString* : MySql database connection string
-* *config.username* : Database User
-* *config.password* : Database Password
+* *pipeId* : As a data source provider, this id identifies this data pipe
+uniquely with the *Braineous Data Pipline Engine*.
+* *entity* : The business/domain entity that this dataset should be associated with.
+* *configuration.stagingStore*: The `Staging Store` driver
+* *configuration.name*: a user-friendly way to indentify the target store
+* *configuration.config.connectionString*: MongoDB database connection string for your target store
+* *configuration.config.database*: MongoDB database on your target store
+* *configuration.config.collection*: MongoDB database collection on your target store
 
 A data pipe can be configured with multiple target stores/systems associated with the same data pipe
 for data delivery.
@@ -122,15 +113,15 @@ In the future releases, Braineous team will add support for more target stores a
 * Airbyte Catalog
 
 Braineous also provides a *Staging Store Framework* for developers to develop custom connectors.
+For a hands-on tutorial please refer to: link:/braineous/guides/create-a-custom-data-connector[Create a Data Connector]
 
-== DataLake Store
+== Data Lake
 
-==== What is a Data Lake Store?
+==== What is a Data Lake?
 
 A *'datalake store'* is the internal store the pipeline delivers the
-data for applications that have usecases related to analytics and machine learning. Braineous
-is built on Apache Flink as its data processing engine and supports Apache Hive as its core
-data lake. Future releases of Braineous will include a Data Lake Connector framework that
+data for applications that have use cases related to analytics and machine learning. Braineous
+is built on `Apache Flink` as its data processing engine and supports `Apache Hive` based data lakes. Future releases of Braineous will include a Data Lake Connector framework that
 can support third-party data lakes like Apache Iceberg, Snowflake or a custom data lake
 developed by the customer.
 
@@ -138,17 +129,143 @@ developed by the customer.
 
 ==== What is Data Transformation?
 
+Data transformation is the process of converting data from one format, such as a database file, XML document or Excel spreadsheet, into another.
+
+Transformations typically involve converting a raw data source into a cleansed, validated and ready-to-use format. Data transformation is crucial to data management processes that include data integration, data migration, data warehousing and data preparation.
+
+Braineous is fully compliant with JSONPath specification:
+https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html
+
+You can transform your payload on the fly using JSONPath expressions on the
+pipeline configuration.
+
+Here is a tutorial: link:/braineous/guides/data-transform[Data Transformation]
+
+
 == Pipeline Monitoring
+`Braineous` includes a pipeline monitoring tool called `pipemon` available
+in the `bin` directory of the binary distribution.
 
-== Usecases
+The tool is evolving and is designed to support the following features:
 
-==== Extract/Transform/Load (ETL)
+[source,bash,subs=attributes+]
+----
+./pipemon.sh
+----
 
-==== Extract/Load/Transform (ELT)
+=== Create a Tenant with `API_KEY` and `API_SECRET`
+[source,bash,subs=attributes+]
+----
+babyboy@BabyBoys-MBP bin % ./pipemon.sh
+********************
+ 𝔹ℝ𝔸𝕀ℕ𝔼𝕆𝕌𝕊
+ *****************
+> If you have a tenant press [l] to login, If you need to create a tenant press[c]
+c
+Create a tenant
+> tenant:
+ruku_tenant
+> email:
+ruku@ruku.com
+> password:
+password
+***TENANT_CREATION_SUCCESS***
+{principal: 38016be6-2869-4543-b7bd-9a772edd4c07, apiSecret: 1093eafc-4445-4a44-8d62-0a9d8512f23d, name: ruku_tenant, email: ruku@ruku.com, password: 5F4DCC3B5AA765D61D8327DEB882CF99, apiKey: 38016be6-2869-4543-b7bd-9a772edd4c07}
+Please keep the API secret safe for Braineous Data Platform usage. This will not be displayed in the future for security reasons
+*****************************
+38016be6-2869-4543-b7bd-9a772edd4c07 > Press exit or CTRL+C to exit
+----
 
-==== Analytics
+=== Show registered pipelines
+[source,bash,subs=attributes+]
+----
+********************
+ 𝔹ℝ𝔸𝕀ℕ𝔼𝕆𝕌𝕊
+ *****************
+> If you have a tenant press [l] to login, If you need to create a tenant press[c]
+l
+Login
+> email:
+paro@paro.com
+> password:
+password
+6ca06059-aebb-43a6-ba47-306d2469c059 > Press exit or CTRL+C to exit
+show pipes
+*******All registered pipes********
+[{subscriptionId: 20350d12-7563-4931-82b8-0e7dcb0ef442, group: {subscribers: [{email: 6ca06059-aebb-43a6-ba47-306d2469c059}]}, pipe: {pipeId: yyya, subscriptionId: 20350d12-7563-4931-82b8-0e7dcb0ef442, pipeName: yyya, pipeStage: DEVELOPMENT, pipeType: PUSH, cleanerFunctions: []}}, {subscriptionId: ced17e1b-604d-4d6c-93f4-8933e8c3e14b, group: {subscribers: [{email: 6ca06059-aebb-43a6-ba47-306d2469c059}]}, pipe: {pipeId: yyya, subscriptionId: ced17e1b-604d-4d6c-93f4-8933e8c3e14b, pipeName: yyya, pipeStage: DEVELOPMENT, pipeType: PUSH, cleanerFunctions: []}}, {subscriptionId: eba00d05-80df-4207-8c20-286cd305564b, group: {subscribers: [{email: 6ca06059-aebb-43a6-ba47-306d2469c059}]}, pipe: {pipeId: yyya, subscriptionId: eba00d05-80df-4207-8c20-286cd305564b, pipeName: yyya, pipeStage: DEVELOPMENT, pipeType: PUSH, cleanerFunctions: []}}, {subscriptionId: 9b9c3897-8bde-4c9a-adbb-a23e3faa5d2a, group: {subscribers: [{email: 6ca06059-aebb-43a6-ba47-306d2469c059}]}, pipe: {pipeId: zzza, subscriptionId: 9b9c3897-8bde-4c9a-adbb-a23e3faa5d2a, pipeName: zzza, pipeStage: DEVELOPMENT, pipeType: PUSH, cleanerFunctions: []}}, {subscriptionId: dd24d228-0a4d-4453-a9bd-85a3aec92664, group: {subscribers: [{email: 6ca06059-aebb-43a6-ba47-306d2469c059}]}, pipe: {pipeId: yyya, subscriptionId: dd24d228-0a4d-4453-a9bd-85a3aec92664, pipeName: yyya, pipeStage: DEVELOPMENT, pipeType: PUSH, cleanerFunctions: []}}, {subscriptionId: 3ddce006-e26e-45fc-be68-d4ad4c8f4522, group: {subscribers: [{email: 6ca06059-aebb-43a6-ba47-306d2469c059}]}, pipe: {pipeId: zzza, subscriptionId: 3ddce006-e26e-45fc-be68-d4ad4c8f4522, pipeName: zzza, pipeStage: DEVELOPMENT, pipeType: PUSH, cleanerFunctions: []}}]
+6ca06059-aebb-43a6-ba47-306d2469c059 > Press exit or CTRL+C to exit
+----
 
-==== Machine Learning
+=== Show ingestion statistics
+[source,bash,subs=attributes+]
+----
+6ca06059-aebb-43a6-ba47-306d2469c059 > Press exit or CTRL+C to exit
+use yyya
+Using pipe: yyya
+yyya > Press exit or CTRL+C to exit
+show ingestion_stats
+*******Data_Ingestion_Stats********
+{type: ingestion, pipeId: yyya, pipeName: yyya, sizeInBytes: 2176}
+yyya > Press exit or CTRL+C to exit
+----
+=== Show delivery statistics
+[source,bash,subs=attributes+]
+----
+yyya > Press exit or CTRL+C to exit
+show delivery_stats
+*******Data_Delivery_Stats********
+{type: delivery, pipeId: yyya, pipeName: yyya, sizeInBytes: 1088}
+yyya > Press exit or CTRL+C to exit
+----
+=== Show live snapshots
+[source,bash,subs=attributes+]
+----
+yyya > Press exit or CTRL+C to exit
+show live_snapshot
+*******Live_Snapshot********
+[{_id: {$oid: 660d132a0638fb53523e72f2}, pipelineServiceType: DATALAKE, metadata: {datalake: {name: mongodb, configuration: {connectionString: mongodb://localhost:27017, collection: datalake}}}, entity: abc, pipeId: yyya, message: [{"id":1,"name":"name_1","age":46,"addr":{"email":"name_1@email.com","phone":"123"}},{"id":"2","name":"name_2","age":55,"addr":{"email":"name_2@email.com","phone":"1234"}}], sizeInBytes: 272, incoming: true}, {_id: {$oid: 660d132a0638fb53523e72f1}, pipelineServiceType: INGESTION, metadata: {connectionString: mongodb://localhost:27017, database: yyya, collection: data, jsonpathExpressions: []}, entity: abc, pipeId: yyya, message: [{"id":1,"name":"name_1","age":46,"addr":{"email":"name_1@email.com","phone":"123"}},{"id":"2","name":"name_2","age":55,"addr":{"email":"name_2@email.com","phone":"1234"}}], sizeInBytes: 272, incoming: true}, {_id: {$oid: 660d132b0638fb53523e72f3}, pipelineServiceType: INGESTION, metadata: {connectionString: mongodb://localhost:27017, database: yyya, collection: data, jsonpathExpressions: []}, entity: abc, pipeId: yyya, message: [{"id":1,"name":"name_1","age":46,"addr":{"email":"name_1@email.com","phone":"123"}},{"id":"2","name":"name_2","age":55,"addr":{"email":"name_2@email.com","phone":"1234"}}], sizeInBytes: 272, outgoing: true}, {_id: {$oid: 660d155e0638fb53523e72f9}, pipelineServiceType: DATALAKE, metadata: {datalake: {name: mongodb, configuration: {connectionString: mongodb://localhost:27017, collection: datalake}}}, entity: abc, pipeId: yyya, message: [{"id":1,"name":"name_1","age":46,"addr":{"email":"name_1@email.com","phone":"123"}},{"id":"2","name":"name_2","age":55,"addr":{"email":"name_2@email.com","phone":"1234"}}], sizeInBytes: 272, incoming: true}, {_id: {$oid: 660d155e0638fb53523e72fc}, pipelineServiceType: INGESTION, metadata: {connectionString: mongodb://localhost:27017, database: yyya, collection: data, jsonpathExpressions: []}, entity: abc, pipeId: yyya, message: [{"id":1,"name":"name_1","age":46,"addr":{"email":"name_1@email.com","phone":"123"}},{"id":"2","name":"name_2","age":55,"addr":{"email":"name_2@email.com","phone":"1234"}}], sizeInBytes: 272, incoming: true}, {_id: {$oid: 660d155e0638fb53523e72fd}, pipelineServiceType: INGESTION, metadata: {connectionString: mongodb://localhost:27017, database: yyya, collection: data, jsonpathExpressions: []}, entity: abc, pipeId: yyya, message: [{"id":1,"name":"name_1","age":46,"addr":{"email":"name_1@email.com","phone":"123"}},{"id":"2","name":"name_2","age":55,"addr":{"email":"name_2@email.com","phone":"1234"}}], sizeInBytes: 272, outgoing: true}, {_id: {$oid: 660d17910638fb53523e72ff}, pipelineServiceType: DATALAKE, metadata: {datalake: {name: mongodb, configuration: {connectionString: mongodb://localhost:27017, collection: datalake}}}, entity: abc, pipeId: yyya, message: [{"id":1,"name":"name_1","age":46,"addr":{"email":"name_1@email.com","phone":"123"}},{"id":"2","name":"name_2","age":55,"addr":{"email":"name_2@email.com","phone":"1234"}}], sizeInBytes: 272, incoming: true}, {_id: {$oid: 660d17920638fb53523e7303}, pipelineServiceType: INGESTION, metadata: {connectionString: mongodb://localhost:27017, database: yyya, collection: data, jsonpathExpressions: []}, entity: abc, pipeId: yyya, message: [{"id":1,"name":"name_1","age":46,"addr":{"email":"name_1@email.com","phone":"123"}},{"id":"2","name":"name_2","age":55,"addr":{"email":"name_2@email.com","phone":"1234"}}], sizeInBytes: 272, incoming: true}, {_id: {$oid: 660d17920638fb53523e7304}, pipelineServiceType: INGESTION, metadata: {connectionString: mongodb://localhost:27017, database: yyya, collection: data, jsonpathExpressions: []}, entity: abc, pipeId: yyya, message: [{"id":1,"name":"name_1","age":46,"addr":{"email":"name_1@email.com","phone":"123"}},{"id":"2","name":"name_2","age":55,"addr":{"email":"name_2@email.com","phone":"1234"}}], sizeInBytes: 272, outgoing: true}, {_id: {$oid: 660d190f0638fb53523e7314}, pipelineServiceType: DATALAKE, metadata: {datalake: {name: mongodb, configuration: {connectionString: mongodb://localhost:27017, collection: datalake}}}, entity: abc, pipeId: yyya, message: [{"id":1,"name":"name_1","age":46,"addr":{"email":"name_1@email.com","phone":"123"}},{"id":"2","name":"name_2","age":55,"addr":{"email":"name_2@email.com","phone":"1234"}}], sizeInBytes: 272, incoming: true}, {_id: {$oid: 660d190f0638fb53523e7317}, pipelineServiceType: INGESTION, metadata: {connectionString: mongodb://localhost:27017, database: yyya, collection: data, jsonpathExpressions: []}, entity: abc, pipeId: yyya, message: [{"id":1,"name":"name_1","age":46,"addr":{"email":"name_1@email.com","phone":"123"}},{"id":"2","name":"name_2","age":55,"addr":{"email":"name_2@email.com","phone":"1234"}}], sizeInBytes: 272, incoming: true}, {_id: {$oid: 660d190f0638fb53523e7318}, pipelineServiceType: INGESTION, metadata: {connectionString: mongodb://localhost:27017, database: yyya, collection: data, jsonpathExpressions: []}, entity: abc, pipeId: yyya, message: [{"id":1,"name":"name_1","age":46,"addr":{"email":"name_1@email.com","phone":"123"}},{"id":"2","name":"name_2","age":55,"addr":{"email":"name_2@email.com","phone":"1234"}}], sizeInBytes: 272, outgoing: true}]
+yyya > Press exit or CTRL+C to exit
+----
+=== Move Pipe to development
+[source,bash,subs=attributes+]
+----
+yyya > Press exit or CTRL+C to exit
+move pipe_to_development
+*******Move pipe to development********
+PIPE_SUCCESSFULLY_REGISTERED
+{pipeId: yyya, subscriptionId: 20350d12-7563-4931-82b8-0e7dcb0ef442, pipeName: yyya, pipeStage: DEVELOPMENT, pipeType: PUSH, cleanerFunctions: []}
+yyya > Press exit or CTRL+C to exit
+----
+=== Move Pipe to staging
+[source,bash,subs=attributes+]
+----
+yyya > Press exit or CTRL+C to exit
+move pipe_to_staging
+*******Move pipe to staging********
+PIPE_SUCCESSFULLY_STAGED
+{pipeId: yyya, subscriptionId: 20350d12-7563-4931-82b8-0e7dcb0ef442, pipeName: yyya, pipeStage: STAGED, pipeType: PUSH, cleanerFunctions: []}
+yyya > Press exit or CTRL+C to exit
+----
+=== Move Pipe to production
+[source,bash,subs=attributes+]
+----
+yyya > Press exit or CTRL+C to exit
+move pipe_to_production
+*******Move pipe to staging********
+PIPE_SUCCESSFULLY_DEPLOYED
+{pipeId: yyya, subscriptionId: 20350d12-7563-4931-82b8-0e7dcb0ef442, pipeName: yyya, pipeStage: DEPLOYED, pipeType: PUSH, cleanerFunctions: []}
+yyya > Press exit or CTRL+C to exit
+----
+
+//== Usecases
+
+//==== Extract/Transform/Load (ETL)
+
+//==== Extract/Load/Transform (ELT)
+
+//==== Analytics
+
+//==== Machine Learning
 
 
 

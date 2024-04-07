@@ -58,6 +58,8 @@ more_links:
         url: https://kafka.apache.org/
       - page: Apache Flink
         url: https://flink.apache.org/
+      - page: Apache Hive
+        url: https://hive.apache.org/
       - page: Gson
         url: https://github.com/google/gson
       - page: MongoDB
