@@ -133,11 +133,8 @@ for data delivery.
 In the next Candidate Release, Braineous team will add support for more target stores and systems such as :
 
 * Postgresql
-* Mysql
 * Oracle
-* Snowflake
-* Microservices
-* Airbyte Catalog
+* Amazon Redshift
 
 Java Code - Register Pipe
 [source,bash,subs=attributes+]
