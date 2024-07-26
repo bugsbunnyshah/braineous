@@ -129,6 +129,7 @@ uniquely with the *Braineous Data Pipline Engine*.
 * *configuration.config.connectionString*: ClickHouse database connection string for your target store
 * *configuration.config.username*: ClickHouse user
 * *configuration.config.password*: ClickHouses' user's password
+* *configuration.config.staging_table*: ClickHouse staging table
 * *configuration.config.jsonpathExpressions*: Data Transformation based on JSONPath specification: https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html
 
 A data pipe can be configured with multiple target stores/systems associated with the same data pipe
