@@ -3,23 +3,24 @@ This guide is maintained in the main Quarkus repository
 and pull requests should be submitted there:
 https://github.com/quarkusio/quarkus/tree/main/docs/src/main/asciidoc
 ////
-= Creating Your First Braineous Data Pipeline
+= Integrate the ElasticSearch Data Pipeline Connector
 include::_attributes.adoc[]
-:categories: getting-started
-:summary: Discover how to create your first Braineous data pipeline.
+:categories: elastic-search-connector
+:summary: Discover how to integrate the ElasticSearch Data Pipeline Connector.
 :numbered:
 :sectnums:
 :sectnumlevels: 4
-:topics: getting-started
+:topics: elastic-search-connector
 
-:url: https://github.com/bugsbunnyshah/braineous_dataplatform/releases/download/braineous-1.0.0-CR1/braineous-1.0.0-cr1.zip
+:url: https://github.com/bugsbunnyshah/braineous_dataplatform/releases/download/braineous-1.0.0-CR1/braineous-1.0.0-cr3.zip
+:getting_started_url: https://bugsbunnyshah.github.io/braineous/get-started/
 
-Learn how to create a Braineous Data Pipeline.
+Learn how to integrate the ElasticSearch Data Pipeline Connector.
 
 This guide covers:
 
 * Get the Source Data
-* Register a data pipe and send source data to configured target MongoDB database
+* Register a data pipe and send source data to configured target ElasticSearch database
 * Verify the target database received the data
 
 == Prerequisites
@@ -35,13 +36,15 @@ and you could end up with unexpected results.
 You can verify which JDK Maven uses by running `mvn --version`.
 ====
 
-Download the {url}[Braineous-1.0.0-CR2] zip archive
+Download the {url}[Braineous-1.0.0-CR3] zip archive
 
-This tutorial is located under: braineous-1.0.0-cr2/tutorials/get-started
+This tutorial is located under: braineous-1.0.0-cr3/tutorials/elastic-connector
 
 == Initialize
 
-Get an instance of the `DataPlatformService`. Setup your `API_KEY` and `API_SECRET`
+Get an instance of the `DataPlatformService`. Setup your `API_KEY` and `API_SECRET`.
+Please refer to 'Step 9' of the Getting Started guide.
+{getting_started_url} [Get Started]
 
 [source,bash,subs=attributes+]
 ----
@@ -91,7 +94,7 @@ A dataset can be loaded from any data source such as a database, legacy producti
 live data feed, third-party data source, Kafka stream, etc. In this example the dataset is loaded from a classpath
 resource located at `src/main/resources/dataset/data.json`
 
-== Register a data pipe and send source data to configured target MongoDB database
+== Register a data pipe and send source data to configured target ClickHouse database
 
 Register a data pipe with the *Braineous Data Ingestion Engine* using the
 *Java Braineous Data Ingestion Client SDK*.
@@ -104,12 +107,16 @@ Pipe Configuration
   "entity": "abc",
   "configuration": [
     {
-      "stagingStore" : "com.appgallabs.dataplatform.targetSystem.core.driver.MongoDBStagingStore",
+      "stagingStore" : "com.appgallabs.dataplatform.targetSystem.core.driver.ElasticSearchStagingStore",
       "name": "yyya",
       "config": {
-        "connectionString": "mongodb://localhost:27017",
-        "database": "yyya",
-        "collection": "data",
+        "elasticSearchUrl": "http://localhost:9200/",
+        "index": "yyya",
+        "security": {
+          "type": "built_in_users",
+          "user": "elastic",
+          "password": "password"
+        },
         "jsonpathExpressions": []
       }
     }
@@ -122,21 +129,15 @@ uniquely with the *Braineous Data Pipline Engine*.
 * *entity* : The business/domain entity that this dataset should be associated with.
 * *configuration.stagingStore*: The `Staging Store` driver
 * *configuration.name*: a user-friendly way to indentify the target store
-* *configuration.config.connectionString*: MongoDB database connection string for your target store
-* *configuration.config.database*: MongoDB database on your target store
-* *configuration.config.collection*: MongoDB database collection on your target store
+* *configuration.config.elasticSearchUrl*: Elastic Search URl of your ElasticSearch instance
+* *configuration.config.index*: Elastic Search Index for the Staging Store
+* *configuration.config.security.type*: Elastic Search authentication type
+* *configuration.config.security.user*: Elastic Search user
+* *configuration.config.security.password*: Elastic Search user's password
+* *configuration.jsonpathExpressions*: Data Transformation based on JSONPath specification: https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html
 
 A data pipe can be configured with multiple target stores/systems associated with the same data pipe
 for data delivery.
-
-In the next Candidate Release, Braineous team will add support for more target stores and systems such as :
-
-* Postgresql
-* Mysql
-* Oracle
-* Snowflake
-* Microservices
-* Airbyte Catalog
 
 Java Code - Register Pipe
 [source,bash,subs=attributes+]
@@ -180,7 +181,7 @@ System.out.println("*****DATA_INGESTION_SUCCESS******");
 
 [source,bash,subs=attributes+]
 ----
-cd braineous-1.0.0-cr2/tutorials/get-started
+cd braineous-1.0.0-cr3/tutorials/clickhouse-connector
 ----
 
 [source,bash,subs=attributes+]
@@ -192,12 +193,11 @@ cd braineous-1.0.0-cr2/tutorials/get-started
 
 [source,bash,subs=attributes+]
 ----
-[INFO] ------------------------------------------------------------------------
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
 *****DATA_SET******
-******ARRAY_SIZE: 2**********
+******ARRAY_SIZE: 4**********
 [
   {
     "id": 1,
@@ -209,12 +209,30 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
     }
   },
   {
-    "id": "2",
+    "id": 2,
     "name": "name_2",
     "age": 55,
     "addr": {
       "email": "name_2@email.com",
       "phone": "1234"
+    }
+  },
+  {
+    "id": 3,
+    "name": "name_3",
+    "age": 60,
+    "addr": {
+      "email": "name_3@email.com",
+      "phone": "12345"
+    }
+  },
+  {
+    "id": 4,
+    "name": "name_4",
+    "age": 65,
+    "addr": {
+      "email": "name_4@email.com",
+      "phone": "123456"
     }
   }
 ]
@@ -225,12 +243,16 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
   "entity": "abc",
   "configuration": [
     {
-      "stagingStore": "com.appgallabs.dataplatform.targetSystem.core.driver.MongoDBStagingStore",
+      "stagingStore": "com.appgallabs.dataplatform.targetSystem.core.driver.ElasticSearchStagingStore",
       "name": "yyya",
       "config": {
-        "connectionString": "mongodb://localhost:27017",
-        "database": "yyya",
-        "collection": "data",
+        "elasticSearchUrl": "http://localhost:9200/",
+        "index": "yyya",
+        "security": {
+          "type": "built_in_users",
+          "user": "elastic",
+          "password": "password"
+        },
         "jsonpathExpressions": []
       }
     }
@@ -242,38 +264,89 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 *****DATA_INGESTION_SUCCESS******
 ----
 
-== Verify all target collections receive the data
+== Verify all the data is successfully stored in the Elastic Search Database
 
 To verify the success of the ingestion and delivery to the configured target
-databases, use the following MongoDB commands.
+databases, refer to the Braineous Server Console.
 
-`Expected Result :` You should see two records added to a collection called "data"
-in a database called "yyya" corresponding to configured value `configuration.config.database`
-
-mongosh
+`Expected Result :`
 
 [source,bash,subs=attributes+]
 ----
-mongosh
-----
-
-[source,bash,subs=attributes+]
-----
-use yyya
-----
-
-[source,bash,subs=attributes+]
-----
-show collections
-----
-
-[source,bash,subs=attributes+]
-----
-db.data.find()
-----
-
-[source,bash,subs=attributes+]
-----
-db.data.count()
+2024-07-25 20:50:18,663 INFO  [org.apa.fli.tab.cat.hiv.HiveCatalog] (pool-10-thread-3) Setting hive conf dir as /Users/babyboy/mumma/braineous/infrastructure/apache-hive-3.1.3-bin/conf
+{
+  "status_code": 200,
+  "response": {
+    "errors": false,
+    "took": 598,
+    "items": [
+      {
+        "index": {
+          "_index": "yyya",
+          "_id": "oR-E7JABE6xho924ZSQe",
+          "_version": 1,
+          "result": "created",
+          "_shards": {
+            "total": 2,
+            "successful": 1,
+            "failed": 0
+          },
+          "_seq_no": 33,
+          "_primary_term": 1,
+          "status": 201
+        }
+      },
+      {
+        "index": {
+          "_index": "yyya",
+          "_id": "oh-E7JABE6xho924ZSQg",
+          "_version": 1,
+          "result": "created",
+          "_shards": {
+            "total": 2,
+            "successful": 1,
+            "failed": 0
+          },
+          "_seq_no": 34,
+          "_primary_term": 1,
+          "status": 201
+        }
+      },
+      {
+        "index": {
+          "_index": "yyya",
+          "_id": "ox-E7JABE6xho924ZSQg",
+          "_version": 1,
+          "result": "created",
+          "_shards": {
+            "total": 2,
+            "successful": 1,
+            "failed": 0
+          },
+          "_seq_no": 35,
+          "_primary_term": 1,
+          "status": 201
+        }
+      },
+      {
+        "index": {
+          "_index": "yyya",
+          "_id": "pB-E7JABE6xho924ZSQg",
+          "_version": 1,
+          "result": "created",
+          "_shards": {
+            "total": 2,
+            "successful": 1,
+            "failed": 0
+          },
+          "_seq_no": 36,
+          "_primary_term": 1,
+          "status": 201
+        }
+      }
+    ]
+  }
+}
+**********************
 ----
 

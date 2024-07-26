@@ -242,7 +242,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 To verify the success of the ingestion and delivery to the configured target
 databases, use the following ClickHouse commands commands.
 
-Expected Result: You should see two records added to a table called "tutorial_staging"
+`Expected Result :` You should see two records added to a table called "tutorial_staging"
 in a database called "default" corresponding to configured value `configuration.config.connectionString`
 
 [source,bash,subs=attributes+]
