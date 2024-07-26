@@ -1,0 +1,283 @@
+////
+This guide is maintained in the main Quarkus repository
+and pull requests should be submitted there:
+https://github.com/quarkusio/quarkus/tree/main/docs/src/main/asciidoc
+////
+= Integrate the ClickHouse Data Pipeline Connector
+include::_attributes.adoc[]
+:categories: click-house-connector
+:summary: Discover how to integrate the ClickHouse Data Pipeline Connector.
+:numbered:
+:sectnums:
+:sectnumlevels: 4
+:topics: click-house-connector
+
+:url: https://github.com/bugsbunnyshah/braineous_dataplatform/releases/download/braineous-1.0.0-CR1/braineous-1.0.0-cr3.zip
+:getting_started_url: https://bugsbunnyshah.github.io/braineous/get-started/
+
+Learn how to integrate the ClickHouse Data Pipeline Connector.
+
+This guide covers:
+
+* Get the Source Data
+* Register a data pipe and send source data to configured target Clickhouse database
+* Verify the target database received the data
+
+== Prerequisites
+
+:prerequisites-no-graalvm:
+include::{includes}/prerequisites.adoc[]
+
+[TIP]
+.Verify Maven is using the Java you expect
+====
+If you have multiple JDK's installed, it is not certain Maven will pick up the expected java
+and you could end up with unexpected results.
+You can verify which JDK Maven uses by running `mvn --version`.
+====
+
+Download the {url}[Braineous-1.0.0-CR3] zip archive
+
+This tutorial is located under: braineous-1.0.0-cr3/tutorials/clickhouse-connector
+
+== Initialize
+
+Get an instance of the `DataPlatformService`. Setup your `API_KEY` and `API_SECRET`.
+Please refer to 'Step 9' of the Getting Started guide.
+{getting_started_url} [Get Started]
+
+[source,bash,subs=attributes+]
+----
+DataPlatformService dataPlatformService = DataPlatformService.getInstance();
+
+String apiKey = "ffb2969c-5182-454f-9a0b-f3f2fb0ebf75";
+String apiSecret = "5960253b-6645-41bf-b520-eede5754196e";
+----
+
+== Get the Source Data
+
+Let's start with a simple Json array to be used as datasource to be
+ingested by the *Braineous Data Ingestion Engine*
+
+Source Data
+[source,bash,subs=attributes+]
+----
+[
+  {
+    "id" : 1,
+    "name": "name_1",
+    "age": 46,
+    "addr": {
+      "email": "name_1@email.com",
+      "phone": "123"
+    }
+  },
+  {
+    "id": "2",
+    "name": "name_2",
+    "age": 55,
+    "addr": {
+      "email": "name_2@email.com",
+      "phone": "1234"
+    }
+  }
+]
+----
+
+Java Code
+[source,bash,subs=attributes+]
+----
+String datasetLocation = "dataset/data.json";
+String json = Util.loadResource(datasetLocation);
+----
+A dataset can be loaded from any data source such as a database, legacy production data store,
+live data feed, third-party data source, Kafka stream, etc. In this example the dataset is loaded from a classpath
+resource located at `src/main/resources/dataset/data.json`
+
+== Register a data pipe and send source data to configured target ClickHouse database
+
+Register a data pipe with the *Braineous Data Ingestion Engine* using the
+*Java Braineous Data Ingestion Client SDK*.
+
+Pipe Configuration
+[source,bash,subs=attributes+]
+----
+{
+  "pipeId": "yyya",
+  "entity": "abc",
+  "configuration": [
+    {
+      "stagingStore" : "com.appgallabs.dataplatform.targetSystem.core.driver.ClickHouseStagingStore",
+      "name": "click_house_staging_store",
+      "config": {
+        "connectionString": "jdbc:ch://localhost:8123/default",
+        "username": "default",
+        "password": "",
+        "staging_table": "tutorial_staging",
+        "jsonpathExpressions": []
+      }
+    }
+  ]
+}
+----
+
+* *pipeId* : As a data source provider, this id identifies this data pipe
+uniquely with the *Braineous Data Pipline Engine*.
+* *entity* : The business/domain entity that this dataset should be associated with.
+* *configuration.stagingStore*: The `Staging Store` driver
+* *configuration.name*: a user-friendly way to indentify the target store
+* *configuration.config.connectionString*: ClickHouse database connection string for your target store
+* *configuration.config.username*: ClickHouse user
+* *configuration.config.password*: ClickHouses' user's password
+* *configuration.config.jsonpathExpressions*: Data Transformation based on JSONPath specification: https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html
+
+A data pipe can be configured with multiple target stores/systems associated with the same data pipe
+for data delivery.
+
+Java Code - Register Pipe
+[source,bash,subs=attributes+]
+----
+String configLocation = "pipe_config/pipe_config.json";
+String pipeConfigJson = Util.loadResource(configLocation);
+JsonObject configJson = JsonUtil.validateJson(pipeConfigJson).getAsJsonObject();
+String pipeId = configJson.get("pipeId").getAsString();
+String entity = configJson.get("entity").getAsString();
+System.out.println("*****PIPE_CONFIGURATION******");
+JsonUtil.printStdOut(configJson);
+
+//configure the DataPipeline Client
+Configuration configuration = new Configuration().
+ingestionHostUrl("http://localhost:8080/").
+apiKey(apiKey).
+apiSecret(apiSecret).
+streamSizeInObjects(0);
+dataPlatformService.configure(configuration);
+
+//register pipe
+dataPlatformService.registerPipe(configJson);
+System.out.println("*****PIPE_REGISTRATION_SUCCESS******");
+----
+
+Pipe Configuration can be provided dynamically at runtime. The source can be a
+database, a configuration system, local file system, network file system etc.
+In this example the dataset is loaded from a classpath
+resource located at `src/main/resources/pipe_config/pipe_config.json`
+
+
+Java Code - Send Data for ingestion
+[source,bash,subs=attributes+]
+----
+//send source data through the pipeline
+dataPlatformService.sendData(pipeId, entity,datasetElement.toString());
+System.out.println("*****DATA_INGESTION_SUCCESS******");
+----
+
+== Run the Tutorial
+
+[source,bash,subs=attributes+]
+----
+cd braineous-1.0.0-cr3/tutorials/clickhouse-connector
+----
+
+[source,bash,subs=attributes+]
+----
+./run.sh
+----
+
+`Expected Output`:
+
+[source,bash,subs=attributes+]
+----
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+*****DATA_SET******
+******ARRAY_SIZE: 2**********
+[
+  {
+    "id": 1,
+    "name": "name_1",
+    "age": 46,
+    "addr": {
+      "email": "name_1@email.com",
+      "phone": "123"
+    }
+  },
+  {
+    "id": "2",
+    "name": "name_2",
+    "age": 55,
+    "addr": {
+      "email": "name_2@email.com",
+      "phone": "1234"
+    }
+  }
+]
+**********************
+*****PIPE_CONFIGURATION******
+{
+  "pipeId": "yyya",
+  "entity": "abc",
+  "configuration": [
+    {
+      "stagingStore": "com.appgallabs.dataplatform.targetSystem.core.driver.ClickHouseStagingStore",
+      "name": "click_house_staging_store",
+      "config": {
+        "connectionString": "jdbc:ch://localhost:8123/default",
+        "username": "default",
+        "password": "",
+        "staging_table": "tutorial_staging",
+        "jsonpathExpressions": []
+      }
+    }
+  ]
+}
+**********************
+*****PIPE_REGISTRATION_SUCCESS******
+***SENDING_DATA_START*****
+*****DATA_INGESTION_SUCCESS******
+----
+
+== Verify all the data is successfully stored in the ClickHouse Database
+
+To verify the success of the ingestion and delivery to the configured target
+databases, use the following ClickHouse commands commands.
+
+Expected Result: You should see two records added to a table called "tutorial_staging"
+in a database called "default" corresponding to configured value `configuration.config.connectionString`
+
+[source,bash,subs=attributes+]
+----
+./clickhouse client
+----
+
+[source,bash,subs=attributes+]
+----
+ClickHouse client version 24.7.1.1263 (official build).
+Connecting to localhost:9000 as user default.
+Connected to ClickHouse server version 24.7.1.
+
+Warnings:
+ * Maximum number of threads is lower than 30000. There could be problems with handling a lot of simultaneous queries.
+----
+
+[source,bash,subs=attributes+]
+----
+use default
+----
+
+[source,bash,subs=attributes+]
+----
+select * from tutorial_staging
+----
+
+[source,bash,subs=attributes+]
+----
+
+   ┌─id───────────────────────────────┬─data───────────────────────────────────────────────────────────────────────────────────┐
+1. │ 8F3B1B7001BFE2AD0AA72D975BDE78ED │ {"id":"2","name":"name_2","age":55,"addr":{"email":"name_2@email.com","phone":"1234"}} │
+   └──────────────────────────────────┴────────────────────────────────────────────────────────────────────────────────────────┘
+   ┌─id───────────────────────────────┬─data───────────────────────────────────────────────────────────────────────────────────┐
+2. │ 55F1BCC5BAF4BFD841E8E345D35F737B │ {"id":1,"name":"name_1","age":46,"addr":{"email":"name_1@email.com","phone":"123"}}    │
+
+----
+
