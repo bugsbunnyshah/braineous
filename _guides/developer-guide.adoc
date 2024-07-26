@@ -3,7 +3,7 @@ This guide is maintained in the main Quarkus repository
 and pull requests should be submitted there:
 https://github.com/quarkusio/quarkus/tree/main/docs/src/main/asciidoc
 ////
-= Braineous Documentation version (1.0.0-CR2) Candidate Release 2
+= Braineous Documentation version (1.0.0-CR3) Candidate Release 3
 include::_attributes.adoc[]
 :categories: official-documentation
 :summary: Official Developer Documentation.
@@ -42,6 +42,10 @@ a pipeline.
 A pipeline can deliver to multiple stores in real time with network latency the only
 environmental factor.
 
+* *Integration Runner* : A *'staging store'* is the final destination of delivery for a pipeline.
+A pipeline can deliver to multiple stores in real time with network latency the only
+environmental factor.
+
 * *DataLake Store* : A *'datalake store'* is the internal store the pipeline delivers the
 data for applications that have usecases related to analytics and machine learning. Braineous
 is built on Apache Flink as its data processing engine and supports Apache Hive as its core
@@ -56,6 +60,15 @@ link:/braineous/get-started[Get Started]
 == Staging Store
 
 ==== What is a Staging Store?
+
+A *'staging store'* is the final destination of delivery for a pipeline.
+A pipeline can deliver to multiple stores in real time with network latency the only
+environmental factor.
+
+
+Logically, a staging store is identified by its *pipeId* and *entity*
+
+==== What is a Integration Runner?
 
 A *'staging store'* is the final destination of delivery for a pipeline.
 A pipeline can deliver to multiple stores in real time with network latency the only
@@ -102,15 +115,17 @@ for data delivery.
 
 The current Release, supports the following target stores
 
+* Snowflake
+* MySQL
+* ElasticSearch
 * MongoDB
-* MySql
+* ClickHouse
 
 In the future releases, Braineous team will add support for more target stores and systems such as :
 
 * Postgresql
 * Oracle
-* Snowflake
-* Airbyte Catalog
+* Amazon RedShift
 
 Braineous also provides a *Staging Store Framework* for developers to develop custom connectors.
 For a hands-on tutorial please refer to: link:/braineous/guides/create-a-custom-data-connector[Create a Data Connector]
@@ -257,7 +272,7 @@ PIPE_SUCCESSFULLY_DEPLOYED
 yyya > Press exit or CTRL+C to exit
 ----
 
-== Supported Target System Data Connectors
+== Supported Target System Data Pipeline Connectors
 
 === MongoDB
 A sample MongoDB pipe configuration
