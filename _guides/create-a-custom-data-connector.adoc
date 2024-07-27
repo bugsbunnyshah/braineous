@@ -12,7 +12,7 @@ include::_attributes.adoc[]
 :sectnumlevels: 4
 :topics: getting-started
 
-:url: https://github.com/bugsbunnyshah/braineous_dataplatform/releases/download/braineous-1.0.0-CR1/create-connector.zip
+:url: https://www.dropbox.com/scl/fi/87ixa3bbegsmhaiz3danr/braineous-1.0.0-cr3.zip?rlkey=o4s7a8nvuwh8v1wuat1gl6uxe&st=9i9z0u2h&dl=0
 :imagesdir: ../assets
 
 image::tutorials/create_connector.jpg[]
@@ -39,7 +39,9 @@ and you could end up with unexpected results.
 You can verify which JDK Maven uses by running `mvn --version`.
 ====
 
-Download the {url}[Create a Custom Data Connector Tutorial TODO] zip archive
+Download the {url}[Braineous-1.0.0-CR3] zip archive.
+
+This tutorial is located under: braineous-1.0.0-cr3/tutorials/create-connector
 
 == Implement `StagingStore` interface
 
@@ -440,14 +442,19 @@ and a mongodb staging store which is part of the core Braineous target delivery 
 Braineous is built for no interruption and scale. You can associate thousands of target stores and evolve
 the delivery network over time by updating your `pipeId configuration` and deploy without Braineous restart.
 
-In the next Candidate Release, Braineous team will add support for more target stores and systems such as :
+The current Release, supports the following target stores
+
+* Snowflake
+* MySQL
+* ElasticSearch
+* MongoDB
+* ClickHouse
+
+In the future releases, Braineous team will add support for more target stores and systems such as :
 
 * Postgresql
-* Mysql
 * Oracle
-* Snowflake
-* Microservices
-* Airbyte Catalog
+* Amazon RedShift
 
 Java Code - Register Pipe
 [source,bash,subs=attributes+]
@@ -491,7 +498,7 @@ System.out.println("*****DATA_INGESTION_SUCCESS******");
 
 [source,bash,subs=attributes+]
 ----
-cd braineous-1.0.0-cr2/tutorials/create-connector
+cd braineous-1.0.0-cr3/tutorials/create-connector
 ----
 
 ==== Start the Braineous Data Ingestion Server
