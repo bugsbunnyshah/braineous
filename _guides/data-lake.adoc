@@ -13,6 +13,7 @@ include::_attributes.adoc[]
 :topics: getting-started
 
 :url: https://www.dropbox.com/scl/fi/87ixa3bbegsmhaiz3danr/braineous-1.0.0-cr3.zip?rlkey=o4s7a8nvuwh8v1wuat1gl6uxe&st=9i9z0u2h&dl=0
+:getting_started_url: https://bugsbunnyshah.github.io/braineous/get-started/
 
 This guide covers:
 
@@ -39,7 +40,9 @@ This tutorial is located under: braineous-1.0.0-cr3/tutorials/create-connector
 
 == Initialize
 
-Get an instance of the `DataPlatformService`. Setup your `API_KEY` and `API_SECRET`
+Get an instance of the `DataPlatformService`. Setup your `API_KEY` and `API_SECRET`.
+Please refer to 'Step 9' of the Getting Started guide.
+{getting_started_url}
 
 [source,bash,subs=attributes+]
 ----

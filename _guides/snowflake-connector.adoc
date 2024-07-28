@@ -42,10 +42,9 @@ Download the {url}[Braineous-1.0.0-CR3] zip archive
 This tutorial is located under: braineous-1.0.0-cr3/tutorials/snowflake-connector
 
 == Initialize
-
 Get an instance of the `DataPlatformService`. Setup your `API_KEY` and `API_SECRET`.
 Please refer to 'Step 9' of the Getting Started guide.
-{getting_started_url} [Get Started]
+{getting_started_url}
 
 [source,bash,subs=attributes+]
 ----
