@@ -42,9 +42,11 @@ a pipeline.
 A pipeline can deliver to multiple stores in real time with network latency the only
 environmental factor.
 
-* *Integration Runner* : A *'staging store'* is the final destination of delivery for a pipeline.
-A pipeline can deliver to multiple stores in real time with network latency the only
-environmental factor.
+* *Data Integration Agent* : A *'staging store'* is the final destination of delivery for a pipeline.
+*'Data Integration Agent'* is a phase to make the data operational for the application.
+Application is arbitrary. It can be a Dashboard, a backend process, an analytics system,
+or a machine learning application.
+
 
 * *DataLake Store* : A *'datalake store'* is the internal store the pipeline delivers the
 data for applications that have usecases related to analytics and machine learning. Braineous
@@ -68,14 +70,17 @@ environmental factor.
 
 Logically, a staging store is identified by its *pipeId* and *entity*
 
-==== What is a Integration Runner?
+==== What is a Data Integration Agent?
 
 A *'staging store'* is the final destination of delivery for a pipeline.
 A pipeline can deliver to multiple stores in real time with network latency the only
 environmental factor.
 
+*'Data Integration Agent'* is a phase to make the data operational for the application.
+Application is arbitrary. It can be a Dashboard, a backend process, an analytics system,
+or a machine learning application.
 
-Logically, a staging store is identified by its *pipeId* and *entity*
+For a hands-on tutorial please refer to: link:/braineous/guides/create-integration-runner[Creating Your Custom Data Integration Agent]
 
 ===== Pipe Configuration
 
