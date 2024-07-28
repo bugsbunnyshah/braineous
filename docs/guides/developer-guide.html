@@ -6,7 +6,7 @@
 
 
 <head>
-  <title>Braineous Documentation version (1.0.0-CR2) Candidate Release 2 - Quarkus</title>
+  <title>Braineous Documentation version (1.0.0-CR3) Candidate Release 3 - Quarkus</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net https://analytics.ossupstream.org; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app https://analytics.ossupstream.org; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' 
@@ -22,7 +22,7 @@
   <meta name="twitter:site" content="@QuarkusIO"> 
   <meta name="twitter:creator" content="@QuarkusIO">
   <meta property="og:url" content="http://localhost:4000/guides/developer-guide" />
-  <meta property="og:title" content="Braineous Documentation version (1.0.0-CR2) Candidate Release 2" />
+  <meta property="og:title" content="Braineous Documentation version (1.0.0-CR3) Candidate Release 3" />
   <meta property="og:description" content="Braineous Data Platform" />
   <meta property="og:image" content="http://localhost:4000/assets/images/quarkus_card.png" />
   
@@ -77,12 +77,18 @@
         <span href="/braineous/learn/">Learn<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <!--<li><a href="/braineous/get-started" class="">GET STARTED</a></li>-->
-          <li><a href="/braineous/guides/developer-guide" class="active">Developer Documentation (1.0-CR2)</a></li>
+          <li><a href="/braineous/guides/developer-guide" class="active">Developer Documentation (1.0-CR3)</a></li>
           <li><a href="/braineous/get-started" class="">Get Started</a></li>
           <li><a href="/braineous/guides/getting-started" class="">Create a Data Pipeline</a></li>
-          <li><a href="/braineous/guides/create-a-custom-data-connector" class="">Create a Data Connector</a></li>
+          <li><a href="/braineous/guides/create-a-custom-data-connector" class="">Create a Data Pipeline Connector</a></li>
+          <li><a href="/braineous/guides/create-integration-runner" class="">Create a a Custom Data Integration Agent</a></li>
           <li><a href="/braineous/guides/data-lake" class="">Access the Data Lake</a></li>
           <li><a href="/braineous/guides/data-transform" class="">Data Transformation</a></li>
+          <li><a href="/braineous/guides/snowflake-connector" class="">Snowflake Data Pipeline Connector</a></li>
+          <li><a href="/braineous/guides/mysql-connector" class="">MySQL Data Pipeline Connector</a></li>
+          <li><a href="/braineous/guides/elastic-connector" class="">ElasticSearch Data Pipeline Connector</a></li>
+          <li><a href="/braineous/guides/getting-started" class="">MongoDB Data Pipeline Connector</a></li>
+          <li><a href="/braineous/guides/click-house-connector" class="">ClickHouse Data Pipeline Connector</a></li>
           </ul>
       </li>
       <li class="dropdown">
@@ -124,7 +130,7 @@
 
 <div class="grid-wrapper guide">
   <div class="grid__item width-8-12 width-12-12-m">
-    <h1 class="text-caps">Braineous Documentation version (1.0.0-CR2) Candidate Release 2 </h1>
+    <h1 class="text-caps">Braineous Documentation version (1.0.0-CR3) Candidate Release 3 </h1>
     <div class="sect1">
 <h2 id="core-concepts"><a class="anchor" href="#core-concepts"></a>1. Core Concepts</h2>
 <div class="sectionbody">
@@ -161,6 +167,12 @@ A pipeline can deliver to multiple stores in real time with network latency the 
 environmental factor.</p>
 </li>
 <li>
+<p><strong>Data Integration Agent</strong> : A <strong>'staging store'</strong> is the final destination of delivery for a pipeline.
+<strong>'Data Integration Agent'</strong> is a phase to make the data operational for the application.
+Application is arbitrary. It can be a Dashboard, a backend process, an analytics system,
+or a machine learning application.</p>
+</li>
+<li>
 <p><strong>DataLake Store</strong> : A <strong>'datalake store'</strong> is the internal store the pipeline delivers the
 data for applications that have usecases related to analytics and machine learning. Braineous
 is built on Apache Flink as its data processing engine and supports Apache Hive as its core
@@ -195,8 +207,24 @@ environmental factor.</p>
 <div class="paragraph">
 <p>Logically, a staging store is identified by its <strong>pipeId</strong> and <strong>entity</strong></p>
 </div>
+</div>
+<div class="sect3">
+<h4 id="what-is-a-data-integration-agent"><a class="anchor" href="#what-is-a-data-integration-agent"></a>3.2. What is a Data Integration Agent?</h4>
+<div class="paragraph">
+<p>A <strong>'staging store'</strong> is the final destination of delivery for a pipeline.
+A pipeline can deliver to multiple stores in real time with network latency the only
+environmental factor.</p>
+</div>
+<div class="paragraph">
+<p><strong>'Data Integration Agent'</strong> is a phase to make the data operational for the application.
+Application is arbitrary. It can be a Dashboard, a backend process, an analytics system,
+or a machine learning application.</p>
+</div>
+<div class="paragraph">
+<p>For a hands-on tutorial please refer to: <a href="/braineous/guides/create-integration-runner">Creating Your Custom Data Integration Agent</a></p>
+</div>
 <div class="sect4">
-<h5 id="pipe-configuration"><a class="anchor" href="#pipe-configuration"></a>3.1.1. Pipe Configuration</h5>
+<h5 id="pipe-configuration"><a class="anchor" href="#pipe-configuration"></a>3.2.1. Pipe Configuration</h5>
 <div class="paragraph">
 <p>A sample Braineous pipe configuration</p>
 </div>
@@ -256,10 +284,19 @@ for data delivery.</p>
 <div class="ulist">
 <ul>
 <li>
+<p>Snowflake</p>
+</li>
+<li>
+<p>MySQL</p>
+</li>
+<li>
+<p>ElasticSearch</p>
+</li>
+<li>
 <p>MongoDB</p>
 </li>
 <li>
-<p>MySql</p>
+<p>ClickHouse</p>
 </li>
 </ul>
 </div>
@@ -275,10 +312,7 @@ for data delivery.</p>
 <p>Oracle</p>
 </li>
 <li>
-<p>Snowflake</p>
-</li>
-<li>
-<p>Airbyte Catalog</p>
+<p>Amazon RedShift</p>
 </li>
 </ul>
 </div>
@@ -472,6 +506,346 @@ yyya &gt; Press exit or CTRL+C to exit</code></pre>
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="supported-target-system-data-pipeline-connectors"><a class="anchor" href="#supported-target-system-data-pipeline-connectors"></a>7. Supported Target System Data Pipeline Connectors</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="mongodb"><a class="anchor" href="#mongodb"></a>7.1. MongoDB</h3>
+<div class="paragraph">
+<p>A sample MongoDB pipe configuration</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">{
+  "pipeId": "flightpipe",
+  "entity": "flight",
+  "configuration": [
+    {
+      "stagingStore" : "com.appgallabs.dataplatform.targetSystem.core.driver.MongoDBStagingStore",
+      "name": "mongodb_flight_staging_store",
+      "config": {
+        "connectionString": "mongodb://localhost:27017",
+        "database": "flightpipe",
+        "collection": "flight",
+        "jsonpathExpressions": []
+      }
+    }
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>pipeId</strong> : As a data source provider, this id identifies this data pipe
+uniquely with the <strong>Braineous Data Pipline Engine</strong>.</p>
+</li>
+<li>
+<p><strong>entity</strong> : The business/domain entity that this dataset should be associated with.</p>
+</li>
+<li>
+<p><strong>configuration.stagingStore</strong>: The <code>Staging Store</code> driver</p>
+</li>
+<li>
+<p><strong>configuration.name</strong>: a user-friendly way to indentify the target store</p>
+</li>
+<li>
+<p><strong>configuration.config.connectionString</strong>: MongoDB database connection string for your target store</p>
+</li>
+<li>
+<p><strong>configuration.config.username</strong>: MongoDB user</p>
+</li>
+<li>
+<p><strong>configuration.config.password</strong>: MongoDB user&#8217;s password</p>
+</li>
+<li>
+<p><strong>configuration.config.jsonpathExpressions</strong>: Data Transformation based on JSONPath specification: <a href="https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html" class="bare">https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>NOTE:</strong> Data is Transformed before delivery to any configured Target Staging Store.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mysql"><a class="anchor" href="#mysql"></a>7.2. MySql</h3>
+<div class="paragraph">
+<p>A sample MySql pipe configuration</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">{
+  "pipeId": "flightpipe",
+  "entity": "flight",
+  "configuration": [
+    {
+      "stagingStore" : "com.appgallabs.dataplatform.targetSystem.core.driver.MySqlStagingStore",
+      "name": "mysql_flight_staging_store",
+      "config": {
+        "connectionString": "jdbc:mysql://localhost:3306/braineous_staging_database",
+        "username": "root",
+        "password": "",
+        "jsonpathExpressions": []
+      }
+    }
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>pipeId</strong> : As a data source provider, this id identifies this data pipe
+uniquely with the <strong>Braineous Data Pipline Engine</strong>.</p>
+</li>
+<li>
+<p><strong>entity</strong> : The business/domain entity that this dataset should be associated with.</p>
+</li>
+<li>
+<p><strong>configuration.stagingStore</strong>: The <code>Staging Store</code> driver</p>
+</li>
+<li>
+<p><strong>configuration.name</strong>: a user-friendly way to indentify the target store</p>
+</li>
+<li>
+<p><strong>configuration.config.connectionString</strong>: MySQL database connection string for your target store</p>
+</li>
+<li>
+<p><strong>configuration.config.username</strong>: MySQL user</p>
+</li>
+<li>
+<p><strong>configuration.config.password</strong>: MySQL&#8217;s user&#8217;s password</p>
+</li>
+<li>
+<p><strong>configuration.config.staging_table</strong>: MySql staging table</p>
+</li>
+<li>
+<p><strong>configuration.config.jsonpathExpressions</strong>: Data Transformation based on JSONPath specification: <a href="https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html" class="bare">https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>NOTE:</strong> Data is Transformed before delivery to any configured Target Staging Store.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="elastic-search"><a class="anchor" href="#elastic-search"></a>7.3. Elastic Search</h3>
+<div class="paragraph">
+<p>A sample Elastic Search pipe configuration</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">{
+  "pipeId": "flightpipe",
+  "entity": "flight",
+  "configuration": [
+    {
+      "stagingStore" : "com.appgallabs.dataplatform.targetSystem.core.driver.ElasticSearchStagingStore",
+      "name": "elastic_flight_staging_store",
+      "config": {
+        "elasticSearchUrl": "http://localhost:9200/",
+        "index": "yyya",
+        "security": {
+          "type": "built_in_users",
+          "user": "elastic",
+          "password": "password"
+        },
+        "jsonpathExpressions": []
+    }
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>pipeId</strong> : As a data source provider, this id identifies this data pipe
+uniquely with the <strong>Braineous Data Pipline Engine</strong>.</p>
+</li>
+<li>
+<p><strong>entity</strong> : The business/domain entity that this dataset should be associated with.</p>
+</li>
+<li>
+<p><strong>configuration.stagingStore</strong>: The <code>Staging Store</code> driver</p>
+</li>
+<li>
+<p><strong>configuration.name</strong>: a user-friendly way to indentify the target store</p>
+</li>
+<li>
+<p><strong>configuration.config.elasticSearchUrl</strong>: Elastic Search URl of your ElasticSearch instance</p>
+</li>
+<li>
+<p><strong>configuration.config.index</strong>: Elastic Search Index for the Staging Store</p>
+</li>
+<li>
+<p><strong>configuration.config.security.type</strong>: Elastic Search authentication type</p>
+</li>
+<li>
+<p><strong>configuration.config.security.user</strong>: Elastic Search user</p>
+</li>
+<li>
+<p><strong>configuration.config.security.password</strong>: Elastic Search user&#8217;s password</p>
+</li>
+<li>
+<p><strong>configuration.jsonpathExpressions</strong>: Data Transformation based on JSONPath specification: <a href="https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html" class="bare">https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>NOTE:</strong> Data is Transformed before delivery to any configured Target Staging Store.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="snowflake"><a class="anchor" href="#snowflake"></a>7.4. Snowflake</h3>
+<div class="paragraph">
+<p>A sample Snowflake pipe configuration</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">{
+  "pipeId": "flightpipe",
+  "entity": "flight",
+  "configuration": [
+    {
+      "stagingStore" : "com.appgallabs.dataplatform.targetSystem.core.driver.SnowflakeStagingStore",
+      "name": "snowflake_staging_store",
+      "config": {
+        "account_identifier": "&lt;your_snowflake_account_account_identifier&gt;",
+        "host": "&lt;your_snowflake_computing_host&gt;",
+        "user": "&lt;your_snowflake_user&gt;",
+        "password": "&lt;your_snowflake_password&gt;",
+        "port": "443",
+        "database": "testdb",
+        "schema": "public",
+        "stage": "flightpipe",
+        "table": "flight",
+        "pipe": "flightpipe",
+        "source": "local_fs",
+        "source_location":"file:///tmp/braineous/",
+        "jsonpathExpressions": []
+      }
+    }
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>pipeId</strong> : As a data source provider, this id identifies this data pipe
+uniquely with the <strong>Braineous Data Pipline Engine</strong>.</p>
+</li>
+<li>
+<p><strong>entity</strong> : The business/domain entity that this dataset should be associated with.</p>
+</li>
+<li>
+<p><strong>configuration.stagingStore</strong>: The <code>Staging Store</code> driver</p>
+</li>
+<li>
+<p><strong>configuration.name</strong>: a user-friendly way to indentify the target store</p>
+</li>
+<li>
+<p><strong>configuration.config.account_identifier</strong>: Your Snowflake instance&#8217;s account identifier</p>
+</li>
+<li>
+<p><strong>configuration.config.username</strong>: Snowflake username</p>
+</li>
+<li>
+<p><strong>configuration.config.password</strong>: Snowflake user&#8217;s password</p>
+</li>
+<li>
+<p><strong>configuration.config.port</strong>: Snowflake port</p>
+</li>
+<li>
+<p><strong>configuration.config.database</strong>: Snowflake database</p>
+</li>
+<li>
+<p><strong>configuration.config.schema</strong>: Snowflake database schema</p>
+</li>
+<li>
+<p><strong>configuration.config.stage</strong>: Snowflake database staging area</p>
+</li>
+<li>
+<p><strong>configuration.config.table</strong>: Snowflake database staging table</p>
+</li>
+<li>
+<p><strong>configuration.config.pipe</strong>: Snowflake staging pipe that stages the data</p>
+</li>
+<li>
+<p><strong>configuration.config.source</strong>: Currently Braineous supports local file system. Support for Amazon S3, Google Cloud Storage, and Miccrosoft Azure will be added in a future release</p>
+</li>
+<li>
+<p><strong>configuration.config.jsonpathExpressions</strong>: Data Transformation based on JSONPath specification: <a href="https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html" class="bare">https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>NOTE:</strong> Data is Transformed before delivery to any configured Target Staging Store.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="clickhouse"><a class="anchor" href="#clickhouse"></a>7.5. ClickHouse</h3>
+<div class="paragraph">
+<p>A sample Clickhouse pipe configuration</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">{
+  "pipeId": "flightpipe",
+  "entity": "flight",
+  "configuration": [
+    {
+      "stagingStore" : "com.appgallabs.dataplatform.targetSystem.core.driver.ClickHouseStagingStore",
+      "name": "click_house_flight_staging_store",
+      "config": {
+        "connectionString": "jdbc:ch://localhost:8123/default",
+        "username": "default",
+        "password": "",
+        "jsonpathExpressions": []
+      }
+    }
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>pipeId</strong> : As a data source provider, this id identifies this data pipe
+uniquely with the <strong>Braineous Data Pipline Engine</strong>.</p>
+</li>
+<li>
+<p><strong>entity</strong> : The business/domain entity that this dataset should be associated with.</p>
+</li>
+<li>
+<p><strong>configuration.stagingStore</strong>: The <code>Staging Store</code> driver</p>
+</li>
+<li>
+<p><strong>configuration.name</strong>: a user-friendly way to indentify the target store</p>
+</li>
+<li>
+<p><strong>configuration.config.connectionString</strong>: ClickHouse database connection string for your target store</p>
+</li>
+<li>
+<p><strong>configuration.config.username</strong>: ClickHouse user</p>
+</li>
+<li>
+<p><strong>configuration.config.password</strong>: ClickHouses' user&#8217;s password</p>
+</li>
+<li>
+<p><strong>configuration.config.staging_table</strong>: ClickHouse staging table</p>
+</li>
+<li>
+<p><strong>configuration.config.jsonpathExpressions</strong>: Data Transformation based on JSONPath specification: <a href="https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html" class="bare">https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>NOTE:</strong> Data is Transformed before delivery to any configured Target Staging Store.</p>
+</div>
+</div>
+</div>
+</div>
   </div>
   <div class="grid__item width-4-12 width-12-12-m tocwrapper">
     <div class="hide-mobile toc"><ul class="sectlevel1">
@@ -484,6 +858,7 @@ yyya &gt; Press exit or CTRL+C to exit</code></pre>
 <li><a href="#staging-store">3. Staging Store</a>
 <ul class="sectlevel3">
 <li><a href="#what-is-a-staging-store">3.1. What is a Staging Store?</a></li>
+<li><a href="#what-is-a-data-integration-agent">3.2. What is a Data Integration Agent?</a></li>
 </ul>
 </li>
 <li><a href="#data-lake">4. Data Lake</a>
@@ -506,6 +881,15 @@ yyya &gt; Press exit or CTRL+C to exit</code></pre>
 <li><a href="#move-pipe-to-development">6.6. Move Pipe to development</a></li>
 <li><a href="#move-pipe-to-staging">6.7. Move Pipe to staging</a></li>
 <li><a href="#move-pipe-to-production">6.8. Move Pipe to production</a></li>
+</ul>
+</li>
+<li><a href="#supported-target-system-data-pipeline-connectors">7. Supported Target System Data Pipeline Connectors</a>
+<ul class="sectlevel2">
+<li><a href="#mongodb">7.1. MongoDB</a></li>
+<li><a href="#mysql">7.2. MySql</a></li>
+<li><a href="#elastic-search">7.3. Elastic Search</a></li>
+<li><a href="#snowflake">7.4. Snowflake</a></li>
+<li><a href="#clickhouse">7.5. ClickHouse</a></li>
 </ul>
 </li>
 </ul></div>

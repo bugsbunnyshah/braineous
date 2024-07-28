@@ -6,7 +6,7 @@
 
 
 <head>
-  <title>Get Started - Braineous</title>
+  <title>Get Started - Quarkus</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net https://analytics.ossupstream.org; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app https://analytics.ossupstream.org; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' 
@@ -66,6 +66,7 @@
           <li><a href="/braineous/container-first" class="">High Scale Data Ingestion</a></li>
           <!--<li><a href="/braineous/continuum" class="">Automated Data Movement</a></li>-->
           <li><a href="/braineous/developer-joy" class="">Data Pipelines</a></li>
+          <li><a href="/braineous/data-lake" class="">Data Lake</a></li>
           <li><a href="/braineous/continuum" class="">Data Connectors</a></li>
           <!--
           <li><a href="/braineous/standards" class="">STANDARDS</a></li>
@@ -75,9 +76,13 @@
       <li class="dropdown">
         <span href="/braineous/learn/">Learn<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
-          <li><a href="/braineous/get-started" class="active">GET STARTED</a></li>
-          <li><a href="/braineous/guides/getting-started" class="">Data Ingestion Tutorial</a></li>
-          <li><a href="/braineous/guides/create-a-custom-data-connector" class="">Create a Custom Data Connector</a></li>
+          <!--<li><a href="/braineous/get-started" class="active">GET STARTED</a></li>-->
+          <li><a href="/braineous/guides/developer-guide" class="">Developer Documentation (1.0-CR2)</a></li>
+          <li><a href="/braineous/get-started" class="active">Get Started</a></li>
+          <li><a href="/braineous/guides/getting-started" class="">Create a Data Pipeline</a></li>
+          <li><a href="/braineous/guides/create-a-custom-data-connector" class="">Create a Data Connector</a></li>
+          <li><a href="/braineous/guides/data-lake" class="">Access the Data Lake</a></li>
+          <li><a href="/braineous/guides/data-transform" class="">Data Transformation</a></li>
           </ul>
       </li>
       <li class="dropdown">
@@ -135,7 +140,14 @@
       <div class="width-10-12 width-12-12-m">
           <h3>Download Braineous</h3>
           <div class="grid-wrapper">
-              <a href="https://github.com/bugsbunnyshah/braineous_dataplatform/releases/download/braineous-1.0.0-CR1/braineous-1.0.0-cr1.zip">Braineous-1.0.0-CR1</a>
+              <a href="https://www.dropbox.com/scl/fi/33x70udodj1p6wxy5bf7e/braineous-1.0.0-cr2-binary.zip?rlkey=6eh6kraoalln8vt41w9h4e9v4&dl=0">Braineous-1.0.0-CR2</a>
+          </div>
+          <p></p>
+          <div class="grid-wrapper">
+              <p>More instructions</p>
+          </div>
+          <div>
+              <a href="https://github.com/bugsbunnyshah/braineous_dataplatform/releases/tag/braineous-1.0.0-cr2" target="_blank">Release</a>
           </div>
       </div>
 
@@ -148,7 +160,7 @@
               <div class="width-6-12 width-12-12-m">
                   <div class= "highlighter-rouge">
                       <div class="highlight">
-                          <pre class="highlight"><code>cd braineous-1.0.0-cr1/bin</code></pre>
+                          <pre class="highlight"><code>cd braineous-1.0.0-cr2/bin</code></pre>
                       </div>
                       <div class="highlight">
                           <pre class="highlight"><code>./start_zookeper.sh</code></pre>
@@ -168,7 +180,7 @@
               <div class="width-6-12 width-12-12-m">
                   <div class= "highlighter-rouge">
                       <div class="highlight">
-                          <pre class="highlight"><code>cd braineous-1.0.0-cr1/bin</code></pre>
+                          <pre class="highlight"><code>cd braineous-1.0.0-cr2/bin</code></pre>
                       </div>
                       <div class="highlight">
                           <pre class="highlight"><code>./start_kafka.sh</code></pre>
@@ -188,7 +200,7 @@
               <div class="width-6-12 width-12-12-m">
                   <div class= "highlighter-rouge">
                       <div class="highlight">
-                          <pre class="highlight"><code>cd braineous-1.0.0-cr1/bin</code></pre>
+                          <pre class="highlight"><code>cd braineous-1.0.0-cr2/bin</code></pre>
                       </div>
                       <div class="highlight">
                           <pre class="highlight"><code>./start_flink.sh</code></pre>
@@ -198,9 +210,28 @@
           </div>
       </div>
 
-
       <div class="width-2-12 width-12-12-m">
           <h2 class="step">Step <span class="step-no">6</span></h2>
+      </div>
+      <div class="width-10-12 width-12-12-m">
+          <h3>Start Hive Metastore</h3>
+          <div class="grid-wrapper">
+              <div class="width-6-12 width-12-12-m">
+                  <div class= "highlighter-rouge">
+                      <div class="highlight">
+                          <pre class="highlight"><code>cd braineous-1.0.0-cr2/bin</code></pre>
+                      </div>
+                      <div class="highlight">
+                          <pre class="highlight"><code>./start_metastore.sh</code></pre>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+
+      <div class="width-2-12 width-12-12-m">
+          <h2 class="step">Step <span class="step-no">7</span></h2>
       </div>
       <div class="width-10-12 width-12-12-m">
           <h3>Start Braineous</h3>
@@ -208,7 +239,7 @@
               <div class="width-6-12 width-12-12-m">
                   <div class= "highlighter-rouge">
                       <div class="highlight">
-                          <pre class="highlight"><code>cd braineous-1.0.0-cr1/bin</code></pre>
+                          <pre class="highlight"><code>cd braineous-1.0.0-cr2/bin</code></pre>
                       </div>
                       <div class="highlight">
                           <pre class="highlight"><code>./start_braineous.sh</code></pre>
@@ -219,10 +250,70 @@
       </div>
 
       <div class="width-2-12 width-12-12-m">
-          <h2 class="step">Step <span class="step-no">7</span></h2>
+          <h2 class="step">Step <span class="step-no">8</span></h2>
       </div>
       <div class="width-10-12 width-12-12-m">
-          <h3>Ingestion Tutorial</h3>
+          <h3>Test Braineous Installation</h3>
+          <div class="grid-wrapper">
+              <div class="width-6-12 width-12-12-m">
+                  <div class= "highlighter-rouge">
+                      <div class="highlight">
+                          <pre class="highlight"><code>cd braineous-1.0.0-cr2/bin</code></pre>
+                      </div>
+                      <div class="highlight">
+                          <pre class="highlight"><code>./test_installation.sh</code></pre>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="width-2-12 width-12-12-m">
+          <h2 class="step">Step <span class="step-no">9</span></h2>
+      </div>
+      <div class="width-10-12 width-12-12-m">
+          <h3>Generate an API Key and API Secret</h3>
+          <div class="grid-wrapper">
+              <div class="width-6-12 width-12-12-m">
+                  <div class= "highlighter-rouge">
+                      <div class="highlight">
+                          <pre class="highlight">Create a Tenant</pre>
+                      </div>
+                      <div class="highlight">
+                          <pre class="highlight"><code>./pipemon.sh</code></pre>
+                      </div>
+                      <div class="highlight">
+                          <pre class="highlight">
+                        ********************
+                         𝔹ℝ𝔸𝕀ℕ𝔼𝕆𝕌𝕊
+                         *****************
+                        > If you have a tenant press [l] to login, If you need to create a tenant press[c]
+                        c
+                        Create a tenant
+                        > tenant:
+                        cr2_tenant
+                        > email:
+                        cr2@cr2.com
+                        > password:
+                        password
+                        ***TENANT_CREATION_SUCCESS***
+                        {principal: cb4e0e9f-1b06-4e38-8f8a-395775d1a83f, apiSecret: e41bc11a-83ea-42e1-96c1-5bb136de9ce1, name: cr2_tenant, email: cr2@cr2.com, password: 5F4DCC3B5AA765D61D8327DEB882CF99, apiKey: cb4e0e9f-1b06-4e38-8f8a-395775d1a83f}
+                        Please keep the API secret safe for Data Platform usage. This will not be displayed in the future for security reasons
+                          </pre>
+                      </div>
+                      <div class="highlight">
+                          <pre class="highlight">Please use this generated API Key and API Secret for the tutorials.</pre>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="width-2-12 width-12-12-m">
+          <h2 class="step">Step <span class="step-no">10</span></h2>
+      </div>
+      <div class="width-10-12 width-12-12-m">
+          <h3>Create a Data Pipeline</h3>
           <p><a href="/braineous/guides/getting-started">Next</a></p>
       </div>
   </div>
@@ -386,6 +477,8 @@
             <li><a blah href="https://kafka.apache.org/" target="_blank">Apache Kafka</a></li>
           
             <li><a blah href="https://flink.apache.org/" target="_blank">Apache Flink</a></li>
+          
+            <li><a blah href="https://hive.apache.org/" target="_blank">Apache Hive</a></li>
           
             <li><a blah href="https://github.com/google/gson" target="_blank">Gson</a></li>
           

@@ -66,6 +66,7 @@
           <li><a href="/braineous/container-first" class="">High Scale Data Ingestion</a></li>
           <!--<li><a href="/braineous/continuum" class="active">Automated Data Movement</a></li>-->
           <li><a href="/braineous/developer-joy" class="">Data Pipelines</a></li>
+          <li><a href="/braineous/data-lake" class="">Data Lake</a></li>
           <li><a href="/braineous/continuum" class="active">Data Connectors</a></li>
           <!--
           <li><a href="/braineous/standards" class="">STANDARDS</a></li>
@@ -75,9 +76,13 @@
       <li class="dropdown">
         <span href="/braineous/learn/">Learn<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
-          <li><a href="/braineous/get-started" class="">GET STARTED</a></li>
-          <li><a href="/braineous/guides/getting-started" class="">Data Ingestion Tutorial</a></li>
-          <li><a href="/braineous/guides/create-a-custom-data-connector" class="">Create a Custom Data Connector</a></li>
+          <!--<li><a href="/braineous/get-started" class="">GET STARTED</a></li>-->
+          <li><a href="/braineous/guides/developer-guide" class="">Developer Documentation (1.0-CR2)</a></li>
+          <li><a href="/braineous/get-started" class="">Get Started</a></li>
+          <li><a href="/braineous/guides/getting-started" class="">Create a Data Pipeline</a></li>
+          <li><a href="/braineous/guides/create-a-custom-data-connector" class="">Create a Data Connector</a></li>
+          <li><a href="/braineous/guides/data-lake" class="">Access the Data Lake</a></li>
+          <li><a href="/braineous/guides/data-transform" class="">Data Transformation</a></li>
           </ul>
       </li>
       <li class="dropdown">
@@ -115,16 +120,18 @@
     </div>
     <div class="width-12-12 width-12-12-m">
         <p>
-            Braineous supports a core connector for MongoDB as a target system.
-            Candidate Release 2 will include many target data connectors such as
+            Braineous supports core connectors for <strong>MongoDB</strong> and <strong>MySql</strong> as target staging stores.
+            Future releases will include many target data connectors such as
             <ul>
                 <li>Postgresql</li>
-                <li>Mysql</li>
                 <li>Oracle</li>
                 <li>Snowflake</li>
-                <li>Microservices</li>
                 <li><a href="https://airbyte.com/connectors" target="_blank">Airbyte Catalog</a></li>
             </ul>
+        </p>
+        <p>
+            Braineous also provides a <strong>Staging Store Framework</strong> for developers to develop custom connectors.
+            For a hands-on tutorial please refer to: <a href="/braineous/guides/create-a-custom-data-connector">Create a Data Connector</a>
         </p>
     </div>
   </div>
@@ -209,6 +216,8 @@
             <li><a blah href="https://kafka.apache.org/" target="_blank">Apache Kafka</a></li>
           
             <li><a blah href="https://flink.apache.org/" target="_blank">Apache Flink</a></li>
+          
+            <li><a blah href="https://hive.apache.org/" target="_blank">Apache Hive</a></li>
           
             <li><a blah href="https://github.com/google/gson" target="_blank">Gson</a></li>
           

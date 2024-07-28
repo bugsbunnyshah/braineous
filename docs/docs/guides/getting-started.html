@@ -6,7 +6,7 @@
 
 
 <head>
-  <title>Creating Your First Braineous Data Ingestion Application - Quarkus</title>
+  <title>Creating Your First Braineous Data Pipeline - Quarkus</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net https://analytics.ossupstream.org; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app https://analytics.ossupstream.org; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' 
@@ -22,7 +22,7 @@
   <meta name="twitter:site" content="@QuarkusIO"> 
   <meta name="twitter:creator" content="@QuarkusIO">
   <meta property="og:url" content="http://localhost:4000/guides/getting-started" />
-  <meta property="og:title" content="Creating Your First Braineous Data Ingestion Application" />
+  <meta property="og:title" content="Creating Your First Braineous Data Pipeline" />
   <meta property="og:description" content="Braineous Data Platform" />
   <meta property="og:image" content="http://localhost:4000/assets/images/quarkus_card.png" />
   
@@ -66,6 +66,7 @@
           <li><a href="/braineous/container-first" class="">High Scale Data Ingestion</a></li>
           <!--<li><a href="/braineous/continuum" class="">Automated Data Movement</a></li>-->
           <li><a href="/braineous/developer-joy" class="">Data Pipelines</a></li>
+          <li><a href="/braineous/data-lake" class="">Data Lake</a></li>
           <li><a href="/braineous/continuum" class="">Data Connectors</a></li>
           <!--
           <li><a href="/braineous/standards" class="">STANDARDS</a></li>
@@ -75,9 +76,13 @@
       <li class="dropdown">
         <span href="/braineous/learn/">Learn<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
-          <li><a href="/braineous/get-started" class="">GET STARTED</a></li>
-          <li><a href="/braineous/guides/getting-started" class="active">Data Ingestion Tutorial</a></li>
-          <li><a href="/braineous/guides/create-a-custom-data-connector" class="">Create a Custom Data Connector</a></li>
+          <!--<li><a href="/braineous/get-started" class="">GET STARTED</a></li>-->
+          <li><a href="/braineous/guides/developer-guide" class="">Developer Documentation (1.0-CR2)</a></li>
+          <li><a href="/braineous/get-started" class="">Get Started</a></li>
+          <li><a href="/braineous/guides/getting-started" class="active">Create a Data Pipeline</a></li>
+          <li><a href="/braineous/guides/create-a-custom-data-connector" class="">Create a Data Connector</a></li>
+          <li><a href="/braineous/guides/data-lake" class="">Access the Data Lake</a></li>
+          <li><a href="/braineous/guides/data-transform" class="">Data Transformation</a></li>
           </ul>
       </li>
       <li class="dropdown">
@@ -119,11 +124,11 @@
 
 <div class="grid-wrapper guide">
   <div class="grid__item width-8-12 width-12-12-m">
-    <h1 class="text-caps">Creating Your First Braineous Data Ingestion Application </h1>
+    <h1 class="text-caps">Creating Your First Braineous Data Pipeline </h1>
     <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Learn how to create a Braineous Data Ingestion application.</p>
+<p>Learn how to create a Braineous Data Pipeline.</p>
 </div>
 <div class="paragraph">
 <p>This guide covers:</p>
@@ -134,10 +139,10 @@
 <p>Get the Source Data</p>
 </li>
 <li>
-<p>Register a data pipe and send source data to multiple target MongoDB databases</p>
+<p>Register a data pipe and send source data to configured target MongoDB database</p>
 </li>
 <li>
-<p>Verify all target databases receive the data</p>
+<p>Verify the target database received the data</p>
 </li>
 </ul>
 </div>
@@ -183,19 +188,35 @@ You can verify which JDK Maven uses by running <code>mvn --version</code>.</p>
 </table>
 </div>
 <div class="paragraph">
-<p>Download the <a href="https://github.com/bugsbunnyshah/braineous_dataplatform/releases/download/braineous-1.0.0-CR1/braineous-1.0.0-cr1.zip">Braineous-1.0.0-CR1</a> zip archive</p>
+<p>Download the <a href="https://github.com/bugsbunnyshah/braineous_dataplatform/releases/download/braineous-1.0.0-CR1/braineous-1.0.0-cr1.zip">Braineous-1.0.0-CR2</a> zip archive</p>
 </div>
 <div class="paragraph">
-<p>This tutorial is located under: braineous-1.0.0-cr1/tutorials/get-started</p>
+<p>This tutorial is located under: braineous-1.0.0-cr2/tutorials/get-started</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="get-the-source-data"><a class="anchor" href="#get-the-source-data"></a>2. Get the Source Data</h2>
+<h2 id="initialize"><a class="anchor" href="#initialize"></a>2. Initialize</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Get an instance of the <code>DataPlatformService</code>. Setup your <code>API_KEY</code> and <code>API_SECRET</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">DataPlatformService dataPlatformService = DataPlatformService.getInstance();
+
+String apiKey = "ffb2969c-5182-454f-9a0b-f3f2fb0ebf75";
+String apiSecret = "5960253b-6645-41bf-b520-eede5754196e";</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="get-the-source-data"><a class="anchor" href="#get-the-source-data"></a>3. Get the Source Data</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Let&#8217;s start with a simple Json array to be used as datasource to be
-ingested by the Braineous Data Ingestion Engine</p>
+ingested by the <strong>Braineous Data Ingestion Engine</strong></p>
 </div>
 <div class="paragraph">
 <p>Source Data</p>
@@ -205,20 +226,20 @@ ingested by the Braineous Data Ingestion Engine</p>
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">[
   {
     "id" : 1,
-    "name": "Joe Black1",
-    "age": 50,
+    "name": "name_1",
+    "age": 46,
     "addr": {
-      "email": "test@email.com",
-      "phone": "123456"
+      "email": "name_1@email.com",
+      "phone": "123"
     }
   },
   {
     "id": "2",
-    "name": "Joe Black2",
-    "age": 50,
+    "name": "name_2",
+    "age": 55,
     "addr": {
-      "email": "test@email.com",
-      "phone": "123456"
+      "email": "name_2@email.com",
+      "phone": "1234"
     }
   }
 ]</code></pre>
@@ -229,37 +250,23 @@ ingested by the Braineous Data Ingestion Engine</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">//setup source data for ingestion
-String sourceData = "[\n" +
-        "  {\n" +
-        "    \"id\" : 1,\n" +
-        "    \"name\": \"Joe Black1\",\n" +
-        "    \"age\": 50,\n" +
-        "    \"addr\": {\n" +
-        "      \"email\": \"test@email.com\",\n" +
-        "      \"phone\": \"123456\"\n" +
-        "    }\n" +
-        "  },\n" +
-        "  {\n" +
-        "    \"id\": \"2\",\n" +
-        "    \"name\": \"Joe Black2\",\n" +
-        "    \"age\": 50,\n" +
-        "    \"addr\": {\n" +
-        "      \"email\": \"test@email.com\",\n" +
-        "      \"phone\": \"123456\"\n" +
-        "    }\n" +
-        "  }\n" +
-        "]";</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">String datasetLocation = "dataset/data.json";
+String json = Util.loadResource(datasetLocation);</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>A dataset can be loaded from any data source such as a database, legacy production data store,
+live data feed, third-party data source, Kafka stream, etc. In this example the dataset is loaded from a classpath
+resource located at <code>src/main/resources/dataset/data.json</code></p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="register-a-data-pipe-and-send-source-data-to-multiple-target-mongodb-databases"><a class="anchor" href="#register-a-data-pipe-and-send-source-data-to-multiple-target-mongodb-databases"></a>3. Register a data pipe and send source data to multiple target MongoDB databases</h2>
+<h2 id="register-a-data-pipe-and-send-source-data-to-configured-target-mongodb-database"><a class="anchor" href="#register-a-data-pipe-and-send-source-data-to-configured-target-mongodb-database"></a>4. Register a data pipe and send source data to configured target MongoDB database</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Register a data pipe with the Braineous Data Ingestion Engine using the
-Java Braineous Data Ingestion Client SDK.</p>
+<p>Register a data pipe with the <strong>Braineous Data Ingestion Engine</strong> using the
+<strong>Java Braineous Data Ingestion Client SDK</strong>.</p>
 </div>
 <div class="paragraph">
 <p>Pipe Configuration</p>
@@ -267,17 +274,18 @@ Java Braineous Data Ingestion Client SDK.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">{
-  "pipeId": "123",
+  "pipeId": "yyya",
+  "entity": "abc",
   "configuration": [
     {
-      "storeDriver" : "com.appgallabs.dataplatform.receiver.core.driver.MongoDBStoreDriver",
-      "name": "scenario1_store",
+      "stagingStore" : "com.appgallabs.dataplatform.targetSystem.core.driver.MongoDBStagingStore",
+      "name": "yyya",
       "config": {
         "connectionString": "mongodb://localhost:27017",
-        "database": "scenario1_store",
-        "collection": "data"
-      },
-      "jsonpathExpression": "jsonpath:1"
+        "database": "yyya",
+        "collection": "data",
+        "jsonpathExpressions": []
+      }
     }
   ]
 }</code></pre>
@@ -286,22 +294,26 @@ Java Braineous Data Ingestion Client SDK.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>pipeId : As a data source provider, this is id identifies this data pipe uniquely with the Braineous Data Pipline Engine.</p>
+<p><strong>pipeId</strong> : As a data source provider, this id identifies this data pipe
+uniquely with the <strong>Braineous Data Pipline Engine</strong>.</p>
 </li>
 <li>
-<p>configuration.storeDriver: MongoDB target store driver</p>
+<p><strong>entity</strong> : The business/domain entity that this dataset should be associated with.</p>
 </li>
 <li>
-<p>name: a user-friendly way to indentify the target store</p>
+<p><strong>configuration.stagingStore</strong>: The <code>Staging Store</code> driver</p>
 </li>
 <li>
-<p>config.connectionString: MongoDB database connection string</p>
+<p><strong>configuration.name</strong>: a user-friendly way to indentify the target store</p>
 </li>
 <li>
-<p>config.database: MongoDB database</p>
+<p><strong>configuration.config.connectionString</strong>: MongoDB database connection string for your target store</p>
 </li>
 <li>
-<p>config.collection: MongoDB database collection</p>
+<p><strong>configuration.config.database</strong>: MongoDB database on your target store</p>
+</li>
+<li>
+<p><strong>configuration.config.collection</strong>: MongoDB database collection on your target store</p>
 </li>
 </ul>
 </div>
@@ -339,28 +351,32 @@ for data delivery.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">//setup data pipe configuration json
-String dataPipeConfiguration = "{\n" +
-        "  \"pipeId\": \"123\",\n" +
-        "  \"configuration\": [\n" +
-        "    {\n" +
-        "      \"storeDriver\" : \"com.appgallabs.dataplatform.receiver.core.driver.MongoDBStoreDriver\",\n" +
-        "      \"name\": \"get_started_store\",\n" +
-        "      \"config\": {\n" +
-        "        \"connectionString\": \"mongodb://localhost:27017\",\n" +
-        "        \"database\": \"get_started_store\",\n" +
-        "        \"collection\": \"data\"\n" +
-        "      },\n" +
-        "      \"jsonpathExpression\": \"jsonpath:1\"\n" +
-        "    }\n" +
-        "  ]\n" +
-        "}";
-JsonObject configJson = JsonUtil.validateJson(dataPipeConfiguration).getAsJsonObject();
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">String configLocation = "pipe_config/pipe_config.json";
+String pipeConfigJson = Util.loadResource(configLocation);
+JsonObject configJson = JsonUtil.validateJson(pipeConfigJson).getAsJsonObject();
+String pipeId = configJson.get("pipeId").getAsString();
+String entity = configJson.get("entity").getAsString();
+System.out.println("*****PIPE_CONFIGURATION******");
+JsonUtil.printStdOut(configJson);
+
+//configure the DataPipeline Client
+Configuration configuration = new Configuration().
+ingestionHostUrl("http://localhost:8080/").
+apiKey(apiKey).
+apiSecret(apiSecret).
+streamSizeInObjects(0);
+dataPlatformService.configure(configuration);
 
 //register pipe
-JsonObject response = DataPipeline.registerPipe(dataPipeConfiguration);
-JsonUtil.printStdOut(response);</code></pre>
+dataPlatformService.registerPipe(configJson);
+System.out.println("*****PIPE_REGISTRATION_SUCCESS******");</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>Pipe Configuration can be provided dynamically at runtime. The source can be a
+database, a configuration system, local file system, network file system etc.
+In this example the dataset is loaded from a classpath
+resource located at <code>src/main/resources/pipe_config/pipe_config.json</code></p>
 </div>
 <div class="paragraph">
 <p>Java Code - Send Data for ingestion</p>
@@ -368,15 +384,84 @@ JsonUtil.printStdOut(response);</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">//send source data through the pipeline
-String pipeId = configJson.get("pipeId").getAsString();
-String entity = "books";
-DataPipeline.sendData(pipeId, entity, sourceData);</code></pre>
+dataPlatformService.sendData(pipeId, entity,datasetElement.toString());
+System.out.println("*****DATA_INGESTION_SUCCESS******");</code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="verify-all-target-collections-receive-the-data"><a class="anchor" href="#verify-all-target-collections-receive-the-data"></a>4. Verify all target collections receive the data</h2>
+<h2 id="run-the-tutorial"><a class="anchor" href="#run-the-tutorial"></a>5. Run the Tutorial</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd braineous-1.0.0-cr2/tutorials/get-started</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./run.sh</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>Expected Output</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">[INFO] ------------------------------------------------------------------------
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+*****DATA_SET******
+******ARRAY_SIZE: 2**********
+[
+  {
+    "id": 1,
+    "name": "name_1",
+    "age": 46,
+    "addr": {
+      "email": "name_1@email.com",
+      "phone": "123"
+    }
+  },
+  {
+    "id": "2",
+    "name": "name_2",
+    "age": 55,
+    "addr": {
+      "email": "name_2@email.com",
+      "phone": "1234"
+    }
+  }
+]
+**********************
+*****PIPE_CONFIGURATION******
+{
+  "pipeId": "yyya",
+  "entity": "abc",
+  "configuration": [
+    {
+      "stagingStore": "com.appgallabs.dataplatform.targetSystem.core.driver.MongoDBStagingStore",
+      "name": "yyya",
+      "config": {
+        "connectionString": "mongodb://localhost:27017",
+        "database": "yyya",
+        "collection": "data",
+        "jsonpathExpressions": []
+      }
+    }
+  ]
+}
+**********************
+*****PIPE_REGISTRATION_SUCCESS******
+***SENDING_DATA_START*****
+*****DATA_INGESTION_SUCCESS******</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="verify-all-target-collections-receive-the-data"><a class="anchor" href="#verify-all-target-collections-receive-the-data"></a>6. Verify all target collections receive the data</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>To verify the success of the ingestion and delivery to the configured target
@@ -384,7 +469,7 @@ databases, use the following MongoDB commands.</p>
 </div>
 <div class="paragraph">
 <p>Expected Result: You should see two records added to a collection called "data"
-in a database called "get_started_store"</p>
+in a database called "yyya" corresponding to configured value <code>configuration.config.database</code></p>
 </div>
 <div class="paragraph">
 <p>mongosh</p>
@@ -396,7 +481,7 @@ in a database called "get_started_store"</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">use get_started_store</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">use yyya</code></pre>
 </div>
 </div>
 <div class="listingblock">
@@ -420,9 +505,11 @@ in a database called "get_started_store"</p>
   <div class="grid__item width-4-12 width-12-12-m tocwrapper">
     <div class="hide-mobile toc"><ul class="sectlevel1">
 <li><a href="#prerequisites">1. Prerequisites</a></li>
-<li><a href="#get-the-source-data">2. Get the Source Data</a></li>
-<li><a href="#register-a-data-pipe-and-send-source-data-to-multiple-target-mongodb-databases">3. Register a data pipe and send source data to multiple target MongoDB databases</a></li>
-<li><a href="#verify-all-target-collections-receive-the-data">4. Verify all target collections receive the data</a></li>
+<li><a href="#initialize">2. Initialize</a></li>
+<li><a href="#get-the-source-data">3. Get the Source Data</a></li>
+<li><a href="#register-a-data-pipe-and-send-source-data-to-configured-target-mongodb-database">4. Register a data pipe and send source data to configured target MongoDB database</a></li>
+<li><a href="#run-the-tutorial">5. Run the Tutorial</a></li>
+<li><a href="#verify-all-target-collections-receive-the-data">6. Verify all target collections receive the data</a></li>
 </ul></div>
   </div>
 </div>
@@ -505,6 +592,8 @@ in a database called "get_started_store"</p>
             <li><a blah href="https://kafka.apache.org/" target="_blank">Apache Kafka</a></li>
           
             <li><a blah href="https://flink.apache.org/" target="_blank">Apache Flink</a></li>
+          
+            <li><a blah href="https://hive.apache.org/" target="_blank">Apache Hive</a></li>
           
             <li><a blah href="https://github.com/google/gson" target="_blank">Gson</a></li>
           

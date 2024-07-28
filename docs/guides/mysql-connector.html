@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html>
+
+
+
+
+
+<head>
+  <title>Integrate the MySQL Data Pipeline Connector - Quarkus</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net https://analytics.ossupstream.org; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app https://analytics.ossupstream.org; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' 
+  https://analytics.ossupstream.org *; media-src 'self'; frame-src  https://www.youtube.com https://embed.restream.io https://app.mailjet.com http://xy0p2.mjt.lu https://mj.quarkus.io https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
+  <script id="adobe_dtm" src="https://www.redhat.com/dtm.js" type="text/javascript"></script>
+  <script src="/braineous/assets/javascript/highlight.pack.js" type="text/javascript"></script>
+  <META HTTP-EQUIV='X-XSS-Protection' CONTENT="1; mode=block">
+  <META HTTP-EQUIV='X-Content-Type-Options' CONTENT="nosniff">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Braineous Data Platform">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@QuarkusIO"> 
+  <meta name="twitter:creator" content="@QuarkusIO">
+  <meta property="og:url" content="http://localhost:4000/guides/mysql-connector" />
+  <meta property="og:title" content="Integrate the MySQL Data Pipeline Connector" />
+  <meta property="og:description" content="Braineous Data Platform" />
+  <meta property="og:image" content="http://localhost:4000/assets/images/quarkus_card.png" />
+  
+  <link rel="canonical" href="http://localhost:4000/guides/mysql-connector">
+  <link rel="shortcut icon" type="image/png" href="/braineous/favicon.ico" >
+  <link rel="stylesheet" href="/guides/stylesheet/config.css" />
+  <link rel="stylesheet" href="/braineous/assets/css/main.css?2021-07-29" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <link rel="alternate" type="application/rss+xml"  href="/feed.xml" title="Braineous Data Platform">
+  <script src="/assets/javascript/hl.js" type="text/javascript"></script>
+  
+  
+  
+  
+  <link rel="alternate" hreflang="x-default" href="https://quarkus.io/" />  
+  <script src="/braineous/assets/javascript/tracking.js"></script>
+  <script src="https://analytics.ossupstream.org/matomo.js" async defer></script>
+</head>
+
+<body class="guides">
+
+  
+  <div class="nav-wrapper">
+  <div class="grid-wrapper">
+    <div class="width-12-12">
+      <input type="checkbox" id="checkbox" />
+      <nav id="main-nav" class="main-nav">
+        <div class="logo-wrapper">
+           <a href="/braineous/">
+              <span>BRAINEOUS</span>
+           </a>
+        </div>
+    <label class="nav-toggle" for="checkbox">
+      <i class="fa fa-bars"></i>
+    </label>
+    <ul id="menu" class="menu">
+      <li class="dropdown">
+        <span href="/braineous/about/">WHY?<i class="fas fa-chevron-down"></i></span>
+        <ul class="submenu">
+          <!--<li><a href="/braineous/about" class="">WHAT IS BRAINEOUS?</a></li>-->
+          <li><a href="/braineous/container-first" class="">High Scale Data Ingestion</a></li>
+          <!--<li><a href="/braineous/continuum" class="">Automated Data Movement</a></li>-->
+          <li><a href="/braineous/developer-joy" class="">Data Pipelines</a></li>
+          <li><a href="/braineous/data-lake" class="">Data Lake</a></li>
+          <li><a href="/braineous/continuum" class="">Data Connectors</a></li>
+          <!--
+          <li><a href="/braineous/standards" class="">STANDARDS</a></li>
+          -->
+        </ul>
+      </li>
+      <li class="dropdown">
+        <span href="/braineous/learn/">Learn<i class="fas fa-chevron-down"></i></span>
+        <ul class="submenu">
+          <!--<li><a href="/braineous/get-started" class="">GET STARTED</a></li>-->
+          <li><a href="/braineous/guides/developer-guide" class="">Developer Documentation (1.0-CR3)</a></li>
+          <li><a href="/braineous/get-started" class="">Get Started</a></li>
+          <li><a href="/braineous/guides/getting-started" class="">Create a Data Pipeline</a></li>
+          <li><a href="/braineous/guides/create-a-custom-data-connector" class="">Create a Data Pipeline Connector</a></li>
+          <li><a href="/braineous/guides/create-integration-runner" class="">Create a a Custom Data Integration Agent</a></li>
+          <li><a href="/braineous/guides/data-lake" class="">Access the Data Lake</a></li>
+          <li><a href="/braineous/guides/data-transform" class="">Data Transformation</a></li>
+          <li><a href="/braineous/guides/snowflake-connector" class="">Snowflake Data Pipeline Connector</a></li>
+          <li><a href="/braineous/guides/mysql-connector" class="active">MySQL Data Pipeline Connector</a></li>
+          <li><a href="/braineous/guides/elastic-connector" class="">ElasticSearch Data Pipeline Connector</a></li>
+          <li><a href="/braineous/guides/getting-started" class="">MongoDB Data Pipeline Connector</a></li>
+          <li><a href="/braineous/guides/click-house-connector" class="">ClickHouse Data Pipeline Connector</a></li>
+          </ul>
+      </li>
+      <li class="dropdown">
+        <span href="/braineous/community/">Community<i class="fas fa-chevron-down"></i></span>
+        <ul class="submenu">
+          <li><a href="/braineous/support/" class="">SUPPORT</a></li>
+          <!--<li><a href="/braineous/blog" class="">BLOG</a></li>-->
+          <li><a href="https://github.com/bugsbunnyshah/braineous_dataplatform/discussions" class="">DISCUSSION</a></li>
+          <li><a href="/braineous/about/" class="">ROADMAP</a></li>
+          </ul>
+      </li>
+      <li>
+        <a href="/braineous/get-started" class="button-cta secondary white">START CODING</a>
+      </li>
+    </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+  <div class="content">
+    
+
+
+
+
+<section class="full-width-version-bg flexfilterbar guides">
+  <div class="guideflexcontainer">
+    <div class="docslink">
+      <a class="returnlink" href="/braineous/get-started">Back</a>
+    </div>
+    <!--
+    <div class="flexlabel">
+      <label>By Version</label>
+    </div>
+    -->
+  </div>
+</section>
+
+<div class="grid-wrapper guide">
+  <div class="grid__item width-8-12 width-12-12-m">
+    <h1 class="text-caps">Integrate the MySQL Data Pipeline Connector </h1>
+    <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Learn how to integrate the MySQL Data Pipeline Connector.</p>
+</div>
+<div class="paragraph">
+<p>This guide covers:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Get the Source Data</p>
+</li>
+<li>
+<p>Register a data pipe and send source data to configured target MySQL database</p>
+</li>
+<li>
+<p>Verify the target database received the data</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="prerequisites"><a class="anchor" href="#prerequisites"></a>1. Prerequisites</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To complete this guide, you need:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Roughly 15 minutes</p>
+</li>
+<li>
+<p>An IDE</p>
+</li>
+<li>
+<p>JDK 11+ installed with <code>JAVA_HOME</code> configured appropriately</p>
+</li>
+<li>
+<p>Apache Maven 3.9.5</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Verify Maven is using the Java you expect</div>
+<div class="paragraph">
+<p>If you have multiple JDK&#8217;s installed, it is not certain Maven will pick up the expected java
+and you could end up with unexpected results.
+You can verify which JDK Maven uses by running <code>mvn --version</code>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Download the <a href="https://www.dropbox.com/scl/fi/87ixa3bbegsmhaiz3danr/braineous-1.0.0-cr3.zip?rlkey=o4s7a8nvuwh8v1wuat1gl6uxe&amp;st=9i9z0u2h&amp;dl=0">Braineous-1.0.0-CR3</a> zip archive</p>
+</div>
+<div class="paragraph">
+<p>This tutorial is located under: braineous-1.0.0-cr3/tutorials/mysql-connector</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="initialize"><a class="anchor" href="#initialize"></a>2. Initialize</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Get an instance of the <code>DataPlatformService</code>. Setup your <code>API_KEY</code> and <code>API_SECRET</code>.
+Please refer to 'Step 9' of the Getting Started guide.
+<a href="https://bugsbunnyshah.github.io/braineous/get-started/" class="bare">https://bugsbunnyshah.github.io/braineous/get-started/</a></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">DataPlatformService dataPlatformService = DataPlatformService.getInstance();
+
+String apiKey = "ffb2969c-5182-454f-9a0b-f3f2fb0ebf75";
+String apiSecret = "5960253b-6645-41bf-b520-eede5754196e";</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="get-the-source-data"><a class="anchor" href="#get-the-source-data"></a>3. Get the Source Data</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Let&#8217;s start with a simple Json array to be used as datasource to be
+ingested by the <strong>Braineous Data Ingestion Engine</strong></p>
+</div>
+<div class="paragraph">
+<p>Source Data</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">[
+  {
+    "id" : 1,
+    "name": "name_1",
+    "age": 46,
+    "addr": {
+      "email": "name_1@email.com",
+      "phone": "123"
+    }
+  },
+  {
+    "id": "2",
+    "name": "name_2",
+    "age": 55,
+    "addr": {
+      "email": "name_2@email.com",
+      "phone": "1234"
+    }
+  }
+]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Java Code</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">String datasetLocation = "dataset/data.json";
+String json = Util.loadResource(datasetLocation);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A dataset can be loaded from any data source such as a database, legacy production data store,
+live data feed, third-party data source, Kafka stream, etc. In this example the dataset is loaded from a classpath
+resource located at <code>src/main/resources/dataset/data.json</code></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="register-a-data-pipe-and-send-source-data-to-configured-target-snowflake-database"><a class="anchor" href="#register-a-data-pipe-and-send-source-data-to-configured-target-snowflake-database"></a>4. Register a data pipe and send source data to configured target Snowflake database</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Register a data pipe with the <strong>Braineous Data Ingestion Engine</strong> using the
+<strong>Java Braineous Data Ingestion Client SDK</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Pipe Configuration</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">{
+  "pipeId": "yyya",
+  "entity": "abc",
+  "configuration": [
+    {
+      "stagingStore" : "com.appgallabs.dataplatform.targetSystem.core.driver.MySqlStagingStore",
+      "name": "yyya",
+      "config": {
+        "connectionString": "jdbc:mysql://localhost:3306/braineous_staging_database",
+        "username": "root",
+        "password":  "",
+        "staging_table": "staging_store",
+        "jsonpathExpressions": []
+      }
+    }
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>pipeId</strong> : As a data source provider, this id identifies this data pipe
+uniquely with the <strong>Braineous Data Pipline Engine</strong>.</p>
+</li>
+<li>
+<p><strong>entity</strong> : The business/domain entity that this dataset should be associated with.</p>
+</li>
+<li>
+<p><strong>configuration.stagingStore</strong>: The <code>Staging Store</code> driver</p>
+</li>
+<li>
+<p><strong>configuration.name</strong>: a user-friendly way to indentify the target store</p>
+</li>
+<li>
+<p><strong>configuration.config.connectionString</strong>: MySQL database connection string for your target store</p>
+</li>
+<li>
+<p><strong>configuration.config.username</strong>: MySQL user</p>
+</li>
+<li>
+<p><strong>configuration.config.password</strong>: MySQL&#8217;s user&#8217;s password</p>
+</li>
+<li>
+<p><strong>configuration.config.staging_table</strong>: MySql staging table</p>
+</li>
+<li>
+<p><strong>configuration.config.jsonpathExpressions</strong>: Data Transformation based on JSONPath specification: <a href="https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html" class="bare">https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>A data pipe can be configured with multiple target stores/systems associated with the same data pipe
+for data delivery.</p>
+</div>
+<div class="paragraph">
+<p>Java Code - Register Pipe</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">String configLocation = "pipe_config/pipe_config.json";
+String pipeConfigJson = Util.loadResource(configLocation);
+JsonObject configJson = JsonUtil.validateJson(pipeConfigJson).getAsJsonObject();
+String pipeId = configJson.get("pipeId").getAsString();
+String entity = configJson.get("entity").getAsString();
+System.out.println("*****PIPE_CONFIGURATION******");
+JsonUtil.printStdOut(configJson);
+
+//configure the DataPipeline Client
+Configuration configuration = new Configuration().
+ingestionHostUrl("http://localhost:8080/").
+apiKey(apiKey).
+apiSecret(apiSecret).
+streamSizeInObjects(0);
+dataPlatformService.configure(configuration);
+
+//register pipe
+dataPlatformService.registerPipe(configJson);
+System.out.println("*****PIPE_REGISTRATION_SUCCESS******");</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Pipe Configuration can be provided dynamically at runtime. The source can be a
+database, a configuration system, local file system, network file system etc.
+In this example the dataset is loaded from a classpath
+resource located at <code>src/main/resources/pipe_config/pipe_config.json</code></p>
+</div>
+<div class="paragraph">
+<p>Java Code - Send Data for ingestion</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">//send source data through the pipeline
+dataPlatformService.sendData(pipeId, entity,datasetElement.toString());
+System.out.println("*****DATA_INGESTION_SUCCESS******");</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="run-the-tutorial"><a class="anchor" href="#run-the-tutorial"></a>5. Run the Tutorial</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd braineous-1.0.0-cr3/tutorials/mysql-connector</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./run.sh</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>Expected Output</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+*****DATA_SET******
+******ARRAY_SIZE: 2**********
+[
+  {
+    "id": 1,
+    "name": "name_1",
+    "age": 46,
+    "addr": {
+      "email": "name_1@email.com",
+      "phone": "123"
+    }
+  },
+  {
+    "id": "2",
+    "name": "name_2",
+    "age": 55,
+    "addr": {
+      "email": "name_2@email.com",
+      "phone": "1234"
+    }
+  }
+]
+**********************
+*****PIPE_CONFIGURATION******
+{
+  "pipeId": "yyya",
+  "entity": "abc",
+  "configuration": [
+    {
+      "stagingStore": "com.appgallabs.dataplatform.targetSystem.core.driver.MySqlStagingStore",
+      "name": "yyya",
+      "config": {
+        "connectionString": "jdbc:mysql://localhost:3306/braineous_staging_database",
+        "username": "root",
+        "password": "",
+        "staging_table": "staging_store",
+        "jsonpathExpressions": []
+      }
+    }
+  ]
+}
+**********************
+*****PIPE_REGISTRATION_SUCCESS******
+***SENDING_DATA_START*****
+*****DATA_INGESTION_SUCCESS******</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="verify-all-the-data-is-successfully-stored-in-the-mysql-database"><a class="anchor" href="#verify-all-the-data-is-successfully-stored-in-the-mysql-database"></a>6. Verify all the data is successfully stored in the MySql Database</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To verify the success of the ingestion and delivery to the configured target
+databases, use the following login to your MySql instance</p>
+</div>
+<div class="paragraph">
+<p><code>Expected Result :</code> You should see the following results from the attached screenshots</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../assets/tutorials/mysql_results.png" alt="mysql results">
+</div>
+</div>
+</div>
+</div>
+  </div>
+  <div class="grid__item width-4-12 width-12-12-m tocwrapper">
+    <div class="hide-mobile toc"><ul class="sectlevel1">
+<li><a href="#prerequisites">1. Prerequisites</a></li>
+<li><a href="#initialize">2. Initialize</a></li>
+<li><a href="#get-the-source-data">3. Get the Source Data</a></li>
+<li><a href="#register-a-data-pipe-and-send-source-data-to-configured-target-snowflake-database">4. Register a data pipe and send source data to configured target Snowflake database</a></li>
+<li><a href="#run-the-tutorial">5. Run the Tutorial</a></li>
+<li><a href="#verify-all-the-data-is-successfully-stored-in-the-mysql-database">6. Verify all the data is successfully stored in the MySql Database</a></li>
+</ul></div>
+  </div>
+</div>
+
+  </div>
+
+  <div class="content project-footer">
+  <div class="footer-section">
+    <!--
+    <div class="logo-wrapper">
+      <a href="/braineous/"><img src="/braineous/assets/images/quarkus_logo_horizontal_rgb_reverse.svg" class="project-logo" title="Quarkus"></a>
+    </div>
+    -->
+  </div>
+  <div class="grid-wrapper">
+    <p class="grid__item width-3-12">Braineous is open. All dependencies of this project are available under the <a href='https://www.apache.org/licenses/LICENSE-2.0' target='_blank'>Apache Software License 2.0</a> or compatible license.<br /><br />This website was built with <a href='https://jekyllrb.com/' target='_blank'>Jekyll</a>, is hosted on <a href='https://pages.github.com/' target='_blank'>GitHub Pages</a> and is completely open source. If you want to make it better, <a href='https://github.com/quarkusio/quarkusio.github.io' target='_blank'>fork the website</a> and show us what you’ve got.</p>
+
+    
+      <div class="width-1-12 project-links">
+        <span>Navigation</span>
+        <ul class="footer-links">
+          
+          
+            <li><a href="/braineous/" target="_blank">Home</a></li>
+          
+          
+          
+            <li><a href="/braineous/container-first" target="_blank">High Scale Data Ingestion</a></li>
+          
+          
+          
+            <li><a href="/braineous/developer-joy" target="_blank">Data Pipelines</a></li>
+          
+          
+          
+            <li><a href="/braineous/continuum" target="_blank">Data Connectors</a></li>
+          
+          
+          
+            <li><a href="/braineous/about" target="_blank">Roadmap</a></li>
+          
+          
+        </ul>
+      </div>
+    
+      <div class="width-1-12 project-links">
+        <span>Follow Us</span>
+        <ul class="footer-links">
+          
+          
+            <li><a href="https://github.com/bugsbunnyshah/braineous_dataplatform" target="_blank">GitHub</a></li>
+          
+          
+        </ul>
+      </div>
+    
+      <div class="width-2-12 project-links">
+        <span>Get Help</span>
+        <ul class="footer-links">
+          
+          
+            <li><a href="/braineous/support" target="_blank">Support</a></li>
+          
+          
+          
+            <li><a href="https://github.com/bugsbunnyshah/braineous_dataplatform/discussions" target="_blank">Discussions</a></li>
+          
+          
+        </ul>
+      </div>
+    
+
+    
+      <div class="width-4-12 more-links">
+        <span>Braineous is made of community projects</span>
+        <ul class="footer-links">
+          
+            <li><a blah href="https://quarkus.io/" target="_blank">Quarkus</a></li>
+          
+            <li><a blah href="https://kafka.apache.org/" target="_blank">Apache Kafka</a></li>
+          
+            <li><a blah href="https://flink.apache.org/" target="_blank">Apache Flink</a></li>
+          
+            <li><a blah href="https://hive.apache.org/" target="_blank">Apache Hive</a></li>
+          
+            <li><a blah href="https://github.com/google/gson" target="_blank">Gson</a></li>
+          
+            <li><a blah href="https://www.mongodb.com/" target="_blank">MongoDB</a></li>
+          
+            <li><a blah href="https://github.com/bugsbunnyshah/braineous_dataplatform/blob/main/pom.xml" target="_blank">And many more...</a></li>
+          
+        </ul>
+      </div>
+    
+  </div>
+</div>
+
+  <div class="content redhat-footer">
+  <div class="grid-wrapper">
+    <span class="licence">
+      <i class="fab fa-creative-commons"></i><i class="fab fa-creative-commons-by"></i>
+      <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank">CC by 3.0</a>
+    </span>
+  </div>
+</div>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="/braineous/assets/javascript/mobile-nav.js"></script>
+  <script type="text/javascript" src="/braineous/assets/javascript/scroll-down.js"></script>
+  <script src="/braineous/assets/javascript/satellite.js" type="text/javascript"></script>
+  <script src="/braineous/guides/javascript/config.js" type="text/javascript"></script>
+  <script src="/braineous/assets/javascript/search-filter.js" type="text/javascript"></script>
+  <script src="/braineous/assets/javascript/guides-version-dropdown.js" type="text/javascript"></script>
+  <script src="/braineous/assets/javascript/back-to-top.js" type="text/javascript"></script>
+  <script src="/braineous/assets/javascript/clipboard.min.js" type="text/javascript"></script>
+  <script src="/braineous/assets/javascript/copy.js" type="text/javascript"></script>
+  <script src="/braineous/assets/javascript/asciidoc-tabs.js" type="text/javascript"></script>
+</body>
+
+</html>

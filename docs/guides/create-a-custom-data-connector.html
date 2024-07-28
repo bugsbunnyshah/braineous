@@ -77,12 +77,18 @@
         <span href="/braineous/learn/">Learn<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <!--<li><a href="/braineous/get-started" class="">GET STARTED</a></li>-->
-          <li><a href="/braineous/guides/developer-guide" class="">Developer Documentation (1.0-CR2)</a></li>
+          <li><a href="/braineous/guides/developer-guide" class="">Developer Documentation (1.0-CR3)</a></li>
           <li><a href="/braineous/get-started" class="">Get Started</a></li>
           <li><a href="/braineous/guides/getting-started" class="">Create a Data Pipeline</a></li>
-          <li><a href="/braineous/guides/create-a-custom-data-connector" class="active">Create a Data Connector</a></li>
+          <li><a href="/braineous/guides/create-a-custom-data-connector" class="active">Create a Data Pipeline Connector</a></li>
+          <li><a href="/braineous/guides/create-integration-runner" class="">Create a a Custom Data Integration Agent</a></li>
           <li><a href="/braineous/guides/data-lake" class="">Access the Data Lake</a></li>
           <li><a href="/braineous/guides/data-transform" class="">Data Transformation</a></li>
+          <li><a href="/braineous/guides/snowflake-connector" class="">Snowflake Data Pipeline Connector</a></li>
+          <li><a href="/braineous/guides/mysql-connector" class="">MySQL Data Pipeline Connector</a></li>
+          <li><a href="/braineous/guides/elastic-connector" class="">ElasticSearch Data Pipeline Connector</a></li>
+          <li><a href="/braineous/guides/getting-started" class="">MongoDB Data Pipeline Connector</a></li>
+          <li><a href="/braineous/guides/click-house-connector" class="">ClickHouse Data Pipeline Connector</a></li>
           </ul>
       </li>
       <li class="dropdown">
@@ -196,7 +202,10 @@ You can verify which JDK Maven uses by running <code>mvn --version</code>.</p>
 </table>
 </div>
 <div class="paragraph">
-<p>Download the <a href="https://github.com/bugsbunnyshah/braineous_dataplatform/releases/download/braineous-1.0.0-CR1/create-connector.zip">Create a Custom Data Connector Tutorial TODO</a> zip archive</p>
+<p>Download the <a href="https://www.dropbox.com/scl/fi/87ixa3bbegsmhaiz3danr/braineous-1.0.0-cr3.zip?rlkey=o4s7a8nvuwh8v1wuat1gl6uxe&amp;st=9i9z0u2h&amp;dl=0">Braineous-1.0.0-CR3</a> zip archive.</p>
+</div>
+<div class="paragraph">
+<p>This tutorial is located under: braineous-1.0.0-cr3/tutorials/create-connector</p>
 </div>
 </div>
 </div>
@@ -515,7 +524,9 @@ ingested by the Braineous Data Ingestion Engine</p>
 <h2 id="initialize"><a class="anchor" href="#initialize"></a>4. Initialize</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Get an instance of the <code>DataPlatformService</code>. Setup your <code>API_KEY</code> and <code>API_SECRET</code></p>
+<p>Get an instance of the <code>DataPlatformService</code>. Setup your <code>API_KEY</code> and <code>API_SECRET</code>.
+Please refer to 'Step 9' of the Getting Started guide.
+<a href="https://bugsbunnyshah.github.io/braineous/get-started/" class="bare">https://bugsbunnyshah.github.io/braineous/get-started/</a></p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -653,7 +664,29 @@ and a mongodb staging store which is part of the core Braineous target delivery 
 the delivery network over time by updating your <code>pipeId configuration</code> and deploy without Braineous restart.</p>
 </div>
 <div class="paragraph">
-<p>In the next Candidate Release, Braineous team will add support for more target stores and systems such as :</p>
+<p>The current Release, supports the following target stores</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Snowflake</p>
+</li>
+<li>
+<p>MySQL</p>
+</li>
+<li>
+<p>ElasticSearch</p>
+</li>
+<li>
+<p>MongoDB</p>
+</li>
+<li>
+<p>ClickHouse</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In the future releases, Braineous team will add support for more target stores and systems such as :</p>
 </div>
 <div class="ulist">
 <ul>
@@ -661,19 +694,10 @@ the delivery network over time by updating your <code>pipeId configuration</code
 <p>Postgresql</p>
 </li>
 <li>
-<p>Mysql</p>
-</li>
-<li>
 <p>Oracle</p>
 </li>
 <li>
-<p>Snowflake</p>
-</li>
-<li>
-<p>Microservices</p>
-</li>
-<li>
-<p>Airbyte Catalog</p>
+<p>Amazon RedShift</p>
 </li>
 </ul>
 </div>
@@ -726,7 +750,7 @@ System.out.println("*****DATA_INGESTION_SUCCESS******");</code></pre>
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd braineous-1.0.0-cr2/tutorials/create-connector</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd braineous-1.0.0-cr3/tutorials/create-connector</code></pre>
 </div>
 </div>
 <div class="sect3">
