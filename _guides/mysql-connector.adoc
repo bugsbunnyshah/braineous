@@ -3,24 +3,25 @@ This guide is maintained in the main Quarkus repository
 and pull requests should be submitted there:
 https://github.com/quarkusio/quarkus/tree/main/docs/src/main/asciidoc
 ////
-= Creating Your First Braineous Data Pipeline
+= Integrate the MySQL Data Pipeline Connector
 include::_attributes.adoc[]
-:categories: getting-started
-:summary: Discover how to create your first Braineous data pipeline.
+:categories: mysql-connector
+:summary: Discover how to integrate the MySQL Data Pipeline Connector.
 :numbered:
 :sectnums:
 :sectnumlevels: 4
-:topics: getting-started
+:topics: mysql-connector
 
 :url: https://www.dropbox.com/scl/fi/87ixa3bbegsmhaiz3danr/braineous-1.0.0-cr3.zip?rlkey=o4s7a8nvuwh8v1wuat1gl6uxe&st=9i9z0u2h&dl=0
 :getting_started_url: https://bugsbunnyshah.github.io/braineous/get-started/
+:imagesdir: ../assets
 
-Learn how to create a Braineous Data Pipeline.
+Learn how to integrate the MySQL Data Pipeline Connector.
 
 This guide covers:
 
 * Get the Source Data
-* Register a data pipe and send source data to configured target MongoDB database
+* Register a data pipe and send source data to configured target MySQL database
 * Verify the target database received the data
 
 == Prerequisites
@@ -38,7 +39,7 @@ You can verify which JDK Maven uses by running `mvn --version`.
 
 Download the {url}[Braineous-1.0.0-CR3] zip archive
 
-This tutorial is located under: braineous-1.0.0-cr3/tutorials/get-started
+This tutorial is located under: braineous-1.0.0-cr3/tutorials/mysql-connector
 
 == Initialize
 
@@ -94,7 +95,7 @@ A dataset can be loaded from any data source such as a database, legacy producti
 live data feed, third-party data source, Kafka stream, etc. In this example the dataset is loaded from a classpath
 resource located at `src/main/resources/dataset/data.json`
 
-== Register a data pipe and send source data to configured target MongoDB database
+== Register a data pipe and send source data to configured target Snowflake database
 
 Register a data pipe with the *Braineous Data Ingestion Engine* using the
 *Java Braineous Data Ingestion Client SDK*.
@@ -107,12 +108,13 @@ Pipe Configuration
   "entity": "abc",
   "configuration": [
     {
-      "stagingStore" : "com.appgallabs.dataplatform.targetSystem.core.driver.MongoDBStagingStore",
+      "stagingStore" : "com.appgallabs.dataplatform.targetSystem.core.driver.MySqlStagingStore",
       "name": "yyya",
       "config": {
-        "connectionString": "mongodb://localhost:27017",
-        "database": "yyya",
-        "collection": "data",
+        "connectionString": "jdbc:mysql://localhost:3306/braineous_staging_database",
+        "username": "root",
+        "password":  "",
+        "staging_table": "staging_store",
         "jsonpathExpressions": []
       }
     }
@@ -125,27 +127,15 @@ uniquely with the *Braineous Data Pipline Engine*.
 * *entity* : The business/domain entity that this dataset should be associated with.
 * *configuration.stagingStore*: The `Staging Store` driver
 * *configuration.name*: a user-friendly way to indentify the target store
-* *configuration.config.connectionString*: MongoDB database connection string for your target store
-* *configuration.config.database*: MongoDB database on your target store
-* *configuration.config.collection*: MongoDB database collection on your target store
+* *configuration.config.connectionString*: MySQL database connection string for your target store
+* *configuration.config.username*: MySQL user
+* *configuration.config.password*: MySQL's user's password
+* *configuration.config.staging_table*: MySql staging table
 * *configuration.config.jsonpathExpressions*: Data Transformation based on JSONPath specification: https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html
+
 
 A data pipe can be configured with multiple target stores/systems associated with the same data pipe
 for data delivery.
-
-The current Release, supports the following target stores
-
-* Snowflake
-* MySQL
-* ElasticSearch
-* MongoDB
-* ClickHouse
-
-In the future releases, Braineous team will add support for more target stores and systems such as :
-
-* Postgresql
-* Oracle
-* Amazon RedShift
 
 Java Code - Register Pipe
 [source,bash,subs=attributes+]
@@ -189,7 +179,7 @@ System.out.println("*****DATA_INGESTION_SUCCESS******");
 
 [source,bash,subs=attributes+]
 ----
-cd braineous-1.0.0-cr3/tutorials/get-started
+cd braineous-1.0.0-cr3/tutorials/mysql-connector
 ----
 
 [source,bash,subs=attributes+]
@@ -201,7 +191,6 @@ cd braineous-1.0.0-cr3/tutorials/get-started
 
 [source,bash,subs=attributes+]
 ----
-[INFO] ------------------------------------------------------------------------
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
@@ -234,12 +223,13 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
   "entity": "abc",
   "configuration": [
     {
-      "stagingStore": "com.appgallabs.dataplatform.targetSystem.core.driver.MongoDBStagingStore",
+      "stagingStore": "com.appgallabs.dataplatform.targetSystem.core.driver.MySqlStagingStore",
       "name": "yyya",
       "config": {
-        "connectionString": "mongodb://localhost:27017",
-        "database": "yyya",
-        "collection": "data",
+        "connectionString": "jdbc:mysql://localhost:3306/braineous_staging_database",
+        "username": "root",
+        "password": "",
+        "staging_table": "staging_store",
         "jsonpathExpressions": []
       }
     }
@@ -251,38 +241,15 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 *****DATA_INGESTION_SUCCESS******
 ----
 
-== Verify all target collections receive the data
+== Verify all the data is successfully stored in the MySql Database
 
 To verify the success of the ingestion and delivery to the configured target
-databases, use the following MongoDB commands.
+databases, use the following login to your MySql instance
 
-`Expected Result :` You should see two records added to a collection called "data"
-in a database called "yyya" corresponding to configured value `configuration.config.database`
+`Expected Result :` You should see the following results from the attached screenshots
 
-mongosh
+image::tutorials/mysql_results.png[]
 
-[source,bash,subs=attributes+]
-----
-mongosh
-----
 
-[source,bash,subs=attributes+]
-----
-use yyya
-----
 
-[source,bash,subs=attributes+]
-----
-show collections
-----
-
-[source,bash,subs=attributes+]
-----
-db.data.find()
-----
-
-[source,bash,subs=attributes+]
-----
-db.data.count()
-----
 

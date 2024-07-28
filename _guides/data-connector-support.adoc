@@ -3,17 +3,16 @@ This guide is maintained in the main Quarkus repository
 and pull requests should be submitted there:
 https://github.com/quarkusio/quarkus/tree/main/docs/src/main/asciidoc
 ////
-= Data Tranformation on a Data Pipeline
+= Core Data Connector Support
 include::_attributes.adoc[]
 :categories: getting-started
-:summary: Data Tranformation on a Data Pipeline.
+:summary: Core Data Connector Support
 :numbered:
 :sectnums:
 :sectnumlevels: 4
 :topics: getting-started
 
-:url: https://www.dropbox.com/scl/fi/87ixa3bbegsmhaiz3danr/braineous-1.0.0-cr3.zip?rlkey=o4s7a8nvuwh8v1wuat1gl6uxe&st=9i9z0u2h&dl=0
-:getting_started_url: https://bugsbunnyshah.github.io/braineous/get-started/
+:url: https://github.com/bugsbunnyshah/braineous_dataplatform/releases/download/braineous-1.0.0-CR1/braineous-1.0.0-cr1.zip
 
 This guide covers:
 
@@ -34,15 +33,13 @@ and you could end up with unexpected results.
 You can verify which JDK Maven uses by running `mvn --version`.
 ====
 
-Download the {url}[Braineous-1.0.0-CR3] zip archive.
+Download the {url}[Braineous-1.0.0-CR2] zip archive
 
-This tutorial is located under: braineous-1.0.0-cr3/tutorials/data-transformation
+This tutorial is located under: braineous-1.0.0-cr2/tutorials/data-transformation
 
 == Initialize
 
-Get an instance of the `DataPlatformService`. Setup your `API_KEY` and `API_SECRET`.
-Please refer to 'Step 9' of the Getting Started guide.
-{getting_started_url}
+Get an instance of the `DataPlatformService`. Setup your `API_KEY` and `API_SECRET`
 
 [source,bash,subs=attributes+]
 ----
@@ -134,19 +131,14 @@ uniquely with the *Braineous Data Pipline Engine*.
 A data pipe can be configured with multiple target stores/systems associated with the same data pipe
 for data delivery.
 
-The current Release, supports the following target stores
-
-* Snowflake
-* MySQL
-* ElasticSearch
-* MongoDB
-* ClickHouse
-
-In the future releases, Braineous team will add support for more target stores and systems such as :
+In the next Candidate Release, Braineous team will add support for more target stores and systems such as :
 
 * Postgresql
+* Mysql
 * Oracle
-* Amazon RedShift
+* Snowflake
+* Microservices
+* Airbyte Catalog
 
 Java Code - Register Pipe
 [source,bash,subs=attributes+]
@@ -190,7 +182,7 @@ System.out.println("*****DATA_INGESTION_SUCCESS******");
 
 [source,bash,subs=attributes+]
 ----
-cd braineous-1.0.0-cr3/tutorials/data-transformation
+cd braineous-1.0.0-cr2/tutorials/data-transformation
 ----
 
 [source,bash,subs=attributes+]

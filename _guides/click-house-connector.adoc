@@ -3,24 +3,24 @@ This guide is maintained in the main Quarkus repository
 and pull requests should be submitted there:
 https://github.com/quarkusio/quarkus/tree/main/docs/src/main/asciidoc
 ////
-= Creating Your First Braineous Data Pipeline
+= Integrate the ClickHouse Data Pipeline Connector
 include::_attributes.adoc[]
-:categories: getting-started
-:summary: Discover how to create your first Braineous data pipeline.
+:categories: click-house-connector
+:summary: Discover how to integrate the ClickHouse Data Pipeline Connector.
 :numbered:
 :sectnums:
 :sectnumlevels: 4
-:topics: getting-started
+:topics: click-house-connector
 
 :url: https://www.dropbox.com/scl/fi/87ixa3bbegsmhaiz3danr/braineous-1.0.0-cr3.zip?rlkey=o4s7a8nvuwh8v1wuat1gl6uxe&st=9i9z0u2h&dl=0
 :getting_started_url: https://bugsbunnyshah.github.io/braineous/get-started/
 
-Learn how to create a Braineous Data Pipeline.
+Learn how to integrate the ClickHouse Data Pipeline Connector.
 
 This guide covers:
 
 * Get the Source Data
-* Register a data pipe and send source data to configured target MongoDB database
+* Register a data pipe and send source data to configured target Clickhouse database
 * Verify the target database received the data
 
 == Prerequisites
@@ -38,7 +38,7 @@ You can verify which JDK Maven uses by running `mvn --version`.
 
 Download the {url}[Braineous-1.0.0-CR3] zip archive
 
-This tutorial is located under: braineous-1.0.0-cr3/tutorials/get-started
+This tutorial is located under: braineous-1.0.0-cr3/tutorials/clickhouse-connector
 
 == Initialize
 
@@ -94,7 +94,7 @@ A dataset can be loaded from any data source such as a database, legacy producti
 live data feed, third-party data source, Kafka stream, etc. In this example the dataset is loaded from a classpath
 resource located at `src/main/resources/dataset/data.json`
 
-== Register a data pipe and send source data to configured target MongoDB database
+== Register a data pipe and send source data to configured target ClickHouse database
 
 Register a data pipe with the *Braineous Data Ingestion Engine* using the
 *Java Braineous Data Ingestion Client SDK*.
@@ -107,12 +107,13 @@ Pipe Configuration
   "entity": "abc",
   "configuration": [
     {
-      "stagingStore" : "com.appgallabs.dataplatform.targetSystem.core.driver.MongoDBStagingStore",
-      "name": "yyya",
+      "stagingStore" : "com.appgallabs.dataplatform.targetSystem.core.driver.ClickHouseStagingStore",
+      "name": "click_house_staging_store",
       "config": {
-        "connectionString": "mongodb://localhost:27017",
-        "database": "yyya",
-        "collection": "data",
+        "connectionString": "jdbc:ch://localhost:8123/default",
+        "username": "default",
+        "password": "",
+        "staging_table": "tutorial_staging",
         "jsonpathExpressions": []
       }
     }
@@ -125,27 +126,14 @@ uniquely with the *Braineous Data Pipline Engine*.
 * *entity* : The business/domain entity that this dataset should be associated with.
 * *configuration.stagingStore*: The `Staging Store` driver
 * *configuration.name*: a user-friendly way to indentify the target store
-* *configuration.config.connectionString*: MongoDB database connection string for your target store
-* *configuration.config.database*: MongoDB database on your target store
-* *configuration.config.collection*: MongoDB database collection on your target store
+* *configuration.config.connectionString*: ClickHouse database connection string for your target store
+* *configuration.config.username*: ClickHouse user
+* *configuration.config.password*: ClickHouses' user's password
+* *configuration.config.staging_table*: ClickHouse staging table
 * *configuration.config.jsonpathExpressions*: Data Transformation based on JSONPath specification: https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html
 
 A data pipe can be configured with multiple target stores/systems associated with the same data pipe
 for data delivery.
-
-The current Release, supports the following target stores
-
-* Snowflake
-* MySQL
-* ElasticSearch
-* MongoDB
-* ClickHouse
-
-In the future releases, Braineous team will add support for more target stores and systems such as :
-
-* Postgresql
-* Oracle
-* Amazon RedShift
 
 Java Code - Register Pipe
 [source,bash,subs=attributes+]
@@ -189,7 +177,7 @@ System.out.println("*****DATA_INGESTION_SUCCESS******");
 
 [source,bash,subs=attributes+]
 ----
-cd braineous-1.0.0-cr3/tutorials/get-started
+cd braineous-1.0.0-cr3/tutorials/clickhouse-connector
 ----
 
 [source,bash,subs=attributes+]
@@ -201,8 +189,6 @@ cd braineous-1.0.0-cr3/tutorials/get-started
 
 [source,bash,subs=attributes+]
 ----
-[INFO] ------------------------------------------------------------------------
-SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
 *****DATA_SET******
@@ -234,12 +220,13 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
   "entity": "abc",
   "configuration": [
     {
-      "stagingStore": "com.appgallabs.dataplatform.targetSystem.core.driver.MongoDBStagingStore",
-      "name": "yyya",
+      "stagingStore": "com.appgallabs.dataplatform.targetSystem.core.driver.ClickHouseStagingStore",
+      "name": "click_house_staging_store",
       "config": {
-        "connectionString": "mongodb://localhost:27017",
-        "database": "yyya",
-        "collection": "data",
+        "connectionString": "jdbc:ch://localhost:8123/default",
+        "username": "default",
+        "password": "",
+        "staging_table": "tutorial_staging",
         "jsonpathExpressions": []
       }
     }
@@ -251,38 +238,47 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 *****DATA_INGESTION_SUCCESS******
 ----
 
-== Verify all target collections receive the data
+== Verify all the data is successfully stored in the ClickHouse Database
 
 To verify the success of the ingestion and delivery to the configured target
-databases, use the following MongoDB commands.
+databases, use the following ClickHouse commands commands.
 
-`Expected Result :` You should see two records added to a collection called "data"
-in a database called "yyya" corresponding to configured value `configuration.config.database`
-
-mongosh
+`Expected Result :` You should see two records added to a table called "tutorial_staging"
+in a database called "default" corresponding to configured value `configuration.config.connectionString`
 
 [source,bash,subs=attributes+]
 ----
-mongosh
-----
-
-[source,bash,subs=attributes+]
-----
-use yyya
+./clickhouse client
 ----
 
 [source,bash,subs=attributes+]
 ----
-show collections
+ClickHouse client version 24.7.1.1263 (official build).
+Connecting to localhost:9000 as user default.
+Connected to ClickHouse server version 24.7.1.
+
+Warnings:
+ * Maximum number of threads is lower than 30000. There could be problems with handling a lot of simultaneous queries.
 ----
 
 [source,bash,subs=attributes+]
 ----
-db.data.find()
+use default
 ----
 
 [source,bash,subs=attributes+]
 ----
-db.data.count()
+select * from tutorial_staging
+----
+
+[source,bash,subs=attributes+]
+----
+
+   ┌─id───────────────────────────────┬─data───────────────────────────────────────────────────────────────────────────────────┐
+1. │ 8F3B1B7001BFE2AD0AA72D975BDE78ED │ {"id":"2","name":"name_2","age":55,"addr":{"email":"name_2@email.com","phone":"1234"}} │
+   └──────────────────────────────────┴────────────────────────────────────────────────────────────────────────────────────────┘
+   ┌─id───────────────────────────────┬─data───────────────────────────────────────────────────────────────────────────────────┐
+2. │ 55F1BCC5BAF4BFD841E8E345D35F737B │ {"id":1,"name":"name_1","age":46,"addr":{"email":"name_1@email.com","phone":"123"}}    │
+
 ----
 

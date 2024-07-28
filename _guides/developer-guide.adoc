@@ -3,7 +3,7 @@ This guide is maintained in the main Quarkus repository
 and pull requests should be submitted there:
 https://github.com/quarkusio/quarkus/tree/main/docs/src/main/asciidoc
 ////
-= Braineous Documentation version (1.0.0-CR2) Candidate Release 2
+= Braineous Documentation version (1.0.0-CR3) Candidate Release 3
 include::_attributes.adoc[]
 :categories: official-documentation
 :summary: Official Developer Documentation.
@@ -42,6 +42,12 @@ a pipeline.
 A pipeline can deliver to multiple stores in real time with network latency the only
 environmental factor.
 
+* *Data Integration Agent* : A *'staging store'* is the final destination of delivery for a pipeline.
+*'Data Integration Agent'* is a phase to make the data operational for the application.
+Application is arbitrary. It can be a Dashboard, a backend process, an analytics system,
+or a machine learning application.
+
+
 * *DataLake Store* : A *'datalake store'* is the internal store the pipeline delivers the
 data for applications that have usecases related to analytics and machine learning. Braineous
 is built on Apache Flink as its data processing engine and supports Apache Hive as its core
@@ -63,6 +69,18 @@ environmental factor.
 
 
 Logically, a staging store is identified by its *pipeId* and *entity*
+
+==== What is a Data Integration Agent?
+
+A *'staging store'* is the final destination of delivery for a pipeline.
+A pipeline can deliver to multiple stores in real time with network latency the only
+environmental factor.
+
+*'Data Integration Agent'* is a phase to make the data operational for the application.
+Application is arbitrary. It can be a Dashboard, a backend process, an analytics system,
+or a machine learning application.
+
+For a hands-on tutorial please refer to: link:/braineous/guides/create-integration-runner[Creating Your Custom Data Integration Agent]
 
 ===== Pipe Configuration
 
@@ -102,15 +120,17 @@ for data delivery.
 
 The current Release, supports the following target stores
 
+* Snowflake
+* MySQL
+* ElasticSearch
 * MongoDB
-* MySql
+* ClickHouse
 
 In the future releases, Braineous team will add support for more target stores and systems such as :
 
 * Postgresql
 * Oracle
-* Snowflake
-* Airbyte Catalog
+* Amazon RedShift
 
 Braineous also provides a *Staging Store Framework* for developers to develop custom connectors.
 For a hands-on tutorial please refer to: link:/braineous/guides/create-a-custom-data-connector[Create a Data Connector]
@@ -256,6 +276,208 @@ PIPE_SUCCESSFULLY_DEPLOYED
 {pipeId: yyya, subscriptionId: 20350d12-7563-4931-82b8-0e7dcb0ef442, pipeName: yyya, pipeStage: DEPLOYED, pipeType: PUSH, cleanerFunctions: []}
 yyya > Press exit or CTRL+C to exit
 ----
+
+== Supported Target System Data Pipeline Connectors
+
+=== MongoDB
+A sample MongoDB pipe configuration
+
+[source,bash,subs=attributes+]
+----
+{
+  "pipeId": "flightpipe",
+  "entity": "flight",
+  "configuration": [
+    {
+      "stagingStore" : "com.appgallabs.dataplatform.targetSystem.core.driver.MongoDBStagingStore",
+      "name": "mongodb_flight_staging_store",
+      "config": {
+        "connectionString": "mongodb://localhost:27017",
+        "database": "flightpipe",
+        "collection": "flight",
+        "jsonpathExpressions": []
+      }
+    }
+  ]
+}
+----
+
+* *pipeId* : As a data source provider, this id identifies this data pipe
+uniquely with the *Braineous Data Pipline Engine*.
+* *entity* : The business/domain entity that this dataset should be associated with.
+* *configuration.stagingStore*: The `Staging Store` driver
+* *configuration.name*: a user-friendly way to indentify the target store
+* *configuration.config.connectionString*: MongoDB database connection string for your target store
+* *configuration.config.username*: MongoDB user
+* *configuration.config.password*: MongoDB user's password
+* *configuration.config.jsonpathExpressions*: Data Transformation based on JSONPath specification: https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html
+
+*NOTE:* Data is Transformed before delivery to any configured Target Staging Store.
+
+=== MySql
+A sample MySql pipe configuration
+
+[source,bash,subs=attributes+]
+----
+{
+  "pipeId": "flightpipe",
+  "entity": "flight",
+  "configuration": [
+    {
+      "stagingStore" : "com.appgallabs.dataplatform.targetSystem.core.driver.MySqlStagingStore",
+      "name": "mysql_flight_staging_store",
+      "config": {
+        "connectionString": "jdbc:mysql://localhost:3306/braineous_staging_database",
+        "username": "root",
+        "password": "",
+        "jsonpathExpressions": []
+      }
+    }
+  ]
+}
+----
+
+* *pipeId* : As a data source provider, this id identifies this data pipe
+uniquely with the *Braineous Data Pipline Engine*.
+* *entity* : The business/domain entity that this dataset should be associated with.
+* *configuration.stagingStore*: The `Staging Store` driver
+* *configuration.name*: a user-friendly way to indentify the target store
+* *configuration.config.connectionString*: MySQL database connection string for your target store
+* *configuration.config.username*: MySQL user
+* *configuration.config.password*: MySQL's user's password
+* *configuration.config.staging_table*: MySql staging table
+* *configuration.config.jsonpathExpressions*: Data Transformation based on JSONPath specification: https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html
+
+*NOTE:* Data is Transformed before delivery to any configured Target Staging Store.
+
+=== Elastic Search
+A sample Elastic Search pipe configuration
+
+[source,bash,subs=attributes+]
+----
+{
+  "pipeId": "flightpipe",
+  "entity": "flight",
+  "configuration": [
+    {
+      "stagingStore" : "com.appgallabs.dataplatform.targetSystem.core.driver.ElasticSearchStagingStore",
+      "name": "elastic_flight_staging_store",
+      "config": {
+        "elasticSearchUrl": "http://localhost:9200/",
+        "index": "yyya",
+        "security": {
+          "type": "built_in_users",
+          "user": "elastic",
+          "password": "password"
+        },
+        "jsonpathExpressions": []
+    }
+  ]
+}
+----
+
+* *pipeId* : As a data source provider, this id identifies this data pipe
+uniquely with the *Braineous Data Pipline Engine*.
+* *entity* : The business/domain entity that this dataset should be associated with.
+* *configuration.stagingStore*: The `Staging Store` driver
+* *configuration.name*: a user-friendly way to indentify the target store
+* *configuration.config.elasticSearchUrl*: Elastic Search URl of your ElasticSearch instance
+* *configuration.config.index*: Elastic Search Index for the Staging Store
+* *configuration.config.security.type*: Elastic Search authentication type
+* *configuration.config.security.user*: Elastic Search user
+* *configuration.config.security.password*: Elastic Search user's password
+* *configuration.jsonpathExpressions*: Data Transformation based on JSONPath specification: https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html
+
+*NOTE:* Data is Transformed before delivery to any configured Target Staging Store.
+
+=== Snowflake
+
+A sample Snowflake pipe configuration
+
+[source,bash,subs=attributes+]
+----
+{
+  "pipeId": "flightpipe",
+  "entity": "flight",
+  "configuration": [
+    {
+      "stagingStore" : "com.appgallabs.dataplatform.targetSystem.core.driver.SnowflakeStagingStore",
+      "name": "snowflake_staging_store",
+      "config": {
+        "account_identifier": "<your_snowflake_account_account_identifier>",
+        "host": "<your_snowflake_computing_host>",
+        "user": "<your_snowflake_user>",
+        "password": "<your_snowflake_password>",
+        "port": "443",
+        "database": "testdb",
+        "schema": "public",
+        "stage": "flightpipe",
+        "table": "flight",
+        "pipe": "flightpipe",
+        "source": "local_fs",
+        "source_location":"file:///tmp/braineous/",
+        "jsonpathExpressions": []
+      }
+    }
+  ]
+}
+----
+
+* *pipeId* : As a data source provider, this id identifies this data pipe
+uniquely with the *Braineous Data Pipline Engine*.
+* *entity* : The business/domain entity that this dataset should be associated with.
+* *configuration.stagingStore*: The `Staging Store` driver
+* *configuration.name*: a user-friendly way to indentify the target store
+* *configuration.config.account_identifier*: Your Snowflake instance's account identifier
+* *configuration.config.username*: Snowflake username
+* *configuration.config.password*: Snowflake user's password
+* *configuration.config.port*: Snowflake port
+* *configuration.config.database*: Snowflake database
+* *configuration.config.schema*: Snowflake database schema
+* *configuration.config.stage*: Snowflake database staging area
+* *configuration.config.table*: Snowflake database staging table
+* *configuration.config.pipe*: Snowflake staging pipe that stages the data
+* *configuration.config.source*: Currently Braineous supports local file system. Support for Amazon S3, Google Cloud Storage, and Miccrosoft Azure will be added in a future release
+* *configuration.config.jsonpathExpressions*: Data Transformation based on JSONPath specification: https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html
+
+*NOTE:* Data is Transformed before delivery to any configured Target Staging Store.
+
+=== ClickHouse
+
+A sample Clickhouse pipe configuration
+
+[source,bash,subs=attributes+]
+----
+{
+  "pipeId": "flightpipe",
+  "entity": "flight",
+  "configuration": [
+    {
+      "stagingStore" : "com.appgallabs.dataplatform.targetSystem.core.driver.ClickHouseStagingStore",
+      "name": "click_house_flight_staging_store",
+      "config": {
+        "connectionString": "jdbc:ch://localhost:8123/default",
+        "username": "default",
+        "password": "",
+        "jsonpathExpressions": []
+      }
+    }
+  ]
+}
+----
+
+* *pipeId* : As a data source provider, this id identifies this data pipe
+uniquely with the *Braineous Data Pipline Engine*.
+* *entity* : The business/domain entity that this dataset should be associated with.
+* *configuration.stagingStore*: The `Staging Store` driver
+* *configuration.name*: a user-friendly way to indentify the target store
+* *configuration.config.connectionString*: ClickHouse database connection string for your target store
+* *configuration.config.username*: ClickHouse user
+* *configuration.config.password*: ClickHouses' user's password
+* *configuration.config.staging_table*: ClickHouse staging table
+* *configuration.config.jsonpathExpressions*: Data Transformation based on JSONPath specification: https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html
+
+*NOTE:* Data is Transformed before delivery to any configured Target Staging Store.
 
 //== Usecases
 

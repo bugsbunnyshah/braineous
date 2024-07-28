@@ -3,24 +3,25 @@ This guide is maintained in the main Quarkus repository
 and pull requests should be submitted there:
 https://github.com/quarkusio/quarkus/tree/main/docs/src/main/asciidoc
 ////
-= Creating Your First Braineous Data Pipeline
+= Integrate the Snowflake Data Pipeline Connector
 include::_attributes.adoc[]
-:categories: getting-started
-:summary: Discover how to create your first Braineous data pipeline.
+:categories: snow-flake-connector
+:summary: Discover how to integrate the Snowflake Data Pipeline Connector.
 :numbered:
 :sectnums:
 :sectnumlevels: 4
-:topics: getting-started
+:topics: snow-flake-connector
 
 :url: https://www.dropbox.com/scl/fi/87ixa3bbegsmhaiz3danr/braineous-1.0.0-cr3.zip?rlkey=o4s7a8nvuwh8v1wuat1gl6uxe&st=9i9z0u2h&dl=0
 :getting_started_url: https://bugsbunnyshah.github.io/braineous/get-started/
+:imagesdir: ../assets
 
-Learn how to create a Braineous Data Pipeline.
+Learn how to integrate the Snowflake Data Pipeline Connector.
 
 This guide covers:
 
 * Get the Source Data
-* Register a data pipe and send source data to configured target MongoDB database
+* Register a data pipe and send source data to configured target Snowflake database
 * Verify the target database received the data
 
 == Prerequisites
@@ -38,10 +39,9 @@ You can verify which JDK Maven uses by running `mvn --version`.
 
 Download the {url}[Braineous-1.0.0-CR3] zip archive
 
-This tutorial is located under: braineous-1.0.0-cr3/tutorials/get-started
+This tutorial is located under: braineous-1.0.0-cr3/tutorials/snowflake-connector
 
 == Initialize
-
 Get an instance of the `DataPlatformService`. Setup your `API_KEY` and `API_SECRET`.
 Please refer to 'Step 9' of the Getting Started guide.
 {getting_started_url}
@@ -64,22 +64,7 @@ Source Data
 ----
 [
   {
-    "id" : 1,
-    "name": "name_1",
-    "age": 46,
-    "addr": {
-      "email": "name_1@email.com",
-      "phone": "123"
-    }
-  },
-  {
-    "id": "2",
-    "name": "name_2",
-    "age": 55,
-    "addr": {
-      "email": "name_2@email.com",
-      "phone": "1234"
-    }
+    "tutorial" : "snowflake"
   }
 ]
 ----
@@ -94,7 +79,7 @@ A dataset can be loaded from any data source such as a database, legacy producti
 live data feed, third-party data source, Kafka stream, etc. In this example the dataset is loaded from a classpath
 resource located at `src/main/resources/dataset/data.json`
 
-== Register a data pipe and send source data to configured target MongoDB database
+== Register a data pipe and send source data to configured target Snowflake database
 
 Register a data pipe with the *Braineous Data Ingestion Engine* using the
 *Java Braineous Data Ingestion Client SDK*.
@@ -103,16 +88,25 @@ Pipe Configuration
 [source,bash,subs=attributes+]
 ----
 {
-  "pipeId": "yyya",
-  "entity": "abc",
+  "pipeId": "tutorial",
+  "entity": "tutorial",
   "configuration": [
     {
-      "stagingStore" : "com.appgallabs.dataplatform.targetSystem.core.driver.MongoDBStagingStore",
-      "name": "yyya",
+      "stagingStore" : "com.appgallabs.dataplatform.targetSystem.core.driver.SnowflakeStagingStore",
+      "name": "snowflake_staging_store",
       "config": {
-        "connectionString": "mongodb://localhost:27017",
-        "database": "yyya",
-        "collection": "data",
+        "account_identifier": "xxlpraf-ubb29207",
+        "host": "xxlpraf-ubb29207.snowflakecomputing.com",
+        "username": "******",
+        "password": "*****",
+        "port": "443",
+        "database": "braineous",
+        "schema": "public",
+        "stage": "tutorial",
+        "table": "tutorial",
+        "pipe": "yyya",
+        "source": "local_fs",
+        "source_location":"file:///tmp/braineous/",
         "jsonpathExpressions": []
       }
     }
@@ -125,27 +119,20 @@ uniquely with the *Braineous Data Pipline Engine*.
 * *entity* : The business/domain entity that this dataset should be associated with.
 * *configuration.stagingStore*: The `Staging Store` driver
 * *configuration.name*: a user-friendly way to indentify the target store
-* *configuration.config.connectionString*: MongoDB database connection string for your target store
-* *configuration.config.database*: MongoDB database on your target store
-* *configuration.config.collection*: MongoDB database collection on your target store
+* *configuration.config.account_identifier*: Your Snowflake instance's account identifier
+* *configuration.config.username*: Snowflake username
+* *configuration.config.password*: Snowflake user's password
+* *configuration.config.port*: Snowflake port
+* *configuration.config.database*: Snowflake database
+* *configuration.config.schema*: Snowflake database schema
+* *configuration.config.stage*: Snowflake database staging area
+* *configuration.config.table*: Snowflake database staging table
+* *configuration.config.pipe*: Snowflake staging pipe that stages the data
+* *configuration.config.source*: Currently Braineous supports local file system. Support for Amazon S3, Google Cloud Storage, and Miccrosoft Azure will be added in a future release
 * *configuration.config.jsonpathExpressions*: Data Transformation based on JSONPath specification: https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html
 
 A data pipe can be configured with multiple target stores/systems associated with the same data pipe
 for data delivery.
-
-The current Release, supports the following target stores
-
-* Snowflake
-* MySQL
-* ElasticSearch
-* MongoDB
-* ClickHouse
-
-In the future releases, Braineous team will add support for more target stores and systems such as :
-
-* Postgresql
-* Oracle
-* Amazon RedShift
 
 Java Code - Register Pipe
 [source,bash,subs=attributes+]
@@ -189,7 +176,7 @@ System.out.println("*****DATA_INGESTION_SUCCESS******");
 
 [source,bash,subs=attributes+]
 ----
-cd braineous-1.0.0-cr3/tutorials/get-started
+cd braineous-1.0.0-cr3/tutorials/clickhouse-connector
 ----
 
 [source,bash,subs=attributes+]
@@ -201,45 +188,38 @@ cd braineous-1.0.0-cr3/tutorials/get-started
 
 [source,bash,subs=attributes+]
 ----
-[INFO] ------------------------------------------------------------------------
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
 *****DATA_SET******
-******ARRAY_SIZE: 2**********
+******ARRAY_SIZE: 1**********
 [
   {
-    "id": 1,
-    "name": "name_1",
-    "age": 46,
-    "addr": {
-      "email": "name_1@email.com",
-      "phone": "123"
-    }
-  },
-  {
-    "id": "2",
-    "name": "name_2",
-    "age": 55,
-    "addr": {
-      "email": "name_2@email.com",
-      "phone": "1234"
-    }
+    "tutorial": "snowflake"
   }
 ]
 **********************
 *****PIPE_CONFIGURATION******
 {
-  "pipeId": "yyya",
-  "entity": "abc",
+  "pipeId": "tutorial",
+  "entity": "tutorial",
   "configuration": [
     {
-      "stagingStore": "com.appgallabs.dataplatform.targetSystem.core.driver.MongoDBStagingStore",
-      "name": "yyya",
+      "stagingStore": "com.appgallabs.dataplatform.targetSystem.core.driver.SnowflakeStagingStore",
+      "name": "snowflake_staging_store",
       "config": {
-        "connectionString": "mongodb://localhost:27017",
-        "database": "yyya",
-        "collection": "data",
+        "account_identifier": "xxlpraf-ubb29207",
+        "host": "xxlpraf-ubb29207.snowflakecomputing.com",
+        "username": "bugsbunnyshah",
+        "password": "gagumaani@A61$",
+        "port": "443",
+        "database": "braineous",
+        "schema": "public",
+        "stage": "tutorial",
+        "table": "tutorial",
+        "pipe": "yyya",
+        "source": "local_fs",
+        "source_location": "file:///tmp/braineous/",
         "jsonpathExpressions": []
       }
     }
@@ -251,38 +231,17 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 *****DATA_INGESTION_SUCCESS******
 ----
 
-== Verify all target collections receive the data
+== Verify all the data is successfully stored in the Snowflake Database
 
 To verify the success of the ingestion and delivery to the configured target
-databases, use the following MongoDB commands.
+databases, use the following login to your Snowflake instance
 
-`Expected Result :` You should see two records added to a collection called "data"
-in a database called "yyya" corresponding to configured value `configuration.config.database`
+`Expected Result :` You should see the following results from the attached screenshots
 
-mongosh
+image::tutorials/snowflake_pipe.png[]
 
-[source,bash,subs=attributes+]
-----
-mongosh
-----
+image::tutorials/snowflake_table.png[]
 
-[source,bash,subs=attributes+]
-----
-use yyya
-----
 
-[source,bash,subs=attributes+]
-----
-show collections
-----
 
-[source,bash,subs=attributes+]
-----
-db.data.find()
-----
-
-[source,bash,subs=attributes+]
-----
-db.data.count()
-----
 
