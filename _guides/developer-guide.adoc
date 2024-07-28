@@ -390,43 +390,6 @@ uniquely with the *Braineous Data Pipline Engine*.
 
 *NOTE:* Data is Transformed before delivery to any configured Target Staging Store.
 
-=== ClickHouse
-
-A sample Clickhouse pipe configuration
-
-[source,bash,subs=attributes+]
-----
-{
-  "pipeId": "flightpipe",
-  "entity": "flight",
-  "configuration": [
-    {
-      "stagingStore" : "com.appgallabs.dataplatform.targetSystem.core.driver.ClickHouseStagingStore",
-      "name": "click_house_flight_staging_store",
-      "config": {
-        "connectionString": "jdbc:ch://localhost:8123/default",
-        "username": "default",
-        "password": "",
-        "jsonpathExpressions": []
-      }
-    }
-  ]
-}
-----
-
-* *pipeId* : As a data source provider, this id identifies this data pipe
-uniquely with the *Braineous Data Pipline Engine*.
-* *entity* : The business/domain entity that this dataset should be associated with.
-* *configuration.stagingStore*: The `Staging Store` driver
-* *configuration.name*: a user-friendly way to indentify the target store
-* *configuration.config.connectionString*: ClickHouse database connection string for your target store
-* *configuration.config.username*: ClickHouse user
-* *configuration.config.password*: ClickHouses' user's password
-* *configuration.config.staging_table*: ClickHouse staging table
-* *configuration.config.jsonpathExpressions*: Data Transformation based on JSONPath specification: https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html
-
-*NOTE:* Data is Transformed before delivery to any configured Target Staging Store.
-
 === Snowflake
 
 A sample Snowflake pipe configuration
@@ -475,6 +438,43 @@ uniquely with the *Braineous Data Pipline Engine*.
 * *configuration.config.table*: Snowflake database staging table
 * *configuration.config.pipe*: Snowflake staging pipe that stages the data
 * *configuration.config.source*: Currently Braineous supports local file system. Support for Amazon S3, Google Cloud Storage, and Miccrosoft Azure will be added in a future release
+* *configuration.config.jsonpathExpressions*: Data Transformation based on JSONPath specification: https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html
+
+*NOTE:* Data is Transformed before delivery to any configured Target Staging Store.
+
+=== ClickHouse
+
+A sample Clickhouse pipe configuration
+
+[source,bash,subs=attributes+]
+----
+{
+  "pipeId": "flightpipe",
+  "entity": "flight",
+  "configuration": [
+    {
+      "stagingStore" : "com.appgallabs.dataplatform.targetSystem.core.driver.ClickHouseStagingStore",
+      "name": "click_house_flight_staging_store",
+      "config": {
+        "connectionString": "jdbc:ch://localhost:8123/default",
+        "username": "default",
+        "password": "",
+        "jsonpathExpressions": []
+      }
+    }
+  ]
+}
+----
+
+* *pipeId* : As a data source provider, this id identifies this data pipe
+uniquely with the *Braineous Data Pipline Engine*.
+* *entity* : The business/domain entity that this dataset should be associated with.
+* *configuration.stagingStore*: The `Staging Store` driver
+* *configuration.name*: a user-friendly way to indentify the target store
+* *configuration.config.connectionString*: ClickHouse database connection string for your target store
+* *configuration.config.username*: ClickHouse user
+* *configuration.config.password*: ClickHouses' user's password
+* *configuration.config.staging_table*: ClickHouse staging table
 * *configuration.config.jsonpathExpressions*: Data Transformation based on JSONPath specification: https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html
 
 *NOTE:* Data is Transformed before delivery to any configured Target Staging Store.
