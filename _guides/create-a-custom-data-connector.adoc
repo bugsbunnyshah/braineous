@@ -6,22 +6,23 @@ https://github.com/quarkusio/quarkus/tree/main/docs/src/main/asciidoc
 = Creating Your Custom Data Connector
 include::_attributes.adoc[]
 :categories: getting-started
-:summary: Discover how to create your first Braineous data ingestion application.
+:summary: Discover how to create your custom data connector.
 :numbered:
 :sectnums:
 :sectnumlevels: 4
 :topics: getting-started
 
-:url: https://github.com/bugsbunnyshah/braineous_dataplatform/releases/download/braineous-1.0.0-CR1/create-connector.zip
+:url: https://www.dropbox.com/scl/fi/87ixa3bbegsmhaiz3danr/braineous-1.0.0-cr3.zip?rlkey=o4s7a8nvuwh8v1wuat1gl6uxe&st=9i9z0u2h&dl=0
+:getting_started_url: https://bugsbunnyshah.github.io/braineous/get-started/
 :imagesdir: ../assets
 
 image::tutorials/create_connector.jpg[]
 
-Learn how to create a Braineous Custom Data Connector
+Learn how to create a `Braineous Custom Data Connector`
 
 This guide covers:
 
-* Implement "com.appgallabs.dataplatform.targetSystem.framework.StoreDriver"
+* Implement `com.appgallabs.dataplatform.targetSystem.framework.staging.StagingStore`
 * Develop the Java standalone Ingestion Client Application
 * Register a data pipe and send source data to multiple target MongoDB databases
 * Verify all target databases receive the data
@@ -39,41 +40,37 @@ and you could end up with unexpected results.
 You can verify which JDK Maven uses by running `mvn --version`.
 ====
 
-Download the {url}[Create a Custom Data Connector Tutorial] zip archive
+Download the {url}[Braineous-1.0.0-CR3] zip archive.
 
-== Implement "StoreDriver" interface
+This tutorial is located under: braineous-1.0.0-cr3/tutorials/create-connector
 
-StoreDriver interface
+== Implement `StagingStore` interface
+
+StagingStore interface
 [source,bash,subs=attributes+]
 ----
-package com.appgallabs.dataplatform.targetSystem.framework;
+package com.appgallabs.dataplatform.targetSystem.framework.staging;
 
-import com.google.gson.JsonArray;
+import com.appgallabs.dataplatform.infrastructure.Tenant;
 import com.google.gson.JsonObject;
 
-public interface StoreDriver {
+import java.io.Serializable;
+import java.util.List;
+
+public interface StagingStore extends Serializable {
 
     /**
-     * This used to configure your Store Driver.
+     * This used to configure your Staging Store.
      *
      * Configuration is specified as a json object.
-     *
-     * Here is a sample configuration
-     *
-     *     {
-     *       "storeDriver" : "com.appgallabs.dataplatform.targetSystem.core.driver.MySqlStoreDriver",
-     *       "name": "scenario1_store_mysql",
-     *       "config": {
-     *         "connectionString": "jdbc:mysql://localhost:3306/braineous_staging_database",
-     *         "username": "root",
-     *         "password": ""
-     *       },
-     *       "jsonpathExpression": "jsonpath:1"
-     *     }
      *
      * @param configJson
      */
     public void configure(JsonObject configJson);
+
+    public String getName();
+
+    public JsonObject getConfiguration();
 
     /**
      * Implementation logic for storing the dataset processed by the
@@ -81,103 +78,129 @@ public interface StoreDriver {
      *
      * @param dataSet
      */
-    public void storeData(JsonArray dataSet);
+    public void storeData(Tenant tenant,
+                          String pipeId,
+                          String entity,
+                          List<Record> dataSet
+    );
+
+    public List<Record> getData(Tenant tenant,
+                             String pipeId,
+                             String entity);
 }
 ----
 
-In the tutorial, this implemenation is located at server/src/main/java/com/appgallabs/dataplatform/tutorial/MySqlStoreDriver.java
+In the tutorial, this implementation is located at
+`server/src/main/java/com/appgallabs/dataplatform/tutorial
+/CustomMySqlStagingStore.java`
 
 ====  "configure" method implementation
 [source,bash,subs=attributes+]
 ----
 @Override
-    public void configure(JsonObject configJson) {
+public void configure(JsonObject configJson) {
+    try {
+        this.configJson = configJson;
+        Statement createTableStatement = null;
         try {
-            this.configJson = configJson;
+            String url = configJson.get("connectionString").getAsString();
+            String username = configJson.get("username").getAsString();
 
-            Statement createTableStatement = null;
-            try {
-                String url = configJson.get("connectionString").getAsString();
-                String username = configJson.get("username").getAsString();
+            String password = configJson.get("password").getAsString();
 
-                String password = configJson.get("password").getAsString();
+            this.connection = DriverManager.getConnection(
+                    url, username, password);
 
-                this.connection = DriverManager.getConnection(
-                        url, username, password);
-                System.out.println(
-                        "Connection Established successfully");
+            //create schema and tables
+            String createTableSql = "CREATE TABLE IF NOT EXISTS staged_data (\n" +
+                    "    id int NOT NULL AUTO_INCREMENT,\n" +
+                    "    data longtext NOT NULL,\n" +
+                    "    PRIMARY KEY (id)\n" +
+                    ")";
+            createTableStatement = this.connection.createStatement();
+            createTableStatement.executeUpdate(createTableSql);
 
-                //create schema and tables
-                String createTableSql = "CREATE TABLE IF NOT EXISTS staged_data (\n" +
-                        "    id int NOT NULL AUTO_INCREMENT,\n" +
-                        "    data varchar(255) NOT NULL,\n" +
-                        "    PRIMARY KEY (id)\n" +
-                        ")";
-                createTableStatement = this.connection.createStatement();
-                createTableStatement.executeUpdate(createTableSql);
+            //System.out.println("Created table in given database...");
 
-                System.out.println("Created table in given database...");
-
-            } finally {
-                createTableStatement.close();
-
-                System.out.println("****MYSQL_CONNECTOR_SUCCESSFULLY_REGISTERED*****");
-                System.out.println("****BRING_THE_HEAT (lol)*****");
-            }
-        }catch(Exception e){
-            logger.error(e.getMessage());
-            //TODO: (CR2) report to the pipeline monitoring service
+        } finally {
+            createTableStatement.close();
         }
+    }catch(Exception e){
+        logger.error(e.getMessage());
+
+        //report to the pipeline monitoring service
+        JsonObject jsonObject = new JsonObject();
+        this.ingestionReportingService.reportDataError(jsonObject);
     }
+}
 ----
 === "storeData" method implementation
 [source,bash,subs=attributes+]
 ----
 @Override
-    public void storeData(JsonArray dataSet) {
-        try {
-            try {
-                String query = "select * from staged_data";
-
-                //populate table
-                int size = dataSet.size();
-                for (int i = 0; i < size; i++) {
-                    JsonElement record = dataSet.get(i);
-                    String insertSql = "insert into staged_data (data) values ('" + record.toString() + "')";
-                    Statement insertStatement = this.connection.createStatement();
-                    insertStatement.executeUpdate(insertSql);
-                    insertStatement.close();
-                }
-
-                Statement queryStatement = this.connection.createStatement();
-                ResultSet rs = queryStatement.executeQuery(query);
-                while (rs.next()) {
-                    String id = rs.getString("id");
-                    String data = rs.getString("data");
-                    System.out.println(id);
-                    System.out.println(data);
-                    System.out.println("***************");
-                }
-                queryStatement.close();
-
-                System.out.println("Connection Closed....");
-            } finally {
-                this.connection.close();
-            }
-        }catch(Exception e){
-            logger.error(e.getMessage());
-            //TODO: (CR2) report to the pipeline monitoring service
-        }
+public void storeData(Tenant tenant, String pipeId, String entity, List<Record> records) {
+    JsonArray dataSet = new JsonArray();
+    for(Record record: records){
+        JsonObject data = record.getData();
+        dataSet.add(data);
     }
+    this.storeData(dataSet);
+}
+
+private void storeData(JsonArray dataSet) {
+    try {
+        Statement insertStatement = this.connection.createStatement();
+        try {
+            //populate table
+            int size = dataSet.size();
+            for (int i = 0; i < size; i++) {
+                JsonElement record = dataSet.get(i);
+                String insertSql = "insert into staged_data (data) values ('" + record.toString() + "')";
+                insertStatement.addBatch(insertSql);
+            }
+
+            insertStatement.executeBatch();
+
+            String query = "SELECT * FROM staged_data;";
+            Statement queryStatement = this.connection.createStatement();
+            ResultSet rs = queryStatement.executeQuery(query);
+            while (rs.next()) {
+                String id = rs.getString("id");
+                String data = rs.getString("data");
+                System.out.println(id);
+                System.out.println(data);
+                System.out.println("******CUSTOM_MYSQL_DATA_STORE_ROW*********");
+            }
+            queryStatement.close();
+            System.out.println("Connection Closed....");
+
+        } finally {
+            insertStatement.close();
+            this.connection.close();
+            System.out.println(
+                    "MYSQL: STORED_SUCCESSFULLY");
+        }
+    }catch(Exception e){
+        e.printStackTrace();
+        logger.error(e.getMessage());
+
+        //report to the pipeline monitoring service
+        JsonObject jsonObject = new JsonObject();
+        this.ingestionReportingService.reportDataError(jsonObject);
+    }
+}
 ----
 
-=== "Full Implementation"
+=== `Full Implementation`
 [source,bash,subs=attributes+]
 ----
 package com.appgallabs.dataplatform.tutorial;
 
-import com.appgallabs.dataplatform.targetSystem.framework.StoreDriver;
+import com.appgallabs.dataplatform.infrastructure.Tenant;
+import com.appgallabs.dataplatform.reporting.IngestionReportingService;
+import com.appgallabs.dataplatform.targetSystem.framework.staging.Record;
 
+import com.appgallabs.dataplatform.targetSystem.framework.staging.StagingStore;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -190,17 +213,22 @@ import java.sql.DriverManager;
 import java.sql.Statement;
 import java.sql.ResultSet;
 
-public class MySqlStoreDriver implements StoreDriver {
-    private static Logger logger = LoggerFactory.getLogger(MySqlStoreDriver.class);
+import java.util.ArrayList;
+import java.util.List;
+
+public class CustomMySqlStagingStore implements StagingStore {
+    private static Logger logger = LoggerFactory.getLogger(CustomMySqlStagingStore.class);
 
     private Connection connection;
     private JsonObject configJson;
+
+    //TODO: (NOW) - thread it in
+    private IngestionReportingService ingestionReportingService;
 
     @Override
     public void configure(JsonObject configJson) {
         try {
             this.configJson = configJson;
-
             Statement createTableStatement = null;
             try {
                 String url = configJson.get("connectionString").getAsString();
@@ -210,48 +238,71 @@ public class MySqlStoreDriver implements StoreDriver {
 
                 this.connection = DriverManager.getConnection(
                         url, username, password);
-                System.out.println(
-                        "Connection Established successfully");
 
                 //create schema and tables
                 String createTableSql = "CREATE TABLE IF NOT EXISTS staged_data (\n" +
                         "    id int NOT NULL AUTO_INCREMENT,\n" +
-                        "    data varchar(255) NOT NULL,\n" +
+                        "    data longtext NOT NULL,\n" +
                         "    PRIMARY KEY (id)\n" +
                         ")";
                 createTableStatement = this.connection.createStatement();
                 createTableStatement.executeUpdate(createTableSql);
 
-                System.out.println("Created table in given database...");
+                //System.out.println("Created table in given database...");
 
             } finally {
                 createTableStatement.close();
-
-                System.out.println("****MYSQL_CONNECTOR_SUCCESSFULLY_REGISTERED*****");
-                System.out.println("****BRING_THE_HEAT (lol)*****");
             }
         }catch(Exception e){
             logger.error(e.getMessage());
-            //TODO: (CR2) report to the pipeline monitoring service
+
+            //report to the pipeline monitoring service
+            JsonObject jsonObject = new JsonObject();
+            this.ingestionReportingService.reportDataError(jsonObject);
         }
     }
 
     @Override
-    public void storeData(JsonArray dataSet) {
-        try {
-            try {
-                String query = "select * from staged_data";
+    public String getName() {
+        return this.configJson.get("connectionString").getAsString();
+    }
 
+    @Override
+    public JsonObject getConfiguration() {
+        return this.configJson;
+    }
+
+    @Override
+    public void storeData(Tenant tenant, String pipeId, String entity, List<Record> records) {
+        JsonArray dataSet = new JsonArray();
+        for(Record record: records){
+            JsonObject data = record.getData();
+            dataSet.add(data);
+        }
+        this.storeData(dataSet);
+    }
+
+    @Override
+    public List<Record> getData(Tenant tenant, String pipeId, String entity) {
+        return null;
+    }
+
+    //----------------------------------------------------------------------------------------------
+    private void storeData(JsonArray dataSet) {
+        try {
+            Statement insertStatement = this.connection.createStatement();
+            try {
                 //populate table
                 int size = dataSet.size();
                 for (int i = 0; i < size; i++) {
                     JsonElement record = dataSet.get(i);
                     String insertSql = "insert into staged_data (data) values ('" + record.toString() + "')";
-                    Statement insertStatement = this.connection.createStatement();
-                    insertStatement.executeUpdate(insertSql);
-                    insertStatement.close();
+                    insertStatement.addBatch(insertSql);
                 }
 
+                insertStatement.executeBatch();
+
+                String query = "SELECT * FROM staged_data;";
                 Statement queryStatement = this.connection.createStatement();
                 ResultSet rs = queryStatement.executeQuery(query);
                 while (rs.next()) {
@@ -259,247 +310,199 @@ public class MySqlStoreDriver implements StoreDriver {
                     String data = rs.getString("data");
                     System.out.println(id);
                     System.out.println(data);
-                    System.out.println("***************");
+                    System.out.println("******CUSTOM_MYSQL_DATA_STORE_ROW*********");
                 }
                 queryStatement.close();
-
                 System.out.println("Connection Closed....");
+
             } finally {
+                insertStatement.close();
                 this.connection.close();
+                System.out.println(
+                        "MYSQL: STORED_SUCCESSFULLY");
             }
         }catch(Exception e){
+            e.printStackTrace();
             logger.error(e.getMessage());
-            //TODO: (CR2) report to the pipeline monitoring service
+
+            //report to the pipeline monitoring service
+            JsonObject jsonObject = new JsonObject();
+            this.ingestionReportingService.reportDataError(jsonObject);
         }
     }
 }
 ----
-
-
-
 
 == Develop the Java standalone Ingestion Client Application
 
 Let's start with a simple Json array to be used as datasource to be
 ingested by the Braineous Data Ingestion Engine
 
+== Initialize
 
-=== Java Code: Setup Dataset to be ingested
+Get an instance of the `DataPlatformService`. Setup your `API_KEY` and `API_SECRET`.
+Please refer to 'Step 9' of the Getting Started guide.
+{getting_started_url}
+
 [source,bash,subs=attributes+]
 ----
-String user1 = UUID.randomUUID().toString();
-        String user2 = UUID.randomUUID().toString();
-        //setup source data for ingestion
-        String sourceData = "[\n" +
-                "  {\n" +
-                "    \"id\" : 1,\n" +
-                "    \"name\": \""+user1+"\",\n" +
-                "    \"age\": 50,\n" +
-                "    \"addr\": {\n" +
-                "      \"email\": \"joe_1@email.com\",\n" +
-                "      \"phone\": \"123456\"\n" +
-                "    }\n" +
-                "  },\n" +
-                "  {\n" +
-                "    \"id\": \"2\",\n" +
-                "    \"name\": \""+user2+"\",\n" +
-                "    \"age\": 51,\n" +
-                "    \"addr\": {\n" +
-                "      \"email\": \"joe_2@email.com\",\n" +
-                "      \"phone\": \"1234567\"\n" +
-                "    }\n" +
-                "  }\n" +
-                "]";
+DataPlatformService dataPlatformService = DataPlatformService.getInstance();
+
+String apiKey = "ffb2969c-5182-454f-9a0b-f3f2fb0ebf75";
+String apiSecret = "5960253b-6645-41bf-b520-eede5754196e";
 ----
 
-== Register a data pipe and send source data to multiple target MongoDB databases
 
-Register a data pipe with the Braineous Data Ingestion Engine using the
-Java Braineous Data Ingestion Client SDK.
+== Get the Source Data
 
-=== Pipe Configuration
+Let's start with a simple Json array to be used as datasource to be
+ingested by the *Braineous Data Ingestion Engine*
+
+Source Data
+[source,bash,subs=attributes+]
+----
+[
+  {
+    "id" : 1,
+    "name": "name_1",
+    "age": 46,
+    "addr": {
+      "email": "name_1@email.com",
+      "phone": "123"
+    }
+  },
+  {
+    "id": "2",
+    "name": "name_2",
+    "age": 55,
+    "addr": {
+      "email": "name_2@email.com",
+      "phone": "1234"
+    }
+  }
+]
+----
+
+Java Code
+[source,bash,subs=attributes+]
+----
+String datasetLocation = "dataset/data.json";
+String json = Util.loadResource(datasetLocation);
+----
+A dataset can be loaded from any data source such as a database, legacy production data store,
+live data feed, third-party data source, Kafka stream, etc. In this example the dataset is loaded from a classpath
+resource located at `src/main/resources/dataset/data.json`
+
+== Register a data pipe and send source data to your custom mysql staging store
+
+Register a data pipe with the *Braineous Data Ingestion Engine* using the
+*Java Braineous Data Ingestion Client SDK*.
+
+Pipe Configuration
 [source,bash,subs=attributes+]
 ----
 {
-  "pipeId": "mysql_mongodb_fan_out_to_target",
+  "pipeId": "zzza",
+  "entity": "abcd",
   "configuration": [
     {
-      "storeDriver": "com.appgallabs.dataplatform.targetSystem.core.driver.MongoDBStoreDriver",
-      "name": "scenario1_store_mongodb",
-      "config": {
-        "connectionString": "mongodb://localhost:27017",
-        "database": "scenario1_store",
-        "collection": "data"
-      },
-      "jsonpathExpression": "jsonpath:1"
-    },
-    {
-      "storeDriver": "com.appgallabs.dataplatform.tutorial.MySqlStoreDriver",
-      "name": "scenario1_store_mysql",
+      "stagingStore" : "com.appgallabs.dataplatform.tutorial.CustomMySqlStagingStore",
+      "name": "zzza",
       "config": {
         "connectionString": "jdbc:mysql://localhost:3306/braineous_staging_database",
         "username": "root",
-        "password": ""
-      },
-      "jsonpathExpression": "jsonpath:1"
+        "password": "",
+        "jsonpathExpressions": []
+      }
+    },
+    {
+      "stagingStore" : "com.appgallabs.dataplatform.targetSystem.core.driver.MongoDBStagingStore",
+      "name": "zzza",
+      "config": {
+        "connectionString": "mongodb://localhost:27017",
+        "database": "zzza",
+        "collection": "data",
+        "jsonpathExpressions": []
+      }
     }
   ]
 }
-
 ----
 
-* pipeId : As a data source provider, this is id identifies this data pipe uniquely with the Braineous Data Pipline Engine.
-* configuration.storeDriver: MongoDB target store driver
-* name: a user-friendly way to indentify the target store
-* config.connectionString: MySql database connection string
-* config.username: Database User
-* config.password: Database Password
+* *pipeId* : As a data source provider, this id identifies this data pipe
+uniquely with the *Braineous Data Pipline Engine*.
+* *entity* : The business/domain entity that this dataset should be associated with.
+* *configuration.stagingStore*: The `Staging Store` driver
+* *configuration.name*: a user-friendly way to indentify the target store
+* *configuration.config.connectionString*: MongoDB database connection string for your target store
+* *configuration.config.database*: MongoDB database on your target store
+* *configuration.config.collection*: MongoDB database collection on your target store
 
 A data pipe can be configured with multiple target stores/systems associated with the same data pipe
-for data delivery.
+for data delivery. In this tutorial ingested data will be delivered to your custom mysql staging store
+and a mongodb staging store which is part of the core Braineous target delivery engine.
 
-In the next Candidate Release, Braineous team will add support for more target stores and systems such as :
+Braineous is built for no interruption and scale. You can associate thousands of target stores and evolve
+the delivery network over time by updating your `pipeId configuration` and deploy without Braineous restart.
+
+The current Release, supports the following target stores
+
+* Snowflake
+* MySQL
+* ElasticSearch
+* MongoDB
+* ClickHouse
+
+In the future releases, Braineous team will add support for more target stores and systems such as :
 
 * Postgresql
-* Mysql
 * Oracle
-* Snowflake
-* Microservices
-* Airbyte Catalog
+* Amazon RedShift
 
-=== Java Code - Register Pipe
+Java Code - Register Pipe
 [source,bash,subs=attributes+]
 ----
-//setup data pipe configuration json
-        String dataPipeConfiguration = "{\n" +
-                "  \"pipeId\": \""+pipeId+"\",\n" +
-                "  \"configuration\": [\n" +
-                "    {\n" +
-                "      \"storeDriver\" : \"com.appgallabs.dataplatform.targetSystem.core.driver.MongoDBStoreDriver\",\n" +
-                "      \"name\": \"scenario1_store_mongodb\",\n" +
-                "      \"config\": {\n" +
-                "        \"connectionString\": \"mongodb://localhost:27017\",\n" +
-                "        \"database\": \"scenario1_store\",\n" +
-                "        \"collection\": \"data\"\n" +
-                "      },\n" +
-                "      \"jsonpathExpression\": \"jsonpath:1\"\n" +
-                "    },\n" +
-                "    {\n" +
-                "      \"storeDriver\" : \"com.appgallabs.dataplatform.tutorial.MySqlStoreDriver\",\n" +
-                "      \"name\": \"scenario1_store_mysql\",\n" +
-                "      \"config\": {\n" +
-                "        \"connectionString\": \"jdbc:mysql://localhost:3306/braineous_staging_database\",\n" +
-                "        \"username\": \"root\",\n" +
-                "        \"password\": \"\"\n" +
-                "      },\n" +
-                "      \"jsonpathExpression\": \"jsonpath:1\"\n" +
-                "    }\n" +
-                "  ]\n" +
-                "}";
+String configLocation = "pipe_config/pipe_config.json";
+String pipeConfigJson = Util.loadResource(configLocation);
+JsonObject configJson = JsonUtil.validateJson(pipeConfigJson).getAsJsonObject();
+String pipeId = configJson.get("pipeId").getAsString();
+String entity = configJson.get("entity").getAsString();
+System.out.println("*****PIPE_CONFIGURATION******");
+JsonUtil.printStdOut(configJson);
+
+//configure the DataPipeline Client
+Configuration configuration = new Configuration().
+ingestionHostUrl("http://localhost:8080/").
+apiKey(apiKey).
+apiSecret(apiSecret).
+streamSizeInObjects(0);
+dataPlatformService.configure(configuration);
+
+//register pipe
+dataPlatformService.registerPipe(configJson);
+System.out.println("*****PIPE_REGISTRATION_SUCCESS******");
 ----
 
-=== Java Code - Send Data for ingestion
+Pipe Configuration can be provided dynamically at runtime. The source can be a
+database, a configuration system, local file system, network file system etc.
+In this example the dataset is loaded from a classpath
+resource located at `src/main/resources/pipe_config/pipe_config.json`
+
+
+Java Code - Send Data for ingestion
 [source,bash,subs=attributes+]
 ----
 //send source data through the pipeline
-String pipeId = configJson.get("pipeId").getAsString();
-String entity = "books";
-DataPipeline.sendData(pipeId, entity, sourceData);
+dataPlatformService.sendData(pipeId, entity,datasetElement.toString());
+System.out.println("*****DATA_INGESTION_SUCCESS******");
 ----
 
-=== "Full Implementation"
+== Run the Application
+
 [source,bash,subs=attributes+]
 ----
-package com.appgallabs.dataplatform.tutorial;
-
-import com.appgallabs.dataplatform.client.sdk.api.Configuration;
-import com.appgallabs.dataplatform.client.sdk.api.DataPipeline;
-import com.appgallabs.dataplatform.client.sdk.api.RegisterPipeException;
-import com.appgallabs.dataplatform.util.JsonUtil;
-
-import com.google.gson.JsonObject;
-
-import java.util.UUID;
-
-public class DataIngestionTutorial {
-
-    public static void main(String[] args) throws RegisterPipeException, InterruptedException {
-        //configure the DataPipeline Client
-        Configuration configuration = new Configuration().
-                streamSizeInBytes(80).
-                ingestionHostUrl("http://localhost:8080");
-        DataPipeline.configure(configuration);
-
-        String pipeId = "mysql_mongodb_fan_out_to_target";
-
-        //setup data pipe configuration json
-        String dataPipeConfiguration = "{\n" +
-                "  \"pipeId\": \""+pipeId+"\",\n" +
-                "  \"configuration\": [\n" +
-                "    {\n" +
-                "      \"storeDriver\" : \"com.appgallabs.dataplatform.targetSystem.core.driver.MongoDBStoreDriver\",\n" +
-                "      \"name\": \"scenario1_store_mongodb\",\n" +
-                "      \"config\": {\n" +
-                "        \"connectionString\": \"mongodb://localhost:27017\",\n" +
-                "        \"database\": \"scenario1_store\",\n" +
-                "        \"collection\": \"data\"\n" +
-                "      },\n" +
-                "      \"jsonpathExpression\": \"jsonpath:1\"\n" +
-                "    },\n" +
-                "    {\n" +
-                "      \"storeDriver\" : \"com.appgallabs.dataplatform.tutorial.MySqlStoreDriver\",\n" +
-                "      \"name\": \"scenario1_store_mysql\",\n" +
-                "      \"config\": {\n" +
-                "        \"connectionString\": \"jdbc:mysql://localhost:3306/braineous_staging_database\",\n" +
-                "        \"username\": \"root\",\n" +
-                "        \"password\": \"\"\n" +
-                "      },\n" +
-                "      \"jsonpathExpression\": \"jsonpath:1\"\n" +
-                "    }\n" +
-                "  ]\n" +
-                "}";
-        JsonObject configJson = JsonUtil.validateJson(dataPipeConfiguration).getAsJsonObject();
-        JsonUtil.printStdOut(configJson);
-
-
-        String user1 = UUID.randomUUID().toString();
-        String user2 = UUID.randomUUID().toString();
-        //setup source data for ingestion
-        String sourceData = "[\n" +
-                "  {\n" +
-                "    \"id\" : 1,\n" +
-                "    \"name\": \""+user1+"\",\n" +
-                "    \"age\": 50,\n" +
-                "    \"addr\": {\n" +
-                "      \"email\": \"joe_1@email.com\",\n" +
-                "      \"phone\": \"123456\"\n" +
-                "    }\n" +
-                "  },\n" +
-                "  {\n" +
-                "    \"id\": \"2\",\n" +
-                "    \"name\": \""+user2+"\",\n" +
-                "    \"age\": 51,\n" +
-                "    \"addr\": {\n" +
-                "      \"email\": \"joe_2@email.com\",\n" +
-                "      \"phone\": \"1234567\"\n" +
-                "    }\n" +
-                "  }\n" +
-                "]";
-        JsonUtil.printStdOut(JsonUtil.validateJson(sourceData));
-
-        //register pipe
-        JsonObject response = DataPipeline.registerPipe(dataPipeConfiguration);
-        JsonUtil.printStdOut(response);
-
-        //send source data through the pipeline
-        pipeId = configJson.get("pipeId").getAsString();
-        String entity = "books";
-        DataPipeline.sendData(pipeId, entity, sourceData);
-    }
-}
+cd braineous-1.0.0-cr3/tutorials/create-connector
 ----
-
-=== Run the Application
 
 ==== Start the Braineous Data Ingestion Server
 
@@ -518,7 +521,95 @@ cd client
 ./run.sh
 ----
 
-== Verify all target collections receive the data
+`Expected Client Output`:
+
+[source,bash,subs=attributes+]
+----
+[INFO] ------------------------------------------------------------------------
+*****DATA_SET******
+******ARRAY_SIZE: 2**********
+[
+  {
+    "id": 1,
+    "name": "name_1",
+    "age": 46,
+    "addr": {
+      "email": "name_1@email.com",
+      "phone": "123"
+    }
+  },
+  {
+    "id": "2",
+    "name": "name_2",
+    "age": 55,
+    "addr": {
+      "email": "name_2@email.com",
+      "phone": "1234"
+    }
+  }
+]
+**********************
+*****PIPE_CONFIGURATION******
+{
+  "pipeId": "zzza",
+  "entity": "abcd",
+  "configuration": [
+    {
+      "stagingStore": "com.appgallabs.dataplatform.targetSystem.core.driver.MongoDBStagingStore",
+      "name": "zzza",
+      "config": {
+        "connectionString": "mongodb://localhost:27017",
+        "database": "zzza",
+        "collection": "data",
+        "jsonpathExpressions": []
+      }
+    },
+    {
+      "stagingStore": "com.appgallabs.dataplatform.tutorial.CustomMySqlStagingStore",
+      "name": "zzza",
+      "config": {
+        "connectionString": "jdbc:mysql://localhost:3306/braineous_staging_database",
+        "username": "root",
+        "password": "",
+        "jsonpathExpressions": []
+      }
+    }
+  ]
+}
+**********************
+*****PIPE_REGISTRATION_SUCCESS******
+***SENDING_DATA_START*****
+*****DATA_INGESTION_SUCCESS******
+----
+
+`Expected Server Output`:
+
+[source,bash,subs=attributes+]
+----
+2024-03-30 14:00:42,536 INFO  [org.mon.dri.client] (pool-7-thread-4) MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync", "version": "4.8.2"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "12.2.1"}, "platform": "Java/Amazon.com Inc./11.0.22+7-LTS"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@1adbccc9]}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2024-03-30 14:00:42,637 INFO  [org.mon.dri.cluster] (cluster-ClusterId{value='6608534a1cdf54173e088644', description='null'}-localhost:27017) Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=93562834}
+2024-03-30 14:00:42,823 INFO  [org.apa.fli.tab.cat.hiv.HiveCatalog] (pool-7-thread-3) Setting hive conf dir as /Users/babyboy/mumma/braineous/infrastructure/apache-hive-3.1.3-bin/conf
+2024-03-30 14:00:42,870 INFO  [org.apa.fli.tab.cat.hiv.HiveCatalog] (pool-7-thread-3) Created HiveCatalog 'ffbaaaacaaaaaaaaafaaaabafafafbaebfaa'
+2024-03-30 14:00:42,902 INFO  [org.apa.had.hiv.met.HiveMetaStoreClient] (pool-7-thread-3) Trying to connect to metastore with URI thrift://0.0.0.0:9083
+2024-03-30 14:00:42,916 INFO  [org.apa.had.hiv.met.HiveMetaStoreClient] (pool-7-thread-3) Opened a connection to metastore, current connections: 3
+2024-03-30 14:00:42,989 INFO  [org.apa.had.hiv.met.HiveMetaStoreClient] (pool-7-thread-3) Connected to metastore.
+2024-03-30 14:00:42,989 INFO  [org.apa.had.hiv.met.RetryingMetaStoreClient] (pool-7-thread-3) RetryingMetaStoreClient proxy=class org.apache.hadoop.hive.metastore.HiveMetaStoreClient ugi=babyboy (auth:SIMPLE) retries=1 delay=1 lifetime=0
+2024-03-30 14:00:42,990 INFO  [org.apa.fli.tab.cat.hiv.HiveCatalog] (pool-7-thread-3) Connected to Hive metastore
+2024-03-30 14:00:43,096 INFO  [org.apa.fli.tab.cat.CatalogManager] (pool-7-thread-3) Set the current default catalog as [ffbaaaacaaaaaaaaafaaaabafafafbaebfaa] and the current default database as [default].
+2808965
+{"id":1,"name":"name_1","age":46,"addr":{"email":"name_1@email.com","phone":"123"}}
+******CUSTOM_MYSQL_DATA_STORE_ROW*********
+2808966
+{"id":"2","name":"name_2","age":55,"addr":{"email":"name_2@email.com","phone":"1234"}}
+******CUSTOM_MYSQL_DATA_STORE_ROW*********
+Connection Closed....
+MYSQL: STORED_SUCCESSFULLY
+2024-03-30 14:00:43,202 INFO  [com.app.dat.tar.fra.sta.LogicRunner] (pool-7-thread-4) com.appgallabs.dataplatform.targetSystem.framework.staging.InMemoryDB@750c9c8c
+2024-03-30 14:00:43,203 INFO  [com.app.dat.tar.fra.sta.LogicRunner] (pool-7-thread-4) PROCESSING: # of records: 2
+MONGODB: STORED_SUCCESSFULLY
+----
+
+== Verify all target collections received the data
 
 === Verify MySQL Target Store
 image::tutorials/verify_mysql.png[]
@@ -528,7 +619,7 @@ To verify the success of the ingestion and delivery to the configured target
 databases, use the following MongoDB commands.
 
 Expected Result: You should see two records added to a collection called "data"
-in a database called "get_started_store"
+in a database called "zzza" corresponding to configured value `configuration.config.database`
 
 mongosh
 
@@ -539,7 +630,7 @@ mongosh
 
 [source,bash,subs=attributes+]
 ----
-use get_started_store
+use zzza
 ----
 
 [source,bash,subs=attributes+]

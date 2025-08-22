@@ -29,7 +29,14 @@
       <div class="width-10-12 width-12-12-m">
           <h3>Download Braineous</h3>
           <div class="grid-wrapper">
-              <a href="https://github.com/bugsbunnyshah/braineous_dataplatform/releases/download/braineous-1.0.0-CR1/braineous-1.0.0-cr1.zip">Braineous-1.0.0-CR1</a>
+              <a href="https://www.dropbox.com/scl/fi/87ixa3bbegsmhaiz3danr/braineous-1.0.0-cr3.zip?rlkey=o4s7a8nvuwh8v1wuat1gl6uxe&st=9i9z0u2h&dl=0">Braineous-1.0.0-CR3</a>
+          </div>
+          <p></p>
+          <div class="grid-wrapper">
+              <p>More instructions</p>
+          </div>
+          <div>
+              <a href="https://github.com/bugsbunnyshah/braineous_dataplatform/releases/tag/braineous-1.0.0-cr3" target="_blank">Release</a>
           </div>
       </div>
 
@@ -42,7 +49,7 @@
               <div class="width-6-12 width-12-12-m">
                   <div class= "highlighter-rouge">
                       <div class="highlight">
-                          <pre class="highlight"><code>cd braineous-1.0.0-cr1/bin</code></pre>
+                          <pre class="highlight"><code>cd braineous-1.0.0-cr3/bin</code></pre>
                       </div>
                       <div class="highlight">
                           <pre class="highlight"><code>./start_zookeper.sh</code></pre>
@@ -62,7 +69,7 @@
               <div class="width-6-12 width-12-12-m">
                   <div class= "highlighter-rouge">
                       <div class="highlight">
-                          <pre class="highlight"><code>cd braineous-1.0.0-cr1/bin</code></pre>
+                          <pre class="highlight"><code>cd braineous-1.0.0-cr3/bin</code></pre>
                       </div>
                       <div class="highlight">
                           <pre class="highlight"><code>./start_kafka.sh</code></pre>
@@ -82,7 +89,7 @@
               <div class="width-6-12 width-12-12-m">
                   <div class= "highlighter-rouge">
                       <div class="highlight">
-                          <pre class="highlight"><code>cd braineous-1.0.0-cr1/bin</code></pre>
+                          <pre class="highlight"><code>cd braineous-1.0.0-cr3/bin</code></pre>
                       </div>
                       <div class="highlight">
                           <pre class="highlight"><code>./start_flink.sh</code></pre>
@@ -92,9 +99,28 @@
           </div>
       </div>
 
-
       <div class="width-2-12 width-12-12-m">
           <h2 class="step">Step <span class="step-no">6</span></h2>
+      </div>
+      <div class="width-10-12 width-12-12-m">
+          <h3>Start Hive Metastore</h3>
+          <div class="grid-wrapper">
+              <div class="width-6-12 width-12-12-m">
+                  <div class= "highlighter-rouge">
+                      <div class="highlight">
+                          <pre class="highlight"><code>cd braineous-1.0.0-cr3/bin</code></pre>
+                      </div>
+                      <div class="highlight">
+                          <pre class="highlight"><code>./start_metastore.sh</code></pre>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+
+      <div class="width-2-12 width-12-12-m">
+          <h2 class="step">Step <span class="step-no">7</span></h2>
       </div>
       <div class="width-10-12 width-12-12-m">
           <h3>Start Braineous</h3>
@@ -102,7 +128,7 @@
               <div class="width-6-12 width-12-12-m">
                   <div class= "highlighter-rouge">
                       <div class="highlight">
-                          <pre class="highlight"><code>cd braineous-1.0.0-cr1/bin</code></pre>
+                          <pre class="highlight"><code>cd braineous-1.0.0-cr3/bin</code></pre>
                       </div>
                       <div class="highlight">
                           <pre class="highlight"><code>./start_braineous.sh</code></pre>
@@ -113,10 +139,70 @@
       </div>
 
       <div class="width-2-12 width-12-12-m">
-          <h2 class="step">Step <span class="step-no">7</span></h2>
+          <h2 class="step">Step <span class="step-no">8</span></h2>
       </div>
       <div class="width-10-12 width-12-12-m">
-          <h3>Ingestion Tutorial</h3>
+          <h3>Test Braineous Installation</h3>
+          <div class="grid-wrapper">
+              <div class="width-6-12 width-12-12-m">
+                  <div class= "highlighter-rouge">
+                      <div class="highlight">
+                          <pre class="highlight"><code>cd braineous-1.0.0-cr3/bin</code></pre>
+                      </div>
+                      <div class="highlight">
+                          <pre class="highlight"><code>./test_installation.sh</code></pre>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="width-2-12 width-12-12-m">
+          <h2 class="step">Step <span class="step-no">9</span></h2>
+      </div>
+      <div class="width-10-12 width-12-12-m">
+          <h3>Generate an API Key and API Secret</h3>
+          <div class="grid-wrapper">
+              <div class="width-6-12 width-12-12-m">
+                  <div class= "highlighter-rouge">
+                      <div class="highlight">
+                          <pre class="highlight">Create a Tenant</pre>
+                      </div>
+                      <div class="highlight">
+                          <pre class="highlight"><code>./pipemon.sh</code></pre>
+                      </div>
+                      <div class="highlight">
+                          <pre class="highlight">
+                        ********************
+                         𝔹ℝ𝔸𝕀ℕ𝔼𝕆𝕌𝕊
+                         *****************
+                        > If you have a tenant press [l] to login, If you need to create a tenant press[c]
+                        c
+                        Create a tenant
+                        > tenant:
+                        cr2_tenant
+                        > email:
+                        cr2@cr2.com
+                        > password:
+                        password
+                        ***TENANT_CREATION_SUCCESS***
+                        {principal: cb4e0e9f-1b06-4e38-8f8a-395775d1a83f, apiSecret: e41bc11a-83ea-42e1-96c1-5bb136de9ce1, name: cr2_tenant, email: cr2@cr2.com, password: 5F4DCC3B5AA765D61D8327DEB882CF99, apiKey: cb4e0e9f-1b06-4e38-8f8a-395775d1a83f}
+                        Please keep the API secret safe for Data Platform usage. This will not be displayed in the future for security reasons
+                          </pre>
+                      </div>
+                      <div class="highlight">
+                          <pre class="highlight">Please use this generated API Key and API Secret for the tutorials.</pre>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="width-2-12 width-12-12-m">
+          <h2 class="step">Step <span class="step-no">10</span></h2>
+      </div>
+      <div class="width-10-12 width-12-12-m">
+          <h3>Create a Data Pipeline</h3>
           <p><a href="{{site.baseurl}}/guides/getting-started">Next</a></p>
       </div>
   </div>
