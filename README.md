@@ -1,3 +1,9 @@
+# Braineous
+
+## Run the site locally for development
+1. ./localhost_run.sh
+
+
 # Quarkus.io Website Based on Jekyll
 
 ## Getting Started

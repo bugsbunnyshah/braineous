@@ -34,6 +34,12 @@
           </ul>
       </li>
       <li class="dropdown">
+        <span href="{{site.baseurl}}/learn/">Documentation<i class="fas fa-chevron-down"></i></span>
+        <ul class="submenu">
+          <li><a href="{{site.baseurl}}/get-started" class="{% if page.url contains '/get-started/' %}active{% endif %}">GET STARTED</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
         <span href="{{site.baseurl}}/community/">Community<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="{{site.baseurl}}/support/" class="{% if page.url contains '/support/' %}active{% endif %}">SUPPORT</a></li>
@@ -44,6 +50,7 @@
       </li>
       <li>
         <a href="{{site.baseurl}}/get-started" class="button-cta secondary white">START CODING</a>
+        <!--<a href="{{site.baseurl}}/blog" class="button-cta secondary white">START CODING</a>-->
       </li>
     </ul>
       </nav>
